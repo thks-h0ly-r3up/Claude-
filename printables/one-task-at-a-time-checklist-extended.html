@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>ONE TASK AT A TIME — Extended Focus Checklist</title>
+<meta name="description" content="Extended printable checklist: one task at a time, with affirmations, anchor verses, and a full page of blank lines to park everything else." />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Libre+Franklin:wght@400;500;600;700;800&display=swap');
+
+  :root{
+    --pink:#d6598f;
+    --purple:#7a4c9e;
+    --turquoise:#3fb6b0;
+    --denim:#4a6486;
+    --cream:#fdfaf5;
+    --ink:#2b2430;
+    --line:#c9bfd6;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #e9e2ee;
+    font-family: 'Libre Franklin', Arial, sans-serif;
+    color: var(--ink);
+  }
+
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    margin: 0.25in auto;
+    background: var(--cream);
+    padding: 0.28in 0.5in 0.22in 0.5in;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+    position: relative;
+    border: 2px solid var(--purple);
+  }
+
+  .band {
+    height: 7px;
+    width: 100%;
+    background: linear-gradient(90deg, var(--pink), var(--purple) 45%, var(--turquoise));
+    border-radius: 4px;
+    margin-bottom: 9px;
+  }
+
+  header { text-align: center; margin-bottom: 6px; }
+
+  .brand {
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: var(--purple);
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-family: 'Caveat', cursive;
+    font-size: 40px;
+    line-height: 1;
+    margin: 2px 0;
+    color: var(--pink);
+  }
+
+  .subtitle {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--denim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .fields {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    margin: 8px 0 4px 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .fields .f { flex: 1; border-bottom: 1.5px solid var(--line); padding-bottom: 3px; }
+
+  .two-col {
+    display: flex;
+    gap: 14px;
+    margin-top: 10px;
+  }
+  .two-col > div { flex: 1; }
+
+  .card {
+    border-radius: 10px;
+    padding: 9px 13px;
+    font-size: 11.5px;
+    line-height: 1.42;
+  }
+  .card .label {
+    font-style: normal;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    font-size: 9.5px;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .affirm-box {
+    background: #fdeef3;
+    border: 1.5px solid var(--pink);
+  }
+  .affirm-box .label { color: var(--pink); }
+  .affirm-line {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #5c2338;
+  }
+  .affirm-line span.mark { color: var(--pink); font-weight: 800; }
+
+  .verse-box {
+    background: #eaf6f5;
+    border: 1.5px solid var(--turquoise);
+  }
+  .verse-box .label { color: #2f8a84; }
+  .verse-item {
+    margin-bottom: 7px;
+    font-style: italic;
+    color: #234d4a;
+  }
+  .verse-item .ref {
+    display: block;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 10px;
+    color: #2f8a84;
+    margin-top: 1px;
+  }
+
+  .prayer-box {
+    margin-top: 10px;
+    background: #f3ecf8;
+    border: 1.5px dashed var(--purple);
+    border-radius: 10px;
+    padding: 9px 14px;
+    font-size: 11.5px;
+    line-height: 1.4;
+    font-style: italic;
+    color: #423a4d;
+  }
+  .prayer-box .label {
+    font-style: normal;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 10px;
+    color: var(--purple);
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .one-task {
+    border: 3px solid var(--pink);
+    border-radius: 14px;
+    padding: 12px 16px 13px 16px;
+    background: #fff;
+    position: relative;
+    margin-top: 12px;
+  }
+  .one-task .tag {
+    position: absolute;
+    top: -13px;
+    left: 18px;
+    background: var(--pink);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+  }
+  .one-task-line {
+    border-bottom: 2px solid var(--ink);
+    height: 26px;
+    margin-top: 14px;
+  }
+  .one-task .helper {
+    margin-top: 5px;
+    font-size: 10px;
+    color: var(--denim);
+    font-style: italic;
+  }
+
+  .steps { margin-top: 8px; }
+  .steps .steps-label {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--denim);
+    margin-bottom: 4px;
+  }
+  .step-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+  .box {
+    width: 14px;
+    height: 14px;
+    border: 2px solid var(--ink);
+    border-radius: 3px;
+    flex: 0 0 auto;
+  }
+  .step-row .line {
+    flex: 1;
+    border-bottom: 1px solid var(--line);
+    height: 16px;
+  }
+
+  .done-row {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 12px;
+    color: var(--purple);
+  }
+  .done-row .box { width: 16px; height: 16px; border-color: var(--purple); }
+
+  footer {
+    margin-top: 14px;
+    padding-top: 7px;
+    border-top: 1.5px solid var(--line);
+    text-align: center;
+  }
+  footer .mission {
+    font-family: 'Caveat', cursive;
+    font-size: 16px;
+    color: var(--pink);
+    font-weight: 700;
+  }
+  footer .brandline {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--purple);
+    font-weight: 700;
+    margin-top: 3px;
+  }
+  footer .memorial {
+    font-size: 8px;
+    color: var(--denim);
+    margin-top: 3px;
+    letter-spacing: 0.5px;
+  }
+  footer .legal {
+    font-size: 7px;
+    color: #9a8fa8;
+    margin-top: 5px;
+    line-height: 1.3;
+  }
+
+  /* ---- Page 2: parking lot ---- */
+  .tag2 {
+    display: inline-block;
+    background: var(--purple);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 4px;
+  }
+  .parking-helper {
+    font-size: 11px;
+    color: var(--denim);
+    font-style: italic;
+    margin: 4px 0 10px 0;
+  }
+  .parking-grid-big {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0 22px;
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+    padding: 10px 14px 6px 14px;
+    background: #fbf7fc;
+  }
+  .park-row {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 0;
+    border-bottom: 1px dotted var(--line);
+  }
+  .park-row .num {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--purple);
+    width: 16px;
+    flex: 0 0 auto;
+  }
+  .park-row .line { flex: 1; border-bottom: 1px solid var(--line); height: 14px; }
+
+  .reflect {
+    margin-top: 14px;
+    display: flex;
+    gap: 14px;
+  }
+  .reflect .box2 {
+    flex: 1;
+    border: 1.5px solid var(--turquoise);
+    border-radius: 10px;
+    padding: 8px 12px;
+    background: #eef9f8;
+  }
+  .reflect .box2 .lbl {
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #2f8a84;
+    margin-bottom: 4px;
+  }
+  .reflect .box2 .line3 {
+    border-bottom: 1px solid #bfe4e1;
+    height: 16px;
+    margin-top: 6px;
+  }
+
+  .closing {
+    margin-top: 14px;
+    text-align: center;
+    font-family: 'Caveat', cursive;
+    font-size: 22px;
+    color: var(--purple);
+    font-weight: 700;
+  }
+
+  @media print {
+    html, body { background: #fff; }
+    .page {
+      margin: 0;
+      box-shadow: none;
+      border: none;
+      width: auto;
+      min-height: auto;
+      page-break-after: always;
+    }
+    .page:last-child { page-break-after: auto; }
+    @page { size: letter portrait; margin: 0.3in; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="band"></div>
+  <header>
+    <div class="brand">7HE H0LY KIL0 SYNDICATE &mdash; THKS</div>
+    <h1>One Task At A Time</h1>
+    <div class="subtitle">Extended Focus Checklist &mdash; Bando 2 Vineyard</div>
+  </header>
+
+  <div class="fields">
+    <div class="f">Name: ______________________________</div>
+    <div class="f">Date: ___________________</div>
+  </div>
+
+  <div class="prayer-box">
+    <span class="label">Before You Start &mdash; A Prayer</span>
+    Lord, quiet the noise. There's a hundred things pulling at me right now, and I can't carry all of them at once &mdash; and You never asked me to. Help me put my hand to the <em>one</em> thing You've called me to right now, and give me peace to set the rest down without guilt or panic. Give me the discipline to write down what tries to steal my focus instead of chasing it. One task. One step. One row of the vineyard at a time. In Jesus' name, amen.
+  </div>
+
+  <div class="two-col">
+    <div class="card affirm-box">
+      <span class="label">Speak This Before You Start</span>
+      <div class="affirm-line"><span class="mark">&bull;</span> I am not what I survived. I am what God is rebuilding.</div>
+      <div class="affirm-line"><span class="mark">&bull;</span> One task done in obedience beats ten carried in anxiety.</div>
+      <div class="affirm-line"><span class="mark">&bull;</span> Rest is not something I earn. Jesus already finished the work.</div>
+      <div class="affirm-line"><span class="mark">&bull;</span> Discipline is not punishment &mdash; it's how a vineyard grows fruit.</div>
+      <div class="affirm-line"><span class="mark">&bull;</span> I can set this down. God doesn't need me to hold it tonight.</div>
+    </div>
+    <div class="card verse-box">
+      <span class="label">Verses To Anchor To</span>
+      <div class="verse-item">&ldquo;Whatever your hand finds to do, do it with all your might.&rdquo;<span class="ref">Ecclesiastes 9:10</span></div>
+      <div class="verse-item">&ldquo;One thing I do: forgetting what lies behind and reaching forward to what lies ahead.&rdquo;<span class="ref">Philippians 3:13</span></div>
+      <div class="verse-item">&ldquo;Do not worry about tomorrow, for tomorrow will worry about itself.&rdquo;<span class="ref">Matthew 6:34</span></div>
+      <div class="verse-item">&ldquo;Commit your work to the Lord, and your plans will be established.&rdquo;<span class="ref">Proverbs 16:3</span></div>
+    </div>
+  </div>
+
+  <div class="one-task">
+    <span class="tag">The One Task</span>
+    <div class="one-task-line"></div>
+    <div class="helper">This is the only thing you're doing right now. Everything else goes on the next page &mdash; not in your head.</div>
+
+    <div class="steps">
+      <div class="steps-label">Break It Down (small steps, one at a time)</div>
+      <div class="step-row"><div class="box"></div><div class="line"></div></div>
+      <div class="step-row"><div class="box"></div><div class="line"></div></div>
+      <div class="step-row"><div class="box"></div><div class="line"></div></div>
+      <div class="step-row"><div class="box"></div><div class="line"></div></div>
+      <div class="step-row"><div class="box"></div><div class="line"></div></div>
+      <div class="step-row"><div class="box"></div><div class="line"></div></div>
+      <div class="step-row"><div class="box"></div><div class="line"></div></div>
+    </div>
+
+    <div class="done-row"><div class="box"></div> DONE. Set it down. Rest in that before you pick up the next thing.</div>
+  </div>
+
+  <div class="card verse-box" style="margin-top:12px;">
+    <span class="label">If The Old Voice Talks Back &mdash; Say This</span>
+    <div class="verse-item">&ldquo;No weapon formed against you shall prosper, and every tongue that rises against you in judgment you shall condemn.&rdquo;<span class="ref">Isaiah 54:17</span></div>
+    <div class="verse-item">&ldquo;He who began a good work in you will carry it on to completion.&rdquo;<span class="ref">Philippians 1:6</span></div>
+  </div>
+
+  <footer>
+    <div class="mission">D.O.A. Is God's Favorite Starting Point</div>
+    <div class="brandline">7HE H0LY R3UP by THKS &amp; CO.</div>
+  </footer>
+</div>
+
+<div class="page">
+  <div class="band"></div>
+  <header>
+    <div class="brand">7HE H0LY KIL0 SYNDICATE &mdash; THKS</div>
+    <h1>The Parking Lot</h1>
+    <div class="subtitle">Write It Down, Don't Carry It</div>
+  </header>
+
+  <div style="text-align:center; margin-top:2px;">
+    <span class="tag2">Everything Else Goes Here</span>
+  </div>
+  <div class="parking-helper" style="text-align:center;">
+    It'll still be here when it's its turn. This is not today's task list &mdash; it's the holding place so your mind can let go and your hands can stay on the one thing.
+  </div>
+
+  <div class="parking-grid-big">
+    <div>
+      <div class="park-row"><span class="num">1</span><div class="line"></div></div>
+      <div class="park-row"><span class="num">2</span><div class="line"></div></div>
+      <div class="park-row"><span class="num">3</span><div class="line"></div></div>
+      <div class="park-row"><span class="num">4</span><div class="line"></div></div>
+      <div class="park-row"><span class="num">5</span><div class="line"></div></div>
+      <div class="park-row"><span class="num">6</span><div class="line"></div></div>
+      <div class="park-row"><span class="num">7</span><div class="line"></div></div>
+      <div class="park-row"><span class="num">8</span><div class="line"></div></div>
+    </div>
+    <div>
+      <div class="park-row"><span class="num">9</span><div class="line"></div></div>
+      <div class="park-row"><span class="num">10</span><div class="line"></div></div>
+      <div class="park-row"><span class="num">11</span><div class="line"></div></div>
+      <div class="park-row"><span class="num">12</span><div class="line"></div></div>
+      <div class="park-row"><span class="num">13</span><div class="line"></div></div>
+      <div class="park-row"><span class="num">14</span><div class="line"></div></div>
+      <div class="park-row"><span class="num">15</span><div class="line"></div></div>
+      <div class="park-row"><span class="num">16</span><div class="line"></div></div>
+    </div>
+    <div>
+      <div class="park-row"><span class="num">17</span><div class="line"></div></div>
+      <div class="park-row"><span class="num">18</span><div class="line"></div></div>
+      <div class="park-row"><span class="num">19</span><div class="line"></div></div>
+      <div class="park-row"><span class="num">20</span><div class="line"></div></div>
+      <div class="park-row"><span class="num">21</span><div class="line"></div></div>
+      <div class="park-row"><span class="num">22</span><div class="line"></div></div>
+      <div class="park-row"><span class="num">23</span><div class="line"></div></div>
+      <div class="park-row"><span class="num">24</span><div class="line"></div></div>
+    </div>
+  </div>
+
+  <div class="reflect">
+    <div class="box2">
+      <div class="lbl">What tried to pull my focus today</div>
+      <div class="line3"></div>
+      <div class="line3"></div>
+    </div>
+    <div class="box2">
+      <div class="lbl">How staying on one thing felt</div>
+      <div class="line3"></div>
+      <div class="line3"></div>
+    </div>
+  </div>
+
+  <div class="closing">&ldquo;Baby, I know what far gone looks like. Let me show you what God can do from here.&rdquo;</div>
+
+  <footer>
+    <div class="brandline">7HE H0LY R3UP by THKS &amp; CO. &mdash; TRADING THE CORNER FOR THE CROWN</div>
+    <div class="memorial">In Memory of Brandi Renee &mdash; 12787&ndash;121721</div>
+    <div class="legal">&copy; 2026 7HE H0LY KIL0 SYNDICATE (THKS). All rights reserved. No part of this work may be reproduced, distributed, copied, transmitted, or commercially exploited without prior written permission, except as permitted by applicable law.</div>
+  </footer>
+</div>
+
+</body>
+</html>
