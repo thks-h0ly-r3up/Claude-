@@ -43,67 +43,67 @@ WHITE = HexColor("#FFFFFF")
 
 DAYS = [
     {
-        "title": "CHAINS DON'T BREAK THEMSELVES",
+        "title": "SIS, THE CHAIN WON'T BREAK ITSELF",
         "ref": "John 8:36",
         "verse": "If the Son therefore shall make you free, ye shall be free indeed.",
-        "breakdown": "You can't out-grind a chain you were never built to carry. You've tried willpower, new starts, new people, new plans. Same cell. Jesus doesn't say you might get free, He says \"free indeed\" - not free-ish, not free on weekends. Day 1 is not about trying harder. It's about handing Him the key and letting Him do what only He can.",
-        "habits": ["Read the verse out loud, twice", "Name ONE chain in writing (the real one)", "5 minutes of silence, phone in another room", "Told one safe person I'm starting this"],
-        "vault": "What chain have I been calling \"just how I am\"? Who taught me to carry it, and what has it cost me?",
-        "prayer": "Jesus, I'm tired of pretending I'm fine. I've been swinging at this chain with my own hands and it's still on me. Today I quit fighting alone. You said the Son makes free - so make me free. Take the key. Start breaking it now. In Your name, amen.",
+        "breakdown": "Girl, you have been swinging at this chain with your own two hands, and you're exhausted. New start, new plan, new promise to yourself. Same cell. Jesus doesn't say you might get free. He says \"free indeed\" - not free-ish, not free on your good days. Today isn't about trying harder, beautiful. It's about handing Him the key and letting Him do what only He can.",
+        "habits": ["Read the verse out loud, twice", "Named ONE chain in writing (the real one)", "5 quiet minutes, phone in another room", "Told one safe sister I'm starting this"],
+        "vault": "What chain have I been calling \"just how I am\"? Who taught me to carry it, and what has it cost my heart?",
+        "prayer": "Jesus, I'm so tired of pretending I'm fine. I've been fighting this chain alone and it's still on me. Today I lay down the fight and pick up Your hand. You said the Son makes free, so make me free. Take the key. Start breaking it now. In Your name, amen.",
     },
     {
-        "title": "OUT THE DARK, NO BARGAINING",
+        "title": "OUT OF THE DARK, NO MORE HIDING",
         "ref": "Psalm 107:14",
         "verse": "He brought them out of darkness and the shadow of death, and brake their bands in sunder.",
-        "breakdown": "Notice who does the work: HE brought them out. HE broke the bands. The dark you've been living in - the numbing, the hiding, the 3 a.m. thoughts - is not your address forever. God doesn't negotiate with the darkness and He doesn't need you cleaned up first. He walks in, and the bands snap. Your job today: stop hiding the dark from the One who already sees it.",
+        "breakdown": "Look at who does the work: HE brought them out. HE broke the bands. The dark you've been sitting in - the numbing, the 3 a.m. spiral, the smile you put on for everybody - is not your forever address. God isn't waiting for you to clean yourself up first. He walks right in, and the bands snap. Your part today, love: stop hiding the dark from the One who already sees it and loves you anyway.",
         "habits": ["Read the verse out loud, twice", "Said out loud where I'm stuck in the dark", "Deleted or blocked ONE trigger", "10 minutes walking, praying as I go"],
         "vault": "Where do I go to hide when it gets heavy? What am I afraid will happen if the light hits that place?",
-        "prayer": "God, You see the dark I've been sitting in. I'm not hiding it anymore. Walk into that room and turn the light on. Break the bands I can't break. Pull me out of every place I keep going back to. I'm done bargaining. I'm asking. Amen.",
+        "prayer": "Father, You see the dark I've been sitting in, and I'm not hiding it anymore. Walk into that room and turn the light on. Break the bands I can't break. Pull me out of every place I keep running back to. I'm not bargaining anymore, I'm asking. Hold me while You do it. Amen.",
     },
     {
-        "title": "REWIRE THE HEAD",
+        "title": "REWRITE THE STORY IN YOUR HEAD",
         "ref": "Romans 12:2",
         "verse": "And be not conformed to this world: but be ye transformed by the renewing of your mind, that ye may prove what is that good, and acceptable, and perfect, will of God.",
-        "breakdown": "Every cycle starts as a thought you agreed with. \"I'll never change.\" \"One time won't hurt.\" \"Nobody cares.\" Lies on repeat become the ground you walk on. Transformation isn't a vibe, it's renewal - replacing the script one thought at a time. Catch the lie, say what God says, repeat. Do it until the old track goes quiet.",
-        "habits": ["Read the verse out loud, twice", "Caught 3 lies today and wrote them down", "Replaced each lie with a verse or truth", "Cut ONE input feeding the old script"],
-        "vault": "Write the three loudest lies in my head. Next to each, write what God actually says about me.",
-        "prayer": "Father, my mind has been running old tapes for years. I renounce every lie I've agreed with. Renew my mind, God. Rewire what the streets, my past and my pain wrote into me. Let me think like someone You've already set free. Amen.",
+        "breakdown": "Every cycle starts as a thought you believed. \"I'll never change.\" \"I'm too much.\" \"Nobody would choose me.\" Lies on repeat start to feel like truth. Transformation isn't a mood, sis, it's renewal - trading the old script for God's words one thought at a time. Catch the lie, say what He says, repeat. Do it until the old voice goes quiet and hers - the real you - gets loud.",
+        "habits": ["Read the verse out loud, twice", "Caught 3 lies today and wrote them down", "Answered each lie with a verse or truth", "Cut ONE input feeding the old script"],
+        "vault": "Write the three loudest lies in my head. Next to each, write what God actually says about me, His daughter.",
+        "prayer": "Father, my mind has been playing old tapes for years. I renounce every lie I've agreed with. Renew my mind, God. Rewrite what my past and my pain wrote over me. Let me see myself the way You do: chosen, cherished, already free. Amen.",
     },
     {
         "title": "DROP ANCHOR WHEN THE STORM HITS",
         "ref": "Hebrews 6:19",
         "verse": "Which hope we have as an anchor of the soul, both sure and stedfast, and which entereth into that within the veil;",
-        "breakdown": "Storms don't ask if you're ready. The old you grabs the bottle, the phone, the person, the rage. An anchor doesn't stop the storm - it stops you from drifting into the rocks. Hope in Christ is that anchor: sure and steadfast. Today, decide BEFORE the storm what you'll do when it hits. Have your anchor move ready: a verse, a call, a prayer.",
-        "habits": ["Read the verse out loud, twice", "Wrote my 'storm plan' (3 steps)", "Prayed it at my hardest hour of the day", "Texted my anchor person a check-in"],
-        "vault": "What are the 3 moments the storm hits hardest? What will I do the second it starts?",
-        "prayer": "Jesus, You are my anchor. When the storm hits and everything in me wants to run, hold me. Keep me from drifting back into what nearly sank me. I plant my hope in You - sure and steadfast. I'm not going anywhere. Amen.",
+        "breakdown": "Storms don't ask if you're ready. The old you reaches for the drink, the phone, the ex, the shutdown. An anchor doesn't stop the storm - it keeps you from drifting onto the rocks. Hope in Christ is that anchor: sure and steadfast. So decide BEFORE the storm hits what you'll do when it does. Have your anchor move ready: a verse, a call to your girl, a prayer out loud.",
+        "habits": ["Read the verse out loud, twice", "Wrote my 'storm plan' (3 steps)", "Prayed it at my hardest hour of the day", "Texted my anchor sister a check-in"],
+        "vault": "What are the 3 moments the storm hits me hardest? What will I do the second it starts?",
+        "prayer": "Jesus, You are my anchor. When the storm hits and everything in me wants to run, hold me steady. Keep me from drifting back into what nearly sank me. I'm planting my hope in You, sure and steadfast. I'm not going anywhere. Amen.",
     },
     {
-        "title": "SAY IT OUT LOUD",
+        "title": "SAY IT OUT LOUD. SHAME LOSES.",
         "ref": "1 John 1:9",
         "verse": "If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.",
-        "breakdown": "Secrets are the chain's favorite food. Shame says stay quiet; God says bring it into the light and I'll clean it. Confession isn't groveling, it's agreement - saying what's true so He can do what's faithful. Notice: faithful AND just. He forgave it at the cross, so it's settled. Say it. Then walk out clean, not carrying it back.",
-        "habits": ["Read the verse out loud, twice", "Confessed the real thing to God, in detail", "Confessed to one trusted believer", "Forgave one person (or started to)"],
-        "vault": "What have I never said out loud to anyone? What would it feel like to be fully known and still loved?",
-        "prayer": "God, here it is - everything I've been hiding. No excuses, no editing. I agree with You that it's sin and I'm done with it. You said You're faithful and just to forgive. I receive it. Wash me clean and don't let shame drag me back. Amen.",
+        "breakdown": "Secrets are a chain's favorite meal. Shame whispers stay quiet, girl; God says bring it into the light and I'll make you clean. Confession isn't groveling, it's agreeing with the truth so He can do what He promised. Faithful AND just: it's already paid for at the cross. So say it. Then walk out lighter, not carrying it right back in.",
+        "habits": ["Read the verse out loud, twice", "Confessed the real thing to God, in detail", "Confessed to one trusted sister in Christ", "Forgave one person (or started to)"],
+        "vault": "What have I never said out loud to anyone? What would it feel like to be fully known and still fully loved?",
+        "prayer": "God, here it is - everything I've been hiding. No excuses, no editing. I agree with You that it's sin and I'm done carrying it. You said You're faithful and just to forgive, so I receive it. Wash me clean, and don't let shame pull me back. Amen.",
     },
     {
-        "title": "SUIT UP, NO DAYS OFF",
+        "title": "SUIT UP, DAUGHTER OF THE KING",
         "ref": "Ephesians 6:11",
         "verse": "Put on the whole armour of God, that ye may be able to stand against the wiles of the devil.",
-        "breakdown": "The enemy doesn't play fair and he doesn't take a day off. Wiles means schemes - he knows your patterns better than you do. You don't stand in your own strength, you stand dressed: truth, righteousness, peace, faith, salvation, the Word. Whole armour, not half. Today you get dressed on purpose, before the fight finds you.",
-        "habits": ["Read the verse out loud, twice", "Prayed on each piece of armour by name", "Identified the enemy's favorite scheme on me", "Did ONE hard thing I'd normally dodge"],
-        "vault": "Where does the enemy always come at me? Which piece of armour am I leaving off there?",
+        "breakdown": "The enemy doesn't play fair and he doesn't take days off. Wiles means schemes - he knows your patterns and your soft spots. But you don't stand in your own strength, love, you stand dressed: truth, righteousness, peace, faith, salvation, the Word. The whole armour, not half. Today you get dressed on purpose, before the fight finds you.",
+        "habits": ["Read the verse out loud, twice", "Prayed on each piece of armour by name", "Named the enemy's favorite scheme on me", "Did ONE hard thing I'd normally dodge"],
+        "vault": "Where does the enemy always come at me? Which piece of armour am I leaving off right there?",
         "prayer": "Lord, I'm suiting up. Truth around my waist, righteousness on my chest, peace on my feet, faith as my shield, salvation on my head, Your Word in my hand. I know the schemes and I'm not falling for them. I stand in You, not in me. Amen.",
     },
     {
         "title": "NEW SUN, NEW MERCY",
         "ref": "Lamentations 3:22-23",
         "verse": "It is of the LORD'S mercies that we are not consumed, because his compassions fail not. They are new every morning: great is thy faithfulness.",
-        "breakdown": "You made it seven days - and if you slipped, you're still here, and that's mercy. God's compassions don't run out and they don't expire overnight. Every sunrise is a fresh receipt marked PAID. Freedom isn't one perfect week, it's coming back to Him every morning. The sun is up. Get up with it and keep walking.",
-        "habits": ["Read the verse out loud, twice", "Watched or greeted the sunrise with a prayer", "Wrote 3 wins from this week", "Committed to the next 30 days"],
+        "breakdown": "Seven days, sis. And if you stumbled somewhere in there, you're still here, and that's mercy. God's compassions don't run out or expire overnight. Every sunrise is a fresh receipt marked PAID. Freedom isn't one perfect week, it's coming back to Him every morning. The sun is up. Get up with it, wipe your face, and keep walking.",
+        "habits": ["Read the verse out loud, twice", "Greeted the sunrise with a prayer", "Wrote 3 wins from this week", "Committed to the next 30 days"],
         "vault": "What has changed in me since Day 1? What do I want the next 30 days to look like?",
-        "prayer": "Faithful God, thank You for seven days and for every mercy that showed up new. I'm not perfect but I'm Yours. Keep breaking what's left of these chains. Every morning I'll come back to You. The sun's up and so am I. Amen.",
+        "prayer": "Faithful God, thank You for seven days and every mercy that showed up new. I'm not perfect, but I'm Yours. Keep breaking what's left of these chains. Every morning I'll come back to You. The sun's up, and so am I. Amen.",
     },
 ]
 
@@ -304,7 +304,7 @@ def page_cover(c):
     c.drawCentredString(W / 2, 112, "CHAINS")
     c.setFillColor(CREAM)
     c.setFont("Helvetica-Bold", 8)
-    c.drawCentredString(W / 2, 90, "RAW TRUTH.  REAL PRAYER.  ZERO CYCLES.")
+    c.drawCentredString(W / 2, 90, "RAW TRUTH.  REAL PRAYER.  REAL FREEDOM.")
     c.setFillColor(CREAM)
     c.setFont("Helvetica", 7.5)
     c.drawCentredString(W / 2, 40, "Print at 100% on A5 (148 x 210 mm). Fold or trim to tuck inside your Bible.")
