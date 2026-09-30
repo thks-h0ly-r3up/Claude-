@@ -1,0 +1,13 @@
+{
+  "slug": "next-right-step",
+  "title": "The Next Right Step",
+  "subtitle": "A 7-Day Reset From the Floor",
+  "design": {
+    "palette": 1,
+    "border": 0,
+    "ornament": 3,
+    "footer_offset": 2,
+    "cover_photo": 2
+  },
+  "fingerprint": "01a920a6ae8f"
+}

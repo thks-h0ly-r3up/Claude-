@@ -1,0 +1,30 @@
+SEND: day 8 (after they should have finished)
+SUBJECT: Seven days. Now what?
+PREVIEW: This was a seed, not a harvest.
+
+Hey,
+
+If you finished all seven days: I am proud of you. If you didn't, you are not behind. Pick up on whatever day you stopped at. A relapse or a missed day is not resignation. It's information.
+
+Seven days is a seed. Growing is slower, and it includes pruning. That's Bando 2 Vineyard.
+
+If you want to keep going, I built the next tools for exactly this moment:
+👉 Shop: {{STORE_URL}}
+👉 The paid next step: {{PAID_PRODUCT_URL}}
+
+Not required. The free guide stays yours forever. If money is the barrier, reply to this email and tell me. I keep free copies for people who need them.
+
+"And let us not grow weary of doing good, for in due season we will reap, if we do not give up." Galatians 6:9 (ESV)
+
+Still here,
+Nikki "Hellshaker"
+7HE H0LY KIL0 SYNDICATE (THKS) • 7HE H0LY R3UP by THKS & CO.
+
+---
+Linktree: {{LINKTREE_URL}} | Shop: {{STORE_URL}} | Email me: {{GMAIL_ADDRESS}}
+Template Creator: {{TEMPLATE_CREATOR_URL}} | Plugin Creator: {{PLUGIN_CREATOR_URL}}
+Not medical or professional advice. In crisis: 911 • 988 (call/text) • SAMHSA 1-800-662-4357.
+D.O.A. IS GOD'S FAVORITE STARTING POINT — IN MEMORY OF BRANDI RENEE — 12787–121721
+You are getting this because you asked for The Next Right Step. Unsubscribe: {{UNSUBSCRIBE_URL}}
+7HE H0LY KIL0 SYNDICATE (THKS), {{MAILING_ADDRESS}}
+© 2026 7HE H0LY KIL0 SYNDICATE (THKS). All rights reserved.
