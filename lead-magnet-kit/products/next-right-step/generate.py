@@ -295,7 +295,7 @@ out.append(page('''<h2>You Did It. Now What?</h2>
 <div class="cta">Keep going &rarr; Linktree: <a href="{{LINKTREE_URL}}">{{LINKTREE_URL}}</a></div>
 <h3>Ways to keep walking</h3><ul>
 <li><b>Free progress tracker:</b> <a href="{{TRACKER_URL}}">{{TRACKER_URL}}</a></li>
-<li><b>Shop the tools:</b> <a href="{{STORE_URL}}">{{STORE_URL}}</a> (7HE H0LY R3UP by THKS &amp; CO.)</li>
+<li><b>Shop the tools:</b> Etsy <a href="{{STORE_URL}}">{{STORE_URL}}</a> &bull; Gumroad <a href="{{GUMROAD_URL}}">{{GUMROAD_URL}}</a> (7HE H0LY R3UP by THKS &amp; CO.)</li>
 <li><b>Write to me:</b> <a href="mailto:{{GMAIL_ADDRESS}}">{{GMAIL_ADDRESS}}</a></li>
 <li><b>Building your own resource?</b> <a href="{{TEMPLATE_CREATOR_URL}}">Template Creator</a> &bull; <a href="{{PLUGIN_CREATOR_URL}}">Plugin Creator</a></li></ul>
 <h3>Where I'll be honest</h3><p>This guide is not treatment. If you take one thing from it, let it be this: <b>tell one real person today.</b> Then come tell me how it went.</p>

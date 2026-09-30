@@ -46,3 +46,14 @@ Suggested split: hosting/tools 25% • free copies & scholarships 25% • the mi
 
 ## Never
 Fake testimonials • fake scarcity/countdowns • "God told me you need to buy this" • income claims • medical/cure claims • selling the same design twice (`new_product.py` prevents duplicates).
+
+## Your live storefronts (added from the links you sent)
+- **Linktree:** https://linktr.ee/The_Holy_Kilo_Syndicates
+- **Etsy (7HE H0LY R3UP):** https://7heh0lyr3up.etsy.com
+- **Gumroad:** https://gumroad.holykilosyndicate.com/
+
+Suggested roles (check each platform's current rules before you rely on this):
+- **Gumroad = the lead magnet + digital tools.** Create the free guide as a $0 product there so subscribers get the PDF and you can send follow-ups to people who got it. Put that product's link in `GUIDE_DOWNLOAD_URL`.
+- **Etsy = the paid printable shelf** (planner, workbook, bundle). Etsy has rules about sending buyers off-platform, so keep the emails and the free guide on Gumroad/your email tool, and use Etsy for the paid listings.
+- **Linktree = the one link in every bio.** Put the free guide first, the shelf second.
+- The Shopify steps above still apply if you decide to run a Shopify store too.

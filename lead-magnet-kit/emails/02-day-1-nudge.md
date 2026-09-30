@@ -21,7 +21,7 @@ Nikki "Hellshaker"
 7HE H0LY KIL0 SYNDICATE (THKS) • 7HE H0LY R3UP by THKS & CO.
 
 ---
-Linktree: {{LINKTREE_URL}} | Shop: {{STORE_URL}} | Email me: {{GMAIL_ADDRESS}}
+Linktree: {{LINKTREE_URL}} | Etsy: {{STORE_URL}} | Gumroad: {{GUMROAD_URL}} | Email me: {{GMAIL_ADDRESS}}
 Template Creator: {{TEMPLATE_CREATOR_URL}} | Plugin Creator: {{PLUGIN_CREATOR_URL}}
 Not medical or professional advice. In crisis: 911 • 988 (call/text) • SAMHSA 1-800-662-4357.
 D.O.A. IS GOD'S FAVORITE STARTING POINT — IN MEMORY OF BRANDI RENEE — 12787–121721
