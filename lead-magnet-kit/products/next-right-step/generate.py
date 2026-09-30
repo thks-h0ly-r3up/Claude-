@@ -8,6 +8,13 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 CRISIS = ('<div class="crisis">In crisis? Call/text <b>988</b> &bull; SAMHSA <b>1-800-662-4357</b> &bull; '
           'Emergency <b>911</b> &bull; Trafficking <b>1-888-373-7888</b> &bull; DV Hotline <b>1-800-799-7233</b></div>')
 
+def ph(path, h="1.5in", pos="50% 22%", cap=""):
+    c = f'<div style="font-size:10px;text-align:center;color:var(--denim);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px">{cap}</div>' if cap else ""
+    return f'<img src="../photos/{path}" alt="" style="width:100%;height:{h};object-fit:cover;object-position:{pos};border-radius:10px;border:2px solid var(--accent);margin:6px 0 2px">{c}'
+def av(path, pos="50% 25%"):
+    return (f'<img src="../photos/{path}" alt="" style="float:right;width:1.3in;height:1.3in;border-radius:50%;object-fit:cover;'
+            f'object-position:{pos};border:3px solid var(--accent);margin:2px 0 6px 12px">')
+CL = '<div style="clear:both"></div>'
 def lines(n): return '<div class="row"><div class="line"></div></div>' * n
 def box(t): return f'<div class="row"><div class="box"></div><div style="flex:1;font-size:13px">{t}</div></div>'
 def verse(text, ref): return f'<div class="verse"><b>{ref} (ESV)</b>&ldquo;{text}&rdquo;</div>'
@@ -120,11 +127,12 @@ out = []
 # ---- cover
 out.append('''<section class="page"><div class="band"></div><div class="brand">7HE H0LY R3UP by THKS &amp; CO.</div>
 <h1>The Next Right Step</h1><div class="subtitle">A 7-Day Reset From the Floor</div><div class="subtitle" style="margin-top:4px">Guide &bull; Workbook &bull; Prayers &bull; 30-Day Plan</div><div class="orn">🍇</div>
-<!--COVER_PHOTO--><p style="text-align:center;font-weight:700;margin-top:14px">Free from 7HE H0LY KIL0 SYNDICATE (THKS)</p>
+<img class="cover-photo" src="../photos/team/05-leather-jacket-sunset.jpg" alt="" style="object-position:50% 8%"><p style="text-align:center;font-weight:700;margin-top:14px">Free from 7HE H0LY KIL0 SYNDICATE (THKS)</p>
 <p style="text-align:center">Broken by overdose. Rebuilt by God. Unapologetically shaking hell for every soul still bound.</p><!--FOOTER--></section>''')
 
 # ---- welcome letter
 out.append(page('''<h2>Read This First</h2>
+'''+ph('team/02-white-studio-hug.jpg','2.2in','50% 22%')+'''
 <p>If you're holding this, something is wrong and you don't know where to go. That is exactly who I made this for.</p>
 <p>I wish my sister, Brandi Renee, had somewhere to reach. I couldn't give her that. So I built it now, for you. I built it for the person sitting in a car trying not to cry, the person who relapsed yesterday, the person who told nobody, the person who's years in and fighting a craving tonight, the person who was hurt by church, the person who thinks God is done with them.</p>
 <p>I know what the floor feels like. Overdose broke me, and I have learned that <b>D.O.A. is God's favorite starting point.</b> When there's nothing left of you to work with, He still has plenty to work with.</p>
@@ -166,9 +174,9 @@ out.append(page('''<h2>Before You Start: A Safety Check</h2>
 # ---- days
 for i, d in enumerate(DAYS, 1):
     verses = "".join(verse(t, r) for t, r in d["v"])
-    teach = "".join(f'<p style="font-size:14.5px;line-height:1.55">{x}</p>' for x in d["teach"])
+    teach = "".join(f'<p style="font-size:14px;line-height:1.5;margin:6px 0">{x}</p>' for x in d["teach"])
     nb = '<table class="nb"><tr><th style="width:46%">Not this (the lie)</th><th>But this (the truth)</th></tr>' + "".join(f"<tr><td>{a}</td><td>{b}</td></tr>" for a, b in d["nb"]) + "</table>"
-    out.append(page(f'<h2>Day {i}: {d["t"]}</h2>{verses}{teach}{nb}<h3>What stood out to me</h3>{lines(3)}', f"Day {i} of 7 &bull; Read"))
+    out.append(page(f'<h2>Day {i}: {d["t"]}</h2>{ph(f"stages/stage-{i if i<=6 else 6}.png","1.0in","50% 55%",f"Stage {i if i<=6 else 6} of 6 &bull; from the concrete to the harvest")}{verses}{teach}{nb}<h3>What stood out to me</h3>{lines(1)}', f"Day {i} of 7 &bull; Read"))
     prompts = "".join(f'<p style="margin:7px 0 0"><b>{n}.</b> {p}</p>{lines(2)}' for n, p in enumerate(d["prompts"], 1))
     tasks = "".join(box(t) for t in d["tasks"])
     out.append(page(f'''<h2>Day {i}: {d["t"]}</h2>
@@ -184,13 +192,14 @@ lies = [("&ldquo;I'm too far gone.&rdquo;","Nobody is beyond the reach of God. E
  ("&ldquo;I'll be okay when I get [that person/that thing/that money].&rdquo;","Only Jesus is the Source. People, things, and money are not the plug. They're just more supply that runs out.","John 15:5"),
  ("&ldquo;This is just how I am.&rdquo;","Your patterns are learned and they can be unlearned. Nobody is stuck. You can become someone new, one choice at a time.","2 Corinthians 5:17")]
 lie_html = "".join(f'<div class="card2"><b class="h">The lie: {a}</b><p style="margin:3px 0"><b>The truth:</b> {b} <i>({c})</i></p></div>' for a, b, c in lies)
-out.append(page('<h2>The 5 Lies That Keep People Bound</h2><p>The enemy tells lies that sound like your own voice. Learn to spot them, and answer them with truth out loud.</p>'+lie_html+
+out.append(page('<h2>The 5 Lies That Keep People Bound</h2>'+av('team/04-cowprint-hug.jpg','60% 28%')+'<p>The enemy tells lies that sound like your own voice. Learn to spot them, and answer them with truth out loud.</p>'+CL+lie_html+
  verse("For the righteous falls seven times and rises again.","Proverbs 24:16")+
  '<h3>Write your own</h3><p>The lie I hear most often is&hellip;</p>'+lines(2)+'<p>The truth I'"'"'ll answer with is&hellip;</p>'+lines(2)))
 
 # ---- boundaries
 out.append(page('''<h2>Boundaries &amp; Forgiveness Are Not the Same as Access</h2>
-<p>You can forgive someone and still keep the door closed. You can love someone and still say no. Boundaries are not punishment. They are how you protect what God is rebuilding.</p>
+'''+av('team/03-pink-camo-jacket.jpg','50% 24%')+'''
+<p>You can forgive someone and still keep the door closed. You can love someone and still say no. Boundaries are not punishment. They are how you protect what God is rebuilding.</p>'''+CL+'''
 <table class="nb"><tr><th style="width:38%">Situation</th><th>What you can say</th></tr>
 <tr><td>Someone pressures you to use or drink</td><td>&ldquo;No thanks. I'm not doing that anymore.&rdquo; (No explanation needed.)</td></tr>
 <tr><td>Old friends invite you to the old places</td><td>&ldquo;I love you, but I'm not going there. I can meet for coffee somewhere else.&rdquo;</td></tr>
@@ -199,7 +208,7 @@ out.append(page('''<h2>Boundaries &amp; Forgiveness Are Not the Same as Access</
 <tr><td>Family pressures you to &ldquo;just forgive and move on&rdquo;</td><td>&ldquo;Forgiving is between me and God. Trust and access are earned, and they're not available right now.&rdquo;</td></tr>
 <tr><td>Someone uses Scripture to make you stay in danger</td><td>&ldquo;God doesn't ask me to stay somewhere I'm being harmed.&rdquo;</td></tr></table>
 <p><b>Safety note:</b> if the person is dangerous, do not confront them in person. Don't announce a boundary to someone who may react violently. Talk to a hotline advocate about a safe plan first (1-800-799-7233).</p>
-<h3>My boundaries this month</h3>'''+box("Someone I'm not answering right now: ")+lines(1)+box("A place I'm not going: ")+lines(1)+box("A thing I'm not doing: ")+lines(1)+
+<h3>My boundaries this month</h3>'''+box("Someone I'm not answering right now: ______________________")+box("A place I'm not going: ______________________")+box("A thing I'm not doing: ______________________")+
  verse("For freedom Christ has set us free; stand firm therefore, and do not submit again to a yoke of slavery.","Galatians 5:1")))
 
 # ---- relapse plan
@@ -234,6 +243,7 @@ out.append(page('''<h2>My Accountability Partner</h2>
 # ---- 30 day plan
 cal = "".join(f"<div>{n}</div>" for n in range(1, 31))
 out.append(page('''<h2>My Next 30 Days</h2>
+'''+ph('team/01-field-sunrise-cross.jpg','1.15in','50% 45%')+'''
 <p>Seven days was the seed. Now you water it. Put a check or a sticker in each box when you do your daily anchor. Missed one? Skip it and keep going. Don't quit the calendar.</p>
 <div class="cal">'''+cal+'''</div>
 <div class="tool"><span class="tag">My anchors</span>
@@ -255,7 +265,7 @@ out.append(page('''<h2>Weekly Check-In</h2>
 
 # ---- prayers
 def pr(title, text): return f'<div class="card2"><b class="h">{title}</b><p style="margin:3px 0"><i>{text}</i></p></div>'
-out.append(page('<h2>Prayers for Hard Moments</h2><p>Real prayers, short enough to pray with shaky hands. Change the words to sound like you. God isn&rsquo;t grading the grammar.</p>'+
+out.append(page('<h2>Prayers for Hard Moments</h2>'+av('team/06-stool-lace-vest.jpg','50% 18%')+'<p>Real prayers, short enough to pray with shaky hands. Change the words to sound like you. God isn&rsquo;t grading the grammar.</p>'+CL+
  pr("When the craving is loud","Jesus, I'm not going to win this one alone. Come stand between me and this. I'm going to drink water, move, and call somebody. Give me fifteen minutes, and then give me fifteen more. Amen.")+
  pr("When it's 3 a.m. and I can't sleep","Lord, You don't sleep, and You're not surprised by me. Quiet my mind. Take the things I can't fix tonight, and let me rest. Show me the one next right step in the morning. Amen.")+
  pr("After a slip","Father, I fell. I'm not going to hide it from You or from the people You've put in my life. I confess it, and I receive Your mercy, because Your Word says there's no condemnation for those in Christ. Help me get up and start at the next right step. Amen.")+
@@ -269,7 +279,7 @@ cards = [("Psalm 34:18","The LORD is near to the brokenhearted and saves the cru
  ("Lamentations 3:22-23","The steadfast love of the LORD never ceases; his mercies never come to an end; they are new every morning; great is your faithfulness."),("Romans 8:1","There is therefore now no condemnation for those who are in Christ Jesus."),
  ("John 8:36","So if the Son sets you free, you will be free indeed."),("2 Corinthians 12:9","My grace is sufficient for you, for my power is made perfect in weakness."),
  ("Joel 2:25","I will restore to you the years that the swarming locust has eaten."),("Galatians 6:9","And let us not grow weary of doing good, for in due season we will reap, if we do not give up.")]
-out.append(page('<h2>Scripture Cards</h2><p>Cut these out. Tape one to your mirror, your dashboard, your phone case. Say it out loud when the lie is loud.</p><div class="cards">'+
+out.append(page('<h2>Scripture Cards</h2>'+av('team/09-collage-panel-3.jpg','50% 32%')+'<p>Cut these out. Tape one to your mirror, your dashboard, your phone case. Say it out loud when the lie is loud.</p>'+CL+'<div class="cards">'+
  "".join(f'<div class="v">&ldquo;{t}&rdquo;<b>{r} (ESV)</b></div>' for r, t in cards)+'</div>'))
 
 # ---- resources
@@ -291,6 +301,7 @@ out.append(page('''<h2>Where to Get Help</h2>
 
 # ---- closing
 out.append(page('''<h2>You Did It. Now What?</h2>
+'''+ph('team/07-collage-panel-1.jpg','1.7in','50% 32%')+'''
 <p>Seven days is a seed, not a harvest. You didn't come this far to stop at a seed.</p>
 <div class="cta">Keep going &rarr; Linktree: <a href="{{LINKTREE_URL}}">{{LINKTREE_URL}}</a></div>
 <h3>Ways to keep walking</h3><ul>
