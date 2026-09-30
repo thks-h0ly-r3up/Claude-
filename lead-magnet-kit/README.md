@@ -4,8 +4,8 @@
 ## What's here
 | Folder / file | What it is |
 |---|---|
-| `dist/next-right-step.pdf` / `.html` | The finished free lead magnet (12 pages: cover, intro, 7 days, closing, testimony+photos, legal) |
-| `dist/tracker.html` | Live progress tracker (checklists, streak, craving log, wins, print/export). Data stays in the user's browser |
+| `dist/next-right-step.pdf` / `.html` | The finished free lead magnet (30 pages: cover, letter, how-to, safety check, 7 days × teaching+working page, 5 lies, boundaries, relapse plan, accountability partner, 30-day calendar + weekly check-in, prayers, scripture cards, resources, closing, testimony+photos, legal) |
+| `dist/tracker.html` | Live progress tracker (7-day checklists, 30-day anchor grid, streak, craving log, wins, print/export). Data stays in the user's browser |
 | `dist/emails/01…07` | 7-email welcome sequence in Nikki's voice, with send timing on line 1 |
 | `photos/stages/stage-1…6.png` | Six separate "stages of completion" photos: seed in concrete → harvest |
 | `social/thks-social-doa-1080x1350.png` | Social image: D.O.A. line + Ephesians 2:5 + big CTA |

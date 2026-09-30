@@ -28,6 +28,7 @@ footer{text-align:center;font-size:11px;color:#6b6175;padding:10px}
 <div class="card"><div class="bar"><div id="fill"></div></div><div class="msg" id="msg"></div>
 <div class="stats"><div class="stat"><b id="sDone">0</b><span>Steps done</span></div><div class="stat"><b id="sDays">0</b><span>Days complete</span></div><div class="stat"><b id="sStreak">0</b><span>Day streak</span></div><div class="stat"><b id="sCrave">0</b><span>Cravings outlasted</span></div></div></div>
 <div id="days"></div>
+<div class="card"><h3 style="margin-top:0;color:var(--purple)">My Next 30 Days — daily anchor</h3><div id="grid" style="display:grid;grid-template-columns:repeat(6,1fr);gap:6px"></div><p style="font-size:12px">Tap a day when you do your daily anchor (10 minutes with God). Missed one? Skip it and keep going.</p></div>
 <div class="card"><h3 style="margin-top:0;color:var(--purple)">Craving Log — the 15-minute rule</h3>
 <select id="cType"><option>Outlasted it</option><option>Called someone</option><option>Slipped — telling the truth</option></select>
 <input type="text" id="cNote" placeholder="What triggered it? (optional)"><button onclick="addLog()">Add to log</button>
@@ -47,7 +48,7 @@ const DAYS=[["Tell the Truth",["Write my Truth Inventory","Say one true sentence
 ["Own It — Without Drowning",["Write my Own list (facts, not self-hatred)","Write one safe repair step (or “none right now”)","Hand my Release list to God"]],
 ["Plant Something",["Choose daily and weekly anchors","Put them on my calendar","Tell someone my 30-day plan"]]];
 let S;const $=id=>document.getElementById(id);
-function load(){try{S=JSON.parse(localStorage.getItem(K))||{}}catch(e){S={}}S.c=S.c||{};S.log=S.log||[];S.wins=S.wins||[]}
+function load(){try{S=JSON.parse(localStorage.getItem(K))||{}}catch(e){S={}}S.c=S.c||{};S.g=S.g||{};S.log=S.log||[];S.wins=S.wins||[]}
 function save(){try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}}
 function dayDone(i){return DAYS[i][1].every((_,j)=>S.c[i+'_'+j])}
 function render(){
@@ -58,8 +59,10 @@ function render(){
  $('fill').style.width=(done/total*100)+'%';$('sDone').textContent=done;$('sDays').textContent=days;$('sStreak').textContent=streak;
  $('sCrave').textContent=S.log.filter(l=>l.t!=='Slipped — telling the truth').length;
  $('msg').textContent=days==7?'Seven days. Now plant the next thirty.':done==0?'One step. That’s all today asks.':'Keep going, baby. Next right step.';
+ $('grid').innerHTML=Array.from({length:30},(_,i)=>`<button class="alt" style="margin:0;padding:8px 0;border-radius:8px;background:${S.g[i+1]?'#3fb6b0':'#c9bfd6'}" onclick="tg(${i+1})">${i+1}</button>`).join('');
  $('log').innerHTML=S.log.slice().reverse().map(l=>`<div><b>${esc(l.t)}</b> — ${l.d}${l.n?' — '+esc(l.n):''}</div>`).join('');
  $('wins').innerHTML=S.wins.slice().reverse().map(w=>`<div>${w.d}: ${esc(w.w)}</div>`).join('')}
+function tg(n){if(S.g[n])delete S.g[n];else S.g[n]=1;save();render()}
 function esc(s){return s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
 function addLog(){S.log.push({t:$('cType').value,n:$('cNote').value,d:new Date().toLocaleString()});$('cNote').value='';save();render()}
 function saveWin(){const w=$('win').value.trim();if(!w)return;S.wins.push({w,d:new Date().toLocaleDateString()});$('win').value='';save();render()}
