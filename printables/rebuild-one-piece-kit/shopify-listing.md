@@ -95,19 +95,24 @@ recovery printable, sobriety gift, Christian recovery, healing journal, scriptur
 - **Meta description:** 37-page printable faith-based rebuild kit: puzzle board, word cards, Scripture bookmarks, Next Right Step jar, 7-day plan, craving plan, boundary builder. Instant PDF.
 
 ## Product images (in this order)
-Use the real page previews in `previews/`. Put your styled mockup photos after them.
-1. `01-cover.jpg`
-2. `02-rebuild-board.jpg`
-3. `04-word-cards.jpg`
-4. `05-scripture-bookmarks.jpg`
-5. `06-next-right-step-slips.jpg`
-6. `07-daily-page.jpg`
-7. `08-when-it-hits.jpg`
-8. `09-boundary-builder.jpg`
-9. `10-practical-checklist.jpg`
-10. Your styled sunrise / camo mockups (label them "styling example")
+**Use only real pages from the kit. Do not use the styled/AI mockup photos.** They show chains, anchors, leather journals, and a filled jar that are not in the download, and buyers would rightly expect a refund.
 
-**Fix before publishing the mockups:**
-- The styled photos show physical items (chains, anchors, leather journals, bound notebooks, a mason jar with a printed label) that are **not** in the download. Add "Styling example. Physical items not included; printable PDF only" to those images or the description. It prevents refund requests and keeps trust.
-- The bookmark in mockup 2 uses NIV-style wording for 2 Corinthians 5:17 and Isaiah 61:3. The kit uses public-domain KJV. Regenerate the mockups from the real bookmark pages so what customers see matches what they get.
-- The ad image says "Get the $7 full kit". Update it if you change the price.
+Ready-to-upload files:
+1. `ads/ad-a-what-you-get.png` (fan of real pages)
+2. `previews/01-cover.jpg`
+3. `ads/ad-b-every-page.png` (every page type, labeled)
+4. `previews/02-rebuild-board.jpg`
+5. `previews/04-word-cards.jpg`
+6. `previews/05-scripture-bookmarks.jpg`
+7. `previews/06-next-right-step-slips.jpg`
+8. `previews/07-daily-page.jpg`
+9. `previews/08-when-it-hits.jpg`
+10. `previews/09-boundary-builder.jpg`
+11. `previews/10-practical-checklist.jpg`
+12. `ads/ad-c-one-honest-step.png`
+
+**Optional:** if you want a photo of the finished thing, print the kit and photograph *your own* real printed board, cards, and jar. That is honest and it sells.
+
+Add this line near the top of the description: **"Printable PDF download. You print and assemble it yourself. Nothing physical ships."**
+
+Social captions (6-stage format) are in `ads/social-posts.md`.
