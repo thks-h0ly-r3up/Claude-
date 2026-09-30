@@ -7,23 +7,24 @@ import csv, glob, hashlib, json, os, re, subprocess, sys, datetime
 ROOT = os.path.dirname(os.path.abspath(__file__)); R = lambda *p: os.path.join(ROOT,*p)
 RELEASE = "--release" in sys.argv
 sys.path.insert(0, ROOT); from new_product import PALETTES, BORDERS, ORNS
+BRAND = "7HE H0LY REUP"   # the ONE place the brand name lives. Change here and rebuild to update every footer.
 FOOTERS = [
- ("D.O.A. IS GOD'S FAVORITE STARTING POINT","7HE H0LY KIL0 SYNDICATE &mdash; THKS"),
- ("BANDO 2 VINEYARD","7HE H0LY R3UP by THKS &amp; CO."),
- ("TRADING THE CORNER FOR THE CROWN","7HE H0LY KIL0 SYNDICATE &mdash; THKS"),
- ("GOD DOESN'T CALL THE QUALIFIED. HE QUALIFIES THE CALLED.","7HE H0LY R3UP by THKS &amp; CO."),
+ "YOU SURVIVED. NOW WE REBUILD.",
+ "BANDO 2 VINEYARD",
+ "TRADING THE CORNER FOR THE CROWN",
+ "YOU SURVIVED. NOW WE REBUILD.",
 ]
 MEMORIAL = "IN MEMORY OF BRANDI RENEE &mdash; 12787&ndash;121721"
-COPY = "&copy; 2026 7HE H0LY KIL0 SYNDICATE (THKS). All rights reserved. No part of this work may be reproduced, distributed, copied, transmitted, or commercially exploited without prior written permission, except as permitted by applicable law."
+COPY = f"&copy; 2026 {BRAND}. All rights reserved. No part of this work may be reproduced, distributed, copied, transmitted, or commercially exploited without prior written permission, except as permitted by applicable law."
 cfg = {k:v for k,v in json.load(open(R("links.config.json"))).items() if not k.startswith("_")}
 problems = []
 def fill(text):
     for k,v in cfg.items(): text = text.replace("{{%s}}"%k, v if v else "{{%s}}"%k)
     return text
 def footer(i, off):
-    m,b = FOOTERS[(i+off)%len(FOOTERS)]
+    m = FOOTERS[(i+off)%len(FOOTERS)]
     memorial = f'<div>{MEMORIAL}</div>' if (i+off)%2==0 else ''
-    return f'<footer><div class="mission">{m}</div><div>{b}</div>{memorial}<div class="legal">{COPY}</div></footer>'
+    return f'<footer><div class="mission">{m}</div><div>{BRAND} &nbsp;&bull;&nbsp; Page {i}</div>{memorial}<div class="legal">{COPY}</div></footer>'
 def build_product(pj):
     p = json.load(open(pj)); d = p["design"]; slug = p["slug"]
     pal = PALETTES[d["palette"]]; body = open(os.path.join(os.path.dirname(pj),"body.html")).read()

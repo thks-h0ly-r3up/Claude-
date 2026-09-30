@@ -1,0 +1,13 @@
+{
+  "slug": "you-survived-now-we-rebuild",
+  "title": "You Survived. Now We Rebuild.",
+  "subtitle": "A 7-Day Devotional for People Rebuilding",
+  "design": {
+    "palette": 6,
+    "border": 1,
+    "ornament": 5,
+    "footer_offset": 8,
+    "cover_photo": 4
+  },
+  "fingerprint": "cbd6393549f9"
+}

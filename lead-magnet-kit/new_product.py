@@ -31,7 +31,7 @@ def main():
     json.dump(dict(slug=slug,title=title,subtitle=sub,design=design,fingerprint=fp),open(os.path.join(d,"product.json"),"w"),indent=2)
     body = open(os.path.join(ROOT,"template","page.blank.html")).read()
     open(os.path.join(d,"body.html"),"w").write(
-      f'<section class="page"><div class="band"></div><div class="brand">7HE H0LY R3UP by THKS &amp; CO.</div>'
+      f'<section class="page"><div class="band"></div><div class="brand">7HE H0LY REUP</div>'
       f'<h1>{title}</h1><div class="subtitle">{sub}</div><div class="orn">{ORNS[design["ornament"]]}</div>'
       f'<!--COVER_PHOTO--><!--FOOTER--></section>\n' + body*3)
     new = not os.path.exists(log)

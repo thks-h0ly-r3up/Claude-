@@ -6,9 +6,9 @@ Hey,
 
 You are five days in. So I want you to know who is on the other side of these emails.
 
-I know what the floor feels like. Overdose broke me. And I've come to believe D.O.A. is God's favorite starting point, because when there was nothing left of me to work with, He still had plenty to work with.
+I know what the floor feels like. I lost my sister to addiction, and I've survived homelessness, trafficking, abuse, addiction, and years in a destructive relationship. I'm not finished, and I'm not a professional. I'm building as I go.
 
-I lost my sister, Brandi Renee. I wish she had somewhere to reach. I can't change that. So I'm building it now.
+I lost my sister, Brandi Renee. I wish she had somewhere to reach. I can't say it would have changed her outcome. I can build toward something for the people still here.
 
 My dog, Big Boy, a 90-pound gray-and-white American Bully, stayed beside me while I was learning how to stay beside myself. He is not a replacement for God, a doctor, or people. But he is proof that some of the healing shows up with four legs and a lot of patience.
 
@@ -20,13 +20,13 @@ Read more of my story on my Linktree: https://linktr.ee/The_Holy_Kilo_Syndicates
 
 Still here,
 Nikki "Hellshaker"
-7HE H0LY KIL0 SYNDICATE (THKS) • 7HE H0LY R3UP by THKS & CO.
+7HE H0LY REUP • 7HE H0LY REUP
 
 ---
 Linktree: https://linktr.ee/The_Holy_Kilo_Syndicates | Etsy: https://7heh0lyr3up.etsy.com | Gumroad: https://gumroad.holykilosyndicate.com/ | Email me: {{GMAIL_ADDRESS}}
 Template Creator: {{TEMPLATE_CREATOR_URL}} | Plugin Creator: {{PLUGIN_CREATOR_URL}}
 Not medical or professional advice. In crisis: 911 • 988 (call/text) • SAMHSA 1-800-662-4357.
-D.O.A. IS GOD'S FAVORITE STARTING POINT — IN MEMORY OF BRANDI RENEE — 12787–121721
+YOU SURVIVED. NOW WE REBUILD. — IN MEMORY OF BRANDI RENEE — 12787–121721
 You are getting this because you asked for The Next Right Step. Unsubscribe: {{UNSUBSCRIBE_URL}}
-7HE H0LY KIL0 SYNDICATE (THKS), {{MAILING_ADDRESS}}
-© 2026 7HE H0LY KIL0 SYNDICATE (THKS). All rights reserved.
+7HE H0LY REUP, {{MAILING_ADDRESS}}
+© 2026 7HE H0LY REUP. All rights reserved.

@@ -125,17 +125,17 @@ DAYS = [
 
 out = []
 # ---- cover
-out.append('''<section class="page"><div class="band"></div><div class="brand">7HE H0LY R3UP by THKS &amp; CO.</div>
+out.append('''<section class="page"><div class="band"></div><div class="brand">7HE H0LY REUP</div>
 <h1>The Next Right Step</h1><div class="subtitle">A 7-Day Reset From the Floor</div><div class="subtitle" style="margin-top:4px">Guide &bull; Workbook &bull; Prayers &bull; 30-Day Plan</div><div class="orn">🍇</div>
-<img class="cover-photo" src="../photos/team/05-leather-jacket-sunset.jpg" alt="" style="object-position:50% 8%"><p style="text-align:center;font-weight:700;margin-top:14px">Free from 7HE H0LY KIL0 SYNDICATE (THKS)</p>
-<p style="text-align:center">Broken by overdose. Rebuilt by God. Unapologetically shaking hell for every soul still bound.</p><!--FOOTER--></section>''')
+<img class="cover-photo" src="../photos/team/05-leather-jacket-sunset.jpg" alt="" style="object-position:50% 8%"><p style="text-align:center;font-weight:700;margin-top:14px">Free from 7HE H0LY REUP</p>
+<p style="text-align:center">You survived. Now we rebuild.</p><!--FOOTER--></section>''')
 
 # ---- welcome letter
 out.append(page('''<h2>Read This First</h2>
 '''+ph('team/02-white-studio-hug.jpg','2.2in','50% 22%')+'''
 <p>If you're holding this, something is wrong and you don't know where to go. That is exactly who I made this for.</p>
-<p>I wish my sister, Brandi Renee, had somewhere to reach. I couldn't give her that. So I built it now, for you. I built it for the person sitting in a car trying not to cry, the person who relapsed yesterday, the person who told nobody, the person who's years in and fighting a craving tonight, the person who was hurt by church, the person who thinks God is done with them.</p>
-<p>I know what the floor feels like. Overdose broke me, and I have learned that <b>D.O.A. is God's favorite starting point.</b> When there's nothing left of you to work with, He still has plenty to work with.</p>
+<p>I wish my sister, Brandi Renee, had somewhere to reach. I can't say it would have changed her outcome. I can build toward it for you. I built it for the person sitting in a car trying not to cry, the person who relapsed yesterday, the person who told nobody, the person who's years in and fighting a craving tonight, the person who was hurt by church, the person who thinks God is done with them.</p>
+<p>I know what the floor feels like. I lost my sister to addiction, and I have survived homelessness, trafficking, abuse, addiction, and years of manipulation. I'm not finished, and I'm not a professional. I'm building as I go. <b>You survived. Now we rebuild.</b></p>
 <p>This is a seven-day reset. One teaching page and one working page a day. No perfection required. Some days you'll do all of it. Some days you'll do one line. Both count.</p>
 <p>I'm not a doctor, a therapist, or a lawyer. I'm a woman who keeps choosing the next right thing with Jesus as my foundation. This guide is not treatment. It's a hand held out. Use it <i>with</i> real help, not instead of it.</p>
 '''+verse("But God, being rich in mercy, because of the great love with which he loved us, even when we were dead in our trespasses, made us alive together with Christ&mdash;by grace you have been saved&mdash;","Ephesians 2:4-5")+
@@ -186,7 +186,7 @@ for i, d in enumerate(DAYS, 1):
 <p style="font-size:12px;background:var(--tint);border-radius:8px;padding:6px 10px"><b>Hard day?</b> {d["hard"]}</p>''', f"Day {i} of 7 &bull; Work"))
 
 # ---- 5 lies
-lies = [("&ldquo;I'm too far gone.&rdquo;","Nobody is beyond the reach of God. Ephesians 2 says He made us alive when we were dead. D.O.A. is His favorite starting point.","Ephesians 2:4-5"),
+lies = [("&ldquo;I'm too far gone.&rdquo;","Nobody is beyond the reach of God. Ephesians 2 says God made us alive together with Christ when we were dead in our trespasses. Where you are is not too far for Him.","Ephesians 2:4-5"),
  ("&ldquo;If they knew the truth, they'd leave.&rdquo;","Some people might. The right ones won't. And God already knows and stays.","Psalm 34:18"),
  ("&ldquo;One slip and it's all ruined.&rdquo;","A slip is information, not a verdict. The righteous fall and rise again. Tell somebody and start at the next right step.","Proverbs 24:16"),
  ("&ldquo;I'll be okay when I get [that person/that thing/that money].&rdquo;","Only Jesus is the Source. People, things, and money are not the plug. They're just more supply that runs out.","John 15:5"),
@@ -306,7 +306,7 @@ out.append(page('''<h2>You Did It. Now What?</h2>
 <div class="cta">Keep going &rarr; Linktree: <a href="{{LINKTREE_URL}}">{{LINKTREE_URL}}</a></div>
 <h3>Ways to keep walking</h3><ul>
 <li><b>Free progress tracker:</b> <a href="{{TRACKER_URL}}">{{TRACKER_URL}}</a></li>
-<li><b>Shop the tools:</b> Etsy <a href="{{STORE_URL}}">{{STORE_URL}}</a> &bull; Gumroad <a href="{{GUMROAD_URL}}">{{GUMROAD_URL}}</a> (7HE H0LY R3UP by THKS &amp; CO.)</li>
+<li><b>Shop the tools:</b> Etsy <a href="{{STORE_URL}}">{{STORE_URL}}</a> &bull; Gumroad <a href="{{GUMROAD_URL}}">{{GUMROAD_URL}}</a> (7HE H0LY REUP)</li>
 <li><b>Write to me:</b> <a href="mailto:{{GMAIL_ADDRESS}}">{{GMAIL_ADDRESS}}</a></li>
 <li><b>Building your own resource?</b> <a href="{{TEMPLATE_CREATOR_URL}}">Template Creator</a> &bull; <a href="{{PLUGIN_CREATOR_URL}}">Plugin Creator</a></li></ul>
 <h3>Where I'll be honest</h3><p>This guide is not treatment. If you take one thing from it, let it be this: <b>tell one real person today.</b> Then come tell me how it went.</p>

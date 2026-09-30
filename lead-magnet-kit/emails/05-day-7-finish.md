@@ -13,19 +13,19 @@ If you want to keep going, I built the next tools for exactly this moment:
 👉 Gumroad: {{GUMROAD_URL}}
 👉 The paid next step: {{PAID_PRODUCT_URL}}
 
-Not required. The free guide stays yours forever. If money is the barrier, reply to this email and tell me. I keep free copies for people who need them.
+Not required. The free guide stays yours. If money is the barrier, write me and tell me. I can't promise everything, but I'll do what I can.
 
 "And let us not grow weary of doing good, for in due season we will reap, if we do not give up." Galatians 6:9 (ESV)
 
 Still here,
 Nikki "Hellshaker"
-7HE H0LY KIL0 SYNDICATE (THKS) • 7HE H0LY R3UP by THKS & CO.
+7HE H0LY REUP • 7HE H0LY REUP
 
 ---
 Linktree: {{LINKTREE_URL}} | Etsy: {{STORE_URL}} | Gumroad: {{GUMROAD_URL}} | Email me: {{GMAIL_ADDRESS}}
 Template Creator: {{TEMPLATE_CREATOR_URL}} | Plugin Creator: {{PLUGIN_CREATOR_URL}}
 Not medical or professional advice. In crisis: 911 • 988 (call/text) • SAMHSA 1-800-662-4357.
-D.O.A. IS GOD'S FAVORITE STARTING POINT — IN MEMORY OF BRANDI RENEE — 12787–121721
+YOU SURVIVED. NOW WE REBUILD. — IN MEMORY OF BRANDI RENEE — 12787–121721
 You are getting this because you asked for The Next Right Step. Unsubscribe: {{UNSUBSCRIBE_URL}}
-7HE H0LY KIL0 SYNDICATE (THKS), {{MAILING_ADDRESS}}
-© 2026 7HE H0LY KIL0 SYNDICATE (THKS). All rights reserved.
+7HE H0LY REUP, {{MAILING_ADDRESS}}
+© 2026 7HE H0LY REUP. All rights reserved.
