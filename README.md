@@ -7,7 +7,13 @@ Reel/TikTok -> comment "SHATTER" -> ManyChat DM -> Landing page (Vercel)
                              Supabase (leads_funnel)  +  Google Sheet (live)
                                                       |
                      instant PDF download  ->  /api/track (pdf_downloaded)
-                     Premium App card      ->  /api/app  (app_clicked) -> APP_DOWNLOAD_URL
+                     Premium App card      ->  /api/app  (app_clicked) -> /app/  (the paid app)
+
+/app/  (installable PWA)  --magic-link login-->  Supabase Auth
+   |                                                  ^
+   +-- Choose plan --> /api/stripe-checkout --> Stripe Checkout
+                                   Stripe --webhook--> /api/stripe-webhook --> subscriptions table
+   Row Level Security reads `subscriptions` to unlock: Starter $5 / Vault $8 / Full Access $12
 ```
 
 ## What's in this repo
@@ -24,6 +30,11 @@ Reel/TikTok -> comment "SHATTER" -> ManyChat DM -> Landing page (Vercel)
 | `supabase/schema.sql` | `leads_funnel` table, RLS lockdown, metrics view |
 | `google-apps-script/Code.gs` | Secure webhook that writes/updates the live Google Sheet |
 | `.env.example` | Environment variable template |
+| `content/days.json` | All 30 days (verse, breakdown, tracker, vault prompt, prayer). Source of truth for kit + app |
+| `public/app/` | The paid app (PWA): auth, paywall, 30-day map, tracker, Prayer Vault, audio devotionals, account |
+| `api/config.js` `api/stripe-*.js` | App runtime config, Stripe Checkout, billing portal, webhook |
+| `supabase/app_schema.sql` | Subscriptions, progress, vault tables with tier-gated Row Level Security |
+| `tools/build_icons.py` | Regenerates the app icons |
 
 Scripture is the King James Version (public domain), so the kit is free of licensing issues.
 
@@ -102,6 +113,48 @@ Vercel redeploys automatically. (Or replace Page 9's QR inside Canva using `cont
 
 ---
 
+---
+
+# The Paid App ($5 - $12 / month)
+
+Live at `https://<project>.vercel.app/app/`. Installable to the phone home screen (Share > Add to Home Screen).
+
+| Plan | Price | Unlocks |
+|---|---|---|
+| Starter | $5/mo | 30-day interactive map, daily tracker, scripture + breakdowns |
+| Vault | $8/mo | + Private Prayer Vault and journaling every Vault Prompt |
+| Full Access | $12/mo | + daily audio devotionals |
+
+Access is enforced in the database (Row Level Security), not just the UI, so a hacked front end can't read the Vault without paying.
+
+## App setup (extra ~15 minutes, after the funnel steps above)
+
+### A. Supabase
+1. SQL Editor: run `supabase/app_schema.sql` (after `schema.sql`).
+2. **Authentication > URL Configuration**: Site URL `https://<project>.vercel.app`; add Redirect URL `https://<project>.vercel.app/app/`.
+3. **Authentication > Providers > Email**: enable, keep "Confirm email" on (magic link).
+4. **Authentication > SMTP Settings**: add a custom SMTP sender (Resend, Postmark, etc.). Supabase's built-in email is limited to a few messages per hour and will throttle real sign-ups.
+5. **Project Settings > API**: copy the **anon public** key into `SUPABASE_ANON_KEY`.
+
+### B. Stripe
+1. Products: create 3 products with a **recurring monthly** price each: Starter $5, Vault $8, Full Access $12 (or pick any prices in $5-$12; the labels come from the code, the amounts from Stripe). Copy each `price_...` ID into `STRIPE_PRICE_STARTER`, `STRIPE_PRICE_VAULT`, `STRIPE_PRICE_FULL`.
+2. **Developers > API keys**: copy the secret key into `STRIPE_SECRET_KEY` (use a test key first).
+3. **Developers > Webhooks > Add endpoint**: URL `https://<project>.vercel.app/api/stripe-webhook`, events: `checkout.session.completed`, `customer.subscription.created`, `customer.subscription.updated`, `customer.subscription.deleted`. Copy the signing secret into `STRIPE_WEBHOOK_SECRET`.
+4. **Settings > Billing > Customer portal**: turn on, allow cancel and plan switching between your 3 prices (this powers "Manage billing / change plan").
+5. In Vercel add `SUPABASE_ANON_KEY`, the five `STRIPE_*` variables and `SITE_URL`, set `APP_DOWNLOAD_URL=https://<project>.vercel.app/app/`, then **Redeploy**.
+
+### C. Test with Stripe test mode
+Sign in at `/app/` with a real email > choose a plan > pay with card `4242 4242 4242 4242` (any future date/CVC) > you land back in the app with the plan unlocked. Cancel from Account > Manage billing and confirm access ends after the period. Then switch the Stripe keys/prices to live mode.
+
+### D. Audio devotionals
+Out of the box the Full plan reads each devotional aloud with the phone's built-in voice (prefers a female voice). To use your own recordings or ElevenLabs audio, host the MP3s and add `"audio_url": "https://..."` to a day in `content/days.json`, then run `python3 tools/build_kit.py` to sync it to the app.
+
+### App notes
+- Days unlock in order as you complete each one (tick every habit, then Complete Day).
+- Subscribers' data: progress and Vault entries are per-user in Supabase; only that user (and you, via the Supabase dashboard) can read them.
+- Business view: `select * from subscription_metrics;` in Supabase for active subscribers and estimated MRR.
+- Refunds, taxes, invoices and dunning are handled in Stripe.
+
 ## Live auditing
 
 - **Google Sheet > Metrics tab:** total leads, today, last 7 days, PDF download rate, app click rate, leads by source.
@@ -110,7 +163,8 @@ Vercel redeploys automatically. (Or replace Page 9's QR inside Canva using `cont
 ## Security notes
 
 - The service-role key and the Sheets secret live only in Vercel env vars.
-- The browser never talks to Supabase or Sheets directly; it only calls `/api/lead`, `/api/track` and `/api/app`.
+- The landing page never talks to Supabase or Sheets directly; it only calls `/api/lead`, `/api/track` and `/api/app`. The paid app uses the public anon key with Row Level Security, so each user can only touch their own rows and only with an active plan. The `service_role` key, Stripe secret and webhook secret are server-only.
+- Stripe webhooks are verified with the signing secret (HMAC, 5-minute tolerance) before any database write.
 - The opt-in form has a honeypot field. For heavier traffic, add Vercel's WAF rate limiting on `/api/lead`.
 - You are collecting emails: keep the unsubscribe promise, and add your privacy policy link if you send marketing email.
 

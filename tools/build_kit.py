@@ -10,9 +10,11 @@ Usage:
 The Page 9 QR code encodes APP_URL (default: https://example.com/app).
 Scripture is the King James Version (public domain).
 """
+import json
 import math
 import os
 import random
+import shutil
 
 from reportlab.graphics import renderPDF
 from reportlab.graphics.barcode.qr import QrCodeWidget
@@ -41,71 +43,9 @@ OLIVE_L = HexColor("#6B7A3A")
 KHAKI = HexColor("#8A7B4F")
 WHITE = HexColor("#FFFFFF")
 
-DAYS = [
-    {
-        "title": "SIS, THE CHAIN WON'T BREAK ITSELF",
-        "ref": "John 8:36",
-        "verse": "If the Son therefore shall make you free, ye shall be free indeed.",
-        "breakdown": "Girl, you have been swinging at this chain with your own two hands, and you're exhausted. New start, new plan, new promise to yourself. Same cell. Jesus doesn't say you might get free. He says \"free indeed\" - not free-ish, not free on your good days. Today isn't about trying harder, beautiful. It's about handing Him the key and letting Him do what only He can.",
-        "habits": ["Read the verse out loud, twice", "Named ONE chain in writing (the real one)", "5 quiet minutes, phone in another room", "Told one safe sister I'm starting this"],
-        "vault": "What chain have I been calling \"just how I am\"? Who taught me to carry it, and what has it cost my heart?",
-        "prayer": "Jesus, I'm so tired of pretending I'm fine. I've been fighting this chain alone and it's still on me. Today I lay down the fight and pick up Your hand. You said the Son makes free, so make me free. Take the key. Start breaking it now. In Your name, amen.",
-    },
-    {
-        "title": "OUT OF THE DARK, NO MORE HIDING",
-        "ref": "Psalm 107:14",
-        "verse": "He brought them out of darkness and the shadow of death, and brake their bands in sunder.",
-        "breakdown": "Look at who does the work: HE brought them out. HE broke the bands. The dark you've been sitting in - the numbing, the 3 a.m. spiral, the smile you put on for everybody - is not your forever address. God isn't waiting for you to clean yourself up first. He walks right in, and the bands snap. Your part today, love: stop hiding the dark from the One who already sees it and loves you anyway.",
-        "habits": ["Read the verse out loud, twice", "Said out loud where I'm stuck in the dark", "Deleted or blocked ONE trigger", "10 minutes walking, praying as I go"],
-        "vault": "Where do I go to hide when it gets heavy? What am I afraid will happen if the light hits that place?",
-        "prayer": "Father, You see the dark I've been sitting in, and I'm not hiding it anymore. Walk into that room and turn the light on. Break the bands I can't break. Pull me out of every place I keep running back to. I'm not bargaining anymore, I'm asking. Hold me while You do it. Amen.",
-    },
-    {
-        "title": "REWRITE THE STORY IN YOUR HEAD",
-        "ref": "Romans 12:2",
-        "verse": "And be not conformed to this world: but be ye transformed by the renewing of your mind, that ye may prove what is that good, and acceptable, and perfect, will of God.",
-        "breakdown": "Every cycle starts as a thought you believed. \"I'll never change.\" \"I'm too much.\" \"Nobody would choose me.\" Lies on repeat start to feel like truth. Transformation isn't a mood, sis, it's renewal - trading the old script for God's words one thought at a time. Catch the lie, say what He says, repeat. Do it until the old voice goes quiet and hers - the real you - gets loud.",
-        "habits": ["Read the verse out loud, twice", "Caught 3 lies today and wrote them down", "Answered each lie with a verse or truth", "Cut ONE input feeding the old script"],
-        "vault": "Write the three loudest lies in my head. Next to each, write what God actually says about me, His daughter.",
-        "prayer": "Father, my mind has been playing old tapes for years. I renounce every lie I've agreed with. Renew my mind, God. Rewrite what my past and my pain wrote over me. Let me see myself the way You do: chosen, cherished, already free. Amen.",
-    },
-    {
-        "title": "DROP ANCHOR WHEN THE STORM HITS",
-        "ref": "Hebrews 6:19",
-        "verse": "Which hope we have as an anchor of the soul, both sure and stedfast, and which entereth into that within the veil;",
-        "breakdown": "Storms don't ask if you're ready. The old you reaches for the drink, the phone, the ex, the shutdown. An anchor doesn't stop the storm - it keeps you from drifting onto the rocks. Hope in Christ is that anchor: sure and steadfast. So decide BEFORE the storm hits what you'll do when it does. Have your anchor move ready: a verse, a call to your girl, a prayer out loud.",
-        "habits": ["Read the verse out loud, twice", "Wrote my 'storm plan' (3 steps)", "Prayed it at my hardest hour of the day", "Texted my anchor sister a check-in"],
-        "vault": "What are the 3 moments the storm hits me hardest? What will I do the second it starts?",
-        "prayer": "Jesus, You are my anchor. When the storm hits and everything in me wants to run, hold me steady. Keep me from drifting back into what nearly sank me. I'm planting my hope in You, sure and steadfast. I'm not going anywhere. Amen.",
-    },
-    {
-        "title": "SAY IT OUT LOUD. SHAME LOSES.",
-        "ref": "1 John 1:9",
-        "verse": "If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.",
-        "breakdown": "Secrets are a chain's favorite meal. Shame whispers stay quiet, girl; God says bring it into the light and I'll make you clean. Confession isn't groveling, it's agreeing with the truth so He can do what He promised. Faithful AND just: it's already paid for at the cross. So say it. Then walk out lighter, not carrying it right back in.",
-        "habits": ["Read the verse out loud, twice", "Confessed the real thing to God, in detail", "Confessed to one trusted sister in Christ", "Forgave one person (or started to)"],
-        "vault": "What have I never said out loud to anyone? What would it feel like to be fully known and still fully loved?",
-        "prayer": "God, here it is - everything I've been hiding. No excuses, no editing. I agree with You that it's sin and I'm done carrying it. You said You're faithful and just to forgive, so I receive it. Wash me clean, and don't let shame pull me back. Amen.",
-    },
-    {
-        "title": "SUIT UP, DAUGHTER OF THE KING",
-        "ref": "Ephesians 6:11",
-        "verse": "Put on the whole armour of God, that ye may be able to stand against the wiles of the devil.",
-        "breakdown": "The enemy doesn't play fair and he doesn't take days off. Wiles means schemes - he knows your patterns and your soft spots. But you don't stand in your own strength, love, you stand dressed: truth, righteousness, peace, faith, salvation, the Word. The whole armour, not half. Today you get dressed on purpose, before the fight finds you.",
-        "habits": ["Read the verse out loud, twice", "Prayed on each piece of armour by name", "Named the enemy's favorite scheme on me", "Did ONE hard thing I'd normally dodge"],
-        "vault": "Where does the enemy always come at me? Which piece of armour am I leaving off right there?",
-        "prayer": "Lord, I'm suiting up. Truth around my waist, righteousness on my chest, peace on my feet, faith as my shield, salvation on my head, Your Word in my hand. I know the schemes and I'm not falling for them. I stand in You, not in me. Amen.",
-    },
-    {
-        "title": "NEW SUN, NEW MERCY",
-        "ref": "Lamentations 3:22-23",
-        "verse": "It is of the LORD'S mercies that we are not consumed, because his compassions fail not. They are new every morning: great is thy faithfulness.",
-        "breakdown": "Seven days, sis. And if you stumbled somewhere in there, you're still here, and that's mercy. God's compassions don't run out or expire overnight. Every sunrise is a fresh receipt marked PAID. Freedom isn't one perfect week, it's coming back to Him every morning. The sun is up. Get up with it, wipe your face, and keep walking.",
-        "habits": ["Read the verse out loud, twice", "Greeted the sunrise with a prayer", "Wrote 3 wins from this week", "Committed to the next 30 days"],
-        "vault": "What has changed in me since Day 1? What do I want the next 30 days to look like?",
-        "prayer": "Faithful God, thank You for seven days and every mercy that showed up new. I'm not perfect, but I'm Yours. Keep breaking what's left of these chains. Every morning I'll come back to You. The sun's up, and so am I. Amen.",
-    },
-]
+# Single source of truth for all 30 days is content/days.json (shared with the app). The kit uses Days 1-7.
+with open(os.path.join(ROOT, "content", "days.json"), encoding="utf-8") as _f:
+    DAYS = json.load(_f)[:7]
 
 PAYOUT_HEADLINE = ("Ready to track your 30-day journey daily? Scan here to unlock the full "
                    "Interactive Map, Private Prayer Vault, and Daily Audio Devotionals "
@@ -517,6 +457,9 @@ def main():
     page_payout(c)
     c.save()
     write_markdown()
+    # Ship the 30-day content to the app alongside the kit.
+    os.makedirs(os.path.join(ROOT, "public", "app"), exist_ok=True)
+    shutil.copyfile(os.path.join(ROOT, "content", "days.json"), os.path.join(ROOT, "public", "app", "days.json"))
     print("wrote", PDF_PATH)
     print("wrote", MD_PATH)
 

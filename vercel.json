@@ -3,18 +3,46 @@
   "outputDirectory": "public",
   "headers": [
     {
+      "source": "/app/sw.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache"
+        },
+        {
+          "key": "Service-Worker-Allowed",
+          "value": "/app/"
+        }
+      ]
+    },
+    {
       "source": "/shattering-chains-7-day-kit.pdf",
       "headers": [
-        { "key": "Content-Type", "value": "application/pdf" },
-        { "key": "Content-Disposition", "value": "attachment; filename=\"Shattering-Chains-7-Day-A5-Kit.pdf\"" },
-        { "key": "Cache-Control", "value": "public, max-age=3600" }
+        {
+          "key": "Content-Type",
+          "value": "application/pdf"
+        },
+        {
+          "key": "Content-Disposition",
+          "value": "attachment; filename=\"Shattering-Chains-7-Day-A5-Kit.pdf\""
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
       ]
     },
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
       ]
     }
   ]
