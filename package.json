@@ -1,0 +1,14 @@
+{
+  "name": "shattering-chains-funnel",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Lead magnet funnel: landing page, Supabase + Google Sheets sync, printable kit builder.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build:kit": "python3 tools/build_kit.py",
+    "check": "node --check api/_lib.js && node --check api/_auth.js && node --check api/_stripe.js && node --check api/lead.js && node --check api/track.js && node --check api/app.js && node --check api/config.js && node --check api/stripe-checkout.js && node --check api/stripe-portal.js && node --check api/stripe-webhook.js && node --check public/app/app.js && node --check public/app/sw.js",
+    "build:icons": "python3 tools/build_icons.py"
+  }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Shattering Chains - 30-Day Journey</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0B1320">
+  <meta name="description" content="Your 30-day Shattering Chains journey: interactive map, daily tracker, private prayer vault and audio devotionals.">
+  <link rel="manifest" href="/app/manifest.webmanifest">
+  <link rel="icon" type="image/png" href="/app/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="/app/icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Shatter">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { night: '#0B1320', sun: '#FF6B1A', gold: '#FFB833', cream: '#F6EFE0', olive: '#4B5320', olived: '#2E3512' },
+        fontFamily: { display: ['Anton', 'Impact', 'sans-serif'], body: ['Inter', 'system-ui', 'sans-serif'] }
+      } }
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #0B1320; color: #F6EFE0; -webkit-tap-highlight-color: transparent; padding-bottom: env(safe-area-inset-bottom); }
+    .camo {
+      background-color: #4B5320;
+      background-image:
+        radial-gradient(ellipse 60px 34px at 12% 30%, #2E3512 98%, transparent 100%),
+        radial-gradient(ellipse 80px 40px at 58% 20%, #6B7A3A 98%, transparent 100%),
+        radial-gradient(ellipse 70px 36px at 85% 60%, #8A7B4F 98%, transparent 100%),
+        radial-gradient(ellipse 90px 44px at 30% 78%, #0B1320 98%, transparent 100%);
+      background-size: 220px 140px;
+    }
+    .pulse-ring { animation: pulse-ring 1.8s ease-out infinite; }
+    @keyframes pulse-ring { 0% { box-shadow: 0 0 0 0 rgba(255,107,26,.75); } 100% { box-shadow: 0 0 0 20px rgba(255,107,26,0); } }
+    @media (prefers-reduced-motion: reduce) { .pulse-ring { animation: none; } html { scroll-behavior: auto; } }
+    input:focus-visible, textarea:focus-visible, button:focus-visible, a:focus-visible, select:focus-visible { outline: 3px solid #FFB833; outline-offset: 2px; }
+    textarea { resize: vertical; }
+  </style>
+</head>
+<body class="min-h-screen">
+  <div id="root" class="max-w-md mx-auto min-h-screen"></div>
+  <noscript><p class="p-6 font-bold">This app needs JavaScript. Please enable it and reload.</p></noscript>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script src="/app/app.js"></script>
+</body>
+</html>
