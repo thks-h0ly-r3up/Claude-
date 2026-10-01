@@ -436,3 +436,32 @@ def build_with_toc(title, build_body, toc_keys, html_path, pdf_path):
     if drift:
         print("  warn: page numbers shifted after TOC fill:", drift[:8])
     return n2
+
+
+# --------------------------------------------------------------------------
+# the shared 90-day path (journal arcs = companion arcs = workbook/Vol. II reading)
+# --------------------------------------------------------------------------
+PATH_ROWS = [
+ ("1–10", "Telling the Truth", "The war underneath: childhood, body, secrecy, a date", "Part I · Part V Steps 1–3", "Ch. 1, 10, 17 · Steps 1–2"),
+ ("11–20", "The Lies and the Names", "Lies, names, and a mother’s moral injury", "1.5–1.6 · 4.3–4.4", "Ch. 10, 12, 48 · Step 31"),
+ ("21–30", "The Realm and Your Authority", "Warfare, plainly: sorting, standing, forgiving", "Part II", "Ch. 1, 11, 15, 17 · Steps 8–10"),
+ ("31–45", "The Contracts", "Vows, words, ties, the cistern, wanting out", "2.4–2.6", "Ch. 2–6 · Steps 13–15"),
+ ("46–55", "The Bloodline", "Family patterns and the nursery", "Part VI", "Ch. 8–9 · Steps 16, 26"),
+ ("56–68", "The Playbook and the Structure", "Patterns, cravings, daily structure, boundaries, falling", "Part V Steps 4–8", "Ch. 12–18 · Steps 23–29"),
+ ("69–76", "God", "Where He was, honest anger, silence", "3.3 · 7.6", "Ch. 19–27"),
+ ("77–84", "Brandi and Letting Go", "Grief, guilt, children out of reach, release", "Part VII", "Ch. 38–42 · Step 30"),
+ ("85–90", "Becoming Her", "Stewarding what you have learned", "Part III", "Ch. 28–34, 46–52 · Step 32"),
+]
+
+def path_page(title_note=""):
+    rows = "".join(f"<tr><td><strong>{d}</strong></td><td>{esc(a)}</td><td>{esc(s)}</td><td>{esc(w)}</td><td>{esc(v)}</td></tr>" for d, a, s, w, v in PATH_ROWS)
+    return f"""<section class="fm"><div class="band"></div><div class="kick">One path, four books</div>
+<h1>Your 90-Day Path</h1>
+<p>These books were built to be used together. <strong>Day 7 in the journal is Day 7 in <em>Ninety Days of Standing</em></strong>, and each Standing day names the Workbook section and Volume II chapter that go with it. You do not have to read everything every day. Do the journal page; read the Standing spread; dip into the Workbook or Volume II when a day points you there.</p>
+<table><thead><tr><th>Days</th><th>Journal arc</th><th>Standing focus</th><th>Workbook</th><th>Volume II</th></tr></thead><tbody>{rows}</tbody></table>
+<div class="safety"><h3>A simple daily rhythm (about 20 minutes)</h3><ul>
+<li><strong>Journal page:</strong> read it, write on the lines, say the declaration.</li>
+<li><strong>Standing spread:</strong> optional grounding, Scripture, reflection, one soft action, a prayer.</li>
+<li><strong>Workbook or Volume II:</strong> only when the day points you there, and only as much as you can hold.</li>
+<li>Missed a day? Pick the page back up. The pace is the point, and the identity is in the rising.</li></ul></div>
+</section>"""

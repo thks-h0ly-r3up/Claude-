@@ -56,7 +56,7 @@ def build_md_book(cfg):
     md = brand_fix(md, label)
     main_html, heads = convert(md, chapter_breaks=cfg["chapter_breaks"], start_key=100)
 
-    front = [(1, "What’s Ahead", 1), (1, "How to Read This Book", 2)]
+    front = [(1, "What’s Ahead", 1), (1, "How to Read This Book", 2), (1, "Your 90-Day Path", 5)]
     if cfg.get("intro_html"):
         front.append((1, "Introduction", 3))
     back = [(1, "Final Reflection", 50), (1, "Where I Am Now", 51), (1, "Next-Step Challenge and Closing Prayer", 52),
@@ -67,6 +67,7 @@ def build_md_book(cfg):
     def body(pmap):
         ahead = lib.ahead_page("What’s ahead", "What’s Ahead", cfg["ahead"]).replace("<h1>What’s Ahead</h1>", f"<h1>What’s Ahead{mk(1)}</h1>")
         how = lib.how_to_read().replace("<h1>How to Read This Book</h1>", f"<h1>How to Read This Book{mk(2)}</h1>")
+        pathp = lib.path_page().replace("<h1>Your 90-Day Path</h1>", f"<h1>Your 90-Day Path{mk(5)}</h1>")
         intro = ""
         if cfg.get("intro_html"):
             intro = cfg["intro_html"].replace("<h1>Introduction</h1>", f"<h1>Introduction{mk(3)}</h1>")
@@ -83,7 +84,7 @@ def build_md_book(cfg):
             lib.cover(cfg["cover_title"], cfg["cover_sub"], "You survived. Now we rebuild.", cfg["cover_by"]),
             lib.title_page(cfg["cover_title"], cfg["title_sub"], cfg["dedication"]),
             lib.copyright_page(cfg["full_title"]),
-            toc, ahead, how, intro,
+            toc, ahead, how, pathp, intro,
             '<main class="body" style="break-before:page">' + main_html + "</main>",
             closing, cert, res])
 
@@ -175,6 +176,8 @@ ARC_NOTES = {
 }
 
 def build_journal():
+    from companion import COMPANION_DAYS
+    STAND = {d[0]: d[1] for d in COMPANION_DAYS}
     label = "journal"
     t = open(os.path.join(HERE, "original", "journal_text.txt"), encoding="utf-8").read()
     t = apply_edits(t, load_edits("edits_journal"), label)
@@ -227,6 +230,7 @@ def build_journal():
 <div class="dband"></div>
 <div class="dtop"><span class="arcpill">Arc {d['arc']} · {esc(arc_title)}</span><span class="dnum">Day {n:02d}<small> / 90</small></span></div>
 <h1 class="dtitle">{esc(d['title'])}</h1>
+<div class="pair">Pairs with <em>Ninety Days of Standing</em> · Day {n}: {esc(STAND[n])}</div>
 <blockquote class="dverse">“{esc(d['vtext'])}” <span class="ref">{esc(d['vref'])} · ESV</span></blockquote>
 <p class="teach">{esc(d['teach'])}</p>
 <div class="dwork"><span class="tag">Today’s Work</span><span class="date">Date: ____ / ____ / ________</span>
@@ -268,7 +272,7 @@ def build_journal():
     howto_html = "".join(f'<li><strong>{esc(a)}</strong> {esc(b)}</li>' for a, b in howto)
     ahead_items = [(str(a["n"]), f"{a['title']} · Days {a['first']}–{a['last']}", ARC_NOTES[a["n"]]) for a in arcs]
 
-    entries = [(1, "What’s Ahead", 1), (1, "How to Read This Book", 2), (1, "The Prayer Over This Book", 3), (1, "How to Use This Journal", 4)]
+    entries = [(1, "What’s Ahead", 1), (1, "How to Read This Book", 2), (1, "Your 90-Day Path", 5), (1, "The Prayer Over This Book", 3), (1, "How to Use This Journal", 4)]
     for a in arcs:
         entries.append((1, f"Arc {a['n']} · {a['title']} (Days {a['first']}–{a['last']})", 100 + a["n"]))
     entries += [(1, "Day 91 · Begin Again", 60), (1, "Final Reflection", 50), (1, "Where I Am Now", 51),
@@ -288,6 +292,7 @@ def build_journal():
             toc = toc.replace(f"@@P{k}@@", pmap.get(k, ""))
         ahead = lib.ahead_page("What’s ahead", "What’s Ahead", ahead_items).replace("<h1>What’s Ahead</h1>", f"<h1>What’s Ahead{mk(1)}</h1>")
         how = lib.how_to_read().replace("<h1>How to Read This Book</h1>", f"<h1>How to Read This Book{mk(2)}</h1>")
+        pathp = lib.path_page().replace("<h1>Your 90-Day Path</h1>", f"<h1>Your 90-Day Path{mk(5)}</h1>")
         prayer_pg = f'<section class="fm"><div class="band"></div><div class="kick">Say it out loud before day one</div><h1>The Prayer Over This Book{mk(3)}</h1><p class="small">Say it again any day you need it.</p><blockquote class="prayer" style="font-size:10.2pt;line-height:1.6">{prayer}</blockquote></section>'
         howto_pg = f'<section class="fm"><div class="band"></div><div class="kick">Ninety pages · one a day</div><h1>How to Use This Journal{mk(4)}</h1><ol style="font-size:10pt;line-height:1.55">{howto_html}</ol></section>'
         parts = []
@@ -317,7 +322,7 @@ def build_journal():
             lib.title_page("Ninety Days<br>of Freedom", "One Page a Day<br>A daily companion to The Whole Story — trauma, the spiritual realm, the agreements made in pain, the family line, and becoming who God made you to be.",
                            "For Brandi Renee — and for the one who finds this at 3 a.m."),
             lib.copyright_page("Ninety Days of Freedom — A Daily Journal"),
-            toc, ahead, how, prayer_pg, howto_pg] + parts + [day91, closing, cert, res])
+            toc, ahead, how, pathp, prayer_pg, howto_pg] + parts + [day91, closing, cert, res])
 
     css = EXTRA_CSS + r"""
 .jopen{page:day;width:auto;height:10.12in;border-radius:18px;padding:.9in .8in}
@@ -327,6 +332,8 @@ def build_journal():
 .dayp .dtop{display:flex;justify-content:space-between;align-items:center}
 .dayp .arcpill{background:var(--ac);color:#fff;font:800 8pt 'Libre Franklin';letter-spacing:.14em;text-transform:uppercase;padding:3px 12px;border-radius:20px}
 .dayp .dnum{font:700 26pt/1 'Caveat';color:var(--ac)} .dayp .dnum small{font:700 10pt 'Libre Franklin';color:#8f82a3}
+.dayp .pair{font:700 7.8pt 'Libre Franklin';letter-spacing:.06em;color:#4a6486;margin:-.01in 0 .05in;text-transform:none}
+.dayp .pair em{font-style:normal;color:#d6598f}
 .dayp .dtitle{font:700 36pt/1.02 'Caveat';color:#7a4c9e;margin:.06in 0 .04in;border:0;padding:0}
 .dayp .dverse{font:600 14pt/1.25 'Caveat';color:var(--ink);background:linear-gradient(90deg,rgba(63,182,176,.14),rgba(214,89,143,.09));border-radius:12px;padding:.08in .2in;margin:.06in 0 .09in;text-align:center}
 .dayp .dverse .ref{display:block;font:700 7.6pt 'Libre Franklin';letter-spacing:.14em;text-transform:uppercase;color:#4a6486;margin-top:2px}
@@ -368,7 +375,7 @@ def build_journal():
 
 # ---------------------------------------------------------------------------
 if __name__ == "__main__":
-    want = sys.argv[1:] or ["journal", "workbook", "volume2"]
+    want = sys.argv[1:] or ["journal", "workbook", "volume2", "companion"]
     lib_page = lib.page
     # inject the marker css into every md book
     lib.page = lambda title, body, extra_css="": lib_page(title, body, EXTRA_CSS + extra_css)
@@ -378,3 +385,6 @@ if __name__ == "__main__":
         build_md_book(VOLUME2)
     if "journal" in want:
         build_journal()
+    if "companion" in want:
+        import build_companion
+        build_companion.build()
