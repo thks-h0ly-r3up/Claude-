@@ -12,6 +12,9 @@ import os
 import random
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+import base64
+with open(os.path.join(HERE, "assets", "hellshaker-and-big-boy.jpg"), "rb") as _f:
+    PHOTO = "data:image/jpeg;base64," + base64.b64encode(_f.read()).decode()
 FONTS_CSS = os.environ.get("KIT_FONTS_CSS", os.path.join(HERE, "fonts_embedded.css"))
 
 # ---------------------------------------------------------------- page map
@@ -22,12 +25,10 @@ P = dict(welcome=2, inside=3, plan=4, board=5, pieces=6, cards=8, bookmarks=12,
 TOTAL = 37
 
 FOOTS = [
+    "IN MEMORY OF BRANDI RENEE \u2014 1-27-86 * 12-17-21",
     "D.O.A. IS GOD'S FAVORITE STARTING POINT",
+    "CORNER 2 CROWN",
     "BANDO 2 VINEYARD",
-    "IN MEMORY OF BRANDI RENEE — 12787–121721",
-    "TRADING THE CORNER FOR THE CROWN",
-    "GOD DOESN'T CALL THE QUALIFIED. HE QUALIFIES THE CALLED.",
-    "STILL HERE. STILL HIS. LET'S REBUILD.",
 ]
 
 e = html.escape
@@ -442,7 +443,7 @@ def page(inner, cls="", head="", foot=True):
     if foot:
         left = FOOTS[(n - 1) % len(FOOTS)]
         ft = (f'<div class="foot"><span class="fl">{e(left)}</span>'
-              f'<span class="fr">7HE H0LY R3UP by THKS &amp; CO. &nbsp;•&nbsp; {n}</span></div>')
+              f'<span class="fr">7HE H0LY R3UP &nbsp;•&nbsp; {n}</span></div>')
     hd = ""
     if head:
         hd = (f'<div class="phead"><span class="pb">7HE H0LY R3UP</span>'
@@ -474,10 +475,11 @@ def build_cover():
     <div class="cover-sun"></div>
     <div class="cover-card">
       <div class="cv-brand">7HE H0LY R3UP</div>
-      <div class="cv-by">by THKS &amp; CO.</div>
+      <div class="cv-by">PRINTABLE FAITH &amp; RECOVERY KIT</div>
       <div class="cv-kicker">THE COMPLETE PRINTABLE REBUILD KIT</div>
       <h1>Rebuild<br>One Piece<br>at a Time</h1>
       <div class="cv-tag">Take one honest step.</div>
+      <div class="cv-who"><img src="{PHOTO}" alt="Hellshaker and Big Boy"><span>Made by <b>Hellshaker</b><br>with Big Boy beside her</span></div>
       <ul class="cv-list">
         <li><b>Rebuild Board</b> + 16 word pieces to cut &amp; glue</li>
         <li><b>16 Word Cards</b> with truth, Scripture &amp; a step</li>
@@ -492,7 +494,7 @@ def build_cover():
       <div class="cv-foot">37 pages • US Letter • Instant PDF download • Personal use</div>
     </div>
     <div class="cover-tagline">STILL HERE. STILL HIS. LET'S REBUILD.</div>
-    <div class="cover-copy">© 2026 7HE H0LY R3UP by THKS &amp; CO. All rights reserved. Personal use only. No part of this work may be reproduced, distributed, copied, transmitted, or commercially exploited without prior written permission, except as permitted by applicable law.</div>
+    <div class="cover-copy">© 2026 7HE H0LY R3UP. All rights reserved. Personal use only. No part of this work may be reproduced, distributed, copied, transmitted, or commercially exploited without prior written permission, except as permitted by applicable law.</div>
     '''
     page(inner, cls="cover", foot=False)
 
@@ -502,6 +504,7 @@ def build_welcome():
     inner = f'''
     {title("Welcome to the worktable", "A note from Hellshaker")}
     <div class="letter">
+      <figure class="fig"><img src="{PHOTO}" alt="Hellshaker and Big Boy"><figcaption>Hellshaker &amp; Big Boy</figcaption></figure>
       <p>Hey, it's Hellshaker.</p>
       <p>I made this kit for the version of me who didn't know where to start. I put it together with Big Boy right beside me,
       because he stayed beside me while I was learning how to stay beside myself.</p>
@@ -1210,12 +1213,12 @@ def build_closing():
     <div class="pbox purple mt"><h4>Questions, or want to tell me how it went?</h4>
       <p>Reply to your order email, or use the Contact link on the 7HE H0LY R3UP store. I read and reply myself as time allows. — Hellshaker</p></div>
     <div class="fine legal">
-      © 2026 7HE H0LY R3UP by THKS &amp; CO. All rights reserved. Personal use only. No part of this work may be reproduced, distributed, copied, transmitted,
+      © 2026 7HE H0LY R3UP. All rights reserved. Personal use only. No part of this work may be reproduced, distributed, copied, transmitted,
       resold, or commercially exploited without prior written permission, except as permitted by applicable law. This kit is a faith-centered creative and educational tool.
       It is not medical, mental-health, or legal advice or treatment, and no specific outcome is promised. In an emergency call 911. For 24/7 crisis support call or text 988.
       Scripture quotations are from the King James Version (public domain).
     </div>
-    <div class="last-tag">IN MEMORY OF BRANDI RENEE — 12787–121721</div>
+    <div class="last-tag">IN MEMORY OF BRANDI RENEE — 1-27-86 * 12-17-21</div>
     '''
     page(inner, head="Keep building")
 
@@ -1295,6 +1298,11 @@ h2{font-family:'Caveat',cursive;font-size:42px;line-height:1;margin:.02in 0 0;co
 .cover-tagline{position:absolute;bottom:.68in;left:0;right:0;text-align:center;font-weight:800;letter-spacing:4px;font-size:13px;color:#fff;text-shadow:0 1px 4px rgba(20,60,60,.6);}
 .cover-copy{position:absolute;bottom:.14in;left:.6in;right:.6in;font-size:7px;line-height:1.35;color:#fff;text-align:center;text-shadow:0 1px 3px rgba(20,60,60,.6);}
 /* letter */
+.fig{float:right;width:2.3in;margin:0 0 .1in .22in;border:3px solid var(--purple);border-radius:14px;overflow:hidden;background:#fff;}
+.fig img{display:block;width:100%;height:2.7in;object-fit:cover;object-position:50% 40%;}
+.fig figcaption{font-family:'Caveat',cursive;font-size:21px;font-weight:700;color:var(--purple);text-align:center;padding:2px 0 3px;background:var(--lav);}
+.cv-who{display:flex;align-items:center;justify-content:center;gap:.18in;margin:0 0 .14in;font-size:13px;line-height:1.4;color:var(--denim);}
+.cv-who img{width:1.05in;height:1.05in;border-radius:50%;object-fit:cover;object-position:50% 14%;border:3px solid var(--pink);}
 .letter{font-size:11.2px;line-height:1.5;margin:.06in 0 .12in;} .letter p{margin:0 0 7px;}
 .letter .sig{font-family:'Caveat',cursive;font-size:24px;line-height:1.05;color:var(--purple);font-weight:700;margin-top:10px;}
 .letter .sig span{font-family:'Libre Franklin';font-size:11px;font-weight:700;color:var(--ink);}

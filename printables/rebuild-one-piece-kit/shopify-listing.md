@@ -110,6 +110,7 @@ Ready-to-upload files:
 10. `previews/09-boundary-builder.jpg`
 11. `previews/10-practical-checklist.jpg`
 12. `ads/ad-c-one-honest-step.png`
+13. `ads/ad-d-meet-hellshaker.png` (Hellshaker and Big Boy)
 
 **Optional:** if you want a photo of the finished thing, print the kit and photograph *your own* real printed board, cards, and jar. That is honest and it sells.
 
