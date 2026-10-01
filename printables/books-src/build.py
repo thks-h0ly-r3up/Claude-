@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the three 7HE H0LY REUP books (journal, workbook, Volume II) into printables/.
+"""Build the three 7HE H0LY R3UP books (journal, workbook, Volume II) into printables/.
 
     python3 books-src/build.py            # all three
     python3 books-src/build.py workbook   # one of: journal | workbook | volume2
@@ -39,7 +39,7 @@ def brand_fix(text, label):
     text = text.replace("**7HE H0LY KIL0 SYNDICATE (THKS)**", "")
     text = re.sub(r"\*\*7HE H0LY KIL0 SYNDICATE\*\*\n\*Reaching back\. Freeing the bound\. Saying the things everybody's afraid to say\.\*\n?", "", text)
     text = text.replace("7HE H0LY KIL0 SYNDICATE", BRAND)
-    for bad in ("THKS", "KIL0", "SYNDICATE", "R3UP"):
+    for bad in ("THKS", "KIL0", "SYNDICATE", "REUP"):
         if bad in text:
             i = text.index(bad)
             raise SystemExit(f"[{label}] retired name still present: {text[max(0,i-60):i+60]!r}")

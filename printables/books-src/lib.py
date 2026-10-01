@@ -1,10 +1,10 @@
-"""Shared layout, colors, front/back matter and PDF rendering for the 7HE H0LY REUP books."""
+"""Shared layout, colors, front/back matter and PDF rendering for the 7HE H0LY R3UP books."""
 import html as _html
 import os
 import re
 
-BRAND = "7HE H0LY REUP"
-BRAND_CO = "7HE H0LY REUP & CO."
+BRAND = "7HE H0LY R3UP"
+BRAND_CO = "7HE H0LY R3UP & CO."
 DATE = "September 30, 2026"
 YEAR = "2026"
 MEMORIAL = "In Memory of Brandi Renee — 12787–121721"
@@ -42,7 +42,7 @@ html,body{margin:0;padding:0;background:#fff;color:var(--ink);
 
 /* ---------- page setup ---------- */
 @page{size:8.5in 11in;margin:0.7in 0.78in 0.85in;
-  @bottom-left{content:"7HE H0LY REUP";width:3.2in;white-space:nowrap;text-align:left;font:700 7pt 'Libre Franklin';letter-spacing:.18em;color:#7a4c9e;vertical-align:top;padding-top:.22in}
+  @bottom-left{content:"7HE H0LY R3UP";width:3.2in;white-space:nowrap;text-align:left;font:700 7pt 'Libre Franklin';letter-spacing:.18em;color:#7a4c9e;vertical-align:top;padding-top:.22in}
   @bottom-right{content:counter(page);width:1in;text-align:right;font:700 8.5pt 'Libre Franklin';color:#7a4c9e;vertical-align:top;padding-top:.2in}
   @bottom-center{content:"";border-top:1.5px solid #c9bfd6;width:100%;vertical-align:top;margin-top:.1in}
 }

@@ -83,7 +83,7 @@ EDITS = [
 ("**4. The specific attack.** The enemy fights hardest where he's losing most. If the attack on your life has been disproportionate — if it's been *weirdly* much — read that as intelligence about what you're carrying, not evidence that you're cursed.",
  "**4. A season that feels out of proportion.** If it has been *weirdly* much, that does not mean you are cursed — and it does not prove you are carrying something special, either. Some seasons are just brutal. Ask for help either way."),
 ("Every time you step up in assignment, it will knock.", "Often when you step up, it will knock."),
-("That's what THKS is.", "That's what 7HE H0LY REUP is for."),
+("That's what THKS is.", "That's what 7HE H0LY R3UP is for."),
 ("Brandi's absence does not get smaller because the work is real. It gets *carried better.* Different thing.",
  "The absence of someone you lost does not get smaller because the work is real. It gets *carried better.* Different thing."),
 
