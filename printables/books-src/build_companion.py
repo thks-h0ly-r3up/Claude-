@@ -48,14 +48,14 @@ WARFARE = """<section class="fm"><div class="band"></div><div class="kick">Befor
 <p class="small"><em>Where I offer a picture (doors, agreements, stages) it is interpretation. Scripture is the authority; the pictures are tools.</em></p>
 </section>"""
 
-MOTHERS = """<section class="fm"><div class="band"></div><div class="kick">Before day one</div><h1>A Word to Mothers</h1>
-<p>This book is for anyone who mothers or has been mothered: raising children, grieving them, separated from them, fostering, adopting, stepping in, pregnant, hoping to be, or healing from your own mother. It is also for women with no children who are still carrying what motherhood meant in their house.</p>
+MOTHERS = """<section class="fm"><div class="band"></div><div class="kick">Before day one</div><h1>A Word About Your Mother</h1>
+<p>This book was rewritten for you: a daughter whose mother carried her own trauma and addiction, and who allowed your father to abuse you when you were a baby; a woman in recovery from her own addiction; a woman who is not a mother and does not want to carry any of this on. If that is not your story, read it as the nearest true thing.</p>
 <h2>What I will not do</h2>
-<p>I will not promise how your children will turn out. Proverbs 22:6 is a proverb about wisdom, not a guarantee, and every child makes choices. I will not tell you that your child is cursed, demonic, or being punished for your past. I will not tell you to stay somewhere unsafe, and I will not use guilt to pressure you.</p>
+<p>I will not ask you to remember. You were six months old; you cannot, and you do not need to. I will not tell you your mother was only a monster or only a victim; people are often both, and you can hold that without excusing her. I will not tell you your addiction is her fault, or that it is only yours. I will not tell you that you are destined to repeat it, or that you are cursed. I will not use guilt, and I will not tell you that forgiving means going back.</p>
 <h2>What I will do</h2>
-<p>Put safety first. Name the grief and the guilt without making them your identity. Point toward real help: doctors, counselors, treatment programs that welcome mothers, legal aid, advocates. Be honest that fear of losing your children keeps many mothers from getting help, and that hiding usually makes it worse while support usually helps. Hold hope without guarantees.</p>
+<p>Explain, plainly and without claiming certainty, how a baby who was not protected can grow into a woman whose body reaches for relief and whose heart struggles to trust (Days 5, 6, 39, 40). Name the grief for the mother you needed. Walk you through forgiving at your own pace, setting boundaries, and releasing what is not yours. Show you concrete ways to stop the pattern with you: recovery, therapy, safe people, new habits, and a line of faith and honesty you start now, with or without children.</p>
 <h2>Right now</h2>
-<p>If a child is in danger, call 911. Childhelp National Child Abuse Hotline: 1-800-422-4453. If you are thinking about hurting yourself or your child, call or text 988 now. Postpartum Support International: 1-800-944-4773. National Maternal Mental Health Hotline: 1-833-852-6262. <span class="small">(Please confirm numbers before relying on them.)</span></p>
+<p>If you are in danger, call 911. If you are thinking about ending your life, call or text 988. If a child is at risk near the person who harmed you, Childhelp: 1-800-422-4453. SAMHSA Helpline (substance use): 1-800-662-4357. <span class="small">(Please confirm numbers before relying on them.)</span></p>
 </section>"""
 
 USE = """<section class="fm"><div class="band"></div><div class="kick">How it works</div><h1>How to Use This Book</h1>
@@ -65,7 +65,7 @@ USE = """<section class="fm"><div class="band"></div><div class="kick">How it wo
 <li><strong>Grounding is optional.</strong> Skip it, change it, or keep your eyes open. Use another anchor if that one does not work for you.</li>
 <li><strong>Write on the lines.</strong> You never have to write the story. Titles and single sentences are enough.</li>
 <li><strong>One soft action.</strong> Small enough to do on a bad day. Doing less is allowed. Doing it is the point.</li>
-<li><strong>Not every day will fit your life.</strong> If you are not a mother, read “my kids” as the people you are responsible for, or the child you were.</li>
+<li><strong>Same day, same path.</strong> This book, the journal, and <em>Ninety Days of Coming Home</em> line up by day, so the same theme meets you three ways.</li>
 <li><strong>Stop when it is too much.</strong> Reach for a safe person or a number in the back. The page will wait.</li>
 </ol></section>"""
 
@@ -156,7 +156,7 @@ def arc_divider(arc):
 
 def build():
     entries = [(1, "What’s Ahead", 1), (1, "How to Read This Book", 2), (1, "Your 90-Day Path", 5), (1, "Spiritual Warfare, Plainly", 6),
-               (1, "A Word to Mothers", 7), (1, "How to Use This Book", 8)]
+               (1, "A Word About Your Mother", 7), (1, "How to Use This Book", 8)]
     for n, t, a, b in ARCS:
         entries.append((1, f"Arc {n} · {t} (Days {a}–{b})", 100 + n))
     entries += [(1, "Final Reflection", 50), (1, "Where I Am Now", 51), (1, "Next-Step Challenge and Closing Prayer", 52),
@@ -175,7 +175,7 @@ def build():
         how = tag(lib.how_to_read(), "How to Read This Book", 2)
         pathp = tag(lib.path_page(), "Your 90-Day Path", 5)
         warf = tag(WARFARE, "Spiritual Warfare, Plainly", 6)
-        moms = tag(MOTHERS, "A Word to Mothers", 7)
+        moms = tag(MOTHERS, "A Word About Your Mother", 7)
         use = tag(USE, "How to Use This Book", 8)
         parts = []
         for arc in ARCS:
@@ -184,22 +184,22 @@ def build():
                 parts.append(left(by_day[n], arc[0]))
                 parts.append(right(by_day[n], arc[0]))
         closing = lib.closing_pages("Ninety Days of Standing", [f"Arc {n} · {t}" for n, t, a, b in ARCS], "Arc",
-            "Go back to Day 1 of this book and the journal and read what you wrote. Then choose one practice (the armor, the craving protocol, the silence, a boundary, a blessing for your children) and keep it for thirty days. Tell one person which one.")
+            "Go back to Day 1 of this book and the journal and read what you wrote. Then choose one practice (the armor, the craving protocol, the silence, a boundary, a blessing for someone watching how you live) and keep it for thirty days. Tell one person which one.")
         closing = (closing.replace("<h1>Final Reflection</h1>", f"<h1>Final Reflection{mk(50)}</h1>")
                           .replace("<h1>Where I Am Now</h1>", f"<h1>Where I Am Now{mk(51)}</h1>")
                           .replace("<h1>Next-Step Challenge</h1>", f"<h1>Next-Step Challenge{mk(52)}</h1>"))
         cert = lib.certificate("Ninety Days of Standing").replace("Certificate of Completion</div>", f"Certificate of Completion{mk(53)}</div>", 1)
         extra = "".join(f"<tr><td><strong>{esc(a)}</strong></td><td>{esc(b)}</td></tr>" for a, b in [
             ("Childhelp National Child Abuse Hotline", "1-800-422-4453"),
-            ("Postpartum Support International", "1-800-944-4773"),
-            ("National Maternal Mental Health Hotline", "1-833-852-6262")])
+            ("Adult Children of Alcoholics & Dysfunctional Families", "adultchildren.org"),
+            ("Al-Anon (for families of people with addiction)", "al-anon.org")])
         res = lib.resources_page(extra_rows=extra).replace("<h1>Help, Right Now</h1>", f"<h1>Help, Right Now{mk(54)}</h1>")
         return "\n".join([
-            lib.cover("Ninety Days<br>of Standing", "Spiritual Warfare for Survivors and Mothers", "You survived. Now we rebuild.",
-                      "Childhood · Addiction · Motherhood · Faith<br>A daily companion to the 90-Day Journal"),
-            lib.title_page("Ninety Days<br>of Standing", "Spiritual warfare, childhood trauma, addiction, and motherhood<br>One spread a day, paired with the 90 Days of Freedom Journal, the Workbook, and Volume II",
-                           "For Brandi Renee — and for every mother, and every daughter, still standing."),
-            lib.copyright_page("Ninety Days of Standing — A Daily Companion on Spiritual Warfare, Childhood Trauma, Addiction, and Motherhood"),
+            lib.cover("Ninety Days<br>of Standing", "The Mother Wound, Addiction, and Breaking the Cycle", "You survived. Now we rebuild.",
+                      "Childhood · Addiction · Spiritual Warfare · Faith<br>A daily companion to the 90-Day Journal"),
+            lib.title_page("Ninety Days<br>of Standing", "Spiritual warfare, the mother wound, addiction, and breaking the cycle<br>One spread a day, paired with the 90 Days of Freedom Journal, the Workbook, and Volume II",
+                           "For Brandi Renee — and for the little girl who was not protected, and the woman who is standing now."),
+            lib.copyright_page("Ninety Days of Standing — A Daily Companion on Spiritual Warfare, the Mother Wound, Addiction, and Breaking the Cycle"),
             toc, ahead, how, pathp, warf, moms, use] + parts + [closing, cert, res])
 
     slug = "ninety-days-of-standing"

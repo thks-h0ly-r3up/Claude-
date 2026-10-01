@@ -96,6 +96,9 @@ EDITS = [
 ("I am the pivot. What was meant to bury my family is going to free it.",
  "I can be the pivot. I am choosing to help what was meant to bury my family become something that frees it."),
 
+("Write it and sign it and put it where your children can read it. Three things that end with me. Three things that begin with me. Then bless your children out loud, by name, regularly.",
+ "Write it and sign it and put it where you will see it every day. Three things that end with me. Three things that begin with me. Then bless the people in your life out loud, by name, regularly."),
+
 # ---- Arc Six ----
 ("It is a plan, and plans can be read.",
  "Patterns can be read. (This is a pattern-spotting tool, not a revealed schedule — Scripture warns us not to be ignorant of the enemy's designs, and it also warns against blaming the devil for everything. Use it to notice, not to label every hard thing an attack.)"),

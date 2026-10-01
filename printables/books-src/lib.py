@@ -443,10 +443,10 @@ def build_with_toc(title, build_body, toc_keys, html_path, pdf_path):
 # --------------------------------------------------------------------------
 PATH_ROWS = [
  ("1–10", "Telling the Truth", "The war underneath: childhood, body, secrecy, a date", "Part I · Part V Steps 1–3", "Ch. 1, 10, 17 · Steps 1–2"),
- ("11–20", "The Lies and the Names", "Lies, names, and a mother’s moral injury", "1.5–1.6 · 4.3–4.4", "Ch. 10, 12, 48 · Step 31"),
+ ("11–20", "The Lies and the Names", "Lies, names, and the moral injury of surviving", "1.5–1.6 · 4.3–4.4", "Ch. 10, 12, 48 · Step 31"),
  ("21–30", "The Realm and Your Authority", "Warfare, plainly: sorting, standing, forgiving", "Part II", "Ch. 1, 11, 15, 17 · Steps 8–10"),
  ("31–45", "The Contracts", "Vows, words, ties, the cistern, wanting out", "2.4–2.6", "Ch. 2–6 · Steps 13–15"),
- ("46–55", "The Bloodline", "Family patterns and the nursery", "Part VI", "Ch. 8–9 · Steps 16, 26"),
+ ("46–55", "The Bloodline", "Family patterns and ending the cycle", "Part VI", "Ch. 8–9 · Steps 16, 26"),
  ("56–68", "The Playbook and the Structure", "Patterns, cravings, daily structure, boundaries, falling", "Part V Steps 4–8", "Ch. 12–18 · Steps 23–29"),
  ("69–76", "God", "Where He was, honest anger, silence", "3.3 · 7.6", "Ch. 19–27"),
  ("77–84", "Brandi and Letting Go", "Grief, guilt, children out of reach, release", "Part VII", "Ch. 38–42 · Step 30"),

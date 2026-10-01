@@ -135,6 +135,11 @@ EDITS = [
 ("> I am the pivot. What was meant to bury my family is going to free it.",
  "> I can be the pivot. I am choosing to help what was meant to bury my family become something that frees it."),
 
+("Write it. Out loud. Then put it somewhere your kids can read it.", "Write it. Out loud. Then put it somewhere you will see it every day."),
+("**Then:** bless your children out loud, by name, regularly.", "**Then:** bless the people in your life out loud, by name, regularly."),
+("> \"I dedicate my children and my children's children to the Lord. They are not the enemy's inheritance. They are God's.\"",
+ "> \"I place whoever comes after me, in any sense, in the Lord's hands. They are not the enemy's inheritance. They are God's.\""),
+
 # ---- Part VII ----
 ("**Step 5 — Cut the tie.** (2.6, Step 6.)", "**Step 5 — Release the hold.** (2.6, Step 6.)"),
 
