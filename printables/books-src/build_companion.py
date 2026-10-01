@@ -6,6 +6,10 @@ import lib
 from lib import BRAND, esc, inline
 from mdbook import mk
 from companion import COMPANION_DAYS
+from home_days_1 import H1
+from home_days_2 import H2
+from home_days_3 import H3
+HOME_T = {d[0]: d[1] for d in H1 + H2 + H3}
 
 ARCS = [(1, "Telling the Truth", 1, 10), (2, "The Lies and the Names", 11, 20), (3, "The Realm and Your Authority", 21, 30),
         (4, "The Contracts", 31, 45), (5, "The Bloodline", 46, 55), (6, "The Playbook and the Structure", 56, 68),
@@ -120,7 +124,7 @@ def left(d, arc_n):
     return f"""<section class="sp" style="--ac:{c}"><div class="dband"></div>
 <div class="dtop"><span class="arcpill">Arc {arc_n} · {esc(an)}</span><span class="dnum">Day {n:02d}<small> / 90</small></span></div>
 <h1 class="dtitle">{esc(title)}</h1><div class="lens">{esc(lens)}</div>
-<div class="pairs"><b>Pairs with</b> Journal Day {n}: {esc(JOURNAL_TITLES[n])} &nbsp;·&nbsp; <b>Also read</b> {esc(also)}</div>
+<div class="pairs"><b>Pairs with</b> Journal Day {n}: {esc(JOURNAL_TITLES[n])} &nbsp;·&nbsp; Coming Home Day {n}: {esc(HOME_T[n])} &nbsp;·&nbsp; <b>Also read</b> {esc(also)}</div>
 <div class="sanct"><span class="tag">Sanctuary · optional</span>{esc(a)} <i>{esc(s)}</i></div>
 {verse}
 <div class="kick2">What this means</div>

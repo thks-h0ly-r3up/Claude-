@@ -178,6 +178,10 @@ ARC_NOTES = {
 def build_journal():
     from companion import COMPANION_DAYS
     STAND = {d[0]: d[1] for d in COMPANION_DAYS}
+    from home_days_1 import H1
+    from home_days_2 import H2
+    from home_days_3 import H3
+    HOME = {d[0]: d[1] for d in H1 + H2 + H3}
     label = "journal"
     t = open(os.path.join(HERE, "original", "journal_text.txt"), encoding="utf-8").read()
     t = apply_edits(t, load_edits("edits_journal"), label)
@@ -230,7 +234,7 @@ def build_journal():
 <div class="dband"></div>
 <div class="dtop"><span class="arcpill">Arc {d['arc']} · {esc(arc_title)}</span><span class="dnum">Day {n:02d}<small> / 90</small></span></div>
 <h1 class="dtitle">{esc(d['title'])}</h1>
-<div class="pair">Pairs with <em>Ninety Days of Standing</em> · Day {n}: {esc(STAND[n])}</div>
+<div class="pair">Pairs with <em>Ninety Days of Standing</em> · Day {n}: {esc(STAND[n])} &nbsp;|&nbsp; <em>Ninety Days of Coming Home</em> · Day {n}: {esc(HOME[n])}</div>
 <blockquote class="dverse">“{esc(d['vtext'])}” <span class="ref">{esc(d['vref'])} · ESV</span></blockquote>
 <p class="teach">{esc(d['teach'])}</p>
 <div class="dwork"><span class="tag">Today’s Work</span><span class="date">Date: ____ / ____ / ________</span>
@@ -375,7 +379,7 @@ def build_journal():
 
 # ---------------------------------------------------------------------------
 if __name__ == "__main__":
-    want = sys.argv[1:] or ["journal", "workbook", "volume2", "companion"]
+    want = sys.argv[1:] or ["journal", "workbook", "volume2", "companion", "home"]
     lib_page = lib.page
     # inject the marker css into every md book
     lib.page = lambda title, body, extra_css="": lib_page(title, body, EXTRA_CSS + extra_css)
@@ -388,3 +392,6 @@ if __name__ == "__main__":
     if "companion" in want:
         import build_companion
         build_companion.build()
+    if "home" in want:
+        import build_home
+        build_home.build()

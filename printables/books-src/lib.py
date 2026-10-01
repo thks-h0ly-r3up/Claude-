@@ -453,15 +453,18 @@ PATH_ROWS = [
  ("85–90", "Becoming Her", "Stewarding what you have learned", "Part III", "Ch. 28–34, 46–52 · Step 32"),
 ]
 
+HOME_STAGES = ["Build Her a Safe Place", "Meet Her at the Doorway", "Stand Guard for Her", "Release What She Promised", "Show Her Her Family Line", "Build Her a House", "Where Was Jesus?", "Say Goodbye and Hello", "Meet the New You"]
+
 def path_page(title_note=""):
-    rows = "".join(f"<tr><td><strong>{d}</strong></td><td>{esc(a)}</td><td>{esc(s)}</td><td>{esc(w)}</td><td>{esc(v)}</td></tr>" for d, a, s, w, v in PATH_ROWS)
+    rows = "".join(f"<tr><td><strong>{d}</strong></td><td>{esc(a)}</td><td>{esc(s)}</td><td>{esc(h)}</td><td>{esc(w)}</td><td>{esc(v)}</td></tr>" for (d, a, s, w, v), h in zip(PATH_ROWS, HOME_STAGES))
     return f"""<section class="fm"><div class="band"></div><div class="kick">One path, four books</div>
 <h1>Your 90-Day Path</h1>
-<p>These books were built to be used together. <strong>Day 7 in the journal is Day 7 in <em>Ninety Days of Standing</em></strong>, and each Standing day names the Workbook section and Volume II chapter that go with it. You do not have to read everything every day. Do the journal page; read the Standing spread; dip into the Workbook or Volume II when a day points you there.</p>
-<table><thead><tr><th>Days</th><th>Journal arc</th><th>Standing focus</th><th>Workbook</th><th>Volume II</th></tr></thead><tbody>{rows}</tbody></table>
-<div class="safety"><h3>A simple daily rhythm (about 20 minutes)</h3><ul>
+<p>These books were built to be used together. <strong>Day 7 in the journal is Day 7 in <em>Ninety Days of Standing</em> and Day 7 in <em>Ninety Days of Coming Home</em></strong>, and each day names the Workbook section and Volume II chapter that go with it. You do not have to read everything every day. Do the journal page; read the Standing spread; dip into the Workbook or Volume II when a day points you there.</p>
+<table><thead><tr><th>Days</th><th>Journal arc</th><th>Standing focus</th><th>Coming Home stage</th><th>Workbook</th><th>Volume II</th></tr></thead><tbody>{rows}</tbody></table>
+<div class="safety"><h3>A simple daily rhythm (about 25 minutes)</h3><ul>
 <li><strong>Journal page:</strong> read it, write on the lines, say the declaration.</li>
 <li><strong>Standing spread:</strong> optional grounding, Scripture, reflection, one soft action, a prayer.</li>
+<li><strong>Coming Home page:</strong> one step toward the child you were, a prayer, an affirmation, and a small challenge.</li>
 <li><strong>Workbook or Volume II:</strong> only when the day points you there, and only as much as you can hold.</li>
 <li>Missed a day? Pick the page back up. The pace is the point, and the identity is in the rising.</li></ul></div>
 </section>"""
