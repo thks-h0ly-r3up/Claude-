@@ -101,6 +101,17 @@ def arc_divider(n, title, a, b):
 <div class="kicker">Arc {n} · Days {a}–{b}</div><h1>{esc(title)}{mk(100 + n)}</h1><div class="orn"></div>
 <div class="sub">{sub}</div><div class="bm">{BRAND} · {b - a + 1} days · {4 * (b - a + 1)} pages</div></section>"""
 
+def arc_review(n, title):
+    c = ARC_COLORS[n - 1]
+    q = [("What did I tell the truth about in this arc?", 5), ("What was hardest, and what helped?", 5), ("What do I want to carry into the next arc?", 5)]
+    inner = "".join(f'<h3>{esc(a)}</h3><div class="lines5">{"<div></div>" * k}</div>' for a, k in q)
+    return f'''<section class="fm revw" style="--ac:{c}"><div class="band"></div><div class="kick">Arc {n} review</div>
+<h1 style="font-size:32pt">Looking Back: {esc(title)}</h1>
+<p class="small">A few honest lines before you turn the page. This sheet also keeps each arc starting on a fresh sheet of paper for your binder.</p>{inner}</section>'''
+
+def notes_page():
+    return '<section class="fm revw"><div class="band"></div><div class="kick">Notes</div><h1>Notes</h1><div class="lines5">' + "<div></div>" * 24 + "</div></section>"
+
 def ref_divider(kicker, title, sub, k):
     return f"""<section class="opener jopen" style="background:linear-gradient(175deg,#2a8f8a 0%,#7a4c9e 55%,#d6598f 100%)">
 <div class="kicker">{esc(kicker)}</div><h1>{esc(title)}{mk(k)}</h1><div class="orn"></div>
@@ -150,6 +161,16 @@ def remap(el, offset):
     s = ser(el)
     return re.sub(r"§H(\d+)§", lambda m: f"§H{int(m.group(1)) + offset}§", s)
 
+GUTTER_CSS = '''
+@page:right{margin-left:1.05in;margin-right:.7in}
+@page:left{margin-left:.7in;margin-right:1.05in}
+@page day:right{margin-left:.95in;margin-right:.4in}
+@page day:left{margin-left:.4in;margin-right:.95in}
+@page cert:right{margin-left:.95in;margin-right:.35in}
+@page cert:left{margin-left:.35in;margin-right:.95in}
+.lines5 div{height:.3in;border-bottom:1.2px solid #d3c8e0}
+'''
+
 def build():
     wb_entries = md_entries(wb_main, 1000, "wb")
     v2_entries = md_entries(v2_main, 2000, "v2")
@@ -172,7 +193,7 @@ def build():
 <p>Each arc has one theme, seen four ways. The last two columns tell you where to read more in the Reference Library when a day says <em>Go deeper</em>. (Workbook numbers are section numbers such as 2.4; Volume II numbers are chapters. Look them up in the Contents.)</p>
 <table><thead><tr><th>Days</th><th>Journal arc</th><th>Standing focus</th><th>Coming Home stage</th><th>Workbook</th><th>Volume II</th></tr></thead><tbody>{rows}</tbody></table></section>"""
 
-    def body(pmap):
+    def body(pmap, pad=False):
         parts = []
         parts.append(lib.cover("The 90-Day<br>Rebuild", "Journal · Standing · Coming Home · Workbook · Volume II", "You survived. Now we rebuild.",
                                "Four pages a day for ninety days,<br>with the whole reference library behind them"))
@@ -187,6 +208,8 @@ def build():
         parts.append(tag(strip(ser(s_by["Spiritual Warfare, Plainly"])), "Spiritual Warfare, Plainly", 7))
         parts.append(tag(strip(ser(s_by["A Word About Your Mother"])), "A Word About Your Mother", 8))
         parts.append(tag(strip(ser(j_by["The Prayer Over This Book"])), "The Prayer Over This Book", 9))
+        if pad:
+            parts.append(notes_page())
         for n, t, a, b in ARCS:
             parts.append(arc_divider(n, t, a, b))
             for d in range(a, b + 1):
@@ -194,6 +217,7 @@ def build():
                 parts.append(fix_standing(s_days[2 * (d - 1)]))
                 parts.append(fix_standing(s_days[2 * (d - 1) + 1]))
                 parts.append(fix_home(h_days[d - 1]))
+            parts.append(arc_review(n, t))
         parts.append(fix_journal(j_day91).replace("Begin Again</h1>", f"Begin Again{mk(60)}</h1>", 1))
         jar = "".join(strip(ser(e)) for e in h_jar)
         parts.append(jar.replace("<h2>The Challenge Jar</h2>", f"<h2>The Challenge Jar{mk(61)}</h2>", 1) if "<h2>The Challenge Jar" in jar else jar)
@@ -214,24 +238,26 @@ def build():
         parts.append(remap(v2_main, 2000))
         return "\n".join(parts)
 
-    css = "\n".join([JOURNAL_STYLES, STAND_STYLES, HOME_STYLES])
+    css = "\n".join([JOURNAL_STYLES, STAND_STYLES, HOME_STYLES, GUTTER_CSS])
     html_path = os.path.join(OUT, "the-90-day-rebuild.html")
     pdf_path = os.path.join(OUT, "the-90-day-rebuild.pdf")
     title = "The 90-Day Rebuild"
-    page = lambda t, b: f"<!doctype html><html lang='en'><head><meta charset='utf-8'><title>{esc(t)}</title><style>{css}\n.mk{{font-size:2px;line-height:0;color:rgba(255,255,255,.01);letter-spacing:0}}</style></head><body>{b}</body></html>"
+    page = lambda t, b_: f"<!doctype html><html lang='en'><head><meta charset='utf-8'><title>{esc(t)}</title><style>{css}\n.mk{{font-size:2px;line-height:0;color:rgba(255,255,255,.01);letter-spacing:0}}</style></head><body>{b_}</body></html>"
+    def render(pmap, pad):
+        open(html_path, "w").write(page(title, body(pmap, pad)))
+        lib.render_pdf(html_path, pdf_path)
+        return lib.find_marker_pages(pdf_path, keys)
     pmap = {k: "000" for k in keys}
-    open(html_path, "w").write(page(title, body(pmap)))
-    lib.render_pdf(html_path, pdf_path)
-    found, n = lib.find_marker_pages(pdf_path, keys)
-    miss = [k for k in keys if k not in found]
-    if miss:
-        print("  warn: missing TOC keys", miss[:10], len(miss))
+    found, n = render(pmap, False)
+    pad = int(found["101"]) % 2 == 1          # first arc divider must land on a back (even) page
+    if pad:
+        found, n = render(pmap, True)
     pmap = {k: str(found.get(k, "")) for k in keys}
-    open(html_path, "w").write(page(title, body(pmap)))
-    lib.render_pdf(html_path, pdf_path)
-    f2, n2 = lib.find_marker_pages(pdf_path, keys)
+    f2, n2 = render(pmap, pad)
     if any(f2.get(k) != found.get(k) for k in keys):
         print("  warn: page numbers shifted")
+    odd = [k for k in ("101","102","103","104","105","106","107","108","109") if int(f2[k]) % 2 == 1]
+    print("  arc dividers on odd pages (should be none):", odd, "| padded front:", pad)
     print(f"the-90-day-rebuild: {n2} pages -> {pdf_path}")
 
 if __name__ == "__main__":
