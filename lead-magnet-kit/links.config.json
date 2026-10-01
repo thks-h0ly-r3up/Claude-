@@ -1,0 +1,14 @@
+{
+  "_readme": "Fill every value with your real URL/address, then run: python3 build.py --release. Nothing in the kit invents a link for you.",
+  "LINKTREE_URL": "https://linktr.ee/The_Holy_Kilo_Syndicates",
+  "STORE_URL": "https://7heh0lyr3up.etsy.com",
+  "GMAIL_ADDRESS": "",
+  "TEMPLATE_CREATOR_URL": "",
+  "PLUGIN_CREATOR_URL": "",
+  "TRACKER_URL": "",
+  "GUIDE_DOWNLOAD_URL": "",
+  "PAID_PRODUCT_URL": "",
+  "UNSUBSCRIBE_URL": "",
+  "MAILING_ADDRESS": "",
+  "GUMROAD_URL": "https://gumroad.holykilosyndicate.com/"
+}
