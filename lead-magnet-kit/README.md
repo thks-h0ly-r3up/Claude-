@@ -1,5 +1,5 @@
-# 7HE H0LY REUP Lead Magnet Kit — The Next Right Step
-7HE H0LY REUP • 7HE H0LY REUP
+# 7HE H0LY R3UP Lead Magnet Kit — The Next Right Step
+7HE H0LY R3UP • 7HE H0LY R3UP
 
 ## What's here
 | Folder / file | What it is |
@@ -24,7 +24,10 @@
 5. Have an attorney review `content/legal.html` and your store policies. It's solid boilerplate, not legal advice.
 
 ## Brand name
-The brand name lives in ONE place: `BRAND` in `build.py` (and `BRAND` in each product's `generate.py`). Currently **7HE H0LY REUP**. Change it there, regenerate, rebuild.
+The brand name lives in ONE place: `BRAND` in `build.py` (and `BRAND` in each product's `generate.py`). Currently **7HE H0LY R3UP**. Change it there, regenerate, rebuild.
+
+## Links
+`python3 make_links.py` writes `LINKS.md`: your live links, a tagged version for each place you post, and the exact steps to create the links only you can (guide download, tracker, paid product, email, unsubscribe).
 
 ## Commands
 ```

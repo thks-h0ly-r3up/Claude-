@@ -7,7 +7,7 @@ import csv, glob, hashlib, json, os, re, subprocess, sys, datetime
 ROOT = os.path.dirname(os.path.abspath(__file__)); R = lambda *p: os.path.join(ROOT,*p)
 RELEASE = "--release" in sys.argv
 sys.path.insert(0, ROOT); from new_product import PALETTES, BORDERS, ORNS
-BRAND = "7HE H0LY REUP"   # the ONE place the brand name lives. Change here and rebuild to update every footer.
+BRAND = "7HE H0LY R3UP"   # the ONE place the brand name lives. Change here and rebuild to update every footer.
 FOOTERS = [
  "YOU SURVIVED. NOW WE REBUILD.",
  "BANDO 2 VINEYARD",

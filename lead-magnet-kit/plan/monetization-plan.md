@@ -1,4 +1,4 @@
-# Monetization Plan — 7HE H0LY REUP
+# Monetization Plan — 7HE H0LY R3UP
 *Prices and numbers below are planning estimates, not promises or income guarantees. Adjust to your real costs.*
 
 ## The ladder (honest, no fake scarcity, no countdowns)
@@ -49,7 +49,7 @@ Fake testimonials • fake scarcity/countdowns • "God told me you need to buy 
 
 ## Your live storefronts (added from the links you sent)
 - **Linktree:** https://linktr.ee/The_Holy_Kilo_Syndicates
-- **Etsy (7HE H0LY REUP):** https://7heh0lyr3up.etsy.com
+- **Etsy (7HE H0LY R3UP):** https://7heh0lyr3up.etsy.com
 - **Gumroad:** https://gumroad.holykilosyndicate.com/
 
 Suggested roles (check each platform's current rules before you rely on this):

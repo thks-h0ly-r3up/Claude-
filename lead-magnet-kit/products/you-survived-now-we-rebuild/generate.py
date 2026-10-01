@@ -5,7 +5,7 @@
 """
 import os, datetime
 HERE = os.path.dirname(os.path.abspath(__file__))
-BRAND = "7HE H0LY REUP"
+BRAND = "7HE H0LY R3UP"
 TODAY = datetime.date.today().strftime("%B %d, %Y").replace(" 0", " ")
 
 def lines(n): return '<div class="row"><div class="line"></div></div>' * n
@@ -276,7 +276,7 @@ add("Where to Get Help", page(f'''<h2>Where to Get Help</h2>
 <li>Write down names and numbers as you go. Bring a person if you can.</li>
 <li>If the first call doesn't work, call another. You only need one yes.</li></ol>
 <p style="font-size:11.5px">Outside the U.S.? Look up your country's crisis line and emergency number and write them here: ______________________________</p>
-<h3>Keep going with 7HE H0LY REUP</h3>
+<h3>Keep going with 7HE H0LY R3UP</h3>
 <p>Linktree: <a href="{{{{LINKTREE_URL}}}}">{{{{LINKTREE_URL}}}}</a><br>Etsy: <a href="{{{{STORE_URL}}}}">{{{{STORE_URL}}}}</a><br>Gumroad: <a href="{{{{GUMROAD_URL}}}}">{{{{GUMROAD_URL}}}}</a><br>Email: <a href="mailto:{{{{GMAIL_ADDRESS}}}}">{{{{GMAIL_ADDRESS}}}}</a></p>'''))
 
 # ---- TOC with computed page numbers (page number = position in final book; build.py numbers footers the same way)

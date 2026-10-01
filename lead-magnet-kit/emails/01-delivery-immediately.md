@@ -23,7 +23,7 @@ If you want to, hit reply and tell me one word for how you feel right now. I may
 
 Still here,
 Nikki "Hellshaker"
-7HE H0LY REUP • 7HE H0LY REUP
+7HE H0LY R3UP • 7HE H0LY R3UP
 
 ---
 Linktree: {{LINKTREE_URL}} | Etsy: {{STORE_URL}} | Gumroad: {{GUMROAD_URL}} | Email me: {{GMAIL_ADDRESS}}
@@ -31,5 +31,5 @@ Template Creator: {{TEMPLATE_CREATOR_URL}} | Plugin Creator: {{PLUGIN_CREATOR_UR
 Not medical or professional advice. In crisis: 911 • 988 (call/text) • SAMHSA 1-800-662-4357.
 YOU SURVIVED. NOW WE REBUILD. — IN MEMORY OF BRANDI RENEE — 12787–121721
 You are getting this because you asked for The Next Right Step. Unsubscribe: {{UNSUBSCRIBE_URL}}
-7HE H0LY REUP, {{MAILING_ADDRESS}}
-© 2026 7HE H0LY REUP. All rights reserved.
+7HE H0LY R3UP, {{MAILING_ADDRESS}}
+© 2026 7HE H0LY R3UP. All rights reserved.
