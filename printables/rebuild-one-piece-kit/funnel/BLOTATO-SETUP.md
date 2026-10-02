@@ -1,27 +1,23 @@
-# Blotato DM Automations: setup record
+# Blotato DM automations: setup record
 
-Status: **3 drafts, all INACTIVE. Nothing live, nothing posted.**
-Account on file: @holy_kilo_syndicate_thks (Blotato account id 63814). Nikki has said this is the *wrong* Instagram, so confirm or connect the right one before activating.
-Untouched: existing live automation 1743 "Rise & Reclaim - RECLAIM".
+Account: **@7he_h0ly_r3up** (Instagram, Blotato account id 75275). Old @holy_kilo_syndicate_thks drafts are retired.
+All three automations are INACTIVE drafts. Nothing live, nothing posted.
 
-| ID | Name | Triggers | Gates | Buttons |
+| ID | Name | Triggers | Gate | Button |
 |---|---|---|---|---|
-| 4395 | REBUILD: kit (draft) | comment on any post + DM, keyword REBUILD | none | **needs "Get the kit" URL** |
-| 10532 | WAVE: free craving plan (draft) | keyword WAVE | email (consent + 988/911) | **needs free-plan URL** |
-| 10533 | GATE: free boundary page (draft) | keyword GATE | email (consent + DV hotline 1-800-799-7233 / text START to 88788) | **needs boundary page URL** |
+| 10567 | REBUILD: kit | comment (any post) + DM, "REBUILD" | none | NEEDS kit product URL |
+| 10568 | WAVE: free craving plan | comment + DM, "WAVE" | email + consent + 988/911 | NEEDS free-plan URL |
+| 10569 | GATE: free boundary page | comment + DM, "GATE" | email + consent + DV hotline | NEEDS boundary page URL |
 
-Follow gate is OFF on purpose: crisis and free tools should not be locked behind following.
+Follow gate is off on purpose (crisis/free tools are not locked behind a follow).
+Other connected accounts: TikTok holykilo26 (54572), YouTube hellshaker (46066).
 
-## DM copy (as filled)
-- **REBUILD:** "Hey, it's Hellshaker 🖤 Thanks for asking. Rebuild One Piece at a Time is a printable PDF kit, 37 pages… Nothing ships. It's a companion, not a replacement for real help. Want the free craving plan first? Reply WAVE. If you're in danger right now, call or text 988, or call 911. Tap below to get the kit 👇"
-- **WAVE:** When It Hits plan + 988 / 911 / SAMHSA 1-800-662-4357. "Tap below to get it 👇"
-- **GATE:** Boundary Builder page + "If you want the whole kit, reply REBUILD". "Tap below to get the page 👇"
+## Blockers
+1. Shopify connector needs re-sign-in -> no kit URL, no $0 free-plan product.
+2. Sandbox network blocks database.blotato.io, so the post image could not be uploaded from here. Upload `ads/ad-a-what-you-get.png` in the Blotato post editor (or give a public URL).
 
-## Before going live (Nikki's list)
-1. Confirm/connect the correct Instagram in Blotato.
-2. Kit product page URL → add as button on 4395.
-3. Free craving plan link (`funnel/FREE-when-it-hits-craving-plan.pdf` needs a public host, e.g. $0 Shopify product) → button on 10532.
-4. Boundary page link → button on 10533 (or swap to a DM with the file).
-5. Test each keyword from a second account.
-6. Only then set isActive = true, one at a time.
-7. Email list: you need a real sender address, unsubscribe link, and consent before sending the funnel emails.
+## Launch order
+1. Add button URLs to 10567-10569.
+2. Publish POST 1 (`ads/social-posts.md`, image ad-a-what-you-get.png) to @7he_h0ly_r3up.
+3. Activate automations, then test each keyword from a second account.
+4. Funnel emails (`FULL-FUNNEL.md`) need a real sender address, unsubscribe link and consent.
