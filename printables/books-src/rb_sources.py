@@ -31,4 +31,6 @@ SRC = {
 "RUM": ("Nolen-Hoeksema et al., 2008", "Nolen-Hoeksema, S., Wisco, B. E., & Lyubomirsky, S. (2008). Rethinking rumination. Perspectives on Psychological Science, 3(5), 400–424."),
 "KROSS": ("Kross et al., 2014", "Kross, E., et al. (2014). Self-talk as a regulatory mechanism: How you do it matters. Journal of Personality and Social Psychology, 106(2), 304–324."),
 "GOLDM": ("Goldman et al., 2005", "Goldman, D., Oroszi, G., & Ducci, F. (2005). The genetics of addictions: Uncovering the genes. Nature Reviews Genetics, 6(7), 521–532."),
+"BONN": ("Bonanno, 2004", "Bonanno, G. A. (2004). Loss, trauma, and human resilience: Have we underestimated the human capacity to thrive after extremely aversive events? American Psychologist, 59(1), 20–28."),
+"PAGANO": ("Pagano et al., 2004", "Pagano, M. E., et al. (2004). Helping other alcoholics in Alcoholics Anonymous and drinking outcomes: Findings from Project MATCH. Journal of Studies on Alcohol, 65(6), 766–773."),
 }
