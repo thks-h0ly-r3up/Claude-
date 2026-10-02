@@ -117,14 +117,22 @@ html,body{background:transparent!important}
 .src p{font-size:8.6pt;line-height:1.38;margin:.05in 0;text-indent:-.2in;padding-left:.2in}
 '''
 BG = '''
-.bgR,.bgL{position:relative}
-.bgR::before,.bgL::before{content:"";position:absolute;z-index:-1;top:-.38in;width:8.5in;height:11in}
-.bgR::before{left:-.95in;background:url(books-src/art/bg_right.jpg) 0 0/100% 100% no-repeat}
-.bgL::before{left:-.4in;background:url(books-src/art/bg_left.jpg) 0 0/100% 100% no-repeat}
+@page bgp{size:8.5in 11in;margin:0}
+.bgR,.bgL{page:bgp!important;position:relative;width:8.5in;height:11in!important;box-sizing:border-box;break-after:page;overflow:hidden}
+.bgR{padding:.38in .4in .78in .95in;background:url(books-src/art/bg_right.jpg) 0 0/100% 100% no-repeat}
+.bgL{padding:.38in .95in .78in .4in;background:url(books-src/art/bg_left.jpg) 0 0/100% 100% no-repeat}
+.bgR>.nfoot,.bgL>.nfoot{display:none}
+.pgn{position:absolute;bottom:.28in;left:0;right:0;text-align:center;font:700 8pt 'Libre Franklin';color:#5b4a2e}
+.pgn.pr{left:.95in;right:.4in}.pgn.pl{left:.4in;right:.95in}
 '''
 
-def bg(h, side):
-    return h.replace('<section class="', f'<section class="bg{side} ', 1)
+def bg(h, side, pg=None):
+    if INK:
+        return h
+    h = re.sub(r'<div class="pairs">.*?</div>', '', h, count=1, flags=re.S)
+    h = h.replace('<section class="', f'<section class="bg{side} ', 1)
+    n = f'<div class="pgn p{side.lower()}">{pg}</div>' if pg is not None else ""
+    return h[:h.rindex("</section>")] + n + "</section>"
 
 def how_works():
     return f"""<section class="fm"><div class="band"></div><div class="kick">Read this first</div><h1>How This Book Works</h1>
@@ -199,12 +207,13 @@ def build():
         for n, t, a, b in ARCS:
             P.append(arc_divider(n, t, a, b))
             for d in range(a, b + 1):
-                P.append(bg(guide(d), 'R'))
-                P.append(bg(B.fix_standing(B.s_days[2 * (d - 1)]), 'L'))
-                P.append(bg(B.fix_standing(B.s_days[2 * (d - 1) + 1]), 'R'))
-                P.append(bg(B.fix_home(B.h_days[d - 1]), 'L'))
-                P.append(bg(write_page(d), 'R'))
-                P.append(bg(pocket(d), 'L'))
+                base = int(pmap.get(str(100 + n), '0') or 0) + 1 + 6 * (d - a)
+                P.append(bg(guide(d), 'R', base))
+                P.append(bg(B.fix_standing(B.s_days[2 * (d - 1)]), 'L', base + 1))
+                P.append(bg(B.fix_standing(B.s_days[2 * (d - 1) + 1]), 'R', base + 2))
+                P.append(bg(B.fix_home(B.h_days[d - 1]), 'L', base + 3))
+                P.append(bg(write_page(d), 'R', base + 4))
+                P.append(bg(pocket(d), 'L', base + 5))
             P.append(B.arc_review(n, t))
         P.append(sources_pages())
         jar = "".join(B.strip(B.ser(e)) for e in B.h_jar)
