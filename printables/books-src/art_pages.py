@@ -15,9 +15,12 @@ CSS = r"""
 .artp .sub{font:italic 600 12.5pt/1.5 'Libre Franklin';color:#2a3b5a;margin:.08in .2in}
 .artp .brand{font:400 27pt 'Rye';color:#a06f1c;letter-spacing:.06em}
 .artp .tag{font:700 22pt 'Caveat';color:#7a2c4a;margin-top:.04in}
-.artp .foot{position:absolute;left:1.95in;right:.5in;bottom:.7in;text-align:center}
+.artp .foot{position:absolute;left:1.95in;right:.5in;bottom:.45in;text-align:center}
 .artp .small{font:800 8.5pt 'Libre Franklin';letter-spacing:.3em;text-transform:uppercase;color:#5b6b86;margin-top:.1in}
 .artp .mk{font-size:2px;line-height:0;color:rgba(255,255,255,.01)}
+.bb{position:absolute;left:4.1in;top:7.45in;width:1.75in;transform:rotate(-2.5deg);background:#f4ead4;padding:.07in .07in .2in;border:2px dashed #3b5a85;border-radius:6px;box-shadow:0 5px 14px rgba(40,30,20,.35)}
+.bb img{display:block;width:100%;border-radius:3px}
+.bb .cap{position:absolute;left:0;right:0;bottom:.02in;text-align:center;font:700 11pt 'Caveat';color:#7a2c4a}
 .cert2 .tx{left:1.15in;right:1.15in}
 .cert2 .frame{position:absolute;left:1.05in;right:1.05in;top:.5in;bottom:.5in;border:3px double #b58a2e}
 .cert2 .line{border-bottom:2px solid #8a7a5a;height:.5in;margin:0 .5in}
@@ -32,12 +35,13 @@ ORN = """<svg class="orn" viewBox="0 0 440 30" xmlns="http://www.w3.org/2000/svg
 def _bg(plate):
     return f"background-image:url('books-src/art/{plate}_page.jpg')"
 
-def cover(plate, kicker, title_lines, sub_lines, mk=""):
+def cover(plate, kicker, title_lines, sub_lines, mk="", photo=None):
     t = "<br>".join(esc(x) for x in title_lines)
     s = "<br>".join(esc(x) for x in sub_lines)
+    photo_html = f'<div class="bb"><img src="books-src/art/{photo}.jpg"><div class="cap">Big Boy · battle buddy</div></div>' if photo else ""
     return f"""<section class="artp" style="{_bg(plate)}"><div class="tx" style="top:4.15in">
 <div class="kick">{esc(kicker)}</div><h1>{t}{mk}</h1>{ORN}<div class="sub">{s}</div></div>
-<div class="foot"><div class="brand">{BRAND}</div><div class="tag">You survived. Now we rebuild.</div></div></section>"""
+{photo_html}<div class="foot"><div class="brand">{BRAND}</div><div class="tag">You survived. Now we rebuild.</div></div></section>"""
 
 def divider(plate, kicker, title, sub, bottom, mk=""):
     cls = "sm" if len(title) > 24 else ""

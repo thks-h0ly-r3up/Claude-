@@ -46,7 +46,7 @@ def cover_page(vol, rng, arcs, a, b, cls):
     if cls == "v3":
         return A.cover(plate, vol, ["The Reference", "Library"], arcs)
     sub = [rng] + [" · ".join(arcs[i:i + 2]) for i in range(0, len(arcs), 2)]
-    return A.cover(plate, vol, ["The 90-Day", "Rebuild"], sub)
+    return A.cover(plate, vol, ["The 90-Day", "Rebuild"], sub, photo="bigboy" if cls == "v1" else None)
 
 def spines():
     colors = {"v1": "#27857f", "v2": "#7a4c9e", "v3": "#4a6486"}
