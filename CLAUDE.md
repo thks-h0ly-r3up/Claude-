@@ -3,7 +3,7 @@
 These apply to every future task in this repository. Follow them without being re-asked.
 
 ## Brand and voice
-- Brand name is exactly **7HE H0LY R3UP** (company line: 7HE H0LY R3UP & CO.). Never THKS, KIL0, SYNDICATE, or REUP.
+- Brand name is exactly **7HE H0LY R3UP** (company line: 7HE H0LY R3UP & CO.). Never THKS, KIL0, SYNDICATE, or REUP. (See the later “Names, dates” section for the full line.)
 - Mission line: **You survived. Now we rebuild.** Voice: Southern cowgirl grit, fierce faith, street-level honesty, compassion without swinging at wounds. Sparing with "baby". No profanity.
 - Keep Jesus central. ESV unless told otherwise; identify the translation; never invent verses or divine promises; label testimony vs Scripture vs interpretation vs symbol.
 - Clinical/safety: trauma-informed, never demand disclosure, never "recover memories", prayer beside (not instead of) treatment, crisis lines on every product (988, SAMHSA 1-800-662-4357, NDVH 1-800-799-7233 / text START to 88788, RAINN 1-800-656-4673, Childhelp 1-800-422-4453). Not a mother; the author is a daughter of an addicted mother, in recovery, ending the cycle.
@@ -23,3 +23,9 @@ These apply to every future task in this repository. Follow them without being r
 
 ## Build
 - Sources and build scripts: `printables/books-src/` (see STYLE_GUIDE.md there). Originals in `original/` are never edited; corrections live in `edits_*.py`.
+
+## Names, dates, and what “new” means (user correction, Oct 2026)
+- The full brand line is **7HE H0LY R3UP FOR ALL** (use it on covers, title lines, and headers in place of any older name).
+- **Never print the author’s last name.** Introduce her by first name (Nikki) and Big Boy (see `lib.meet_page()`).
+- Her sister **Brandi Renee**: born January 27, 1986 (1-27-86); passed December 17, 2021 (12-17-21). Use these dates whenever dates are given.
+- **Do not hand her own words back to her.** Anything we publish must be new writing (Bible context, research, steps, prayers) in her voice, not a restyle of her uploaded text. The uploaded journal, workbook, and Volume II stay separate, untouched references.

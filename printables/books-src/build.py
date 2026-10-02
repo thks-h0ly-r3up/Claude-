@@ -36,7 +36,7 @@ def apply_edits(text, edits, label):
     return text
 
 def brand_fix(text, label):
-    text = text.replace("**7HE H0LY KIL0 SYNDICATE (THKS)**", "")
+    text = text.replace("**7HE H0LY KIL0 SYNDICATE (THKS)**", f"**{BRAND}**")
     text = re.sub(r"\*\*7HE H0LY KIL0 SYNDICATE\*\*\n\*Reaching back\. Freeing the bound\. Saying the things everybody's afraid to say\.\*\n?", "", text)
     text = text.replace("7HE H0LY KIL0 SYNDICATE", BRAND)
     for bad in ("THKS", "KIL0", "SYNDICATE", "REUP"):

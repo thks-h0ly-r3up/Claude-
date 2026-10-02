@@ -3,11 +3,11 @@ import html as _html
 import os
 import re
 
-BRAND = "7HE H0LY R3UP"
+BRAND = "7HE H0LY R3UP FOR ALL"
 BRAND_CO = "7HE H0LY R3UP & CO."
 DATE = "September 30, 2026"
 YEAR = "2026"
-MEMORIAL = "In Memory of Brandi Renee — 12787–121721"
+MEMORIAL = "In Memory of Brandi Renee · January 27, 1986 – December 17, 2021"
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.dirname(HERE)            # printables/
@@ -248,6 +248,14 @@ DISCLAIMER = [
  ("About the stories and ideas", "Personal testimony is shared as lived experience, not as a formula or a promise of any outcome. Interpretations of Scripture are labeled as interpretation and offered for you to test against the Bible and with wise, trusted people. Nothing in this book guarantees healing, deliverance, income, or any particular result."),
 ]
 
+def meet_page():
+    return '''<section class="fm"><div class="band"></div><div class="kick">Before day one</div><h1>Meet Nikki and Big Boy</h1>
+<p>Hey. I’m Nikki, and this is Big Boy, my battle buddy: a big gray-and-white American Bully with a muscular build and no ears, who stood beside me through some of my loneliest days.</p>
+<p>I lost my sister to addiction. I have lived through homelessness, trafficking, abuse, addiction, and a long, destructive relationship. When I reached for help, too often there were strings attached, or a watered-down verse and a pat on the head. I needed somewhere that could hold the truth about trauma without pushing God out of the room.</p>
+<p>I am not a counselor, a doctor, or a finished story. I am building as I go. What I can offer is what I have learned, what Scripture actually says, and something practical you can do today. God met me while I was still trying to get up. That is where this book comes from.</p>
+<p>Take what helps. Leave what does not. Get real help when you need it, because prayer sits beside treatment and safety, not instead of them.</p>
+<p class="center" style="font:700 17pt 'Caveat';color:#7a2c4a;margin-top:.2in">You survived. Now we rebuild. — Nikki &amp; Big Boy</p></section>'''
+
 def copyright_page(full_title, extra_note=""):
     d = "".join(f"<h3>{esc(h)}</h3><p>{esc(p)}</p>" for h, p in DISCLAIMER)
     return f"""<section class="fm legal">
@@ -260,7 +268,7 @@ def copyright_page(full_title, extra_note=""):
 {extra_note}
 <h3>In memory</h3><p>{esc(MEMORIAL)}</p>
 <p class="center" style="margin-top:.3in;font:700 15pt 'Caveat';color:#d6598f">You survived. Now we rebuild.</p>
-</section>"""
+</section>""" + meet_page()
 
 def title_page(title_html, subtitle, dedication):
     return f"""<section class="fm titlepage">
