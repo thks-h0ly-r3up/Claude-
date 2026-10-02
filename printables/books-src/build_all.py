@@ -9,7 +9,9 @@ import re
 
 from lxml import etree, html as LH
 
+import html as _html
 import lib
+import art_pages as A
 from lib import BRAND, esc
 from mdbook import mk
 
@@ -93,14 +95,6 @@ ARCS = [(1, "Telling the Truth", 1, 10), (2, "The Lies and the Names", 11, 20), 
         (7, "God", 69, 76), (8, "Brandi and Letting Go", 77, 84), (9, "Becoming Her", 85, 90)]
 ARC_COLORS = ["#27857f", "#7a4c9e", "#d6598f", "#4a6486", "#27857f", "#7a4c9e", "#d6598f", "#4a6486", "#c58a2d"]
 
-def arc_divider(n, title, a, b):
-    c = ARC_COLORS[n - 1]
-    row = lib.PATH_ROWS[n - 1]
-    sub = (f"The Journal: {esc(title)}. Standing: {esc(row[2])}. Coming Home: {esc(lib.HOME_STAGES[n - 1])}.")
-    return f"""<section class="opener jopen" style="background:linear-gradient(175deg,{c} 0%,#7a4c9e 62%,#d6598f 100%)">
-<div class="kicker">Arc {n} · Days {a}–{b}</div><h1>{esc(title)}{mk(100 + n)}</h1><div class="orn"></div>
-<div class="sub">{sub}</div><div class="bm">{BRAND} · {b - a + 1} days · {4 * (b - a + 1)} pages</div></section>"""
-
 def arc_review(n, title):
     c = ARC_COLORS[n - 1]
     q = [("What did I tell the truth about in this arc?", 5), ("What was hardest, and what helped?", 5), ("What do I want to carry into the next arc?", 5)]
@@ -112,10 +106,22 @@ def arc_review(n, title):
 def notes_page():
     return '<section class="fm revw"><div class="band"></div><div class="kick">Notes</div><h1>Notes</h1><div class="lines5">' + "<div></div>" * 24 + "</div></section>"
 
+def arc_divider(n, title, a, b):
+    row = lib.PATH_ROWS[n - 1]
+    sub = f"The Journal: {title}. Standing: {row[2]}. Coming Home: {lib.HOME_STAGES[n - 1]}."
+    return A.divider(A.PLATES[(n - 1) % 3], f"Arc {n} · Days {a}–{b}", title, sub, f"{b - a + 1} days · {4 * (b - a + 1)} pages", mk(100 + n))
+
 def ref_divider(kicker, title, sub, k):
-    return f"""<section class="opener jopen" style="background:linear-gradient(175deg,#2a8f8a 0%,#7a4c9e 55%,#d6598f 100%)">
-<div class="kicker">{esc(kicker)}</div><h1>{esc(title)}{mk(k)}</h1><div class="orn"></div>
-<div class="sub">{esc(sub)}</div><div class="bm">{BRAND}</div></section>"""
+    return A.divider(A.PLATES[2], kicker, title, sub, "Reference Library", mk(k))
+
+_OPEN = re.compile(r'<section class="opener"><div class="kicker">(?P<k>.*?)</div><h1>(?P<t>.*?)<span class="mk">(?P<m>§H\d+§)</span></h1><div class="orn"></div>(?:<div class="sub">(?P<s>.*?)</div>)?<div class="bm">.*?</div></section>', re.S)
+_cnt = [0]
+def art_openers(html_str):
+    def rep(m):
+        _cnt[0] += 1
+        u = lambda x: _html.unescape(x or "")
+        return A.divider(A.PLATES[_cnt[0] % 3], u(m.group("k")), u(m.group("t")), u(m.group("s")), "Reference Library", f'<span class="mk">{m.group("m")}</span>')
+    return _OPEN.sub(rep, html_str)
 
 # ---------------- front matter ----------------
 HOW = f"""<section class="fm"><div class="band"></div><div class="kick">One book, five voices</div>
@@ -227,18 +233,17 @@ def build():
         parts.append(letters)
         for e, (t_, k_) in zip(j_closing, (("Final Reflection", 50), ("Where I Am Now", 51), ("Next-Step Challenge", 52))):
             parts.append(tag(strip(ser(e)), t_, k_))
-        cert = strip(ser(j_cert)).replace("Ninety Days of Freedom", "The 90-Day Rebuild")
-        cert = cert.replace("Certificate of Completion</div>", f"Certificate of Completion{mk(53)}</div>", 1)
+        cert = A.certificate("The 90-Day Rebuild", mk(53))
         parts.append(cert)
         parts.append(tag(strip(ser(j_res)), "Help, Right Now", 54))
         parts.append(ref_divider("Reference One", "Trauma and the Spiritual Realm", "The Workbook, whole. Come here when a day says Go deeper.", 70))
-        parts.append(remap(wb_main, 1000))
+        parts.append(art_openers(remap(wb_main, 1000)))
         parts.append(ref_divider("Reference Two", "The Whole Story, Volume II", "The master companion, whole: contracts, family patterns, the enemy's playbook, where God was, and the step-by-step unraveling.", 71))
         parts.append(strip(ser(v2_intro)))
-        parts.append(remap(v2_main, 2000))
+        parts.append(art_openers(remap(v2_main, 2000)))
         return "\n".join(parts)
 
-    css = "\n".join([JOURNAL_STYLES, STAND_STYLES, HOME_STYLES, GUTTER_CSS])
+    css = "\n".join([JOURNAL_STYLES, STAND_STYLES, HOME_STYLES, A.CSS, GUTTER_CSS])
     html_path = os.path.join(OUT, "the-90-day-rebuild.html")
     pdf_path = os.path.join(OUT, "the-90-day-rebuild.pdf")
     title = "The 90-Day Rebuild"

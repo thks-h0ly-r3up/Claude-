@@ -2,6 +2,7 @@
 """Binder covers (card stock), spine strips, and a print/binding guide for The 90-Day Rebuild."""
 import os
 import lib
+import art_pages as A
 from lib import BRAND, esc
 
 PDF = os.path.join(lib.OUT, "the-90-day-rebuild.pdf")
@@ -41,11 +42,11 @@ CSS = r"""
 """
 
 def cover_page(vol, rng, arcs, a, b, cls):
-    inner = lib.cover("The 90-Day<br>Rebuild", rng, "You survived. Now we rebuild.", "<br>".join(esc(x) for x in arcs))
-    inner = inner.replace('<div class="subtitle">', f'<div class="subtitle">', 1)
-    inner = inner.replace('<div class="tag">', f'<div class="vol">{esc(vol)}</div><div class="tag">', 1)
-    inner = inner.replace('<section class="cover">', f'<section class="cover {cls}">', 1)
-    return f'<div class="cwrap">{inner}</div>'
+    plate = {"v1": "el1", "v2": "el2", "v3": "el3"}[cls]
+    if cls == "v3":
+        return A.cover(plate, vol, ["The Reference", "Library"], arcs)
+    sub = [rng] + [" · ".join(arcs[i:i + 2]) for i in range(0, len(arcs), 2)]
+    return A.cover(plate, vol, ["The 90-Day", "Rebuild"], sub)
 
 def spines():
     colors = {"v1": "#27857f", "v2": "#7a4c9e", "v3": "#4a6486"}
@@ -61,13 +62,14 @@ def guide():
 <table><thead><tr><th>Binder</th><th>Contents</th><th>Print range</th><th>Sheets</th></tr></thead><tbody>{rows}</tbody></table>
 <h3>Driver settings</h3><ul style="line-height:1.55"><li>Paper: Letter, 24 lb pre-punched 3-hole · Two-sided, binding edge <strong>long edge (left)</strong></li><li>Scale: 100% / Actual size · Color on · Standard quality</li><li>Volume Two begins with the review page for Arc 4 (The Contracts), so you look back before you move on.</li></ul>
 <h3>Covers</h3><ul style="line-height:1.55"><li>Print the three cover pages (pages 1–3 of this file) on <strong>65–80 lb matte white card stock</strong>, one side only, through the rear or bypass tray, with paper type set to heavy / cardstock.</li><li>Slide each into the clear front pocket of its binder. A thin white border around the color is normal on office inkjets.</li></ul>
+<h3>Protect the holes</h3><ul style="line-height:1.55"><li>Put a <strong>self-adhesive hole reinforcement ring</strong> on each punched hole of the pages you will turn most: the arc dividers, the certificate, the Challenge Jar cards, and the first and last page of every arc. A sheet of 500 costs a few dollars.</li><li>Print the dividers and certificate on <strong>65 lb card stock</strong> instead of 24 lb, and punch them with a heavy-duty 3-hole punch.</li><li>Do not overfill: keep each binder under about 80 percent of its ring capacity, and turn pages by the outer edge, not the punched edge.</li><li>For pages you write on heavily, a clear heavy-duty sheet protector with a reinforced edge works too.</li></ul>
 <h3>Binders</h3><ul style="line-height:1.55"><li>Three <strong>1.5 inch</strong> zip binders with a clear front and spine pocket (about 100 sheets per volume, with room for tabs, notes, and the Challenge Jar).</li><li>Tab at each arc divider (the colored pages) in Volumes One and Two, and at each Part and Book in Volume Three.</li></ul></div>"""
 
 def build():
     body = "".join(cover_page(v, r, arcs, a, b, c) for v, r, arcs, a, b, c in VOL) + spines() + guide()
     html_path = os.path.join(lib.OUT, "binder-covers.html")
     pdf_path = os.path.join(lib.OUT, "binder-covers.pdf")
-    open(html_path, "w").write(lib.page("Binder covers", body, CSS))
+    open(html_path, "w").write(lib.page("Binder covers", body, CSS + A.CSS))
     lib.render_pdf(html_path, pdf_path)
     os.remove(html_path)
     print("volumes:", [(v, a, b, (b - a + 1) // 2) for v, r, _, a, b, c in VOL], "->", pdf_path)
