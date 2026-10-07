@@ -363,9 +363,9 @@ def warfare_essay():
 
 def soul_contract_essay():
     p1 = """
-<p>This is the page I most want to get right, because it touches a real loss and a real belief.</p>
+<p>This page touches a real loss and a real belief, so it is written slowly. The next pages say what Scripture does teach about why you are here.</p>
 <h3>What a soul contract is</h3>
-<p>A soul contract is the idea that before birth a soul agrees to a set of lessons, relationships, and sometimes the time and manner of its death. It comes from New Age and reincarnation-based teaching. <b>It is not in the Bible, and it is not in 1 Enoch, Jubilees, Sirach, Wisdom, or Baruch.</b> I will not dress it in a verse. I am saying this plainly because this book is for people at risk, and a frame that sounds biblical and is not can hurt them.</p>
+<p>A soul contract is the idea that before birth a soul agrees to a set of lessons, relationships, and sometimes the time and manner of its death. It comes from New Age and reincarnation-based teaching. <b>It is not in the Bible, and it is not in 1 Enoch, Jubilees, Sirach, Wisdom, or Baruch.</b> This book will not dress it in a verse. It says so plainly because the book is for people at risk, and a frame that sounds biblical and is not can hurt them.</p>
 <h3>What the canon does say, which can sound close</h3>
 <ul>
 <li><b>God knows our days.</b> “In your book were written, every one of them, the days that were formed for me, when as yet there was none of them” (Ps. 139:16, ESV). Job 14:5 says a person’s days are determined. This is about God’s knowledge and care, not a deal the soul made.</li>
@@ -374,7 +374,7 @@ def soul_contract_essay():
 <li><b>God does not author evil.</b> “God cannot be tempted with evil, and he himself tempts no one” (James 1:13, ESV).</li>
 <li><b>God can redeem harm without scripting it.</b> “You meant evil against me, but God meant it for good” (Gen. 50:20, ESV). Joseph’s brothers chose evil. God worked good beyond it.</li>
 <li><b>A short life can be fulfilled.</b> Wisdom of Solomon 4:7–14 says the righteous who die early will be at rest, and 4:13 says that being perfected in a short time, he fulfilled long years. That is a hope about people God is pleased with. It is not a formula, and it does not say a death was arranged.</li></ul>
-<h3>Why I would not build on a “fulfilled soul contract” for an addiction loss</h3>
+<h3>Why this book does not build on a “fulfilled soul contract” for an addiction loss</h3>
 <ol>
 <li>It can imply that an overdose or any death was agreed to or required, which can make God or the soul the author of something that addiction and a broken world caused.</li>
 <li>It can close the door on grief, anger, and “what if” questions that need room.</li>
@@ -384,9 +384,9 @@ def soul_contract_essay():
     p2 = """
 <h3>What you can honestly say instead</h3>
 <div class="warn"><i>“[Name]’s life mattered. Their death is a real loss. I do not know everything about their last days or their soul, and I do not have to. God knew them fully (Ps. 139). The Judge of all the earth does right (Gen. 18:25). Their story moves me, and I am building something so someone else has a place to reach.”</i></div>
-<p>I cannot tell you where any person stands with God, and neither can anyone else. What Scripture gives us to hold is this: He is near to the brokenhearted (Ps. 34:18, ESV), nothing “will be able to separate us from the love of God in Christ Jesus our Lord” (Rom. 8:39, ESV), and He is the just and merciful judge. The canon’s hope in Wisdom 3:1–3 is that the souls of the righteous are in God’s hand. It is a hope offered, not a verdict about one person.</p>
+<p>No one can tell you where any person stands with God. What Scripture gives us to hold is this: He is near to the brokenhearted (Ps. 34:18, ESV), nothing “will be able to separate us from the love of God in Christ Jesus our Lord” (Rom. 8:39, ESV), and He is the just and merciful judge. The canon’s hope in Wisdom 3:1–3 is that the souls of the righteous are in God’s hand. It is a hope offered, not a verdict about one person.</p>
 <h3>If you carry a belief about someone you lost</h3>
-<p>If you privately sense purpose in how a loved one’s life has shaped yours, that is your testimony and your grief, and it is yours to keep. I would label it for what it is, a personal belief and not a teaching of Scripture. If this book is ever shared with others, I would leave that belief out of the shared pages. Grief resources, if you want them: GRASP (Grief Recovery After a Substance Passing, grasphelp.org), GriefShare (griefshare.org), and 988 any time. Confirm current details.</p>
+<p>If you privately sense purpose in how a loved one’s life has shaped yours, that is your testimony and your grief, and it is yours to keep. It helps to label it for what it is, a personal belief and not a teaching of Scripture, and to leave it out of any pages you share with others. Grief resources, if you want them: GRASP (Grief Recovery After a Substance Passing, grasphelp.org), GriefShare (griefshare.org), and 988 any time. Confirm current details.</p>
 <div class="box"><div class="lab p">My own page (private)</div>
 <div class="small"><b>What I know about the person I lost.</b></div><div class="ruled" style="height:.54in"></div>
 <div class="small"><b>What I do not know, and may never.</b></div><div class="ruled" style="height:.54in"></div>
@@ -394,6 +394,52 @@ def soul_contract_essay():
 <div class="small"><b>What I am choosing to do with what their life taught me.</b></div><div class="ruled" style="height:.54in"></div></div>"""
     return [essay("Soul Contracts, Heavenly Tablets, and Grief", p1, "Companion essay"),
             essay("Soul Contracts, Heavenly Tablets, and Grief (continued)", p2, "Companion essay")]
+
+
+
+def why_here():
+    p1 = """
+<p>You asked how to wake up to why you are here. Scripture has a real answer, and it is bigger and kinder than a contract. Here is what it says, what it does not say, and how to tell the difference.</p>
+<h3>What Scripture says about purpose</h3>
+<ul>
+<li><b>You are loved before you are useful.</b> Jesus heard “This is my beloved Son” before He did any ministry (Matt. 3:17). Start there.</li>
+<li><b>You were made on purpose.</b> “For we are his workmanship, created in Christ Jesus for good works, which God prepared beforehand, that we should walk in them” (Eph. 2:10, ESV).</li>
+<li><b>God finishes what He starts.</b> “I cry out to God Most High, to God who fulfills his purpose for me” (Ps. 57:2, ESV). “The LORD will fulfill his purpose for me; your steadfast love, O LORD, endures forever” (Ps. 138:8, ESV).</li>
+<li><b>Pain can become comfort for others.</b> God “comforts us in all our affliction, so that we may be able to comfort those who are in any affliction, with the comfort with which we ourselves are comforted by God” (2 Cor. 1:3–4, ESV). That is what reaching back is.</li>
+<li><b>Place and time are not random to God.</b> He “determined allotted periods and the boundaries of their dwelling place, that they should seek God” (Acts 17:26–27, ESV). “God settles the solitary in a home” (Ps. 68:6, ESV).</li>
+<li><b>God can use what others meant for harm.</b> “You meant evil against me, but God meant it for good” (Gen. 50:20, ESV).</li></ul>
+<h3>Providence is not a contract</h3>
+<p>A contract says you agreed to it beforehand. Providence says God works with what actually happens, including adoptions, losses, and the strange coincidences that make a person say, “What are the odds?” Scripture lets you receive those details as meaningful, as a gift and a sign of care, without claiming you or anyone else signed for them. Where a family came together in a way that seems too specific to be chance, you can thank God for it and not need it explained.</p>
+<h3>On a goodbye you cannot fully read</h3>
+<p>A hug that felt like no other is love, and love is real whether or not the person knew it was the last. You may never know what was in someone’s heart that day, and you do not have to settle it. You do not owe anyone a performance to honor them. Love honors them. Guilt does not.</p>
+<div class="warn"><b>If the night is the hardest time:</b> a pain that comes at night can be grief, trauma, or sleep. Tell a doctor or counselor about it, and keep 988 (call or text) in reach. Wanting your life to mean something is good. Pressure to prove it is not from God.</div>"""
+    p2 = """
+<h3>Seven steps to wake up to your calling</h3>
+<ol>
+<li><b>Start with who, not what.</b> You are beloved first. Say it out loud once today.</li>
+<li><b>Tell the truth about the pain.</b> Write what hurts at night, plainly, without making it prettier. Get care for sleep and safety.</li>
+<li><b>Take an inventory.</b> Four lists: what I have survived, what I am good at, what breaks my heart, and what people already thank me for. The overlap is a clue, not a verdict.</li>
+<li><b>Run it through the six tests</b> on the “How to Read This Book” page: Christ, Scripture, fruit, freedom, cost, humility.</li>
+<li><b>Take one small, real step this week.</b> “One who is faithful in a very little is also faithful in much” (Luke 16:10, ESV). A call, a meeting, one page of writing, one act of help.</li>
+<li><b>Ask wise, safe people.</b> “Without counsel plans fail, but with many advisers they succeed” (Prov. 15:22, ESV). Choose people who respect your no and keep your confidence.</li>
+<li><b>Hold it loosely and keep walking.</b> Moses waited forty years in the wilderness. A calling grows and gets revised. Certainty is not required for obedience.</li></ol>
+<h3>Watch for these</h3>
+<ul><li>Anyone who sells you your purpose, or says a “reading” will reveal it.</li>
+<li>Any voice that says you must do this or something bad will happen. “God gave us a spirit not of fear but of power and love and self-control” (2 Tim. 1:7, ESV).</li>
+<li>A calling that requires secrecy, a leader’s approval for everything, or dropping treatment.</li>
+<li>The idea that you have to complete someone else’s story. Your purpose is yours.</li></ul>
+<p>Esther was told, “Who knows whether you have not come to the kingdom for such a time as this?” (Esth. 4:14, ESV). Notice it is a question. The invitation is real. The certainty is not promised. Take the next faithful step.</p>"""
+    p3 = """
+<p>Private pages. Write in pencil. Nothing here has to be shared.</p>
+<div class="box"><div class="lab">My story and the signs I notice</div><div class="small">The coincidences, family details, and moments that feel meaningful to me:</div><div class="ruled" style="height:1.5in"></div></div>
+<div class="box" style="margin-top:8px"><div class="lab p">My personal belief (labeled as such)</div><div class="small">What I believe about soul contracts or destiny, in my own words. This is my belief and my testimony, not a teaching of Scripture:</div><div class="ruled" style="height:1.3in"></div></div>
+<div class="box" style="margin-top:8px"><div class="lab k">The four lists</div>
+<table class="rt"><tr><th>What I have survived</th><th>What I am good at</th></tr><tr><td style="height:.9in"></td><td></td></tr>
+<tr><th>What breaks my heart</th><th>What people already thank me for</th></tr><tr><td style="height:.9in"></td><td></td></tr></table></div>
+<div class="box" style="margin-top:8px"><div class="lab">What I think I am here for, in pencil, and my one small step this week</div><div class="ruled" style="height:1in"></div></div>"""
+    return [essay("Why Am I Here? Calling, Not Contract", p1, "Companion essay"),
+            essay("Waking Up to Your Calling", p2, "Companion essay"),
+            essay("My Private Pages", p3, "Companion essay")]
 
 
 def sky_calendar():
@@ -447,7 +493,8 @@ def toc_page(toc):
     parts = ['<div class="grp">Front matter</div>']
     for lab, key in [("About this companion", "about"), ("How to read this book", "read"), ("Reading the sky chips and the moon", "read2"), ("The sky for these 91 days", "sky"),
                      ("Trauma in the canon", "trauma"), ("Addiction and bondage in the canon", "addiction"),
-                     ("Spiritual warfare, carefully", "warfare"), ("Soul contracts, heavenly tablets, and grief", "soul")]:
+                     ("Spiritual warfare, carefully", "warfare"), ("Soul contracts, heavenly tablets, and grief", "soul"),
+                     ("Why am I here? Calling, not contract", "why"), ("Waking up to your calling", "why2"), ("My private pages", "why3")]:
         parts.append(row(lab, toc[key]))
     parts.append('<div class="grp">Day-by-day deep dive (three days per page)</div>')
     for n in range(1, 92, 3):
@@ -475,6 +522,10 @@ def assemble():
     soul = soul_contract_essay()
     pages.append(("soul", soul[0]))
     pages.append(("soul2", soul[1]))
+    wh = why_here()
+    pages.append(("why", wh[0]))
+    pages.append(("why2", wh[1]))
+    pages.append(("why3", wh[2]))
     pages += day_pages()
     pages.append(("close", closing()))
     toc = {k: i + 1 for i, (k, _) in enumerate(pages)}
