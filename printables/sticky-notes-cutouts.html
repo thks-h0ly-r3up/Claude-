@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>7HE H0LY R3UP — Printable Cut-Out Sticky Notes (6 Fronts + 6 Backs)</title>
+<meta name="description" content="Six different affirmation + Scripture sticky-note fronts and six matching backs with cut lines. Print double-sided, flip on the long edge." />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Libre+Franklin:wght@400;500;600;700;800&display=swap');
+  @page { size: 8.5in 11in; margin: 0; }
+  :root{
+    --pink:#d6598f; --purple:#7a4c9e; --turquoise:#3fb6b0; --denim:#4a6486;
+    --gold:#e8b04a; --peach:#f6b98a; --cream:#fdfaf5; --ink:#2b2430;
+  }
+  *{box-sizing:border-box;}
+  .brand{font-family:'Inter','Libre Franklin',Arial,sans-serif;font-feature-settings:'zero' 1,'ss01' 0;font-variant-numeric:slashed-zero;}
+  html,body{margin:0;padding:0;background:#e9e2ee;font-family:'Libre Franklin',Arial,sans-serif;color:var(--ink);
+    -webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .sheet{width:8.5in;height:11in;position:relative;background:#fff;page-break-after:always;overflow:hidden;margin:0 auto;}
+  .sheet:last-child{page-break-after:auto;}
+  /* 2 x 3 grid of 3.5in x 3in notes, centered: side margin .75in, top/bottom 1in */
+  .grid{position:absolute;left:.75in;top:1in;width:7in;height:9in;display:grid;
+    grid-template-columns:3.5in 3.5in;grid-template-rows:repeat(3,3in);}
+  .note{position:relative;width:3.5in;height:3in;overflow:hidden;}
+
+  /* cut lines — dashed, run out into the margin as guides */
+  .cut{position:absolute;border-color:#6b6475;border-style:dashed;border-width:0;z-index:5;}
+  .cv{top:.55in;height:9.9in;border-left-width:1px;}
+  .ch{left:.3in;width:7.9in;border-top-width:1px;}
+  .scissor{position:absolute;font-size:11px;color:#6b6475;z-index:6;}
+  .legend{position:absolute;bottom:.28in;left:0;right:0;text-align:center;font-size:8.5px;letter-spacing:1px;
+    color:#6b6475;text-transform:uppercase;font-weight:600;}
+  .legend b{color:var(--purple);}
+
+  /* ---------- FRONTS ---------- */
+  .front{background:var(--cream);}
+  .front .leather{position:absolute;inset:.1in;border:3px solid var(--turquoise);border-radius:12px;}
+  .front .stitch{position:absolute;inset:.17in;border:1.5px dashed var(--gold);border-radius:8px;}
+  .front .inner{position:absolute;inset:.24in .28in .2in .28in;display:flex;flex-direction:column;align-items:center;text-align:center;}
+  .front .icon{height:.34in;margin-top:.02in;}
+  .front .ref{font-size:9px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--purple);margin-top:.04in;}
+  .front .verse{font-family:'Libre Franklin',Georgia,serif;font-size:12px;line-height:1.45;color:#423a4d;font-style:italic;margin:.07in 0 0;}
+  .front .aff{font-family:'Caveat','Comic Sans MS',cursive;font-weight:700;font-size:25px;line-height:1.02;color:var(--pink);
+    margin-top:auto;margin-bottom:.03in;}
+  .front .brand{font-size:7.5px;font-weight:800;letter-spacing:2px;color:var(--denim);}
+  .front .divider{width:.9in;height:2px;background:linear-gradient(90deg,var(--pink),var(--purple),var(--turquoise));border-radius:2px;margin:.06in 0;}
+
+  /* ---------- BACKS ---------- */
+  .back{color:#fff;}
+  .back .frame{position:absolute;inset:.1in;border:2px solid rgba(253,250,245,.85);border-radius:12px;}
+  .back .inner{position:absolute;inset:.22in .26in .2in .26in;display:flex;flex-direction:column;align-items:center;text-align:center;}
+  .back .big{height:.78in;margin-top:.03in;}
+  .back .brand{font-size:13px;font-weight:800;letter-spacing:3px;margin-top:.08in;text-shadow:0 1px 2px rgba(43,36,48,.35);}
+  .back .tag{font-family:'Caveat','Comic Sans MS',cursive;font-weight:700;font-size:19px;line-height:1;margin-top:.02in;
+    text-shadow:0 1px 2px rgba(43,36,48,.35);}
+  .back .step{margin-top:auto;width:100%;background:var(--cream);color:var(--ink);border-radius:10px;padding:.07in .12in .08in;}
+  .back .step .lbl{font-size:7.5px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--purple);display:block;margin-bottom:2px;}
+  .back .step .txt{font-size:9.4px;line-height:1.35;font-weight:500;}
+  .back .step .alt{font-size:8px;line-height:1.3;color:var(--denim);font-style:italic;display:block;margin-top:2px;}
+  .g1{background:linear-gradient(160deg,#d6598f 0%,#7a4c9e 100%);}
+  .g2{background:linear-gradient(200deg,#7a4c9e 0%,#d6598f 60%,#f6b98a 100%);}
+  .g3{background:linear-gradient(150deg,#f6b98a 0%,#d6598f 55%,#7a4c9e 100%);}
+  .g4{background:linear-gradient(190deg,#e8b04a 0%,#d6598f 55%,#7a4c9e 100%);}
+  .g5{background:linear-gradient(170deg,#d6598f 0%,#7a4c9e 70%,#4a6486 100%);}
+  .g6{background:linear-gradient(210deg,#3fb6b0 -10%,#7a4c9e 55%,#d6598f 100%);}
+
+  @media screen{ .sheet{box-shadow:0 4px 18px rgba(0,0,0,.18);margin:.25in auto;} }
+  @media print{ html,body{background:#fff;} .sheet{margin:0;box-shadow:none;} }
+</style>
+</head>
+<body>
+
+<!-- icon library (reused via <use>) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="cross" viewBox="0 0 40 40"><rect x="17" y="3" width="6" height="34" rx="2"/><rect x="8" y="12" width="24" height="6" rx="2"/></symbol>
+    <symbol id="anchor" viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="7" r="3.6"/><path d="M20 10.6V34M12 17h16M6 25c1 6 7 10 14 10s13-4 14-10M6 25l-2.5 3M34 25l2.5 3"/></g></symbol>
+    <symbol id="sun" viewBox="0 0 40 40"><g fill="currentColor"><path d="M6 28a14 14 0 0 1 28 0z"/></g><g stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M20 4v6M7 9l4 4M33 9l-4 4M2 20h6M32 20h6"/><path d="M3 33h34"/></g></symbol>
+    <symbol id="chain" viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"><path d="M16 12l-3-3a6 6 0 0 0-8.5 8.5l4 4"/><path d="M24 28l3 3a6 6 0 0 0 8.5-8.5l-4-4"/><path d="M13 9l-2-5M9 12l-5-2M27 31l2 5M31 28l5 2" stroke-width="2.6"/></g></symbol>
+    <symbol id="jar" viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><rect x="11" y="4" width="18" height="6" rx="1.5"/><path d="M12 10c-4 3-5 6-5 10v12a4 4 0 0 0 4 4h18a4 4 0 0 0 4-4V20c0-4-1-7-5-10"/><path d="M13 22h14M13 29h14" opacity=".55"/></g></symbol>
+    <symbol id="boards" viewBox="0 0 40 40"><g fill="currentColor"><rect x="4" y="22" width="32" height="6" rx="1.5"/><rect x="4" y="30" width="32" height="6" rx="1.5"/><rect x="8" y="12" width="24" height="6" rx="1.5"/><rect x="14" y="3" width="12" height="6" rx="1.5"/></g></symbol>
+  </defs>
+</svg>
+
+<!-- ===================== PAGE 1 : FRONTS ===================== -->
+<div class="sheet" id="fronts">
+  <div class="grid">
+
+    <!-- F1 -->
+    <div class="note front">
+      <div class="leather"></div><div class="stitch"></div>
+      <div class="inner">
+        <svg class="icon" style="color:var(--turquoise);fill:var(--turquoise)"><use href="#cross"/></svg>
+        <div class="ref">Psalm 34:18 · LXX 33:18</div>
+        <p class="verse">“The LORD is nigh unto them that are of a broken heart; and saveth such as be of a contrite spirit.”</p>
+        <div class="divider"></div>
+        <div class="aff">I’m still here.<br>And that is mercy.</div>
+        <div class="brand">7HE H0LY R3UP</div>
+      </div>
+    </div>
+
+    <!-- F2 -->
+    <div class="note front">
+      <div class="leather"></div><div class="stitch"></div>
+      <div class="inner">
+        <svg class="icon" style="color:var(--denim)"><use href="#anchor"/></svg>
+        <div class="ref">Isaiah 41:10</div>
+        <p class="verse">“Fear thou not; for I am with thee: be not dismayed; for I am thy God: I will strengthen thee; yea, I will help thee.”</p>
+        <div class="divider"></div>
+        <div class="aff">I don’t have to be fearless<br>to keep walking.</div>
+        <div class="brand">7HE H0LY R3UP</div>
+      </div>
+    </div>
+
+    <!-- F3 -->
+    <div class="note front">
+      <div class="leather"></div><div class="stitch"></div>
+      <div class="inner">
+        <svg class="icon" style="color:var(--gold)"><use href="#sun"/></svg>
+        <div class="ref">Psalm 30:5 · LXX 29:5</div>
+        <p class="verse">“Weeping may endure for a night, but joy cometh in the morning.”</p>
+        <div class="divider"></div>
+        <div class="aff">My tears aren’t wasted.<br>Thanks and grief can<br>sit at the same table.</div>
+        <div class="brand">7HE H0LY R3UP</div>
+      </div>
+    </div>
+
+    <!-- F4 -->
+    <div class="note front">
+      <div class="leather"></div><div class="stitch"></div>
+      <div class="inner">
+        <svg class="icon" style="color:var(--purple)"><use href="#jar"/></svg>
+        <div class="ref">Joel 2:25</div>
+        <p class="verse">“And I will restore to you the years that the locust hath eaten.”</p>
+        <div class="divider"></div>
+        <div class="aff">I’m thankful for what’s been restored.<br>I’m allowed to grieve the rest.</div>
+        <div class="brand">7HE H0LY R3UP</div>
+      </div>
+    </div>
+
+    <!-- F5 -->
+    <div class="note front">
+      <div class="leather"></div><div class="stitch"></div>
+      <div class="inner">
+        <svg class="icon" style="color:var(--pink)"><use href="#chain"/></svg>
+        <div class="ref">Psalm 107:14 · LXX 106:14</div>
+        <p class="verse">“He brought them out of darkness and the shadow of death, and brake their bands in sunder.”</p>
+        <div class="divider"></div>
+        <div class="aff">Those chains are broken.<br>I can walk at my own pace.</div>
+        <div class="brand">7HE H0LY R3UP</div>
+      </div>
+    </div>
+
+    <!-- F6 -->
+    <div class="note front">
+      <div class="leather"></div><div class="stitch"></div>
+      <div class="inner">
+        <svg class="icon" style="color:var(--turquoise)"><use href="#boards"/></svg>
+        <div class="ref">Nehemiah 2:18</div>
+        <p class="verse">“Let us rise up and build. So they strengthened their hands for this good work.”</p>
+        <div class="divider"></div>
+        <div class="aff">One board at a time.<br>Rest is part of the work.</div>
+        <div class="brand">7HE H0LY R3UP</div>
+      </div>
+    </div>
+
+  </div>
+  <!-- cut lines -->
+  <div class="cut cv" style="left:.75in"></div><div class="cut cv" style="left:4.25in"></div><div class="cut cv" style="left:7.75in"></div>
+  <div class="cut ch" style="top:1in"></div><div class="cut ch" style="top:4in"></div><div class="cut ch" style="top:7in"></div><div class="cut ch" style="top:10in"></div>
+  <div class="legend"><b>FRONTS</b> · Cut on the dashed lines · Print double-sided, flip on LONG edge · Print at 100% / “Actual size”</div>
+</div>
+
+<!-- ===================== PAGE 2 : BACKS (columns mirrored for duplex) ===================== -->
+<div class="sheet" id="backs">
+  <div class="grid">
+
+    <!-- row 1 : mirrored → B2 | B1 -->
+    <div class="note back g2">
+      <div class="frame"></div>
+      <div class="inner">
+        <svg class="big" style="color:var(--cream)"><use href="#anchor"/></svg>
+        <div class="brand">7HE H0LY R3UP</div>
+        <div class="tag">You survived. Now we rebuild.</div>
+        <div class="step"><span class="lbl">Soft step · 10 min or less</span>
+          <span class="txt">Think of one thing God already carried you through. Write it on the back of this note — or just whisper it.</span>
+          <span class="alt">Low energy? Thinking it counts.</span></div>
+      </div>
+    </div>
+
+    <div class="note back g1">
+      <div class="frame"></div>
+      <div class="inner">
+        <svg class="big" style="color:var(--cream);fill:var(--cream)"><use href="#cross"/></svg>
+        <div class="brand">7HE H0LY R3UP</div>
+        <div class="tag">You survived. Now we rebuild.</div>
+        <div class="step"><span class="lbl">Soft step · 1 minute</span>
+          <span class="txt">Hand on your chest. One slow breath. Say, “Thank You, God.” Eyes open or closed — your call.</span>
+          <span class="alt">Not feeling it? Pause here. That’s allowed.</span></div>
+      </div>
+    </div>
+
+    <!-- row 2 : mirrored → B4 | B3 -->
+    <div class="note back g4">
+      <div class="frame"></div>
+      <div class="inner">
+        <svg class="big" style="color:var(--cream)"><use href="#jar"/></svg>
+        <div class="brand">7HE H0LY R3UP</div>
+        <div class="tag">You survived. Now we rebuild.</div>
+        <div class="step"><span class="lbl">Soft step · 5 minutes</span>
+          <span class="txt">Write one thing that’s been rebuilt since your hardest season. Small counts. Drop it in a jar if you like.</span>
+          <span class="alt">Low energy? Say it out loud once.</span></div>
+      </div>
+    </div>
+
+    <div class="note back g3">
+      <div class="frame"></div>
+      <div class="inner">
+        <svg class="big" style="color:var(--cream)"><use href="#sun"/></svg>
+        <div class="brand">7HE H0LY R3UP</div>
+        <div class="tag">You survived. Now we rebuild.</div>
+        <div class="step"><span class="lbl">Soft step · 2 minutes</span>
+          <span class="txt">Drink a glass of water. Name one thing you’re grateful for — even if you’re tired or sad too.</span>
+          <span class="alt">Both can be true. No shame in either.</span></div>
+      </div>
+    </div>
+
+    <!-- row 3 : mirrored → B6 | B5 -->
+    <div class="note back g6">
+      <div class="frame"></div>
+      <div class="inner">
+        <svg class="big" style="color:var(--cream)"><use href="#boards"/></svg>
+        <div class="brand">7HE H0LY R3UP</div>
+        <div class="tag">You survived. Now we rebuild.</div>
+        <div class="step"><span class="lbl">Soft step · 10 minutes</span>
+          <span class="txt">Pick ONE small task. Set a timer. When it rings, stop — even mid-sentence. Rest is part of rebuilding.</span>
+          <span class="alt">Low energy? Do 3 minutes instead.</span></div>
+      </div>
+    </div>
+
+    <div class="note back g5">
+      <div class="frame"></div>
+      <div class="inner">
+        <svg class="big" style="color:var(--cream)"><use href="#chain"/></svg>
+        <div class="brand">7HE H0LY R3UP</div>
+        <div class="tag">You survived. Now we rebuild.</div>
+        <div class="step"><span class="lbl">Soft step · 1 minute</span>
+          <span class="txt">Unclench your jaw. Drop your shoulders. Stand and stretch, or wiggle your toes where you sit.</span>
+          <span class="alt">Skip it if your body says no.</span></div>
+      </div>
+    </div>
+
+  </div>
+  <div class="cut cv" style="left:.75in"></div><div class="cut cv" style="left:4.25in"></div><div class="cut cv" style="left:7.75in"></div>
+  <div class="cut ch" style="top:1in"></div><div class="cut ch" style="top:4in"></div><div class="cut ch" style="top:7in"></div><div class="cut ch" style="top:10in"></div>
+  <div class="legend"><b>BACKS</b> · Columns are mirrored so each back lands behind its front when flipped on the long edge</div>
+</div>
+
+</body>
+</html>
