@@ -290,7 +290,7 @@ function dayPage(t) {
   return `<section class="page">${brandHead('Daily Planner', { text: t.motif, pat: !!t.pattern, icons: iconRow(t.icons), rip: t.rip })}
 <div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">SATURDAY, OCTOBER 24, 2026</div><div class="field">WEATHER / MOOD: </div></div>
 <div class="grid" style="grid-template-columns:1.1fr 1fr">
-<div class="sec"><h2>Schedule</h2><div class="in" style="padding:2px 4px">${hrs.map((h) => `<div class="hr2"><b>${h}</b></div>`).join('')}</div></div>
+<div class="sec"><h2>Today <em>write the time, then what</em></h2><div class="in" style="padding:3px 4px 4px"><table><tr><th style="width:24%">TIME</th><th>WHAT / WHERE / WHO</th></tr>${Array.from({ length: 15 }, () => '<tr><td style="height:46px"></td><td></td></tr>').join('')}</table></div></div>
 <div class="col">
   <div class="sec"><h2>Top 3 Today</h2><div class="in">${[1,2,3].map((n)=>`<div class="row">${box('')}<span class="fill" style="min-width:150px"></span></div>`).join('')}</div></div>
   <div class="sec"><h2>To Do <em>one at a time</em></h2><div class="in">${Array.from({length:6},()=>`<div class="row">${box('')}<span class="fill" style="min-width:150px"></span></div>`).join('')}</div></div>
@@ -344,9 +344,8 @@ function weekly() {
 <table class="wk"><tr>${cell(days[0])}${cell(days[1])}${cell(days[2])}${cell(days[3])}</tr><tr>${cell(days[4])}${cell(days[5])}${cell(days[6])}${cell(days[7])}</tr></table></section>`;
 }
 function daily() {
-  const hrs = ['5', '6', '7', '8', '9', '10', '11', '12', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
   return `<section class="pg por"><div class="ttl">DATE <span></span> DAY <span class="s"></span></div>
-<div class="dly"><div>${hrs.map((h) => `<div class="hr"><b>${h}:00</b></div>`).join('')}</div>
+<div class="dly"><div><div class="hr" style="height:24px;background:#eee;font-weight:700"><b style="width:90px">TIME</b><span style="padding:4px 6px">WHAT</span></div>${Array.from({ length: 15 }, () => '<div class="hr" style="height:52px"><b style="width:90px"></b></div>').join('')}</div>
 <div><div class="box" style="height:34%">TO DO<i></i></div><div class="box" style="height:34%">NOTES<i></i></div><div class="box" style="height:22%">APPOINTMENTS / CALLS<i></i></div></div></div></section>`;
 }
 
