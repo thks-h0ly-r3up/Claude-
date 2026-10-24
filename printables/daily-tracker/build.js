@@ -244,6 +244,71 @@ ${Array.from({ length: 17 }, () => '<tr><td style="height:25px"></td><td></td><t
 </section>`;
 }
 
+
+// ---------- calendar set pages (monthly / weekly / daily planner) ----------
+const setCss = `
+.mt{ width:100%; border-collapse:collapse; table-layout:fixed; margin-top:6px; }
+.mt th{ background:var(--a); color:#fff; font-size:9px; letter-spacing:1.5px; padding:4px; border:1px solid var(--a); }
+.mt td{ border:1.2px solid var(--line); height:92px; vertical-align:top; padding:3px 5px; background:#fff; }
+.mt td b{ font-size:13px; color:var(--b); } .mt td.o{ background:var(--soft); opacity:.55; } .mt td.o b{ color:#999; font-weight:400; }
+.mt td.today{ outline:2.5px solid var(--b); outline-offset:-2.5px; }
+.mtitle{ font-family:'Caveat','Brush Script MT',cursive; font-size:40px; line-height:1; color:var(--b); margin:8px 0 0; letter-spacing:1px; }
+.wkd{ border:1.3px solid var(--line); border-radius:7px; background:#fff; overflow:hidden; margin-bottom:5px; }
+.wkd>h3{ margin:0; background:var(--a); color:#fff; font-size:10px; letter-spacing:1.4px; padding:2.5px 8px; display:flex; justify-content:space-between; font-weight:800; }
+.wkd>h3 span{ font-weight:600; letter-spacing:.3px; font-size:8px; }
+.wkd .in{ padding:3px 8px 4px; }
+.hr2{ display:flex; border-bottom:1px solid var(--line); height:45px; font-size:9px; color:var(--b); font-weight:700; } .hr2 b{ width:44px; border-right:1px solid var(--line); padding:3px 0 0 3px; }
+`;
+const MONTH_START = 4; // Oct 1, 2026 is a Thursday (Sun=0)
+function monthPage(t) {
+  const dow = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+  const cells = [];
+  for (let i = 0; i < 35; i++) {
+    const d = i - MONTH_START + 1;
+    if (d < 1) cells.push(`<td class="o"><b>${30 + d}</b></td>`);
+    else if (d > 31) cells.push(`<td class="o"><b>${d - 31}</b></td>`);
+    else cells.push(`<td class="${d === 24 ? 'today' : ''}"><b>${d}</b></td>`);
+  }
+  const trs = Array.from({ length: 5 }, (_, r) => `<tr>${cells.slice(r * 7, r * 7 + 7).join('')}</tr>`).join('');
+  return `<section class="page">${brandHead('Monthly Calendar', { text: t.motif, pat: !!t.pattern, icons: iconRow(t.icons), rip: t.rip })}
+<div class="mtitle">October 2026</div>
+<table class="mt"><tr>${dow.map((d) => `<th>${d}</th>`).join('')}</tr>${trs}</table>
+<div class="grid" style="margin-top:6px">
+  <div class="sec"><h2>Month Focus</h2><div class="in">${lines(3, 19)}</div></div>
+  <div class="sec"><h2>Appointments · Prayer Requests</h2><div class="in">${lines(3, 19)}</div></div>
+</div>
+<div class="sec" style="margin-top:6px"><h2>My Categories <em>mark days with the letter</em></h2><div class="in"><div class="key">${[['B','Body'],['M','Mind'],['S','Sleep'],['F','Food'],['G','God/Prayer'],['P','People'],['X','Safety'],['$','Money/Legal'],['H','Home/Big Boy'],['W','Win']].map(([k,v])=>`<div><b>${k}</b>${v}</div>`).join('')}</div></div></div>
+<div class="foot"><b>October 2026.</b> You survived. Now we rebuild. · Today is circled.</div></section>`;
+}
+function weekPage(t) {
+  const names = ['SATURDAY', 'SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY'];
+  const dates = ['Oct 24', 'Oct 25', 'Oct 26', 'Oct 27', 'Oct 28', 'Oct 29', 'Oct 30'];
+  const days = names.map((n, i) => `<div class="wkd"><h3>${n} <span>${dates[i]}, 2026</span></h3><div class="in">
+    <div class="row" style="margin:1px 0 2px">${box('Prayed')}${box('Ate')}${box('Water')}${box('Slept')}${box('Meds')}${box('Ears ringing')}${box('Big Boy walked')}</div>
+    ${lines(3, 18)}</div></div>`).join('');
+  return `<section class="page">${brandHead('Weekly Plan', { text: t.motif, pat: !!t.pattern, icons: iconRow(t.icons), rip: t.rip })}
+<div class="datebar" style="grid-template-columns:1fr 1fr"><div class="field">WEEK OF: Saturday, Oct 24 – Friday, Oct 30, 2026</div><div class="field">THIS WEEK'S FOCUS: </div></div>
+${days}
+<div class="grid"><div class="sec"><h2>Wins · Mercy I Saw</h2><div class="in">${lines(2, 17)}</div></div><div class="sec"><h2>Next Week's One Thing</h2><div class="in">${lines(2, 17)}</div></div></div>
+<div class="foot"><b>Weekly.</b> Share only what feels safe. · We survived. Now let's go back — with truth and a hand out.</div></section>`;
+}
+function dayPage(t) {
+  const hrs = ['6 AM','7','8','9','10','11','12 PM','1','2','3','4','5','6','7','8','9'];
+  return `<section class="page">${brandHead('Daily Planner', { text: t.motif, pat: !!t.pattern, icons: iconRow(t.icons), rip: t.rip })}
+<div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">SATURDAY, OCTOBER 24, 2026</div><div class="field">WEATHER / MOOD: </div></div>
+<div class="grid" style="grid-template-columns:1.1fr 1fr">
+<div class="sec"><h2>Schedule</h2><div class="in" style="padding:2px 4px">${hrs.map((h) => `<div class="hr2"><b>${h}</b></div>`).join('')}</div></div>
+<div class="col">
+  <div class="sec"><h2>Top 3 Today</h2><div class="in">${[1,2,3].map((n)=>`<div class="row">${box('')}<span class="fill" style="min-width:150px"></span></div>`).join('')}</div></div>
+  <div class="sec"><h2>To Do <em>one at a time</em></h2><div class="in">${Array.from({length:6},()=>`<div class="row">${box('')}<span class="fill" style="min-width:150px"></span></div>`).join('')}</div></div>
+  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in">${lines(5, 19)}</div></div>
+  <div class="sec"><h2>Body Check <em>circle / check</em></h2><div class="in"><div class="row">${box('Ate')}${box('Water')}${box('Meds')}${box('Slept')}</div><div class="row">${box('Ears ringing')}${box('Headache')}${box('Dizzy')}</div><div class="row"><span class="lab">Big Boy:</span>${box('Fed')}${box('Walked')}</div></div></div>
+  <div class="sec"><h2>Appointments / Calls</h2><div class="in">${lines(2, 19)}</div></div>
+  <div class="sec"><h2>Thankful For</h2><div class="in">${lines(2, 19)}</div></div>
+</div></div>
+<div class="foot"><b>Daily.</b> The detailed log is on the next two pages. Even one box counts.</div></section>`;
+}
+
 const docWrap = (title, css, body) => `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>${title}</title>
 <meta name="description" content="Printable daily tracker — 7HE H0LY R3UP.">
 <style>${css}</style></head><body>${body}</body></html>`;
@@ -302,9 +367,9 @@ function daily() {
   };
 
   for (const t of THEMES) {
-    const body = page1(t) + page2(t);
-    const html = docWrap(`7HE H0LY R3UP — Daily Tracker — ${t.name}`, baseCss(t), body);
-    const hp = path.join(OUT, `daily-tracker-${t.id}.html`);
+    const body = monthPage(t) + weekPage(t) + dayPage(t) + page1(t) + page2(t);
+    const html = docWrap(`7HE H0LY R3UP — Calendar Set — ${t.name}`, baseCss(t) + setCss, body);
+    const hp = path.join(OUT, `set-${t.id}.html`);
     fs.writeFileSync(hp, html);
     await render(hp, hp.replace('.html', '.pdf'));
     console.log('built', t.id);
