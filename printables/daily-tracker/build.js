@@ -21,22 +21,41 @@ const chain = encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width=
 <rect x='4' y='4' width='22' height='12' rx='6'/><rect x='20' y='4' width='22' height='12' rx='6' transform='translate(0 0)'/>
 <rect x='60' y='4' width='22' height='12' rx='6'/><rect x='76' y='4' width='22' height='12' rx='6'/></g></svg>`);
 
+// ---------- faith-cowgirl icons (inline SVG, drawn in currentColor) ----------
+const svg = (inner) => `<svg viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">${inner}</svg>`;
+const ICONS = {
+  cross: svg('<path d="M16 3v26M8 11h16"/>'),
+  anchor: svg('<circle cx="16" cy="7" r="3"/><path d="M16 10v18M10 15h12M5 20c1 6 6 8 11 8s10-2 11-8"/>'),
+  jar: svg('<rect x="9" y="3" width="14" height="5" rx="1.5"/><path d="M10 8c-3 3-3 5-3 9v9a3 3 0 003 3h12a3 3 0 003-3v-9c0-4 0-6-3-9"/><path d="M12 15h8M12 20h8"/>'),
+  chain: svg('<rect x="2" y="11" width="11" height="10" rx="5"/><rect x="19" y="11" width="11" height="10" rx="5"/><path d="M14 8l-2-4M18 24l2 4M15 16h2" />'),
+  hat: svg('<path d="M3 21c4 2 22 2 26 0M8 20c0-6 1-12 5-12 1 0 2 2 3 2s2-2 3-2c4 0 5 6 5 12"/>'),
+  boot: svg('<path d="M9 4h8v14l9 4v6H8z"/><path d="M9 10h8"/>'),
+};
+const iconRow = (ids) => ids.map((i) => ICONS[i]).join('');
+
 // ---------- 7 designs ----------
+const jag = 'polygon(0 0,100% 0,100% 78%,96% 100%,92% 80%,87% 98%,81% 76%,75% 100%,69% 82%,62% 98%,55% 78%,48% 100%,41% 80%,34% 98%,27% 76%,20% 100%,13% 80%,7% 98%,0 78%)';
+const pinkCamo = encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='260' height='60'>
+<g opacity='.9'><path d='M0 30c14-18 40-14 46 4s-20 24-34 18S-8 44 0 30z' fill='#f48fb8'/>
+<path d='M60 8c12-10 40-4 40 12s-24 18-36 10S52 16 60 8z' fill='#c2417f'/>
+<path d='M120 32c14-14 44-6 40 12s-28 16-38 8-10-14-2-20z' fill='#7d2a56'/>
+<path d='M180 6c14-8 38 0 36 16s-24 18-34 8-8-18-2-24z' fill='#f48fb8'/>
+<path d='M226 34c10-10 34-2 34 14s-26 14-34 6-6-14 0-20z' fill='#e86aa0'/></g></svg>`);
 const THEMES = [
-  { id: '01-turquoise-leather', name: 'Turquoise Leather', ink: '#1f2d2e', paper: '#fffdf8', a: '#2fa7a0', b: '#1c6f6b', soft: '#e3f4f2', line: '#9fcfcb',
-    head: 'linear-gradient(90deg,#1c6f6b,#2fa7a0 60%,#7fd0c8)', stitch: '#2fa7a0', motif: 'STITCHED LEATHER', pattern: '' },
-  { id: '02-sunrise-gold', name: 'Sunrise Gold', ink: '#3a2a1c', paper: '#fffaf2', a: '#e8a43a', b: '#d9774b', soft: '#fdf0da', line: '#efc98c',
-    head: 'linear-gradient(90deg,#f6c453,#f0955a 55%,#f3a79a)', stitch: '#e8a43a', motif: 'FIRST LIGHT', pattern: '' },
-  { id: '03-pink-purple-ombre', name: 'Pink-Purple Ombré', ink: '#2b2430', paper: '#fdfaf8', a: '#d6598f', b: '#7a4c9e', soft: '#f6e9f3', line: '#d3b6d9',
-    head: 'linear-gradient(90deg,#d6598f,#a45aa8 50%,#7a4c9e)', stitch: '#b25aa0', motif: 'OMBRÉ SKY', pattern: '' },
-  { id: '04-weathered-denim', name: 'Weathered Denim', ink: '#1e2733', paper: '#fbfaf6', a: '#4a6486', b: '#2f4560', soft: '#e6ecf3', line: '#a9b9cc',
-    head: 'repeating-linear-gradient(45deg,#3b5373 0 3px,#44607f 3px 6px)', stitch: '#e0b45a', motif: 'DENIM & STITCH', pattern: '' },
-  { id: '05-warm-ivory-tooled', name: 'Warm Ivory & Tooled', ink: '#3a2e22', paper: '#fbf5e8', a: '#8a6a45', b: '#5e452b', soft: '#f1e7d2', line: '#cdb995',
-    head: 'linear-gradient(90deg,#5e452b,#8a6a45 55%,#b99870)', stitch: '#8a6a45', motif: 'TOOLED LEATHER', pattern: '' },
-  { id: '06-cow-print', name: 'Cow Print (Restrained)', ink: '#1a1a1a', paper: '#ffffff', a: '#2fa7a0', b: '#1a1a1a', soft: '#f1f1f1', line: '#b9b9b9',
-    head: `#ffffff url("data:image/svg+xml,${cow}") center/260px 60px`, stitch: '#2fa7a0', motif: 'COW GIRL STRONG', pattern: 'cow' },
-  { id: '07-camo', name: 'Camo (Restrained)', ink: '#26301a', paper: '#fbfaf4', a: '#5c6b3a', b: '#3f4a2a', soft: '#eceee0', line: '#b4bb94',
-    head: `#d9d6b8 url("data:image/svg+xml,${camo}") center/260px 60px`, stitch: '#8a7a52', motif: 'HOLD THE LINE', pattern: 'camo' },
+  { id: '01-hot-pink-and-teal', name: 'Hot Pink & Teal', ink: '#22232b', paper: '#fffafc', a: '#e6007e', b: '#0a8f8f', soft: '#ffe6f2', line: '#f0a6cc',
+    head: 'linear-gradient(90deg,#e6007e,#ff4fa3 45%,#14b8b0)', stitch: '#14b8b0', motif: 'HOT PINK · TEAL · FAITH', icons: ['cross', 'hat', 'anchor'], pattern: '' },
+  { id: '02-turquoise-sunrise', name: 'Turquoise Sunrise', ink: '#1f2d2e', paper: '#fffbf4', a: '#1fa8a4', b: '#c9683a', soft: '#e3f5f3', line: '#9fd3cf',
+    head: 'linear-gradient(90deg,#1fa8a4,#6fd0c6 35%,#ffd68a 68%,#ff9f78)', stitch: '#f0a45a', motif: 'TURQUOISE SUNRISE', icons: ['cross', 'anchor'], pattern: '' },
+  { id: '03-cow-print', name: 'Cow Print', ink: '#1a1a1a', paper: '#ffffff', a: '#e6007e', b: '#111111', soft: '#f3f3f3', line: '#c4c4c4',
+    head: `#ffffff url("data:image/svg+xml,${cow}") center/260px 60px`, stitch: '#14b8b0', motif: 'COWGIRL STRONG', icons: ['hat', 'boot', 'cross'], pattern: 'cow' },
+  { id: '04-ripped-denim', name: 'Ripped Denim', ink: '#1e2733', paper: '#fbfaf6', a: '#3f5b80', b: '#243a57', soft: '#e3eaf3', line: '#a3b5cc',
+    head: 'repeating-linear-gradient(45deg,#33507a 0 3px,#3f5b80 3px 6px)', stitch: '#e6007e', motif: 'RIPPED · NOT BROKEN', icons: ['chain', 'cross'], pattern: '', rip: true },
+  { id: '05-pink-camo', name: 'Pink Camo', ink: '#3a1d2e', paper: '#fffafb', a: '#c2417f', b: '#7d2a56', soft: '#fde6ef', line: '#efb3cb',
+    head: `#f9d3e2 url("data:image/svg+xml,${pinkCamo}") center/260px 60px`, stitch: '#e86aa0', motif: 'HOLD THE LINE', icons: ['anchor', 'cross'], pattern: 'camo' },
+  { id: '06-mason-jar-cowgirl', name: 'Mason Jar Cowgirl', ink: '#3a2e22', paper: '#fbf5e8', a: '#14a39f', b: '#6b4a2b', soft: '#e4f3ef', line: '#c5b48f',
+    head: 'linear-gradient(90deg,#6b4a2b,#8a6a45 40%,#14a39f)', stitch: '#e6007e', motif: 'COUNTRY · FAITH · GRIT', icons: ['jar', 'hat', 'cross'], pattern: '' },
+  { id: '07-chain-break-anchor', name: 'Chain Break & Anchor', ink: '#22232b', paper: '#fdfaff', a: '#7a4c9e', b: '#e6007e', soft: '#f3eaf8', line: '#cdb6df',
+    head: 'linear-gradient(90deg,#e6007e,#a45aa8 50%,#14b8b0)', stitch: '#14b8b0', motif: 'CHAINS BROKEN · ANCHORED', icons: ['chain', 'anchor', 'cross'], pattern: '' },
 ];
 
 // ---------- helpers ----------
@@ -54,11 +73,13 @@ html,body{ margin:0; padding:0; background:#ddd; color:var(--ink); font-family:'
 .page::before{ content:''; position:absolute; inset:.13in; border:2px solid var(--a); border-radius:10px; pointer-events:none; }
 .page::after{ content:''; position:absolute; inset:.18in; border:1.2px dashed var(--stitch); border-radius:7px; pointer-events:none; }
 .head{ background:${t.head}; border-radius:8px; padding:7px 12px; display:flex; justify-content:space-between; align-items:center; position:relative; margin-top:.02in; }
+.head.rip{ clip-path:${jag}; padding-bottom:13px; box-shadow:none; background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.0) 0 5px,rgba(255,255,255,.28) 5px 6px),repeating-linear-gradient(45deg,#33507a 0 3px,#3f5b80 3px 6px); }
 .head.pat{ border:1.5px solid var(--b); }
 .head .tt{ ${t.pattern ? 'background:#fff;border:1.5px solid var(--b);border-radius:6px;padding:3px 10px;' : ''} }
 .brand{ font-size:8px; letter-spacing:2.2px; font-weight:800; text-transform:uppercase; color:${t.pattern ? 'var(--b)' : '#fff'}; ${t.pattern ? '' : 'text-shadow:0 1px 2px rgba(0,0,0,.25);'} }
 h1{ margin:0; font-family:'Caveat','Brush Script MT',cursive; font-size:30px; line-height:1; color:${t.pattern ? 'var(--b)' : '#fff'}; ${t.pattern ? '' : 'text-shadow:0 1px 2px rgba(0,0,0,.28);'} }
 .tag{ font-size:8px; color:${t.pattern ? 'var(--b)' : '#fff'}; font-weight:600; letter-spacing:.4px; }
+.ic{ display:flex; gap:4px; justify-content:flex-end; margin-bottom:2px; } .ic svg{ width:24px; height:24px; }
 .motif{ font-size:7px; letter-spacing:2px; font-weight:800; color:${t.pattern ? 'var(--b)' : '#fff'}; opacity:.95; text-align:right; }
 .datebar{ display:grid; grid-template-columns:1.25fr 1.5fr 1.1fr; gap:6px; margin:6px 0 5px; }
 .field{ border-bottom:1.3px solid var(--b); padding:0 2px 1px; font-weight:700; font-size:8.5px; color:var(--b); height:19px; display:flex; align-items:flex-end; }
@@ -91,9 +112,9 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
 `;
 
 const brandHead = (title, motif) => `
-<div class="head ${motif.pat ? 'pat' : ''}">
+<div class="head ${motif.pat ? 'pat' : ''} ${motif.rip ? 'rip' : ''}">
   <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>${title}</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif">${motif.text}</div>
+  <div class="motif"><div class="ic">${motif.icons}</div>${motif.text}</div>
 </div>`;
 
 // ---------- page 1: Daily Log ----------
@@ -101,7 +122,7 @@ function page1(t) {
   const pat = !!t.pattern;
   return `
 <section class="page">
-${brandHead('Daily Log', { text: t.motif, pat })}
+${brandHead('Daily Log', { text: t.motif, pat, icons: iconRow(t.icons), rip: t.rip })}
 <div class="datebar">
   <div class="field">DATE: </div>
   <div class="dow"><span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span></div>
@@ -187,7 +208,7 @@ function page2(t) {
     ['P', 'People / contact'], ['X', 'Safety / incident'], ['$', 'Money / work / legal'], ['H', 'Home / Big Boy'], ['W', 'Win / mercy']];
   return `
 <section class="page">
-${brandHead('What Happened — Full Detail', { text: t.motif, pat })}
+${brandHead('What Happened — Full Detail', { text: t.motif, pat, icons: iconRow(t.icons), rip: t.rip })}
 <div class="datebar" style="grid-template-columns:1.2fr 1fr 1.3fr">
   <div class="field">DATE: </div><div class="field">DAY: </div><div class="field">WHERE I WAS MOST OF THE DAY: </div>
 </div>

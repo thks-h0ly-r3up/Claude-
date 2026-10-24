@@ -1,20 +1,22 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><title>7HE H0LY R3UP — Daily Tracker — Weathered Denim</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>7HE H0LY R3UP — Daily Tracker — Pink Camo</title>
 <meta name="description" content="Printable daily tracker — 7HE H0LY R3UP.">
 <style>
 @page { size: 8.5in 11in; margin: 0; }
-:root{ --ink:#1e2733; --paper:#fbfaf6; --a:#4a6486; --b:#2f4560; --soft:#e6ecf3; --line:#a9b9cc; --stitch:#e0b45a; }
+:root{ --ink:#3a1d2e; --paper:#fffafb; --a:#c2417f; --b:#7d2a56; --soft:#fde6ef; --line:#efb3cb; --stitch:#e86aa0; }
 *{ box-sizing:border-box; }
 html,body{ margin:0; padding:0; background:#ddd; color:var(--ink); font-family:'Libre Franklin','Helvetica Neue',Arial,sans-serif; font-size:10px; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 .page{ width:8.5in; height:11in; background:var(--paper); position:relative; overflow:hidden; padding:.3in .36in .24in; page-break-after:always; }
 .page::before{ content:''; position:absolute; inset:.13in; border:2px solid var(--a); border-radius:10px; pointer-events:none; }
 .page::after{ content:''; position:absolute; inset:.18in; border:1.2px dashed var(--stitch); border-radius:7px; pointer-events:none; }
-.head{ background:repeating-linear-gradient(45deg,#3b5373 0 3px,#44607f 3px 6px); border-radius:8px; padding:7px 12px; display:flex; justify-content:space-between; align-items:center; position:relative; margin-top:.02in; }
+.head{ background:#f9d3e2 url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'260'%20height%3D'60'%3E%0A%3Cg%20opacity%3D'.9'%3E%3Cpath%20d%3D'M0%2030c14-18%2040-14%2046%204s-20%2024-34%2018S-8%2044%200%2030z'%20fill%3D'%23f48fb8'%2F%3E%0A%3Cpath%20d%3D'M60%208c12-10%2040-4%2040%2012s-24%2018-36%2010S52%2016%2060%208z'%20fill%3D'%23c2417f'%2F%3E%0A%3Cpath%20d%3D'M120%2032c14-14%2044-6%2040%2012s-28%2016-38%208-10-14-2-20z'%20fill%3D'%237d2a56'%2F%3E%0A%3Cpath%20d%3D'M180%206c14-8%2038%200%2036%2016s-24%2018-34%208-8-18-2-24z'%20fill%3D'%23f48fb8'%2F%3E%0A%3Cpath%20d%3D'M226%2034c10-10%2034-2%2034%2014s-26%2014-34%206-6-14%200-20z'%20fill%3D'%23e86aa0'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") center/260px 60px; border-radius:8px; padding:7px 12px; display:flex; justify-content:space-between; align-items:center; position:relative; margin-top:.02in; }
+.head.rip{ clip-path:polygon(0 0,100% 0,100% 78%,96% 100%,92% 80%,87% 98%,81% 76%,75% 100%,69% 82%,62% 98%,55% 78%,48% 100%,41% 80%,34% 98%,27% 76%,20% 100%,13% 80%,7% 98%,0 78%); padding-bottom:13px; box-shadow:none; background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.0) 0 5px,rgba(255,255,255,.28) 5px 6px),repeating-linear-gradient(45deg,#33507a 0 3px,#3f5b80 3px 6px); }
 .head.pat{ border:1.5px solid var(--b); }
-.head .tt{  }
-.brand{ font-size:8px; letter-spacing:2.2px; font-weight:800; text-transform:uppercase; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,.25); }
-h1{ margin:0; font-family:'Caveat','Brush Script MT',cursive; font-size:30px; line-height:1; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,.28); }
-.tag{ font-size:8px; color:#fff; font-weight:600; letter-spacing:.4px; }
-.motif{ font-size:7px; letter-spacing:2px; font-weight:800; color:#fff; opacity:.95; text-align:right; }
+.head .tt{ background:#fff;border:1.5px solid var(--b);border-radius:6px;padding:3px 10px; }
+.brand{ font-size:8px; letter-spacing:2.2px; font-weight:800; text-transform:uppercase; color:var(--b);  }
+h1{ margin:0; font-family:'Caveat','Brush Script MT',cursive; font-size:30px; line-height:1; color:var(--b);  }
+.tag{ font-size:8px; color:var(--b); font-weight:600; letter-spacing:.4px; }
+.ic{ display:flex; gap:4px; justify-content:flex-end; margin-bottom:2px; } .ic svg{ width:24px; height:24px; }
+.motif{ font-size:7px; letter-spacing:2px; font-weight:800; color:var(--b); opacity:.95; text-align:right; }
 .datebar{ display:grid; grid-template-columns:1.25fr 1.5fr 1.1fr; gap:6px; margin:6px 0 5px; }
 .field{ border-bottom:1.3px solid var(--b); padding:0 2px 1px; font-weight:700; font-size:8.5px; color:var(--b); height:19px; display:flex; align-items:flex-end; }
 .dow{ display:flex; gap:3px; align-items:flex-end; padding-bottom:1px; }
@@ -46,9 +48,9 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
 </style></head><body>
 <section class="page">
 
-<div class="head ">
+<div class="head pat ">
   <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Daily Log</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif">DENIM & STITCH</div>
+  <div class="motif"><div class="ic"><svg viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="7" r="3"/><path d="M16 10v18M10 15h12M5 20c1 6 6 8 11 8s10-2 11-8"/></svg><svg viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3v26M8 11h16"/></svg></div>HOLD THE LINE</div>
 </div>
 <div class="datebar">
   <div class="field">DATE: </div>
@@ -128,9 +130,9 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
 </section>
 <section class="page">
 
-<div class="head ">
+<div class="head pat ">
   <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>What Happened — Full Detail</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif">DENIM & STITCH</div>
+  <div class="motif"><div class="ic"><svg viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="7" r="3"/><path d="M16 10v18M10 15h12M5 20c1 6 6 8 11 8s10-2 11-8"/></svg><svg viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3v26M8 11h16"/></svg></div>HOLD THE LINE</div>
 </div>
 <div class="datebar" style="grid-template-columns:1.2fr 1fr 1.3fr">
   <div class="field">DATE: </div><div class="field">DAY: </div><div class="field">WHERE I WAS MOST OF THE DAY: </div>
