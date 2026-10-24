@@ -5,18 +5,18 @@
 :root{ --ink:#1f2d2e; --paper:#fffbf4; --a:#1fa8a4; --b:#c9683a; --soft:#e3f5f3; --line:#9fd3cf; --stitch:#f0a45a; }
 *{ box-sizing:border-box; }
 html,body{ margin:0; padding:0; background:#ddd; color:var(--ink); font-family:'Libre Franklin','Helvetica Neue',Arial,sans-serif; font-size:10px; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
-.page{ width:8.5in; height:11in; background:var(--paper); position:relative; overflow:hidden; padding:.3in .36in .24in; page-break-after:always; }
+.page{ width:8.5in; height:11in; background:linear-gradient(#fffbf4ea,#fffbf4ea),url(assets/tex-02-turquoise-sunrise.jpg) center/cover; position:relative; overflow:hidden; padding:.3in .36in .24in; page-break-after:always; }
 .page::before{ content:''; position:absolute; inset:.13in; border:2px solid var(--a); border-radius:10px; pointer-events:none; }
 .page::after{ content:''; position:absolute; inset:.18in; border:1.2px dashed var(--stitch); border-radius:7px; pointer-events:none; }
-.head{ background:linear-gradient(90deg,#1fa8a4,#6fd0c6 35%,#ffd68a 68%,#ff9f78); border-radius:8px; padding:7px 12px; display:flex; justify-content:space-between; align-items:center; position:relative; margin-top:.02in; }
-.head.rip{ clip-path:polygon(0 0,100% 0,100% 78%,96% 100%,92% 80%,87% 98%,81% 76%,75% 100%,69% 82%,62% 98%,55% 78%,48% 100%,41% 80%,34% 98%,27% 76%,20% 100%,13% 80%,7% 98%,0 78%); padding-bottom:13px; box-shadow:none; background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.0) 0 5px,rgba(255,255,255,.28) 5px 6px),repeating-linear-gradient(45deg,#33507a 0 3px,#3f5b80 3px 6px); }
+.head{ background:url(assets/tex-02-turquoise-sunrise.jpg) center/cover; min-height:.78in; border-radius:8px; padding:7px 12px; display:flex; justify-content:space-between; align-items:center; position:relative; margin-top:.02in; }
+.head.rip{ clip-path:polygon(0 0,100% 0,100% 78%,96% 100%,92% 80%,87% 98%,81% 76%,75% 100%,69% 82%,62% 98%,55% 78%,48% 100%,41% 80%,34% 98%,27% 76%,20% 100%,13% 80%,7% 98%,0 78%); padding-bottom:13px; box-shadow:none;  }
 .head.pat{ border:1.5px solid var(--b); }
-.head .tt{  }
-.brand{ font-size:8px; letter-spacing:2.2px; font-weight:800; text-transform:uppercase; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,.25); }
-h1{ margin:0; font-family:'Caveat','Brush Script MT',cursive; font-size:30px; line-height:1; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,.28); }
-.tag{ font-size:8px; color:#fff; font-weight:600; letter-spacing:.4px; }
-.ic{ display:flex; gap:4px; justify-content:flex-end; margin-bottom:2px; } .ic svg{ width:24px; height:24px; }
-.motif{ font-size:7px; letter-spacing:2px; font-weight:800; color:#fff; opacity:.95; text-align:right; }
+.head .tt{ background:#fff;border:1.5px solid var(--b);border-radius:6px;padding:3px 10px; }
+.brand{ font-size:8px; letter-spacing:2.2px; font-weight:800; text-transform:uppercase; color:var(--b);  }
+h1{ margin:0; font-family:'Caveat','Brush Script MT',cursive; font-size:30px; line-height:1; color:var(--b);  }
+.tag{ font-size:8px; color:var(--b); font-weight:600; letter-spacing:.4px; }
+.ic{ display:flex; gap:7px; justify-content:center; align-items:center; margin-bottom:2px; } .ic img{ height:36px; width:auto; filter:drop-shadow(0 1px 1px rgba(0,0,0,.35)); } .ic img.i-chain{ height:26px; }
+.motif{ font-size:7px; letter-spacing:2px; font-weight:800; color:var(--b); text-align:center; background:rgba(255,255,255,.9); border:1.5px solid var(--b); border-radius:10px; padding:3px 9px 4px; }
 .datebar{ display:grid; grid-template-columns:1.25fr 1.5fr 1.1fr; gap:6px; margin:6px 0 5px; }
 .field{ border-bottom:1.3px solid var(--b); padding:0 2px 1px; font-weight:700; font-size:8.5px; color:var(--b); height:19px; display:flex; align-items:flex-end; }
 .dow{ display:flex; gap:3px; align-items:flex-end; padding-bottom:1px; }
@@ -58,9 +58,9 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
 .wkd .in{ padding:3px 8px 4px; }
 .hr2{ display:flex; border-bottom:1px solid var(--line); height:45px; font-size:9px; color:var(--b); font-weight:700; } .hr2 b{ width:44px; border-right:1px solid var(--line); padding:3px 0 0 3px; }
 </style></head><body><section class="page">
-<div class="head  ">
+<div class="head pat ">
   <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Monthly Calendar</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><svg viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3v26M8 11h16"/></svg><svg viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="7" r="3"/><path d="M16 10v18M10 15h12M5 20c1 6 6 8 11 8s10-2 11-8"/></svg></div>TURQUOISE SUNRISE</div>
+  <div class="motif"><div class="ic"><img src="assets/icons/cross.png" class="i-cross" alt=""><img src="assets/icons/anchor.png" class="i-anchor" alt=""></div>TURQUOISE SUNRISE</div>
 </div>
 <div class="mtitle">October 2026</div>
 <table class="mt"><tr><th>SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></tr><tr><td class="o"><b>27</b></td><td class="o"><b>28</b></td><td class="o"><b>29</b></td><td class="o"><b>30</b></td><td class=""><b>1</b></td><td class=""><b>2</b></td><td class=""><b>3</b></td></tr><tr><td class=""><b>4</b></td><td class=""><b>5</b></td><td class=""><b>6</b></td><td class=""><b>7</b></td><td class=""><b>8</b></td><td class=""><b>9</b></td><td class=""><b>10</b></td></tr><tr><td class=""><b>11</b></td><td class=""><b>12</b></td><td class=""><b>13</b></td><td class=""><b>14</b></td><td class=""><b>15</b></td><td class=""><b>16</b></td><td class=""><b>17</b></td></tr><tr><td class=""><b>18</b></td><td class=""><b>19</b></td><td class=""><b>20</b></td><td class=""><b>21</b></td><td class=""><b>22</b></td><td class=""><b>23</b></td><td class="today"><b>24</b></td></tr><tr><td class=""><b>25</b></td><td class=""><b>26</b></td><td class=""><b>27</b></td><td class=""><b>28</b></td><td class=""><b>29</b></td><td class=""><b>30</b></td><td class=""><b>31</b></td></tr></table>
@@ -70,9 +70,9 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
 </div>
 <div class="sec" style="margin-top:6px"><h2>My Categories <em>mark days with the letter</em></h2><div class="in"><div class="key"><div><b>B</b>Body</div><div><b>M</b>Mind</div><div><b>S</b>Sleep</div><div><b>F</b>Food</div><div><b>G</b>God/Prayer</div><div><b>P</b>People</div><div><b>X</b>Safety</div><div><b>$</b>Money/Legal</div><div><b>H</b>Home/Big Boy</div><div><b>W</b>Win</div></div></div></div>
 <div class="foot"><b>October 2026.</b> You survived. Now we rebuild. · Today is circled.</div></section><section class="page">
-<div class="head  ">
+<div class="head pat ">
   <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Weekly Plan</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><svg viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3v26M8 11h16"/></svg><svg viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="7" r="3"/><path d="M16 10v18M10 15h12M5 20c1 6 6 8 11 8s10-2 11-8"/></svg></div>TURQUOISE SUNRISE</div>
+  <div class="motif"><div class="ic"><img src="assets/icons/cross.png" class="i-cross" alt=""><img src="assets/icons/anchor.png" class="i-anchor" alt=""></div>TURQUOISE SUNRISE</div>
 </div>
 <div class="datebar" style="grid-template-columns:1fr 1fr"><div class="field">WEEK OF: Saturday, Oct 24 – Friday, Oct 30, 2026</div><div class="field">THIS WEEK'S FOCUS: </div></div>
 <div class="wkd"><h3>SATURDAY <span>Oct 24, 2026</span></h3><div class="in">
@@ -92,9 +92,9 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
     <div class="ln" style="height:18px"></div><div class="ln" style="height:18px"></div><div class="ln" style="height:18px"></div></div></div>
 <div class="grid"><div class="sec"><h2>Wins · Mercy I Saw</h2><div class="in"><div class="ln" style="height:17px"></div><div class="ln" style="height:17px"></div></div></div><div class="sec"><h2>Next Week's One Thing</h2><div class="in"><div class="ln" style="height:17px"></div><div class="ln" style="height:17px"></div></div></div></div>
 <div class="foot"><b>Weekly.</b> Share only what feels safe. · We survived. Now let's go back — with truth and a hand out.</div></section><section class="page">
-<div class="head  ">
+<div class="head pat ">
   <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><svg viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3v26M8 11h16"/></svg><svg viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="7" r="3"/><path d="M16 10v18M10 15h12M5 20c1 6 6 8 11 8s10-2 11-8"/></svg></div>TURQUOISE SUNRISE</div>
+  <div class="motif"><div class="ic"><img src="assets/icons/cross.png" class="i-cross" alt=""><img src="assets/icons/anchor.png" class="i-anchor" alt=""></div>TURQUOISE SUNRISE</div>
 </div>
 <div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">SATURDAY, OCTOBER 24, 2026</div><div class="field">WEATHER / MOOD: </div></div>
 <div class="grid" style="grid-template-columns:1.1fr 1fr">
@@ -110,9 +110,9 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
 <div class="foot"><b>Daily.</b> The detailed log is on the next two pages. Even one box counts.</div></section>
 <section class="page">
 
-<div class="head  ">
+<div class="head pat ">
   <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Daily Log</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><svg viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3v26M8 11h16"/></svg><svg viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="7" r="3"/><path d="M16 10v18M10 15h12M5 20c1 6 6 8 11 8s10-2 11-8"/></svg></div>TURQUOISE SUNRISE</div>
+  <div class="motif"><div class="ic"><img src="assets/icons/cross.png" class="i-cross" alt=""><img src="assets/icons/anchor.png" class="i-anchor" alt=""></div>TURQUOISE SUNRISE</div>
 </div>
 <div class="datebar">
   <div class="field">DATE: </div>
@@ -192,9 +192,9 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
 </section>
 <section class="page">
 
-<div class="head  ">
+<div class="head pat ">
   <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>What Happened — Full Detail</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><svg viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3v26M8 11h16"/></svg><svg viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="7" r="3"/><path d="M16 10v18M10 15h12M5 20c1 6 6 8 11 8s10-2 11-8"/></svg></div>TURQUOISE SUNRISE</div>
+  <div class="motif"><div class="ic"><img src="assets/icons/cross.png" class="i-cross" alt=""><img src="assets/icons/anchor.png" class="i-anchor" alt=""></div>TURQUOISE SUNRISE</div>
 </div>
 <div class="datebar" style="grid-template-columns:1.2fr 1fr 1.3fr">
   <div class="field">DATE: </div><div class="field">DAY: </div><div class="field">WHERE I WAS MOST OF THE DAY: </div>
