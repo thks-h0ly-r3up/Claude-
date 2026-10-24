@@ -277,7 +277,7 @@ r2: What do I most want to be different 91 days from now?
 r3: What do I have right now that I can build with?
 action: Mark all 91 days on a calendar or in this book. Then list three resources you have today.
 s1: Find a calendar or use the Month 1 page in this book.
-s2: Mark Day 1 (today) and Day 91 (January 5, 2027).
+s2: Mark Day 1 ({{START}}) and Day 91 ({{END}}).
 s3: List three resources you already have: a person, a skill, a place, a tool.
 prayer: Father, teach me to number my days. Hold the ones I lost. Give me a heart of wisdom for the ones ahead. Amen.
 decl: My days have edges, and they are still a gift.
@@ -477,7 +477,7 @@ cal: Sabbath: sleep
 title: The Breath You Did Not Make
 ref: Job 33:4
 q: “The Spirit of God has made me, and the breath of the Almighty gives me life.” (Job 33:4, ESV)
-teach: Elihu says this in the middle of Job’s suffering, so it is a speech by a man who is not yet right about everything, but this line stands. Your next breath is a gift you did not make. Today is Sunday, a day for gratitude and worship, so let gratitude be honest. In much of the US, clocks fall back an hour today. If yours do, you have a free extra hour. Spend it on rest, not on catching up.
+teach: Elihu says this in the middle of Job’s suffering, so it is a speech by a man who is not yet right about everything, but this line stands. Your next breath is a gift you did not make. Today is Sunday, a day for gratitude and worship, so let gratitude be honest. If you get a free hour today, spend it on rest and not on catching up.
 intent: Breath is a gift from God, and each one is received, not earned.
 quantum:
 canon:
@@ -490,7 +490,7 @@ s2: Write one thing you are not grateful for. Tell God the truth.
 s3: Spend one hour on rest or worship: a song, a service, a walk.
 prayer: God, You gave me breath. Thank You for it, and for this one more day. Where I cannot be grateful, be honest with me. Let this day be a gift, not a task. Amen.
 decl: Every breath is a gift I did not have to earn.
-cal: Gratitude and extra hour
+cal: Gratitude and rest
 
 === 27
 title: Dust Is Not Disgrace

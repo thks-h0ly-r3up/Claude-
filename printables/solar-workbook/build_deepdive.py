@@ -125,7 +125,7 @@ ECL = []
 
 
 def build_events():
-    t0, t1 = ephem.Date("2026/10/07"), ephem.Date("2027/01/06")
+    t0, t1 = ephem.Date("2026/10/24"), ephem.Date("2027/01/28")
     for fn, label in ((ephem.next_new_moon, "New moon"), (ephem.next_first_quarter_moon, "First quarter"),
                       (ephem.next_full_moon, "Full moon"), (ephem.next_last_quarter_moon, "Last quarter")):
         t = t0
@@ -139,9 +139,9 @@ def build_events():
                 m = ephem.Moon(t); s = ephem.Sun(t)
                 # ecliptic latitude of the moon near syzygy: eclipse possible if |beta| is small
                 beta = abs(math.degrees(ephem.Ecliptic(m).lat))
-                if beta < 1.8:
+                if beta < 1.55:
                     ECL.append((label, d, round(beta, 2)))
-    t = ephem.Date("2026/10/07")
+    t = ephem.Date("2026/10/24")
     while True:
         t = ephem.next_solstice(t)
         if t > t1:
@@ -157,7 +157,10 @@ build_events()
 
 
 def sky(n):
-    d = day_date(n)
+    return sky_for(day_date(n))
+
+
+def sky_for(d):
     snap = ephem.Date(dt.datetime(d.year, d.month, d.day, 2, 0) + dt.timedelta(days=1))  # 02:00 UTC next day: evening in the US
     m, s = ephem.Moon(snap), ephem.Sun(snap)
     prev_new = ephem.previous_new_moon(snap)
@@ -254,14 +257,14 @@ def cover():
   <div style="position:absolute;bottom:2.35in;font-size:8.2pt;letter-spacing:2.2px;color:#e6f7f6;font-weight:700">CANON · SKY · TRAUMA · ADDICTION · WARFARE · GRIEF</div>
   <div class="tag">You survived. Now we rebuild.</div>
   <div class="by">Written from the floor up by Hellshaker<br>and her loyal service dog, Big Boy</div>
-  <div class="dt">SEASON ONE · OCTOBER 7, 2026 TO JANUARY 5, 2027</div>
+  <div class="dt">SEASON ONE · PRELUDE OCT 24 · DAY 1 OCT 28, 2026 TO JAN 26, 2027</div>
 </div>"""
     return page(inner, "cover", running=False).replace('<div class="body">', '<div class="body" style="padding:0">', 1)
 
 
 def about_page():
     body = f"""
-<p><b>{BRAND}</b> · Original Lights: The Deep Dive · Companion to The Solar Workbook · Created October 7, 2026 · Version 1.0 · © 2026 {BRAND}. All rights reserved. Personal use only.</p>
+<p><b>{BRAND}</b> · Original Lights: The Deep Dive · Companion to The Solar Workbook · Created October 24, 2026 · Version 1.1 · © 2026 {BRAND}. All rights reserved. Personal use only.</p>
 <p><b>Scripture.</b> Quotations are from the ESV Bible (The Holy Bible, English Standard Version), copyright © 2001 by Crossway, a publishing ministry of Good News Publishers. All rights reserved. They are marked ESV where they appear. Quotations from Sirach, Wisdom of Solomon, Baruch, 1 Enoch, and Jubilees are my paraphrases of common English translations, so verse numbers may differ slightly in the copy you own. Check them against a translation before you quote them.</p>
 <p><b>What this book is.</b> A companion to the daily pages. For each of the 91 days it gives (1) a deeper look at the day’s verse through the Ethiopian canon, (2) what the sky actually looked like, computed from astronomical formulas, and (3) a plain word about how to read both, including where trauma, addiction, and spiritual warfare come in.</p>
 <p><b>What this book is not.</b> It is not astrology or fortune-telling, and it will never tell you what a moon phase or a constellation “means” for your life. It is not therapy, medical care, addiction treatment, or crisis support, and the author is not a clinician. It does not tell you what happened to anyone’s soul. Prayer sits beside treatment, medication, safe housing, and safety planning. It does not replace them.</p>
@@ -450,16 +453,21 @@ def sky_calendar():
             allev.append((d_, lab, tm))
     for d_, lab, tm in allev:
         n = (d_ - b.START).days + 1
-        if not 1 <= n <= 91:
+        if not -3 <= n <= 91 or n == 0 and False:
             continue
+        lbl = f"Day {n}" if n >= 1 else f"Prelude {n + 4}"
         t = f' · {tm.strftime("%H:%M")} UTC' if tm else ""
-        rows += f"<tr><td>{d_.strftime('%a %b %-d, %Y')}</td><td>Day {n}</td><td>{E(lab)}{t}</td></tr>"
+        rows += f"<tr><td>{d_.strftime('%a %b %-d, %Y')}</td><td>{lbl}</td><td>{E(lab)}{t}</td></tr>"
+    pre_rows = ""
+    for k in range(4):
+        x = sky_for(b.PRE_START + dt.timedelta(days=k))
+        pre_rows += f"<tr><td>{x['date'].strftime('%a %b %-d, %Y')}</td><td>Prelude {k+1}</td><td>Moon: {x['phase']}, {x['illum']:.0f}% lit, in {x['moon_con']}. Sun in {x['sun_con']}.</td></tr>"
     ecl = "No eclipses fall in this window." if not ECL else "Possible eclipse geometry: " + "; ".join(f"{l} {d.strftime('%b %-d')}" for l, d, _ in ECL)
     body = f"""
 <p>Moon phases, the solstice, and annual meteor-shower peaks for the 91 days. UTC times are shown, so subtract 5 to 8 hours for US time zones.</p>
-<table class="rt"><tr><th>Date</th><th style="width:.7in">Day</th><th>Event</th></tr>{rows}</table>
+<table class="rt"><tr><th>Date</th><th style="width:.8in">Day</th><th>Event</th></tr>{pre_rows}{rows}</table>
 <p style="margin-top:6px"><b>Eclipses:</b> {ecl} (checked from the Moon’s position at each new and full moon.)</p>
-<p><b>The sun’s constellation.</b> The sun’s apparent position moves through the modern IAU constellations: Virgo until about October 30, Libra until about November 22, Scorpius for about a week (November 23–29), Ophiuchus from about November 30, and Sagittarius from about December 18. The constellations are star patterns on a map. They are not “signs” that assign traits to a day or a person.</p>
+<p><b>The sun’s constellation.</b> The sun’s apparent position moves through the modern IAU constellations: Virgo until about October 30, Libra until about November 22, Scorpius for about a week (November 23–29), Ophiuchus from about November 30, Sagittarius from about December 18, and Capricornus from about January 20. The constellations are star patterns on a map. They are not “signs” that assign traits to a day or a person.</p>
 <p><b>The solstice.</b> The winter solstice is the day the sun reaches its lowest point in the Northern Hemisphere. After it the days lengthen. In the Southern Hemisphere it is reversed.</p>"""
     return essay("The Sky for These 91 Days", body, "Sky calendar")
 

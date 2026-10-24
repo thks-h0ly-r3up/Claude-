@@ -11,7 +11,8 @@ import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-START = dt.date(2026, 10, 7)          # Day 1 (a Wednesday)
+START = dt.date(2026, 10, 28)         # Day 1 (a Wednesday, the fourth day of the creation week)
+PRE_START = dt.date(2026, 10, 24)     # the Prelude begins today (a Saturday), four days before Day 1
 TOTAL_DAYS = 91
 BRAND = "7HE H0LY R3UP"
 BOOK = "The Solar Workbook"
@@ -45,6 +46,16 @@ def eth_str(d, short=False):
 
 def day_date(n):
     return START + dt.timedelta(days=n - 1)
+
+
+def long_date(d):
+    return d.strftime("%A, %B %-d, %Y")
+
+
+END = START + dt.timedelta(days=90)
+NEXT_START = START + dt.timedelta(days=91)
+TOKENS = {"{{START}}": START.strftime("%B %-d, %Y"), "{{END}}": END.strftime("%B %-d, %Y"),
+          "{{NEXT}}": NEXT_START.strftime("%B %-d, %Y")}
 
 
 def month_of(n):
@@ -96,11 +107,24 @@ MONTH_INFO = {
     3: ("Month 3", "The Vine Is Tended", "Rest, walk in the light, tend the vineyard, and choose.",
         "What am I tending, and what am I choosing for the next season?"),
 }
-SPECIAL = {  # day number -> short calendar tag
-    26: "Clocks fall back (US)", 51: "Thanksgiving (US)", 54: "Advent begins",
-    76: "Winter solstice", 79: "Christmas Eve", 80: "Christmas Day",
-    86: "New Year’s Eve", 87: "New Year’s Day", 91: "Final day. Next season Wed Jan 6",
-    1: "Day 1. Today.",
+SPECIAL = {1: "Day 1: the lights are set", 91: "Final day. Next season starts " + NEXT_START.strftime("%b %-d")}
+INSERTS = {  # real calendar dates -> (calendar tag, title, note printed on that day's page)
+    dt.date(2026, 11, 1): ("Clocks fall back (US)", "Clocks fall back (US)",
+        "In most of the US, clocks go back one hour today. If yours do, you have an extra hour. Spend it on rest, not on catching up."),
+    dt.date(2026, 11, 26): ("Thanksgiving (US)", "Thanksgiving (US)",
+        "A day of thanks can be a heavy day. Give yourself an exit plan, a time limit, and one safe person to text. You can be thankful and sad on the same day. 988 is there any time."),
+    dt.date(2026, 11, 29): ("Advent begins", "First Sunday of Advent",
+        "Advent is the four weeks before Christmas, a season of waiting for the light (Isa. 9:2). If you are waiting in the dark, you are in the right part of the story. Light one small light tonight."),
+    dt.date(2026, 12, 21): ("Winter solstice", "Winter solstice (Northern Hemisphere)",
+        "Today has the least daylight of the year in the Northern Hemisphere, and after today the days lengthen. That is astronomy, not a sign about you. Psalm 30:5 gives even the longest night a morning."),
+    dt.date(2026, 12, 24): ("Christmas Eve", "Christmas Eve",
+        "If tonight is heavy, make a plan: how you will leave if you need to, a ride, and one number to call. The good news in Luke 2 was told first to shepherds working the night shift."),
+    dt.date(2026, 12, 25): ("Christmas Day", "Christmas Day",
+        "Merry Christmas. If the day is hard, that is not a failure of Christmas. God came near (John 1:14). Let one small thing be a gift: a note, a call, a few words of thanks."),
+    dt.date(2026, 12, 31): ("New Year’s Eve", "New Year’s Eve",
+        "A high-risk night for many. Plan it: where you will be, who you will call, and how you will leave. A safe, quiet night is a good night."),
+    dt.date(2027, 1, 1): ("New Year’s Day", "New Year’s Day",
+        "Happy new year. Pick a few small practices instead of resolutions, and tell one person."),
 }
 
 # ---------------------------------------------------------------- data
@@ -116,7 +140,10 @@ def parse(path):
         if cur is None or not raw.strip():
             continue
         k, _, v = raw.partition(":")
-        out[cur][k.strip()] = v.strip()
+        v = v.strip()
+        for tk, val in TOKENS.items():
+            v = v.replace(tk, val)
+        out[cur][k.strip()] = v
     return out
 
 
@@ -126,6 +153,8 @@ for f in ("days_m1.txt", "days_m2.txt", "days_m3.txt"):
     DAYS.update(parse(os.path.join(HERE, "data", f)))
 assert sorted(DAYS) == list(range(1, TOTAL_DAYS + 1)), "days missing"
 assert sorted(WEEKS) == list(range(1, 14)), "weeks missing"
+PRE = parse(os.path.join(HERE, "data", "prelude.txt"))
+assert sorted(PRE) == [1, 2, 3, 4], "prelude missing"
 
 
 def E(s):
@@ -186,6 +215,7 @@ h1,h2,h3{font-family:'DejaVu Serif',Georgia,serif;margin:0;color:var(--denim2)}
 .daynum{white-space:nowrap;font-family:'DejaVu Serif',Georgia,serif;text-align:right;line-height:1;color:var(--gold);font-weight:700;font-size:26pt}
 .daynum small{display:block;font-family:'DejaVu Sans',sans-serif;font-size:7pt;letter-spacing:1.4px;color:var(--denim);font-weight:700}
 .dtitle{font-size:18pt;line-height:1.15;margin:7px 0 5px;color:var(--purple)}
+.calnote{margin-top:4px;border:1.3px solid var(--gold);background:#fff6df;border-radius:7px;padding:3px 8px;font-size:8.6pt;line-height:1.3;color:#6e4e08}
 .sanct{font-size:9.4pt;background:linear-gradient(90deg,#e6f6f5,#f4ecf9);border:1.2px solid #bfe3e1;border-radius:8px;padding:5px 9px}
 .scrip{margin-top:6px;padding:6px 10px 7px;border-left:4px solid var(--gold);background:#fffaf0;border-radius:0 8px 8px 0}
 .scrip .ref{font-weight:800;color:#8a6208;font-size:9pt}
@@ -325,7 +355,7 @@ def cover():
   <div style="position:absolute;bottom:2.35in;font-size:8.2pt;letter-spacing:2.2px;color:#e6f7f6;font-weight:700">ONE DAY PER PAGE · 3 MONTHLY CALENDARS · 13 WEEKLY MAPS</div>
   <div class="tag">You survived. Now we rebuild.</div>
   <div class="by">Written from the floor up by Hellshaker<br>and her loyal service dog, Big Boy</div>
-  <div class="dt">SEASON ONE · BEGINS WEDNESDAY, OCTOBER 7, 2026</div>
+  <div class="dt">SEASON ONE · START TODAY, OCTOBER 24, 2026 · DAY 1 WEDNESDAY, OCTOBER 28</div>
 </div>"""
     return page(inner, "cover", running=False).replace('<div class="body">', '<div class="body" style="padding:0">', 1)
 
@@ -335,7 +365,7 @@ def copyright_page():
 <h1 class="h-big">About This Book</h1>
 <div class="small">
 <p class="p"><b>{BRAND}</b> · {BOOK}: Original Lights · Season One (91 days)<br>
-Created October 7, 2026 · Version 1.0 · © 2026 {BRAND}. All rights reserved. Personal use only.
+Created October 24, 2026 · Version 1.1 · © 2026 {BRAND}. All rights reserved. Personal use only.
 Please do not copy, resell, or redistribute without written permission.</p>
 <p class="p"><b>Scripture.</b> Scripture quotations are from the ESV Bible (The Holy Bible, English Standard Version),
 copyright © 2001 by Crossway, a publishing ministry of Good News Publishers. All rights reserved.
@@ -386,8 +416,9 @@ def whats_ahead():
 Each week has a theme, a Scripture, a thread from the Ethiopian canon, and one quantum-physics picture. Each day gives you a
 page to read, write on, and act from. Here is the road.</p></div>
 <table class="rt"><tr><th style="width:.4in">Wk</th><th>Theme and goal</th><th style="width:1.2in">Dates</th></tr>{rows}</table>
-<div class="small" style="margin-top:6px"><b>Three months:</b> Month 1, <i>The Lights Are Set</i> (Oct 7 – Nov 5).
-Month 2, <i>The Ground Is Broken</i> (Nov 6 – Dec 5). Month 3, <i>The Vine Is Tended</i> (Dec 6 – Jan 5).</div>"""
+<div class="small" style="margin-top:6px"><b>Prelude:</b> four days to get ready, {PRE_START.strftime("%a %b %-d")} to {(PRE_START + dt.timedelta(days=3)).strftime("%a %b %-d")}, then Day 1 on {START.strftime("%A, %B %-d")}.
+<b>Three months:</b> Month 1, <i>The Lights Are Set</i> ({day_date(1).strftime("%b %-d")} – {day_date(30).strftime("%b %-d")}).
+Month 2, <i>The Ground Is Broken</i> ({day_date(31).strftime("%b %-d")} – {day_date(60).strftime("%b %-d")}). Month 3, <i>The Vine Is Tended</i> ({day_date(61).strftime("%b %-d")} – {day_date(91).strftime("%b %-d")}).</div>"""
     return page(inner, top_r="What’s ahead")
 
 
@@ -402,7 +433,7 @@ pushing God out of the room. This is my attempt to build that for you.</p>
 <p class="p">I am not finished. I am not a counselor or a doctor, and surviving something did not make me qualified to treat you.
 I am building as I go, with my American Bully, Big Boy, beside me. What I can do is reach back with what I have learned, what
 Scripture actually teaches, and something practical you can use today.</p>
-<p class="p">This workbook starts today, October 7, 2026, and runs ninety-one days. Each day is one page. Each page has the same five
+<p class="p">This workbook starts today, Saturday, October 24, 2026, with a four-day Prelude, and then runs ninety-one days from Wednesday, October 28 to Tuesday, January 26, 2027. Each day is one page. Each page has the same five
 parts, so when you are tired you will always know where to go next:</p></div>
 <table class="rt"><tr><th style="width:1.3in">Part</th><th>What it is</th></tr>
 <tr><td><b>1. Sanctuary</b></td><td>A short, optional grounding exercise and a one-line prayer. Skip it, keep your eyes open, or use any anchor that works for you.</td></tr>
@@ -429,22 +460,23 @@ def howto_calendar():
 <p class="p"><b>The 364-day pattern.</b> 1 Enoch 72–82 and Jubilees 6 describe a solar year of exactly 364 days: 52 weeks and four seasons
 of 91 days (13 weeks). As scholars read these texts, each season begins on the fourth day of the week, a Wednesday. Each season is three months of
 30, 30, and 31 days. This workbook is one season of that pattern.</p>
-<p class="p"><b>Why today is Day 1.</b> Wednesday is the fourth day of the creation week, when God set the sun, moon, and stars
-(Gen. 1:14–19), and today, October 7, 2026, is a Wednesday. So Day 1 is today and Day 91 is Tuesday, January 5, 2027. I chose
-that anchor. I am <b>not</b> claiming October 7 is the official new year of the Enoch calendar. Scholars reconstruct how the
+<p class="p"><b>Why you start today but Day 1 is Wednesday.</b> Wednesday is the fourth day of the creation week, when God set the sun, moon, and stars
+(Gen. 1:14–19), and it is the day each 91-day season begins. Today, Saturday, October 24, 2026, is not a Wednesday, so you begin with a four-day Prelude
+(Saturday through Tuesday) to get your ground ready. Day 1 is Wednesday, October 28, and Day 91 is Tuesday, January 26, 2027. I chose
+that anchor. I am <b>not</b> claiming October 28 is the official new year of the Enoch calendar. Scholars reconstruct how the
 364-day year lined up with the Gregorian one in different ways, and the ancient sources do not settle it. The 364-day year is also about
 a day and a quarter shorter than the sun’s true year (about 365.24 days), and the old texts do not clearly say how that
 was corrected. Staying inside one 91-day season avoids guessing.</p>
 <p class="p"><b>Every page shows three dates.</b> The Gregorian date, the workbook’s 364-day position (Month, Day, Week), and the Ethiopian date.
 The Ethiopian calendar is a different solar calendar with 12 months of 30 days plus a short thirteenth month, and it is about seven to eight years behind
-the Gregorian one. Today, October 7, 2026, is Meskerem 27, 2019 E.C.</p>
+the Gregorian one. Today, October 24, 2026, is {eth_str(PRE_START)}.</p>
 <p class="p"><b>Weeks run Wednesday to Tuesday.</b> Each weekday keeps one job all season, matched to the creation week:</p></div>
 <table class="rt"><tr><th>Weekday</th><th>Creation day</th><th>Job for the day</th></tr>{rows}</table>
 <div class="small" style="margin-top:7px"><p class="p"><b>About Sabbath.</b> Saturday is the seventh day, and it is your Sabbath. If your church gathers on Sunday, keep both:
 rest on one and worship on the other. Rest was never meant to be a performance. It is the first thing slavery takes, and the first thing God gives back
 (Deut. 5:15). Take what you can get, even twenty minutes.</p>
 <p class="p"><b>Where to start each week.</b> Read the Week Map first, then the Day-by-Day Steps, then each day’s page. Fill in the monthly calendar as you go.</p></div>
-<div class="box" style="margin-top:4px;flex:1;min-height:0;display:flex;flex-direction:column"><div class="lab">My Day 1 check-in (October 7, 2026): how am I, honestly?</div><div class="ruled" style="flex:1"></div></div>"""
+<div class="box" style="margin-top:4px;flex:1;min-height:0;display:flex;flex-direction:column"><div class="lab">My starting check-in (October 24, 2026): how am I, honestly?</div><div class="ruled" style="flex:1"></div></div>"""
     return page(inner, top_r="How the calendar works")
 
 
@@ -454,7 +486,7 @@ def toc_page(toc):
         return f'<div class="row"><b>{E(label)}</b><span class="d"></span><span>{pg}</span></div>'
     parts = ['<div class="grp">Front matter</div>']
     for lab, key in [("About this book", "about"), ("What’s ahead", "ahead"), ("Start here", "intro"),
-                     ("How the calendar works", "howto")]:
+                     ("How the calendar works", "howto"), ("Prelude: four days before the lights", "pre")]:
         parts.append(row(lab, toc[key]))
     groups = {1: range(1, 5), 2: range(5, 9), 3: range(9, 14)}
     for m in (1, 2, 3):
@@ -469,7 +501,7 @@ def toc_page(toc):
         parts.append(row(lab, toc[key]))
     inner = f'<h1 class="h-big">Table of Contents</h1><div class="toc">{"".join(parts)}</div>' \
             f'<div class="small" style="margin-top:8px">Each week has a <b>Week Map</b> page, a <b>Day-by-Day Steps</b> page, and then seven daily pages in order. ' \
-            f'Page numbers listed are for the Week Map. Month 2 begins Friday, November 6 (Week 5), and Month 3 begins Sunday, December 6 (Week 9).</div>'
+            f'Page numbers listed are for the Week Map. Month 2 begins {day_date(31).strftime("%A, %B %-d")} (Week 5), and Month 3 begins {day_date(61).strftime("%A, %B %-d")} (Week 9).</div>'
     return page(inner, top_r="Contents")
 
 
@@ -488,6 +520,8 @@ def month_page(m):
         tags = []
         if n in SPECIAL:
             tags.append(SPECIAL[n])
+        if d in INSERTS:
+            tags.append(INSERTS[d][0])
         y, em, ed = ethiopian(d)
         if ed == 1:
             tags.append(f"{ETH_MONTHS[em-1]} 1 (Eth.)")
@@ -496,6 +530,11 @@ def month_page(m):
             f'<div class="cell{" sab" if wd == 3 else ""}"><div class="n"><span><b>{d.day}</b> {d.strftime("%b")}</span>'
             f'<span>D{n}</span></div>{wk}<div class="t">{E(DAYS[n]["cal"])}</div>'
             f'<div class="tag">{E("; ".join(tags))}</div></div>')
+    prelude_strip = ""
+    if m == 1:
+        pc = "".join(f'<div class="box" style="flex:1;padding:3px 5px"><div class="lab p" style="margin:0">{(PRE_START + dt.timedelta(days=k)).strftime("%a %b %-d")} · Prelude {k+1}</div>'
+                     f'<div style="font-size:8pt;font-weight:700">{E(PRE[k+1]["cal"])}</div></div>' for k in range(4))
+        prelude_strip = f'<div style="display:flex;gap:4px;margin-top:5px">{pc}</div>'
     used = wd0 + month_len(m)
     cells += ['<div class="cell empty"></div>'] * ((7 - used % 7) % 7)
     inner = f"""
@@ -503,6 +542,7 @@ def month_page(m):
 <h1 style="font-size:23pt;color:var(--purple);line-height:1.1;margin-bottom:2px">{E(theme)}</h1>
 <div class="small"><b>{d1.strftime("%A, %B %-d, %Y")}</b> to <b>{d2.strftime("%A, %B %-d, %Y")}</b>
 · Ethiopian: {eth_str(d1, True)} to {eth_str(d2, True)}<br>{E(line)}</div>
+{prelude_strip if m == 1 else ""}
 <div class="cal" style="margin-top:5px">{"".join(cells)}</div>
 <div style="display:flex;gap:8px;margin-top:5px">
  <div class="box" style="flex:1.2"><div class="lab p">Monthly question</div><div class="small">{E(ask)}</div>{lines(2)}</div>
@@ -561,18 +601,29 @@ def week_steps(n):
     return page(inner, top_r=f"Week {n} · day-by-day")
 
 
-def day_page(n):
-    d = DAYS[n]
-    w = WEEKS[week_of(n)]
-    dd = day_date(n)
-    wd = (n - 1) % 7
-    m = month_of(n)
+def day_page(n, pre=None):
+    if pre:
+        d = PRE[pre]
+        dd = PRE_START + dt.timedelta(days=pre - 1)
+        wd = (dd - START).days % 7
+        w = None
+    else:
+        d = DAYS[n]
+        w = WEEKS[week_of(n)]
+        dd = day_date(n)
+        wd = (n - 1) % 7
+        m = month_of(n)
     role = ROLE[wd]
-    chips = (f'<span class="chip c1">Solar Walk · Month {m}, Day {day_in_month(n)} of {month_len(m)}</span>'
-             f'<span class="chip c2">Week {week_of(n)} · Day {wd+1} of 7</span>'
-             f'<span class="chip c3">{role[0]}: {role[1]}</span>'
-             f'<span class="chip c4">Ethiopian: {eth_str(dd)}</span>')
-    # weave boxes
+    if pre:
+        chips = (f'<span class="chip c1">Prelude · Day {pre} of 4</span>'
+                 f'<span class="chip c2">Day 1 is {START.strftime("%a %b %-d")}</span>'
+                 f'<span class="chip c3">{role[0]}: {role[1]}</span>'
+                 f'<span class="chip c4">Ethiopian: {eth_str(dd)}</span>')
+    else:
+        chips = (f'<span class="chip c1">Solar Walk · Month {m}, Day {day_in_month(n)} of {month_len(m)}</span>'
+                 f'<span class="chip c2">Week {week_of(n)} · Day {wd+1} of 7</span>'
+                 f'<span class="chip c3">{role[0]}: {role[1]}</span>'
+                 f'<span class="chip c4">Ethiopian: {eth_str(dd)}</span>')
     boxes = f'<div class="box i"><div class="lab">God’s original intent</div>{E(d["intent"])}</div>'
     if d.get("quantum"):
         lab, txt = label_split(d["quantum"])
@@ -586,10 +637,20 @@ def day_page(n):
         boxes += (f'<div class="box cn"><div class="lab k">This week’s canon thread</div>'
                   f'{E(first_sentence(w["canon"]))}</div>')
     steps = "".join(f'<li><span class="ck"></span><span>{E(d["s"+str(i)])}</span></li>' for i in (1, 2, 3))
-    prompts = "".join(f'<div class="pg"><div class="prompt">{i}. {E(d["r"+str(i)])}</div><div class="ruled" style="flex:1;min-height:.5in"></div></div>' for i in (1, 2, 3))
+    prompts = "".join(f'<div class="pg"><div class="prompt">{i}. {E(d["r"+str(i)])}</div><div class="ruled" style="flex:1;min-height:.3in"></div></div>' for i in (1, 2, 3))
+    note = ""
+    if dd in INSERTS:
+        _, ntitle, ntext = INSERTS[dd]
+        note = f'<div class="calnote"><b>On the calendar today · {E(ntitle)}.</b> {E(ntext)}</div>'
+    if pre:
+        dn = f'<div class="daynum"><small>PRELUDE</small>{pre}<small>OF 4</small></div>'
+        top = f"Prelude · Day {pre} of 4"
+    else:
+        dn = f'<div class="daynum"><small>DAY</small>{n}<small>OF 91</small></div>'
+        top = f"Day {n} of 91 · Week {week_of(n)} · Month {m}"
     inner = f"""
 <div class="datehead"><div><div class="datebig">{dd.strftime("%A, %B %-d, %Y")}</div><div class="chips">{chips}</div></div>
- <div class="daynum"><small>DAY</small>{n}<small>OF 91</small></div></div>
+ {dn}</div>{note}
 <h2 class="dtitle">{E(d["title"])}</h2>
 <div class="sanct small"><span class="lab" style="margin:0">1 · Sanctuary</span> <i style="color:var(--denim)">optional. Skip it or swap in any anchor that works for you.</i><br>
  <b>Ground:</b> {E(GROUND[wd])} &nbsp; <b>Pray:</b> <i>{E(PRESENCE[wd])}</i></div>
@@ -604,7 +665,30 @@ def day_page(n):
  </div>
 </div>
 <div class="decl">{E(d["decl"])}</div>"""
-    return page(inner, top_r=f"Day {n} of 91 · Week {week_of(n)} · Month {m}")
+    return page(inner, top_r=top)
+
+
+def prelude_page():
+    chips = ""
+    for k in range(1, 5):
+        dd = PRE_START + dt.timedelta(days=k - 1)
+        chips += (f'<div class="box" style="flex:1;padding:4px 5px;text-align:center"><div class="lab p" style="margin:0">{dd.strftime("%a %b %-d")}</div>'
+                  f'<div style="font-size:8pt;line-height:1.25;font-weight:700;color:var(--denim2)">{E(PRE[k]["title"])}</div></div>')
+    inner = f"""
+<div class="lab d">Prelude · {PRE_START.strftime("%B %-d")} – {(PRE_START + dt.timedelta(days=3)).strftime("%B %-d, %Y")} · Ethiopian {eth_str(PRE_START, True)} – {eth_str(PRE_START + dt.timedelta(days=3), True)}</div>
+<h1 class="wtitle">Four Days Before the Lights</h1>
+<div class="scrip"><div class="ref">Why a Prelude?</div><div class="teach">Each 91-day season of the 364-day calendar begins on a Wednesday, the fourth day of the creation week, when God set the lights.
+Today is Saturday, and you decided to start today. So you start today, with four short days to rest, build a support list, make room, and get your ground ready. Day 1 is Wednesday, {START.strftime("%B %-d")}.</div></div>
+<div class="box" style="margin-top:6px;border-color:#bfe3e1;background:#f0fbfa"><div class="lab">What each day does</div>
+<table class="rt" style="margin-top:3px"><tr><td style="width:1.25in"><b>Sat {PRE_START.strftime("%b %-d")}</b></td><td><b>Start and rest.</b> Say where you are, and rest before doing anything.</td></tr>
+<tr><td><b>Sun {(PRE_START + dt.timedelta(days=1)).strftime("%b %-d")}</b></td><td><b>Light for the road.</b> Make a one-page support list with safe people and numbers.</td></tr>
+<tr><td><b>Mon {(PRE_START + dt.timedelta(days=2)).strftime("%b %-d")}</b></td><td><b>Make room.</b> Pick your daily window, your spot, and what stays out of it.</td></tr>
+<tr><td><b>Tue {(PRE_START + dt.timedelta(days=3)).strftime("%b %-d")}</b></td><td><b>Get the ground ready.</b> Gather what you need and set an alarm for Day 1.</td></tr></table></div>
+<div class="lab d" style="margin-top:7px">The four days at a glance</div>
+<div style="display:flex;gap:3px">{chips}</div>
+<div class="box" style="margin-top:7px"><div class="lab p">My support this season</div><div class="small">Who I will check in with, and what I need from them:</div><div class="ruled" style="height:.54in"></div></div>
+<div class="box" style="margin-top:7px;flex:1;min-height:0;display:flex;flex-direction:column"><div class="lab">Why I am starting today, in my own words</div><div class="ruled" style="flex:1"></div></div>"""
+    return page(inner, top_r="Prelude")
 
 
 def final_reflection():
@@ -630,7 +714,7 @@ def progress_review():
 <div class="small"><p class="p">This is not a grade. It is information. Mark the weeks you showed up to, even partly, and write one thing each taught you.</p></div>
 <table class="rt"><tr><th style="width:.4in">Wk</th><th>Theme</th><th>Done</th><th>One thing I learned</th></tr>{rows}</table>
 <div class="lab p" style="margin-top:8px">How I am doing (circle 1 = hard, 5 = steady)</div>
-<table class="rt"><tr><th>Area</th><th style="width:1.7in">Day 1 (Oct 7)</th><th style="width:1.7in">Day 91 (Jan 5)</th></tr>{sr}</table>
+<table class="rt"><tr><th>Area</th><th style="width:1.7in">Day 1 ({START.strftime("%b %-d")})</th><th style="width:1.7in">Day 91 ({END.strftime("%b %-d")})</th></tr>{sr}</table>
 <div class="small" style="margin-top:4px">A lower number is not failure. It may simply be honest.</div>
 <div class="box" style="margin-top:8px;flex:1;min-height:0;display:flex;flex-direction:column"><div class="lab p">What I would tell the person who starts on Day 1</div><div class="ruled" style="flex:1"></div></div>"""
     return page(inner, top_r="Progress review")
@@ -639,14 +723,14 @@ def progress_review():
 def next_step():
     inner = f"""<h1 class="h-big">Next-Step Challenge</h1>
 <div class="small"><p class="p">One season ends and another can begin. In the 364-day pattern, the next 91-day season starts on a Wednesday, which is
-<b>January 6, 2027</b>. You can repeat this book, start another, or simply keep the rhythm. Choose what is realistic. Do not choose what looks impressive.</p></div>
+<b>{NEXT_START.strftime("%B %-d, %Y")}</b>. You can repeat this book, start another, or simply keep the rhythm. Choose what is realistic. Do not choose what looks impressive.</p></div>
 <div class="box"><div class="lab">My next seven days</div><div class="small">Pick one anchor from each part of your life, small enough to do on a bad day.</div>
 <table class="rt" style="margin-top:4px">
 <tr style="height:.4in"><td style="width:1.4in"><b>Rest</b></td><td></td></tr><tr style="height:.4in"><td><b>Connection</b></td><td></td></tr>
 <tr style="height:.4in"><td><b>Care (medical, clinical, recovery)</b></td><td></td></tr><tr style="height:.4in"><td><b>Practical</b></td><td></td></tr>
 <tr style="height:.4in"><td><b>Faith</b></td><td></td></tr></table></div>
 <div class="box" style="margin-top:7px"><div class="lab p">My safety and support plan</div><div class="small">Three people or numbers I can call, one place I can go, and one thing I will do if a craving or a crisis hits.</div><div class="ruled" style="height:1.1in"></div></div>
-<div class="box" style="margin-top:7px;flex:1;min-height:0;display:flex;flex-direction:column"><div class="lab k">Letter to the person I was on October 7</div><div class="ruled" style="flex:1"></div></div>
+<div class="box" style="margin-top:7px;flex:1;min-height:0;display:flex;flex-direction:column"><div class="lab k">Letter to the person I was on October 24</div><div class="ruled" style="flex:1"></div></div>
 <div class="small" style="margin-top:6px"><b>Challenge:</b> Tell one safe person today what you finished. Then pick the day you will begin your next step and write it here:
 ______________________.</div>"""
     return page(inner, top_r="Next-step challenge")
@@ -718,6 +802,9 @@ def assemble():
     pages.append(("ahead", whats_ahead()))
     pages.append(("intro", intro_page()))
     pages.append(("howto", howto_calendar()))
+    pages.append(("pre", prelude_page()))
+    for k in range(1, 5):
+        pages.append((f"pre{k}", day_page(None, pre=k)))
     for n in range(1, 14):
         start = (n - 1) * 7 + 1
         if n in (1, 5, 9):

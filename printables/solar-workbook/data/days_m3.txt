@@ -287,7 +287,7 @@ cal: Old plug, true Source
 title: The Longest Night
 ref: Psalm 30:5
 q: “For his anger is but for a moment, and his favor is for a lifetime. Weeping may tarry for the night, but joy comes with the morning.” (Ps. 30:5, ESV)
-teach: Today is the winter solstice in the Northern Hemisphere, the shortest day and longest night of the year. After today the days get longer. In the Southern Hemisphere it is the opposite, so if that is you, flip this. David wrote Psalm 30 after being rescued, and he says weeping may tarry for the night. “Tarry” means it can stay a while. He does not say it is short. Monday is for boundaries and honesty, so be honest about the dark you are in. You do not have to rush it. Daylight is coming back, slowly.
+teach: The winter solstice, around December 21 in the Northern Hemisphere, is the shortest day and longest night of the year, and after it the days get longer. In the Southern Hemisphere it is the opposite, so if that is you, flip this. David wrote Psalm 30 after being rescued, and he says weeping may tarry for the night. “Tarry” means it can stay a while. He does not say it is short. Monday is for boundaries and honesty, so be honest about the dark you are in. You do not have to rush it. Daylight is coming back, slowly.
 intent: God honors honest weeping, and He is faithful to bring morning.
 quantum:
 canon:
@@ -344,7 +344,7 @@ cal: Abide: one way
 title: Good News for the Night Shift
 ref: Luke 2:8–14
 q: “And the angel said to them, ‘Fear not, for behold, I bring you good news of great joy that will be for all the people.’” (Luke 2:10, ESV)
-teach: Today is Christmas Eve. The first people told about Jesus’ birth were shepherds out in the fields at night, working. They were not the powerful or the polished. And the angel’s first words were “Fear not.” If this holiday is heavy, if there is an empty chair, family that is not safe, or a strong pull toward old habits, you are not alone and you are not behind. Today is a body day, so slow down. Breathe, plan your exit if you need one, and let the good news be for you too.
+teach: At Christmastime, remember that the first people told about Jesus’ birth were shepherds out in the fields at night, working. They were not the powerful or the polished. And the angel’s first words were “Fear not.” If this holiday is heavy, if there is an empty chair, family that is not safe, or a strong pull toward old habits, you are not alone and you are not behind. Thursdays in this book are body days, so slow down. Breathe, plan your exit if you need one, and let the good news be for you too.
 intent: God announced His coming first to ordinary workers in the night, and He does not leave the weary out.
 quantum:
 canon:
@@ -357,13 +357,13 @@ s2: Write your plan: how you will leave if you need to, and who you will call.
 s3: Put the number of one safe person in your phone or wallet. 988 is available anytime in the US.
 prayer: God, tonight is heavy and tender. I am one of the people You came for. Be near me. Keep me safe, and let me hear “fear not” as if it were said to me. Amen.
 decl: The good news is for me too.
-cal: Christmas Eve plan
+cal: Hard-night plan
 
 === 80
 title: God With Us
 ref: John 1:14
 q: “And the Word became flesh and dwelt among us, and we have seen his glory, glory as of the only Son from the Father, full of grace and truth.” (John 1:14, ESV)
-teach: Merry Christmas. John says the Word became flesh and “dwelt among us.” The word for dwelt is the word for pitching a tent. God did not stay far away and send instructions. He moved in. He came into a world with real hunger, danger, and displacement, and was born to a family that soon became refugees (Matt. 2). God with us does not wait for perfect rooms. If today is hard, that is not a failure of Christmas. Let one small thing be a gift: a note, a call, a gift you receive.
+teach: John says the Word became flesh and “dwelt among us.” The word for dwelt is the word for pitching a tent. God did not stay far away and send instructions. He moved in. He came into a world with real hunger, danger, and displacement, and was born to a family that soon became refugees (Matt. 2). God with us does not wait for perfect rooms. If this season is hard, that is not a failure of Christmas. Let one small thing be a gift: a note, a call, a gift you receive.
 intent: God’s answer to our need is presence. He came near.
 quantum:
 canon:
@@ -376,7 +376,7 @@ s2: Do it. Keep it simple.
 s3: Say a short thank-you to God.
 prayer: Jesus, You came into the middle of it. Come into mine today. Where I am lonely, be near. Where I am grieving, hold me. Let me receive what is good, and give what I can. Amen.
 decl: God came near. I am not alone today.
-cal: Christmas Day gift
+cal: One small gift
 
 === 81
 title: He Restores My Soul
@@ -477,7 +477,7 @@ cal: Three choices
 title: Forgetting What Lies Behind
 ref: Philippians 3:13–14
 q: “Brothers, I do not consider that I have made it my own. But one thing I do: forgetting what lies behind and straining forward to what lies ahead, I press on toward the goal for the prize of the upward call of God in Christ Jesus.” (Phil. 3:13–14, ESV)
-teach: Paul is not saying to deny your past or act like it did not happen. “Forgetting” here is about not being held by it. He also starts with “I do not consider that I have made it my own.” He had not arrived either. Today is New Year’s Eve. A kind look back counts: five survival wins, and what you are leaving behind. For many, this night is high-risk. Plan for it: who you will be with, what you will do, who you will call. A safe, quiet night is a good night.
+teach: Paul is not saying to deny your past or act like it did not happen. “Forgetting” here is about not being held by it. He also starts with “I do not consider that I have made it my own.” He had not arrived either. A kind look back counts: five survival wins, and what you are leaving behind. Some nights, like New Year’s Eve, are high-risk for many. Plan for them: who you will be with, what you will do, who you will call. A safe, quiet night is a good night.
 intent: God invites us to release what holds us, and to press on without having to be finished.
 quantum:
 canon:
@@ -496,7 +496,7 @@ cal: Five wins, safe night
 title: All Things New
 ref: Revelation 21:5
 q: “And he who was seated on the throne said, ‘Behold, I am making all things new.’” (Rev. 21:5, ESV)
-teach: Happy New Year. “I am making all things new” is present tense, and it is spoken at the end of the book, about the end of all things. It does not say this year will be perfect or that every wound will heal on a schedule. It says God is making things new. Instead of resolutions, which are often shaming, pick three new practices. Small and repeated. Tell one person. Let them be seeds, not promises.
+teach: “I am making all things new” is present tense, and it is spoken at the end of the book, about the end of all things. It does not say this year will be perfect or that every wound will heal on a schedule. It says God is making things new. Instead of resolutions, which are often shaming, pick three new practices. Small and repeated. Tell one person. Let them be seeds, not promises.
 intent: God’s story ends with renewal, and He is already at work making things new.
 quantum:
 canon: Jubilees 1:29 looks ahead to a day of new creation, when heaven and earth are renewed.
@@ -572,7 +572,7 @@ cal: No-list, yes-list
 title: The Blessing
 ref: Numbers 6:24–26
 q: “The LORD bless you and keep you; the LORD make his face to shine upon you and be gracious to you; the LORD lift up his countenance upon you and give you peace.” (Num. 6:24–26, ESV)
-teach: This is the last day of the season, the thirty-first day of Month 3. God gave Moses these words for Aaron to speak over the people. It begins with blessing and keeping and ends with peace, and in between God’s face shines on them. We started this book with light, and we end with a face shining. This is a blessing, not a prediction of how your life will go. Take it as it is: a blessing spoken over you. Tomorrow is not the end. The next season can begin Wednesday, January 6.
+teach: This is the last day of the season, the thirty-first day of Month 3. God gave Moses these words for Aaron to speak over the people. It begins with blessing and keeping and ends with peace, and in between God’s face shines on them. We started this book with light, and we end with a face shining. This is a blessing, not a prediction of how your life will go. Take it as it is: a blessing spoken over you. Tomorrow is not the end. The next season can begin Wednesday, {{NEXT}}.
 intent: God’s blessing is light, grace, and peace, spoken over His people.
 quantum:
 canon:

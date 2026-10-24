@@ -363,7 +363,7 @@ cal: Plant one hope
 title: In a Mirror, Dimly
 ref: 1 Corinthians 13:12
 q: “For now we see in a mirror dimly, but then face to face. Now I know in part; then I shall know fully, even as I have been fully known.” (1 Cor. 13:12, ESV)
-teach: Paul is not saying you cannot know anything. He is saying you know in part, and one day fully, and meanwhile you are already fully known. That is a kindness. This week has holidays in it, and that can mean grief, family stress, old using times, or an empty chair. You do not have to know how it will go. Today we make a holiday plan: what you know, what you do not, and what you choose to trust.
+teach: Paul is not saying you cannot know anything. He is saying you know in part, and one day fully, and meanwhile you are already fully known. That is a kindness. Holiday seasons can mean grief, family stress, old using times, or an empty chair. You do not have to know how it will go. Today we make a holiday plan: what you know, what you do not, and what you choose to trust.
 intent: God asks us to trust Him with what we cannot see, because we are already fully known by Him.
 quantum: Analogy: Heisenberg’s uncertainty principle says you cannot know a particle’s exact position and exact momentum at once. It is built into nature, not a flaw in our tools. We can still make precise predictions about what is likely.
 canon: Wisdom of Solomon 9:13–14 asks who can learn the counsel of God and says our plans are unstable.
@@ -382,7 +382,7 @@ cal: Holiday plan
 title: Give Thanks Without Pretending
 ref: 1 Thessalonians 5:16–18
 q: “give thanks in all circumstances; for this is the will of God in Christ Jesus for you.” (1 Thess. 5:18, ESV)
-teach: Paul says give thanks in all circumstances, not for all circumstances. That means you can be thankful for one true thing in a day that also hurts. Today is Thanksgiving in the US, and it can be a rough one. If there is an empty chair, say so. If family is not safe, you do not owe them your presence. You can give thanks and grieve in the same day. Tell God the truth, and let both be real.
+teach: Paul says give thanks in all circumstances, not for all circumstances. That means you can be thankful for one true thing in a day that also hurts. A day of thanks, like Thanksgiving in the US, can be a rough one. If there is an empty chair, say so. If family is not safe, you do not owe them your presence. You can give thanks and grieve in the same day. Tell God the truth, and let both be real.
 intent: God invites honest gratitude alongside honest grief, and He does not ask for pretend joy.
 quantum:
 canon:
@@ -439,7 +439,7 @@ cal: Sabbath: worry window
 title: Waiting in the Dark
 ref: Isaiah 9:2
 q: “The people who walked in darkness have seen a great light; those who dwelt in a land of deep darkness, on them has light shone.” (Isa. 9:2, ESV)
-teach: Today is the first Sunday of Advent, the four weeks before Christmas when Christians remember waiting. Isaiah wrote to people living in a dark time, and the light he promised had not come yet. Advent is permission to wait honestly, in the dark, without pretending it is already morning. If you are in a dark season, you are not behind the people who seem to be celebrating. You are in the part of the story where waiting is the faithful thing.
+teach: Advent is the four weeks before Christmas, when Christians remember waiting. Isaiah wrote to people living in a dark time, and the light he promised had not come yet. Advent is permission to wait honestly, in the dark, without pretending it is already morning. If you are in a dark season, you are not behind the people who seem to be celebrating. You are in the part of the story where waiting is the faithful thing.
 intent: God’s people have always waited in the dark for light that was promised.
 quantum:
 canon:
@@ -544,7 +544,7 @@ r3: What name would I give God from my own story?
 action: Write a note that starts with “I was seen when . . .” and let it be as short as it needs to be.
 s1: Write “I was seen when . . .” and finish it any way you can. Leave it blank if that is all you have.
 s2: If there is a word you would use for God from your own story, write it down.
-s3: If you or someone you know needs help: National Human Trafficking Hotline 1-888-373-7888 (text 233733), or 911 if in danger.
+s3: Need help? Trafficking Hotline 1-888-373-7888 (text 233733), or 911.
 prayer: God of seeing, I was not seen when I needed to be. Thank You that You see. Where I am still in danger, make a way out. Where I am free, help me heal. Amen.
 decl: God sees me, and I am not invisible.
 cal: I was seen when
