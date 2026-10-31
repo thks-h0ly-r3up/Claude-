@@ -1,0 +1,31 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Blank Bland Calendars</title>
+<meta name="description" content="Printable daily tracker — 7HE H0LY R3UP.">
+<style>
+@page land { size: 11in 8.5in; margin: 0; }
+@page por { size: 8.5in 11in; margin: 0; }
+.pg{ page:land; }
+.pg.por{ page:por; }
+*{ box-sizing:border-box; }
+html,body{ margin:0; font-family:Arial,Helvetica,sans-serif; color:#222; background:#fff; -webkit-print-color-adjust:exact; }
+.pg{ width:11in; height:8.5in; padding:.4in; page-break-after:always; position:relative; overflow:hidden; }
+.pg.por{ width:8.5in; height:11in; }
+.ttl{ display:flex; gap:24px; align-items:flex-end; border-bottom:2px solid #222; padding-bottom:4px; margin-bottom:6px; font-size:14px; font-weight:700; }
+.ttl span{ flex:1; border-bottom:1px solid #888; height:20px; } .ttl span.s{ flex:.6; }
+.cal{ width:100%; border-collapse:collapse; table-layout:fixed; height:calc(100% - 100px); }
+.cal th{ border:1px solid #444; background:#eee; font-size:11px; padding:3px; height:20px; }
+.cal td{ border:1px solid #444; vertical-align:top; padding:3px 4px; }
+.wk{ width:100%; border-collapse:collapse; table-layout:fixed; height:calc(100% - 50px); }
+.wk td{ border:1px solid #444; vertical-align:top; padding:4px 6px; font-weight:700; font-size:12px; }
+.wk td i{ display:block; margin-top:4px; height:100%; background:repeating-linear-gradient(transparent 0 21px,#ccc 21px 22px); }
+.lbl{ font-size:11px; font-weight:700; margin:6px 0 2px; }
+.leg{ display:flex; gap:10px; margin-top:6px; font-size:11px; } .leg div{ flex:1; border-bottom:1px solid #888; height:18px; }
+.dly{ display:grid; grid-template-columns:1.2fr 1fr; gap:14px; height:calc(100% - 52px); }
+.hr{ display:flex; border-bottom:1px solid #999; height:53px; font-size:11px; } .hr b{ width:42px; border-right:1px solid #999; padding:2px 0 0 3px; }
+.box{ border:1px solid #444; padding:6px; margin-bottom:8px; font-size:11px; font-weight:700; }
+.box i{ display:block; height:100%; background:repeating-linear-gradient(transparent 0 23px,#ccc 23px 24px); margin-top:4px; }
+</style></head><body><section class="pg"><div class="ttl">MONTH <span></span> YEAR <span class="s"></span></div>
+<table class="cal"><tr><th>SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+<div class="lbl">NOTES / KEY (write your own categories)</div><div class="leg"><div></div><div></div><div></div><div></div></div></section><section class="pg"><div class="ttl">WEEK OF <span></span> TO <span></span></div>
+<table class="wk"><tr><td>SUNDAY<i></i></td><td>MONDAY<i></i></td><td>TUESDAY<i></i></td><td>WEDNESDAY<i></i></td></tr><tr><td>THURSDAY<i></i></td><td>FRIDAY<i></i></td><td>SATURDAY<i></i></td><td>NOTES<i></i></td></tr></table></section><section class="pg por"><div class="ttl">DATE <span></span> DAY <span class="s"></span></div>
+<div class="dly"><div><div class="hr" style="height:24px;background:#eee;font-weight:700"><b style="width:90px">TIME</b><span style="padding:4px 6px">WHAT</span></div><div class="hr" style="height:52px"><b style="width:90px"></b></div><div class="hr" style="height:52px"><b style="width:90px"></b></div><div class="hr" style="height:52px"><b style="width:90px"></b></div><div class="hr" style="height:52px"><b style="width:90px"></b></div><div class="hr" style="height:52px"><b style="width:90px"></b></div><div class="hr" style="height:52px"><b style="width:90px"></b></div><div class="hr" style="height:52px"><b style="width:90px"></b></div><div class="hr" style="height:52px"><b style="width:90px"></b></div><div class="hr" style="height:52px"><b style="width:90px"></b></div><div class="hr" style="height:52px"><b style="width:90px"></b></div><div class="hr" style="height:52px"><b style="width:90px"></b></div><div class="hr" style="height:52px"><b style="width:90px"></b></div><div class="hr" style="height:52px"><b style="width:90px"></b></div><div class="hr" style="height:52px"><b style="width:90px"></b></div><div class="hr" style="height:52px"><b style="width:90px"></b></div></div>
+<div><div class="box" style="height:34%">TO DO<i></i></div><div class="box" style="height:34%">NOTES<i></i></div><div class="box" style="height:22%">APPOINTMENTS / CALLS<i></i></div></div></div></section></body></html>
