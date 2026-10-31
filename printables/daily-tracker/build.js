@@ -296,10 +296,109 @@ function dayPage(t) {
   <div class="sec"><h2>To Do <em>one at a time</em></h2><div class="in">${Array.from({length:6},()=>`<div class="row">${box('')}<span class="fill" style="min-width:150px"></span></div>`).join('')}</div></div>
   <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in">${lines(5, 19)}</div></div>
   <div class="sec"><h2>Body Check <em>circle / check</em></h2><div class="in"><div class="row">${box('Ate')}${box('Water')}${box('Meds')}${box('Slept')}</div><div class="row">${box('Ears ringing')}${box('Headache')}${box('Dizzy')}</div><div class="row"><span class="lab">Big Boy:</span>${box('Fed')}${box('Walked')}</div></div></div>
-  <div class="sec"><h2>Appointments / Calls</h2><div class="in">${lines(2, 19)}</div></div>
-  <div class="sec"><h2>Thankful For</h2><div class="in">${lines(2, 19)}</div></div>
+  <div class="sec"><h2>Appointments / Calls</h2><div class="in">${lines(3, 21)}</div></div>
+  <div class="sec"><h2>Thankful For</h2><div class="in">${lines(3, 21)}</div></div>
 </div></div>
 <div class="foot"><b>Daily.</b> The detailed log is on the next two pages. Even one box counts.</div></section>`;
+}
+
+
+// ---------- Oct 31 – Nov 2026 set ----------
+const DOW = ['SUNDAY','MONDAY','TUESDAY','WEDNESDAY','THURSDAY','FRIDAY','SATURDAY'];
+const MON = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const dt = (m, d) => new Date(2026, m, d);
+const addDays = (d, n) => { const x = new Date(d); x.setDate(x.getDate() + n); return x; };
+const short = (d) => `${MON[d.getMonth()].slice(0, 3)} ${d.getDate()}`;
+const hdr = (t, title) => brandHead(title, { text: t.motif, pat: !!t.pattern, icons: iconRow(t.icons), rip: t.rip });
+const novCss = `
+.g3{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px; }
+.mt.n td{ height:90px; } .mt.n td.to{ outline:2.5px solid var(--b); outline-offset:-2.5px; }
+.sec.neg>h2{ background:var(--b); }
+.wnote{ font-size:7.2px; color:#5a5560; margin-top:2px; }
+`;
+const randomSec = (n = 4, h = 19) => `<div class="sec"><h2>Random Things That Come to Me <em>ideas · words · memories</em></h2><div class="in">${lines(n, h)}</div></div>`;
+const negSec = (nRows = 4, h = 26) => `<div class="sec neg"><h2>Negative Watch <em>what's coming against me</em></h2><div class="in" style="padding:3px 4px 4px">
+  <table><tr><th style="width:34%">What's coming</th><th style="width:20%">From (thought · person · event)</th><th style="width:9%">0–10</th><th>Truth I'm standing on / what I'm doing</th></tr>
+  ${Array.from({ length: nRows }, () => `<tr><td style="height:${h}px"></td><td></td><td></td><td></td></tr>`).join('')}</table>
+  <div class="wnote">Naming it takes some of its power. A thought is not a fact. Safety first — reach out if it's more than you can hold.</div></div></div>`;
+
+function novMonthPage(t) {
+  const dow = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+  const start = dt(9, 25); // Sun Oct 25
+  const cells = Array.from({ length: 42 }, (_, i) => {
+    const d = addDays(start, i);
+    const isNov = d.getMonth() === 10;
+    const first = d.getDate() === 1 || i === 0;
+    const label = d.getDate() === 1 || i === 0 ? `${MON[d.getMonth()].slice(0, 3)} ${d.getDate()}` : d.getDate();
+    const cls = [isNov || (d.getMonth() === 9 && d.getDate() === 31) ? '' : 'o', d.getMonth() === 9 && d.getDate() === 31 ? 'to' : ''].join(' ');
+    return `<td class="${cls}"><b>${label}</b></td>`;
+  });
+  const trs = Array.from({ length: 6 }, (_, r) => `<tr>${cells.slice(r * 7, r * 7 + 7).join('')}</tr>`).join('');
+  return `<section class="page">${hdr(t, 'Monthly Calendar')}
+<div class="mtitle">October 31 – November 2026</div>
+<table class="mt n"><tr>${dow.map((d) => `<th>${d}</th>`).join('')}</tr>${trs}</table>
+<div class="g3" style="margin-top:6px">
+  <div class="sec"><h2>Random Things</h2><div class="in">${lines(4, 19)}</div></div>
+  <div class="sec"><h2>Health This Month</h2><div class="in">${lines(2, 19)}<div class="row">${box('Doctor visit')}${box('Refill')}${box('Labs')}</div></div></div>
+  <div class="sec neg"><h2>What's Coming Against Me</h2><div class="in">${lines(4, 19)}</div></div>
+</div>
+<div class="sec" style="margin-top:6px"><h2>My Categories <em>mark days with the letter</em></h2><div class="in"><div class="key">${[['B','Body'],['M','Mind'],['S','Sleep'],['F','Food'],['G','God/Prayer'],['P','People'],['X','Safety'],['$','Money/Legal'],['H','Home/Big Boy'],['W','Win']].map(([k,v])=>`<div><b>${k}</b>${v}</div>`).join('')}</div></div></div>
+<div class="foot"><b>Oct 31 – Nov 30, 2026.</b> You survived. Now we rebuild. · Start day is boxed.</div></section>`;
+}
+
+function novWeekPage(t, start, n) {
+  const end = addDays(start, 6);
+  const days = Array.from({ length: 7 }, (_, i) => {
+    const d = addDays(start, i);
+    return `<div class="wkd"><h3>${DOW[d.getDay()]} <span>${short(d)}, 2026</span></h3><div class="in">
+    <div class="row" style="margin:1px 0 2px">${box('Prayed')}${box('Ate')}${box('Water')}${box('Slept')}${box('Meds')}${box('Ears ringing')}${box('Big Boy walked')}</div>
+    ${lines(3, 19)}</div></div>`;
+  }).join('');
+  return `<section class="page">${hdr(t, 'Weekly Plan')}
+<div class="datebar" style="grid-template-columns:1.3fr 1fr"><div class="field">WEEK ${n}: ${DOW[start.getDay()].slice(0,3)} ${short(start)} – ${DOW[end.getDay()].slice(0,3)} ${short(end)}, 2026</div><div class="field">THIS WEEK'S FOCUS: </div></div>
+${days}
+<div class="g3">
+  <div class="sec"><h2>Random Things</h2><div class="in">${lines(4, 19)}</div></div>
+  <div class="sec"><h2>Health This Week</h2><div class="in"><div class="small">Ringing days <span class="fill" style="min-width:22px"></span> Avg sleep <span class="fill" style="min-width:22px"></span> hrs</div><div class="small" style="margin-top:3px">Days I ate 3x <span class="fill" style="min-width:22px"></span> Meds missed <span class="fill" style="min-width:22px"></span></div>${lines(2, 19)}</div></div>
+  <div class="sec neg"><h2>What's Coming Against Me</h2><div class="in">${lines(4, 19)}</div></div>
+</div>
+<div class="foot"><b>Weekly.</b> Share only what feels safe. · We survived. Now let's go back — with truth and a hand out.</div></section>`;
+}
+
+function novDayPage(t, d) {
+  const title = `${DOW[d.getDay()]}, ${MON[d.getMonth()].toUpperCase()} ${d.getDate()}, 2026`;
+  const tbl = `<table><tr><th style="width:22%">TIME</th><th>WHAT / WHERE / WHO</th></tr>${Array.from({ length: 10 }, () => '<tr><td style="height:42px"></td><td></td></tr>').join('')}</table>`;
+  const task = (n) => Array.from({ length: n }, () => `<div class="row" style="margin:3px 0">${box('')}<span class="fill" style="min-width:150px"></span></div>`).join('');
+  return `<section class="page">${hdr(t, 'Daily Planner')}
+<div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">${title}</div><div class="field">WEATHER / MOOD: </div></div>
+<div class="grid" style="grid-template-columns:1.1fr 1fr">
+<div class="col">
+  <div class="sec"><h2>Today <em>write the time, then what</em></h2><div class="in" style="padding:3px 4px 4px">${tbl}</div></div>
+  ${randomSec(6, 21)}
+  ${negSec(5, 34)}
+</div>
+<div class="col">
+  <div class="sec"><h2>Top 3 Today</h2><div class="in">${task(3)}</div></div>
+  <div class="sec"><h2>To Do <em>one at a time</em></h2><div class="in">${task(6)}</div></div>
+  <div class="sec"><h2>Health Today <em>circle / check</em></h2><div class="in">
+    <div class="row">${box('Ears ringing')}<span class="lab">time</span><span class="fill"></span><span class="lab">1–10</span><span class="fill" style="min-width:18px"></span></div>
+    <div class="row">${box('Headache')}${box('Dizzy')}${box('Nausea')}${box('Shaky')}${box('Pain')}</div>
+    <div class="row"><span class="lab">Slept</span><span class="fill" style="min-width:24px"></span><span class="lab">hrs</span>${box('Rough')}${box('Okay')}${box('Good')}</div>
+    <div class="row">${box('Breakfast')}${box('Lunch')}${box('Dinner')}${box('Snack')}</div>
+    <div class="row"><span class="lab">Water:</span>${Array.from({ length: 8 }, () => '<span class="num">&nbsp;</span>').join('')}</div>
+    <div class="row">${box('Meds AM')}${box('PM')}${box('Missed')}<span class="lab">Notes</span><span class="fill w"></span></div>
+  </div></div>
+  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in">${lines(6, 21)}</div></div>
+  <div class="sec"><h2>Appointments / Calls</h2><div class="in">${lines(3, 21)}</div></div>
+  <div class="sec"><h2>Thankful For</h2><div class="in">${lines(3, 21)}</div></div>
+</div></div>
+<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div></section>`;
+}
+
+function novBody(t) {
+  const weeks = [dt(9, 31), dt(10, 7), dt(10, 14), dt(10, 21), dt(10, 28)];
+  const days = Array.from({ length: 31 }, (_, i) => addDays(dt(9, 31), i));
+  return novMonthPage(t) + weeks.map((w, i) => novWeekPage(t, w, i + 1)).join('') + days.map((d) => novDayPage(t, d)).join('') + page1(t) + page2(t);
 }
 
 const docWrap = (title, css, body) => `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>${title}</title>
@@ -365,6 +464,14 @@ function daily() {
     fs.writeFileSync(hp, html);
     await render(hp, hp.replace('.html', '.pdf'));
     console.log('built', t.id);
+  }
+
+  for (const t of THEMES) {
+    const html2 = docWrap(`7HE H0LY R3UP — Oct 31–Nov 2026 — ${t.name}`, baseCss(t) + setCss + novCss, novBody(t));
+    const hp2 = path.join(OUT, `nov-set-${t.id}.html`);
+    fs.writeFileSync(hp2, html2);
+    await render(hp2, hp2.replace('.html', '.pdf'));
+    console.log('built nov', t.id);
   }
 
   const bland = docWrap('Blank Bland Calendars', blandCss, monthly() + weekly() + daily());
