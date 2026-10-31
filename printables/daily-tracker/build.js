@@ -35,21 +35,24 @@ const pinkCamo = encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' wid
 <path d='M180 6c14-8 38 0 36 16s-24 18-34 8-8-18-2-24z' fill='#f48fb8'/>
 <path d='M226 34c10-10 34-2 34 14s-26 14-34 6-6-14 0-20z' fill='#e86aa0'/></g></svg>`);
 const THEMES = [
-  { id: '01-hot-pink-and-teal', tex: 'tex-01-hot-pink-teal.jpg', ov: 0.45, name: 'Hot Pink & Teal', ink: '#22232b', paper: '#fffafc', a: '#e6007e', b: '#0a8f8f', soft: '#ffe6f2', line: '#f0a6cc',
-    head: 'linear-gradient(90deg,#e6007e,#ff4fa3 45%,#14b8b0)', stitch: '#14b8b0', motif: 'HOT PINK · TEAL · FAITH', icons: ['cross', 'hat', 'anchor'], pattern: '' },
-  { id: '02-turquoise-sunrise', tex: 'tex-02-turquoise-sunrise.jpg', ov: 0, name: 'Turquoise Sunrise', ink: '#1f2d2e', paper: '#fffbf4', a: '#1fa8a4', b: '#c9683a', soft: '#e3f5f3', line: '#9fd3cf',
-    head: 'linear-gradient(90deg,#1fa8a4,#6fd0c6 35%,#ffd68a 68%,#ff9f78)', stitch: '#f0a45a', motif: 'TURQUOISE SUNRISE', icons: ['cross', 'anchor'], pattern: 'box' },
-  { id: '03-cow-print', tex: 'tex-03-cow-print.jpg', ov: 0, name: 'Cow Print', ink: '#1a1a1a', paper: '#ffffff', a: '#e6007e', b: '#111111', soft: '#f3f3f3', line: '#c4c4c4',
-    head: `#ffffff url("data:image/svg+xml,${cow}") center/260px 60px`, stitch: '#14b8b0', motif: 'COWGIRL STRONG', icons: ['hat', 'boot', 'cross'], pattern: 'box' },
-  { id: '04-ripped-denim', tex: 'tex-04-ripped-denim.jpg', ov: 0.45, name: 'Ripped Denim', ink: '#1e2733', paper: '#fbfaf6', a: '#3f5b80', b: '#243a57', soft: '#e3eaf3', line: '#a3b5cc',
-    head: 'repeating-linear-gradient(45deg,#33507a 0 3px,#3f5b80 3px 6px)', stitch: '#e6007e', motif: 'RIPPED · NOT BROKEN', icons: ['chain', 'cross'], pattern: '', rip: true },
-  { id: '05-pink-camo', tex: 'tex-05-pink-camo.jpg', ov: 0, name: 'Pink Camo', ink: '#3a1d2e', paper: '#fffafb', a: '#c2417f', b: '#7d2a56', soft: '#fde6ef', line: '#efb3cb',
-    head: `#f9d3e2 url("data:image/svg+xml,${pinkCamo}") center/260px 60px`, stitch: '#e86aa0', motif: 'HOLD THE LINE', icons: ['anchor', 'cross'], pattern: 'box' },
-  { id: '06-mason-jar-cowgirl', tex: 'tex-06-mason-jar-wood.jpg', ov: 0, name: 'Mason Jar Cowgirl', ink: '#3a2e22', paper: '#fbf5e8', a: '#14a39f', b: '#6b4a2b', soft: '#e4f3ef', line: '#c5b48f',
-    head: 'linear-gradient(90deg,#6b4a2b,#8a6a45 40%,#14a39f)', stitch: '#e6007e', motif: 'COUNTRY · FAITH · GRIT', icons: ['jar', 'hat', 'cross'], pattern: 'box' },
-  { id: '07-chain-break-anchor', tex: 'tex-07-ombre-chain.jpg', ov: 0.45, name: 'Chain Break & Anchor', ink: '#22232b', paper: '#fdfaff', a: '#7a4c9e', b: '#e6007e', soft: '#f3eaf8', line: '#cdb6df',
-    head: 'linear-gradient(90deg,#e6007e,#a45aa8 50%,#14b8b0)', stitch: '#14b8b0', motif: 'CHAINS BROKEN · ANCHORED', icons: ['chain', 'anchor', 'cross'], pattern: '' },
+  { id: '01-hot-pink-and-teal', name: 'Hot Pink & Teal', tex: 'tex-01-hot-pink-teal.jpg', ink: '#22232b', a: '#e6007e', b: '#0f7f82', soft: '#ffe9f3', line: '#f0a6cc', stitch: '#159a9c',
+    motif: 'HOT PINK · TEAL · FAITH', wash: 'wash-pink', dh: ['crosswrap'], fl: ['paws'], fr: ['jar'] },
+  { id: '02-turquoise-sunrise', name: 'Turquoise Sunrise', tex: 'tex-08-sunrise-sky.jpg', ink: '#1f2d2e', a: '#159a9c', b: '#123b3d', soft: '#e3f5f3', line: '#9fd3cf', stitch: '#e8aa4a',
+    motif: 'TURQUOISE SUNRISE', wash: 'wash-gold', dh: ['hatpost'], fl: ['paws'], fr: ['bible'] },
+  { id: '03-cow-print', name: 'Cow Print', tex: 'tex-03-cow-print.jpg', ink: '#1a1a1a', a: '#e6007e', b: '#1a1a1a', soft: '#f3f3f3', line: '#c4c4c4', stitch: '#159a9c',
+    motif: 'COWGIRL STRONG', wash: 'wash-teal', dh: ['cow'], fl: ['paws'], fr: ['bully'] },
+  { id: '04-ripped-denim', name: 'Ripped Denim', tex: 'tex-04-ripped-denim.jpg', ink: '#1e2733', a: '#3b5b83', b: '#243a57', soft: '#e3eaf3', line: '#a3b5cc', stitch: '#e6007e',
+    motif: 'RIPPED · NOT BROKEN', wash: 'wash-teal', dh: ['denim'], fl: ['paws'], fr: ['jar'] },
+  { id: '05-pink-camo', name: 'Pink Camo', tex: 'tex-05-pink-camo.jpg', ink: '#3a1d2e', a: '#c97a92', b: '#7d2a56', soft: '#fde6ef', line: '#efb3cb', stitch: '#e86aa0',
+    motif: 'HOLD THE LINE', wash: 'wash-pink', dh: ['concho'], fl: ['paws'], fr: ['jar'] },
+  { id: '06-mason-jar-cowgirl', name: 'Mason Jar Cowgirl', tex: 'tex-06-mason-jar-wood.jpg', ink: '#3a2e22', a: '#159a9c', b: '#6b4a2b', soft: '#e4f3ef', line: '#c5b48f', stitch: '#e6007e',
+    motif: 'COUNTRY · FAITH · GRIT', wash: 'wash-gold', dh: ['jar'], fl: ['paws'], fr: ['hatpost'] },
+  { id: '07-chain-break-anchor', name: 'Chain Break & Anchor', tex: 'tex-07-ombre-chain.jpg', ink: '#22232b', a: '#7a4c9e', b: '#c2186b', soft: '#f3eaf8', line: '#cdb6df', stitch: '#159a9c',
+    motif: 'CHAINS BROKEN · ANCHORED', wash: 'wash-purple', dh: ['chain', 'anchor'], fl: ['paws'], fr: ['bully'] },
 ];
+let CUR = THEMES[0];
+const decSrc = (n) => (['chain', 'anchor', 'cross', 'hat', 'boot'].includes(n) ? `assets/icons/${n}.png` : `assets/cut/${n}.png`);
+const decImgs = (list, cls = '') => list.map((n) => `<img class="d-${n} ${cls}" src="${decSrc(n)}" alt="">`).join('');
 
 // ---------- helpers ----------
 const lines = (n, h = 17) => Array.from({ length: n }, () => `<div class="ln" style="height:${h}px"></div>`).join('');
@@ -104,10 +107,12 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
 .key b{ display:inline-block; min-width:12px; height:12px; border-radius:3px; background:var(--a); color:#fff; text-align:center; line-height:12px; margin-right:3px; font-size:8px; }
 `;
 
-const brandHead = (title, motif) => `
-<div class="head ${motif.pat ? 'pat' : ''} ${motif.rip ? 'rip' : ''}">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>${title}</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic">${motif.icons}</div>${motif.text}</div>
+const brandHead = (title) => `
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/${CUR.wash}.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>${title}</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco">${decImgs(CUR.dh)}</div>
 </div>`;
 
 // ---------- page 1: Daily Log ----------
@@ -115,7 +120,7 @@ function page1(t) {
   const pat = !!t.pattern;
   return `
 <section class="page">
-${brandHead('Daily Log', { text: t.motif, pat, icons: iconRow(t.icons), rip: t.rip })}
+${brandHead('Daily Log')}
 <div class="datebar">
   <div class="field">DATE: </div>
   <div class="dow"><span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span></div>
@@ -201,7 +206,7 @@ function page2(t) {
     ['P', 'People / contact'], ['X', 'Safety / incident'], ['$', 'Money / work / legal'], ['H', 'Home / Big Boy'], ['W', 'Win / mercy']];
   return `
 <section class="page">
-${brandHead('What Happened — Full Detail', { text: t.motif, pat, icons: iconRow(t.icons), rip: t.rip })}
+${brandHead('What Happened — Full Detail')}
 <div class="datebar" style="grid-template-columns:1.2fr 1fr 1.3fr">
   <div class="field">DATE: </div><div class="field">DAY: </div><div class="field">WHERE I WAS MOST OF THE DAY: </div>
 </div>
@@ -263,7 +268,7 @@ function monthPage(t) {
     else cells.push(`<td class="${d === 24 ? 'today' : ''}"><b>${d}</b></td>`);
   }
   const trs = Array.from({ length: 5 }, (_, r) => `<tr>${cells.slice(r * 7, r * 7 + 7).join('')}</tr>`).join('');
-  return `<section class="page">${brandHead('Monthly Calendar', { text: t.motif, pat: !!t.pattern, icons: iconRow(t.icons), rip: t.rip })}
+  return `<section class="page">${brandHead('Monthly Calendar')}
 <div class="mtitle">October 2026</div>
 <table class="mt"><tr>${dow.map((d) => `<th>${d}</th>`).join('')}</tr>${trs}</table>
 <div class="grid" style="margin-top:6px">
@@ -279,7 +284,7 @@ function weekPage(t) {
   const days = names.map((n, i) => `<div class="wkd"><h3>${n} <span>${dates[i]}, 2026</span></h3><div class="in">
     <div class="row" style="margin:1px 0 2px">${box('Prayed')}${box('Ate')}${box('Water')}${box('Slept')}${box('Meds')}${box('Ears ringing')}${box('Big Boy walked')}</div>
     ${lines(3, 18)}</div></div>`).join('');
-  return `<section class="page">${brandHead('Weekly Plan', { text: t.motif, pat: !!t.pattern, icons: iconRow(t.icons), rip: t.rip })}
+  return `<section class="page">${brandHead('Weekly Plan')}
 <div class="datebar" style="grid-template-columns:1fr 1fr"><div class="field">WEEK OF: Saturday, Oct 24 – Friday, Oct 30, 2026</div><div class="field">THIS WEEK'S FOCUS: </div></div>
 ${days}
 <div class="grid"><div class="sec"><h2>Wins · Mercy I Saw</h2><div class="in">${lines(2, 17)}</div></div><div class="sec"><h2>Next Week's One Thing</h2><div class="in">${lines(2, 17)}</div></div></div>
@@ -287,7 +292,7 @@ ${days}
 }
 function dayPage(t) {
   const hrs = ['6 AM','7','8','9','10','11','12 PM','1','2','3','4','5','6','7','8','9'];
-  return `<section class="page">${brandHead('Daily Planner', { text: t.motif, pat: !!t.pattern, icons: iconRow(t.icons), rip: t.rip })}
+  return `<section class="page">${brandHead('Daily Planner')}
 <div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">SATURDAY, OCTOBER 24, 2026</div><div class="field">WEATHER / MOOD: </div></div>
 <div class="grid" style="grid-template-columns:1.1fr 1fr">
 <div class="sec"><h2>Today <em>write the time, then what</em></h2><div class="in" style="padding:3px 4px 4px"><table><tr><th style="width:24%">TIME</th><th>WHAT / WHERE / WHO</th></tr>${Array.from({ length: 15 }, () => '<tr><td style="height:46px"></td><td></td></tr>').join('')}</table></div></div>
@@ -309,7 +314,7 @@ const MON = ['January','February','March','April','May','June','July','August','
 const dt = (m, d) => new Date(2026, m, d);
 const addDays = (d, n) => { const x = new Date(d); x.setDate(x.getDate() + n); return x; };
 const short = (d) => `${MON[d.getMonth()].slice(0, 3)} ${d.getDate()}`;
-const hdr = (t, title) => brandHead(title, { text: t.motif, pat: !!t.pattern, icons: iconRow(t.icons), rip: t.rip });
+const hdr = (t, title) => brandHead(title);
 const novCss = `
 .g3{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px; }
 .mt.n td{ height:90px; } .mt.n td.to{ outline:2.5px solid var(--b); outline-offset:-2.5px; }
@@ -388,7 +393,7 @@ function novDayPage(t, d) {
     <div class="row"><span class="lab">Water:</span>${Array.from({ length: 8 }, () => '<span class="num">&nbsp;</span>').join('')}</div>
     <div class="row">${box('Meds AM')}${box('PM')}${box('Missed')}<span class="lab">Notes</span><span class="fill w"></span></div>
   </div></div>
-  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in">${lines(6, 21)}</div></div>
+  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="row" style="margin:1px 0 3px"><span class="lab">Scripture today:</span><span class="fill" style="min-width:200px"></span></div>${lines(5, 21)}</div></div>
   <div class="sec"><h2>Appointments / Calls</h2><div class="in">${lines(3, 21)}</div></div>
   <div class="sec"><h2>Thankful For</h2><div class="in">${lines(3, 21)}</div></div>
 </div></div>
@@ -396,10 +401,44 @@ function novDayPage(t, d) {
 }
 
 function novBody(t) {
+  CUR = t;
   const weeks = [dt(9, 31), dt(10, 7), dt(10, 14), dt(10, 21), dt(10, 28)];
   const days = Array.from({ length: 31 }, (_, i) => addDays(dt(9, 31), i));
-  return novMonthPage(t) + weeks.map((w, i) => novWeekPage(t, w, i + 1)).join('') + days.map((d) => novDayPage(t, d)).join('') + page1(t) + page2(t);
+  return (novMonthPage(t) + weeks.map((w, i) => novWeekPage(t, w, i + 1)).join('') + days.map((d) => novDayPage(t, d)).join('') + page1(t) + page2(t)).replace(/<\/section>/g, `${decor()}</section>`);
 }
+
+
+const scrapCss = (t) => `
+@font-face{ font-family:'Alfa'; src:url(assets/fonts/AlfaSlab.woff2) format('woff2'); }
+@font-face{ font-family:'Kaushan'; src:url(assets/fonts/Kaushan.woff2) format('woff2'); }
+@font-face{ font-family:'Franklin'; font-weight:400; src:url(assets/fonts/Franklin400.woff2) format('woff2'); }
+@font-face{ font-family:'Franklin'; font-weight:600; src:url(assets/fonts/Franklin600.woff2) format('woff2'); }
+@font-face{ font-family:'Franklin'; font-weight:800; src:url(assets/fonts/Franklin800.woff2) format('woff2'); }
+html,body{ font-family:'Franklin','Helvetica Neue',Arial,sans-serif; }
+.page{ background:radial-gradient(circle at 100% 100%,${t.a}2e,transparent 36%),radial-gradient(circle at 0 20%,${t.b}1f,transparent 30%),#fbf3e4; padding-bottom:.2in; }
+.page::before{ border-radius:5px; border-width:1.6px; }
+.page>:not(.foot):not(.dec){ zoom:.94; }
+.hd{ position:relative; height:1.02in; margin:.03in 0 .12in; }
+.hd-photo{ position:absolute; left:0; right:0; top:0; bottom:7px; background:url(assets/${t.tex}) center 45%/cover; clip-path:polygon(0 0,100% 0,100% 88%,97% 100%,94% 90%,90% 99%,85% 88%,80% 100%,74% 91%,68% 99%,62% 89%,56% 100%,50% 90%,44% 99%,38% 88%,32% 100%,26% 91%,20% 99%,14% 89%,8% 100%,4% 90%,0 98%); }
+.hd-wash{ position:absolute; left:-.35in; top:-.3in; height:1.5in; opacity:.9; }
+.hd-lw{ position:absolute; left:.12in; top:.1in; filter:drop-shadow(0 2px 2px rgba(0,0,0,.4)); transform:rotate(-1.2deg); }
+.hd-label{ background:#fbf3e4; padding:5px 18px 8px 14px; clip-path:polygon(0 3%,5% 0,12% 4%,22% 0,36% 3%,50% 0,64% 4%,78% 0,90% 3%,100% 1%,99% 40%,100% 70%,98% 100%,88% 96%,74% 100%,60% 95%,44% 100%,30% 96%,16% 100%,6% 96%,0 99%,1% 55%); }
+.hd .brand{ font-size:7px; letter-spacing:2.6px; font-weight:800; color:var(--b); text-shadow:none; }
+.hd h1{ font-family:'Alfa',Georgia,serif; font-size:23px; letter-spacing:.6px; text-transform:uppercase; color:var(--a); text-shadow:none; line-height:1.08; margin:1px 0 0; }
+.hd .tag{ font-family:'Kaushan',cursive; font-size:10.5px; color:var(--b); letter-spacing:.2px; font-weight:400; }
+.hd-deco{ position:absolute; right:.1in; bottom:-.02in; display:flex; align-items:flex-end; gap:6px; }
+.hd-deco img{ height:.98in; width:auto; filter:drop-shadow(0 2px 2px rgba(0,0,0,.4)); }
+.hd-deco img.d-chain{ height:.5in; } .hd-deco img.d-anchor{ height:.86in; } .hd-deco img.d-cow,.hd-deco img.d-denim{ height:.82in; transform:rotate(5deg); } .hd-deco img.d-concho{ height:.8in; } .hd-deco img.d-hatpost{ height:1.1in; margin-top:-.2in; }
+.sec{ background:rgba(255,255,255,.93); box-shadow:0 1px 3px rgba(0,0,0,.13); }
+.sec>h2{ font-family:'Franklin'; }
+.mtitle{ font-family:'Kaushan',cursive; font-size:32px; color:var(--a); letter-spacing:.5px; }
+.dec{ position:absolute; bottom:.17in; display:flex; align-items:flex-end; gap:5px; z-index:3; }
+.dec img{ height:1.05in; width:auto; filter:drop-shadow(0 2px 2px rgba(0,0,0,.35)); }
+.dl{ left:.3in; } .dl img{ height:.62in; opacity:.88; transform:rotate(-10deg); } .dr{ right:.3in; }
+.dr img.d-bible{ height:.85in; } .dr img.d-hatpost{ height:1.15in; } .dr img.d-bully{ height:1.15in; }
+.foot{ left:1.5in; right:1.7in; bottom:.3in; font-size:7.4px; }
+`;
+const decor = () => `<div class="dec dl">${decImgs(CUR.fl)}</div><div class="dec dr">${decImgs(CUR.fr)}</div>`;
 
 const docWrap = (title, css, body) => `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>${title}</title>
 <meta name="description" content="Printable daily tracker — 7HE H0LY R3UP.">
@@ -458,16 +497,7 @@ function daily() {
   };
 
   for (const t of THEMES) {
-    const body = monthPage(t) + weekPage(t) + dayPage(t) + page1(t) + page2(t);
-    const html = docWrap(`7HE H0LY R3UP — Calendar Set — ${t.name}`, baseCss(t) + setCss, body);
-    const hp = path.join(OUT, `set-${t.id}.html`);
-    fs.writeFileSync(hp, html);
-    await render(hp, hp.replace('.html', '.pdf'));
-    console.log('built', t.id);
-  }
-
-  for (const t of THEMES) {
-    const html2 = docWrap(`7HE H0LY R3UP — Oct 31–Nov 2026 — ${t.name}`, baseCss(t) + setCss + novCss, novBody(t));
+    const html2 = docWrap(`7HE H0LY R3UP — Oct 31–Nov 2026 — ${t.name}`, baseCss(t) + setCss + novCss + scrapCss(t), novBody(t));
     const hp2 = path.join(OUT, `nov-set-${t.id}.html`);
     fs.writeFileSync(hp2, html2);
     await render(hp2, hp2.replace('.html', '.pdf'));

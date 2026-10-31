@@ -2,19 +2,19 @@
 <meta name="description" content="Printable daily tracker — 7HE H0LY R3UP.">
 <style>
 @page { size: 8.5in 11in; margin: 0; }
-:root{ --ink:#1a1a1a; --paper:#ffffff; --a:#e6007e; --b:#111111; --soft:#f3f3f3; --line:#c4c4c4; --stitch:#14b8b0; }
+:root{ --ink:#1a1a1a; --paper:undefined; --a:#e6007e; --b:#1a1a1a; --soft:#f3f3f3; --line:#c4c4c4; --stitch:#159a9c; }
 *{ box-sizing:border-box; }
 html,body{ margin:0; padding:0; background:#ddd; color:var(--ink); font-family:'Libre Franklin','Helvetica Neue',Arial,sans-serif; font-size:10px; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
-.page{ width:8.5in; height:11in; background:linear-gradient(#ffffffea,#ffffffea),url(assets/tex-03-cow-print.jpg) center/cover; position:relative; overflow:hidden; padding:.3in .36in .24in; page-break-after:always; }
+.page{ width:8.5in; height:11in; background:linear-gradient(undefinedea,undefinedea),url(assets/tex-03-cow-print.jpg) center/cover; position:relative; overflow:hidden; padding:.3in .36in .24in; page-break-after:always; }
 .page::before{ content:''; position:absolute; inset:.13in; border:2px solid var(--a); border-radius:10px; pointer-events:none; }
 .page::after{ content:''; position:absolute; inset:.18in; border:1.2px dashed var(--stitch); border-radius:7px; pointer-events:none; }
 .head{ background:url(assets/tex-03-cow-print.jpg) center/cover; min-height:.78in; border-radius:8px; padding:7px 12px; display:flex; justify-content:space-between; align-items:center; position:relative; margin-top:.02in; }
 .head.rip{ clip-path:polygon(0 0,100% 0,100% 78%,96% 100%,92% 80%,87% 98%,81% 76%,75% 100%,69% 82%,62% 98%,55% 78%,48% 100%,41% 80%,34% 98%,27% 76%,20% 100%,13% 80%,7% 98%,0 78%); padding-bottom:13px; box-shadow:none;  }
 .head.pat{ border:1.5px solid var(--b); }
-.head .tt{ background:#fff;border:1.5px solid var(--b);border-radius:6px;padding:3px 10px; }
-.brand{ font-size:8px; letter-spacing:2.2px; font-weight:800; text-transform:uppercase; color:var(--b);  }
-h1{ margin:0; font-family:'Caveat','Brush Script MT',cursive; font-size:30px; line-height:1; color:var(--b);  }
-.tag{ font-size:8px; color:var(--b); font-weight:600; letter-spacing:.4px; }
+.head .tt{  }
+.brand{ font-size:8px; letter-spacing:2.2px; font-weight:800; text-transform:uppercase; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,.25); }
+h1{ margin:0; font-family:'Caveat','Brush Script MT',cursive; font-size:30px; line-height:1; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,.28); }
+.tag{ font-size:8px; color:#fff; font-weight:600; letter-spacing:.4px; }
 .ic{ display:flex; gap:7px; justify-content:center; align-items:center; margin-bottom:2px; } .ic img{ height:36px; width:auto; filter:drop-shadow(0 1px 1px rgba(0,0,0,.35)); } .ic img.i-chain{ height:26px; }
 .motif{ font-size:7px; letter-spacing:2px; font-weight:800; color:var(--b); text-align:center; background:rgba(255,255,255,.9); border:1.5px solid var(--b); border-radius:10px; padding:3px 9px 4px; }
 .datebar{ display:grid; grid-template-columns:1.25fr 1.5fr 1.1fr; gap:6px; margin:6px 0 5px; }
@@ -62,10 +62,41 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
 .mt.n td{ height:90px; } .mt.n td.to{ outline:2.5px solid var(--b); outline-offset:-2.5px; }
 .sec.neg>h2{ background:var(--b); }
 .wnote{ font-size:7.2px; color:#5a5560; margin-top:2px; }
+
+@font-face{ font-family:'Alfa'; src:url(assets/fonts/AlfaSlab.woff2) format('woff2'); }
+@font-face{ font-family:'Kaushan'; src:url(assets/fonts/Kaushan.woff2) format('woff2'); }
+@font-face{ font-family:'Franklin'; font-weight:400; src:url(assets/fonts/Franklin400.woff2) format('woff2'); }
+@font-face{ font-family:'Franklin'; font-weight:600; src:url(assets/fonts/Franklin600.woff2) format('woff2'); }
+@font-face{ font-family:'Franklin'; font-weight:800; src:url(assets/fonts/Franklin800.woff2) format('woff2'); }
+html,body{ font-family:'Franklin','Helvetica Neue',Arial,sans-serif; }
+.page{ background:radial-gradient(circle at 100% 100%,#e6007e2e,transparent 36%),radial-gradient(circle at 0 20%,#1a1a1a1f,transparent 30%),#fbf3e4; padding-bottom:.2in; }
+.page::before{ border-radius:5px; border-width:1.6px; }
+.page>:not(.foot):not(.dec){ zoom:.94; }
+.hd{ position:relative; height:1.02in; margin:.03in 0 .12in; }
+.hd-photo{ position:absolute; left:0; right:0; top:0; bottom:7px; background:url(assets/tex-03-cow-print.jpg) center 45%/cover; clip-path:polygon(0 0,100% 0,100% 88%,97% 100%,94% 90%,90% 99%,85% 88%,80% 100%,74% 91%,68% 99%,62% 89%,56% 100%,50% 90%,44% 99%,38% 88%,32% 100%,26% 91%,20% 99%,14% 89%,8% 100%,4% 90%,0 98%); }
+.hd-wash{ position:absolute; left:-.35in; top:-.3in; height:1.5in; opacity:.9; }
+.hd-lw{ position:absolute; left:.12in; top:.1in; filter:drop-shadow(0 2px 2px rgba(0,0,0,.4)); transform:rotate(-1.2deg); }
+.hd-label{ background:#fbf3e4; padding:5px 18px 8px 14px; clip-path:polygon(0 3%,5% 0,12% 4%,22% 0,36% 3%,50% 0,64% 4%,78% 0,90% 3%,100% 1%,99% 40%,100% 70%,98% 100%,88% 96%,74% 100%,60% 95%,44% 100%,30% 96%,16% 100%,6% 96%,0 99%,1% 55%); }
+.hd .brand{ font-size:7px; letter-spacing:2.6px; font-weight:800; color:var(--b); text-shadow:none; }
+.hd h1{ font-family:'Alfa',Georgia,serif; font-size:23px; letter-spacing:.6px; text-transform:uppercase; color:var(--a); text-shadow:none; line-height:1.08; margin:1px 0 0; }
+.hd .tag{ font-family:'Kaushan',cursive; font-size:10.5px; color:var(--b); letter-spacing:.2px; font-weight:400; }
+.hd-deco{ position:absolute; right:.1in; bottom:-.02in; display:flex; align-items:flex-end; gap:6px; }
+.hd-deco img{ height:.98in; width:auto; filter:drop-shadow(0 2px 2px rgba(0,0,0,.4)); }
+.hd-deco img.d-chain{ height:.5in; } .hd-deco img.d-anchor{ height:.86in; } .hd-deco img.d-cow,.hd-deco img.d-denim{ height:.82in; transform:rotate(5deg); } .hd-deco img.d-concho{ height:.8in; } .hd-deco img.d-hatpost{ height:1.1in; margin-top:-.2in; }
+.sec{ background:rgba(255,255,255,.93); box-shadow:0 1px 3px rgba(0,0,0,.13); }
+.sec>h2{ font-family:'Franklin'; }
+.mtitle{ font-family:'Kaushan',cursive; font-size:32px; color:var(--a); letter-spacing:.5px; }
+.dec{ position:absolute; bottom:.17in; display:flex; align-items:flex-end; gap:5px; z-index:3; }
+.dec img{ height:1.05in; width:auto; filter:drop-shadow(0 2px 2px rgba(0,0,0,.35)); }
+.dl{ left:.3in; } .dl img{ height:.62in; opacity:.88; transform:rotate(-10deg); } .dr{ right:.3in; }
+.dr img.d-bible{ height:.85in; } .dr img.d-hatpost{ height:1.15in; } .dr img.d-bully{ height:1.15in; }
+.foot{ left:1.5in; right:1.7in; bottom:.3in; font-size:7.4px; }
 </style></head><body><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Monthly Calendar</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Monthly Calendar</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="mtitle">October 31 – November 2026</div>
 <table class="mt n"><tr><th>SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></tr><tr><td class="o "><b>Oct 25</b></td><td class="o "><b>26</b></td><td class="o "><b>27</b></td><td class="o "><b>28</b></td><td class="o "><b>29</b></td><td class="o "><b>30</b></td><td class=" to"><b>31</b></td></tr><tr><td class=" "><b>Nov 1</b></td><td class=" "><b>2</b></td><td class=" "><b>3</b></td><td class=" "><b>4</b></td><td class=" "><b>5</b></td><td class=" "><b>6</b></td><td class=" "><b>7</b></td></tr><tr><td class=" "><b>8</b></td><td class=" "><b>9</b></td><td class=" "><b>10</b></td><td class=" "><b>11</b></td><td class=" "><b>12</b></td><td class=" "><b>13</b></td><td class=" "><b>14</b></td></tr><tr><td class=" "><b>15</b></td><td class=" "><b>16</b></td><td class=" "><b>17</b></td><td class=" "><b>18</b></td><td class=" "><b>19</b></td><td class=" "><b>20</b></td><td class=" "><b>21</b></td></tr><tr><td class=" "><b>22</b></td><td class=" "><b>23</b></td><td class=" "><b>24</b></td><td class=" "><b>25</b></td><td class=" "><b>26</b></td><td class=" "><b>27</b></td><td class=" "><b>28</b></td></tr><tr><td class=" "><b>29</b></td><td class=" "><b>30</b></td><td class="o "><b>Dec 1</b></td><td class="o "><b>2</b></td><td class="o "><b>3</b></td><td class="o "><b>4</b></td><td class="o "><b>5</b></td></tr></table>
@@ -75,10 +106,12 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
   <div class="sec neg"><h2>What's Coming Against Me</h2><div class="in"><div class="ln" style="height:19px"></div><div class="ln" style="height:19px"></div><div class="ln" style="height:19px"></div><div class="ln" style="height:19px"></div></div></div>
 </div>
 <div class="sec" style="margin-top:6px"><h2>My Categories <em>mark days with the letter</em></h2><div class="in"><div class="key"><div><b>B</b>Body</div><div><b>M</b>Mind</div><div><b>S</b>Sleep</div><div><b>F</b>Food</div><div><b>G</b>God/Prayer</div><div><b>P</b>People</div><div><b>X</b>Safety</div><div><b>$</b>Money/Legal</div><div><b>H</b>Home/Big Boy</div><div><b>W</b>Win</div></div></div></div>
-<div class="foot"><b>Oct 31 – Nov 30, 2026.</b> You survived. Now we rebuild. · Start day is boxed.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Weekly Plan</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Oct 31 – Nov 30, 2026.</b> You survived. Now we rebuild. · Start day is boxed.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Weekly Plan</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:1.3fr 1fr"><div class="field">WEEK 1: SAT Oct 31 – FRI Nov 6, 2026</div><div class="field">THIS WEEK'S FOCUS: </div></div>
 <div class="wkd"><h3>SATURDAY <span>Oct 31, 2026</span></h3><div class="in">
@@ -101,10 +134,12 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
   <div class="sec"><h2>Health This Week</h2><div class="in"><div class="small">Ringing days <span class="fill" style="min-width:22px"></span> Avg sleep <span class="fill" style="min-width:22px"></span> hrs</div><div class="small" style="margin-top:3px">Days I ate 3x <span class="fill" style="min-width:22px"></span> Meds missed <span class="fill" style="min-width:22px"></span></div><div class="ln" style="height:19px"></div><div class="ln" style="height:19px"></div></div></div>
   <div class="sec neg"><h2>What's Coming Against Me</h2><div class="in"><div class="ln" style="height:19px"></div><div class="ln" style="height:19px"></div><div class="ln" style="height:19px"></div><div class="ln" style="height:19px"></div></div></div>
 </div>
-<div class="foot"><b>Weekly.</b> Share only what feels safe. · We survived. Now let's go back — with truth and a hand out.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Weekly Plan</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Weekly.</b> Share only what feels safe. · We survived. Now let's go back — with truth and a hand out.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Weekly Plan</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:1.3fr 1fr"><div class="field">WEEK 2: SAT Nov 7 – FRI Nov 13, 2026</div><div class="field">THIS WEEK'S FOCUS: </div></div>
 <div class="wkd"><h3>SATURDAY <span>Nov 7, 2026</span></h3><div class="in">
@@ -127,10 +162,12 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
   <div class="sec"><h2>Health This Week</h2><div class="in"><div class="small">Ringing days <span class="fill" style="min-width:22px"></span> Avg sleep <span class="fill" style="min-width:22px"></span> hrs</div><div class="small" style="margin-top:3px">Days I ate 3x <span class="fill" style="min-width:22px"></span> Meds missed <span class="fill" style="min-width:22px"></span></div><div class="ln" style="height:19px"></div><div class="ln" style="height:19px"></div></div></div>
   <div class="sec neg"><h2>What's Coming Against Me</h2><div class="in"><div class="ln" style="height:19px"></div><div class="ln" style="height:19px"></div><div class="ln" style="height:19px"></div><div class="ln" style="height:19px"></div></div></div>
 </div>
-<div class="foot"><b>Weekly.</b> Share only what feels safe. · We survived. Now let's go back — with truth and a hand out.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Weekly Plan</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Weekly.</b> Share only what feels safe. · We survived. Now let's go back — with truth and a hand out.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Weekly Plan</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:1.3fr 1fr"><div class="field">WEEK 3: SAT Nov 14 – FRI Nov 20, 2026</div><div class="field">THIS WEEK'S FOCUS: </div></div>
 <div class="wkd"><h3>SATURDAY <span>Nov 14, 2026</span></h3><div class="in">
@@ -153,10 +190,12 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
   <div class="sec"><h2>Health This Week</h2><div class="in"><div class="small">Ringing days <span class="fill" style="min-width:22px"></span> Avg sleep <span class="fill" style="min-width:22px"></span> hrs</div><div class="small" style="margin-top:3px">Days I ate 3x <span class="fill" style="min-width:22px"></span> Meds missed <span class="fill" style="min-width:22px"></span></div><div class="ln" style="height:19px"></div><div class="ln" style="height:19px"></div></div></div>
   <div class="sec neg"><h2>What's Coming Against Me</h2><div class="in"><div class="ln" style="height:19px"></div><div class="ln" style="height:19px"></div><div class="ln" style="height:19px"></div><div class="ln" style="height:19px"></div></div></div>
 </div>
-<div class="foot"><b>Weekly.</b> Share only what feels safe. · We survived. Now let's go back — with truth and a hand out.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Weekly Plan</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Weekly.</b> Share only what feels safe. · We survived. Now let's go back — with truth and a hand out.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Weekly Plan</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:1.3fr 1fr"><div class="field">WEEK 4: SAT Nov 21 – FRI Nov 27, 2026</div><div class="field">THIS WEEK'S FOCUS: </div></div>
 <div class="wkd"><h3>SATURDAY <span>Nov 21, 2026</span></h3><div class="in">
@@ -179,10 +218,12 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
   <div class="sec"><h2>Health This Week</h2><div class="in"><div class="small">Ringing days <span class="fill" style="min-width:22px"></span> Avg sleep <span class="fill" style="min-width:22px"></span> hrs</div><div class="small" style="margin-top:3px">Days I ate 3x <span class="fill" style="min-width:22px"></span> Meds missed <span class="fill" style="min-width:22px"></span></div><div class="ln" style="height:19px"></div><div class="ln" style="height:19px"></div></div></div>
   <div class="sec neg"><h2>What's Coming Against Me</h2><div class="in"><div class="ln" style="height:19px"></div><div class="ln" style="height:19px"></div><div class="ln" style="height:19px"></div><div class="ln" style="height:19px"></div></div></div>
 </div>
-<div class="foot"><b>Weekly.</b> Share only what feels safe. · We survived. Now let's go back — with truth and a hand out.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Weekly Plan</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Weekly.</b> Share only what feels safe. · We survived. Now let's go back — with truth and a hand out.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Weekly Plan</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:1.3fr 1fr"><div class="field">WEEK 5: SAT Nov 28 – FRI Dec 4, 2026</div><div class="field">THIS WEEK'S FOCUS: </div></div>
 <div class="wkd"><h3>SATURDAY <span>Nov 28, 2026</span></h3><div class="in">
@@ -205,10 +246,12 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
   <div class="sec"><h2>Health This Week</h2><div class="in"><div class="small">Ringing days <span class="fill" style="min-width:22px"></span> Avg sleep <span class="fill" style="min-width:22px"></span> hrs</div><div class="small" style="margin-top:3px">Days I ate 3x <span class="fill" style="min-width:22px"></span> Meds missed <span class="fill" style="min-width:22px"></span></div><div class="ln" style="height:19px"></div><div class="ln" style="height:19px"></div></div></div>
   <div class="sec neg"><h2>What's Coming Against Me</h2><div class="in"><div class="ln" style="height:19px"></div><div class="ln" style="height:19px"></div><div class="ln" style="height:19px"></div><div class="ln" style="height:19px"></div></div></div>
 </div>
-<div class="foot"><b>Weekly.</b> Share only what feels safe. · We survived. Now let's go back — with truth and a hand out.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Weekly.</b> Share only what feels safe. · We survived. Now let's go back — with truth and a hand out.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">SATURDAY, OCTOBER 31, 2026</div><div class="field">WEATHER / MOOD: </div></div>
 <div class="grid" style="grid-template-columns:1.1fr 1fr">
@@ -231,14 +274,16 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
     <div class="row"><span class="lab">Water:</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span></div>
     <div class="row"><span class="cb"></span>Meds AM<span class="cb"></span>PM<span class="cb"></span>Missed<span class="lab">Notes</span><span class="fill w"></span></div>
   </div></div>
-  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
+  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="row" style="margin:1px 0 3px"><span class="lab">Scripture today:</span><span class="fill" style="min-width:200px"></span></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Appointments / Calls</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Thankful For</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
 </div></div>
-<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">SUNDAY, NOVEMBER 1, 2026</div><div class="field">WEATHER / MOOD: </div></div>
 <div class="grid" style="grid-template-columns:1.1fr 1fr">
@@ -261,14 +306,16 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
     <div class="row"><span class="lab">Water:</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span></div>
     <div class="row"><span class="cb"></span>Meds AM<span class="cb"></span>PM<span class="cb"></span>Missed<span class="lab">Notes</span><span class="fill w"></span></div>
   </div></div>
-  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
+  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="row" style="margin:1px 0 3px"><span class="lab">Scripture today:</span><span class="fill" style="min-width:200px"></span></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Appointments / Calls</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Thankful For</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
 </div></div>
-<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">MONDAY, NOVEMBER 2, 2026</div><div class="field">WEATHER / MOOD: </div></div>
 <div class="grid" style="grid-template-columns:1.1fr 1fr">
@@ -291,14 +338,16 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
     <div class="row"><span class="lab">Water:</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span></div>
     <div class="row"><span class="cb"></span>Meds AM<span class="cb"></span>PM<span class="cb"></span>Missed<span class="lab">Notes</span><span class="fill w"></span></div>
   </div></div>
-  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
+  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="row" style="margin:1px 0 3px"><span class="lab">Scripture today:</span><span class="fill" style="min-width:200px"></span></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Appointments / Calls</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Thankful For</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
 </div></div>
-<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">TUESDAY, NOVEMBER 3, 2026</div><div class="field">WEATHER / MOOD: </div></div>
 <div class="grid" style="grid-template-columns:1.1fr 1fr">
@@ -321,14 +370,16 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
     <div class="row"><span class="lab">Water:</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span></div>
     <div class="row"><span class="cb"></span>Meds AM<span class="cb"></span>PM<span class="cb"></span>Missed<span class="lab">Notes</span><span class="fill w"></span></div>
   </div></div>
-  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
+  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="row" style="margin:1px 0 3px"><span class="lab">Scripture today:</span><span class="fill" style="min-width:200px"></span></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Appointments / Calls</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Thankful For</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
 </div></div>
-<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">WEDNESDAY, NOVEMBER 4, 2026</div><div class="field">WEATHER / MOOD: </div></div>
 <div class="grid" style="grid-template-columns:1.1fr 1fr">
@@ -351,14 +402,16 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
     <div class="row"><span class="lab">Water:</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span></div>
     <div class="row"><span class="cb"></span>Meds AM<span class="cb"></span>PM<span class="cb"></span>Missed<span class="lab">Notes</span><span class="fill w"></span></div>
   </div></div>
-  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
+  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="row" style="margin:1px 0 3px"><span class="lab">Scripture today:</span><span class="fill" style="min-width:200px"></span></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Appointments / Calls</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Thankful For</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
 </div></div>
-<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">THURSDAY, NOVEMBER 5, 2026</div><div class="field">WEATHER / MOOD: </div></div>
 <div class="grid" style="grid-template-columns:1.1fr 1fr">
@@ -381,14 +434,16 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
     <div class="row"><span class="lab">Water:</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span></div>
     <div class="row"><span class="cb"></span>Meds AM<span class="cb"></span>PM<span class="cb"></span>Missed<span class="lab">Notes</span><span class="fill w"></span></div>
   </div></div>
-  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
+  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="row" style="margin:1px 0 3px"><span class="lab">Scripture today:</span><span class="fill" style="min-width:200px"></span></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Appointments / Calls</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Thankful For</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
 </div></div>
-<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">FRIDAY, NOVEMBER 6, 2026</div><div class="field">WEATHER / MOOD: </div></div>
 <div class="grid" style="grid-template-columns:1.1fr 1fr">
@@ -411,14 +466,16 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
     <div class="row"><span class="lab">Water:</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span></div>
     <div class="row"><span class="cb"></span>Meds AM<span class="cb"></span>PM<span class="cb"></span>Missed<span class="lab">Notes</span><span class="fill w"></span></div>
   </div></div>
-  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
+  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="row" style="margin:1px 0 3px"><span class="lab">Scripture today:</span><span class="fill" style="min-width:200px"></span></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Appointments / Calls</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Thankful For</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
 </div></div>
-<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">SATURDAY, NOVEMBER 7, 2026</div><div class="field">WEATHER / MOOD: </div></div>
 <div class="grid" style="grid-template-columns:1.1fr 1fr">
@@ -441,14 +498,16 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
     <div class="row"><span class="lab">Water:</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span></div>
     <div class="row"><span class="cb"></span>Meds AM<span class="cb"></span>PM<span class="cb"></span>Missed<span class="lab">Notes</span><span class="fill w"></span></div>
   </div></div>
-  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
+  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="row" style="margin:1px 0 3px"><span class="lab">Scripture today:</span><span class="fill" style="min-width:200px"></span></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Appointments / Calls</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Thankful For</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
 </div></div>
-<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">SUNDAY, NOVEMBER 8, 2026</div><div class="field">WEATHER / MOOD: </div></div>
 <div class="grid" style="grid-template-columns:1.1fr 1fr">
@@ -471,14 +530,16 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
     <div class="row"><span class="lab">Water:</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span></div>
     <div class="row"><span class="cb"></span>Meds AM<span class="cb"></span>PM<span class="cb"></span>Missed<span class="lab">Notes</span><span class="fill w"></span></div>
   </div></div>
-  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
+  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="row" style="margin:1px 0 3px"><span class="lab">Scripture today:</span><span class="fill" style="min-width:200px"></span></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Appointments / Calls</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Thankful For</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
 </div></div>
-<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">MONDAY, NOVEMBER 9, 2026</div><div class="field">WEATHER / MOOD: </div></div>
 <div class="grid" style="grid-template-columns:1.1fr 1fr">
@@ -501,14 +562,16 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
     <div class="row"><span class="lab">Water:</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span></div>
     <div class="row"><span class="cb"></span>Meds AM<span class="cb"></span>PM<span class="cb"></span>Missed<span class="lab">Notes</span><span class="fill w"></span></div>
   </div></div>
-  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
+  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="row" style="margin:1px 0 3px"><span class="lab">Scripture today:</span><span class="fill" style="min-width:200px"></span></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Appointments / Calls</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Thankful For</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
 </div></div>
-<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">TUESDAY, NOVEMBER 10, 2026</div><div class="field">WEATHER / MOOD: </div></div>
 <div class="grid" style="grid-template-columns:1.1fr 1fr">
@@ -531,14 +594,16 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
     <div class="row"><span class="lab">Water:</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span></div>
     <div class="row"><span class="cb"></span>Meds AM<span class="cb"></span>PM<span class="cb"></span>Missed<span class="lab">Notes</span><span class="fill w"></span></div>
   </div></div>
-  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
+  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="row" style="margin:1px 0 3px"><span class="lab">Scripture today:</span><span class="fill" style="min-width:200px"></span></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Appointments / Calls</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Thankful For</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
 </div></div>
-<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">WEDNESDAY, NOVEMBER 11, 2026</div><div class="field">WEATHER / MOOD: </div></div>
 <div class="grid" style="grid-template-columns:1.1fr 1fr">
@@ -561,14 +626,16 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
     <div class="row"><span class="lab">Water:</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span></div>
     <div class="row"><span class="cb"></span>Meds AM<span class="cb"></span>PM<span class="cb"></span>Missed<span class="lab">Notes</span><span class="fill w"></span></div>
   </div></div>
-  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
+  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="row" style="margin:1px 0 3px"><span class="lab">Scripture today:</span><span class="fill" style="min-width:200px"></span></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Appointments / Calls</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Thankful For</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
 </div></div>
-<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">THURSDAY, NOVEMBER 12, 2026</div><div class="field">WEATHER / MOOD: </div></div>
 <div class="grid" style="grid-template-columns:1.1fr 1fr">
@@ -591,14 +658,16 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
     <div class="row"><span class="lab">Water:</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span></div>
     <div class="row"><span class="cb"></span>Meds AM<span class="cb"></span>PM<span class="cb"></span>Missed<span class="lab">Notes</span><span class="fill w"></span></div>
   </div></div>
-  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
+  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="row" style="margin:1px 0 3px"><span class="lab">Scripture today:</span><span class="fill" style="min-width:200px"></span></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Appointments / Calls</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Thankful For</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
 </div></div>
-<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">FRIDAY, NOVEMBER 13, 2026</div><div class="field">WEATHER / MOOD: </div></div>
 <div class="grid" style="grid-template-columns:1.1fr 1fr">
@@ -621,14 +690,16 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
     <div class="row"><span class="lab">Water:</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span></div>
     <div class="row"><span class="cb"></span>Meds AM<span class="cb"></span>PM<span class="cb"></span>Missed<span class="lab">Notes</span><span class="fill w"></span></div>
   </div></div>
-  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
+  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="row" style="margin:1px 0 3px"><span class="lab">Scripture today:</span><span class="fill" style="min-width:200px"></span></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Appointments / Calls</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Thankful For</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
 </div></div>
-<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">SATURDAY, NOVEMBER 14, 2026</div><div class="field">WEATHER / MOOD: </div></div>
 <div class="grid" style="grid-template-columns:1.1fr 1fr">
@@ -651,14 +722,16 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
     <div class="row"><span class="lab">Water:</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span></div>
     <div class="row"><span class="cb"></span>Meds AM<span class="cb"></span>PM<span class="cb"></span>Missed<span class="lab">Notes</span><span class="fill w"></span></div>
   </div></div>
-  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
+  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="row" style="margin:1px 0 3px"><span class="lab">Scripture today:</span><span class="fill" style="min-width:200px"></span></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Appointments / Calls</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Thankful For</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
 </div></div>
-<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">SUNDAY, NOVEMBER 15, 2026</div><div class="field">WEATHER / MOOD: </div></div>
 <div class="grid" style="grid-template-columns:1.1fr 1fr">
@@ -681,14 +754,16 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
     <div class="row"><span class="lab">Water:</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span></div>
     <div class="row"><span class="cb"></span>Meds AM<span class="cb"></span>PM<span class="cb"></span>Missed<span class="lab">Notes</span><span class="fill w"></span></div>
   </div></div>
-  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
+  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="row" style="margin:1px 0 3px"><span class="lab">Scripture today:</span><span class="fill" style="min-width:200px"></span></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Appointments / Calls</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Thankful For</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
 </div></div>
-<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">MONDAY, NOVEMBER 16, 2026</div><div class="field">WEATHER / MOOD: </div></div>
 <div class="grid" style="grid-template-columns:1.1fr 1fr">
@@ -711,14 +786,16 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
     <div class="row"><span class="lab">Water:</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span></div>
     <div class="row"><span class="cb"></span>Meds AM<span class="cb"></span>PM<span class="cb"></span>Missed<span class="lab">Notes</span><span class="fill w"></span></div>
   </div></div>
-  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
+  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="row" style="margin:1px 0 3px"><span class="lab">Scripture today:</span><span class="fill" style="min-width:200px"></span></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Appointments / Calls</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Thankful For</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
 </div></div>
-<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">TUESDAY, NOVEMBER 17, 2026</div><div class="field">WEATHER / MOOD: </div></div>
 <div class="grid" style="grid-template-columns:1.1fr 1fr">
@@ -741,14 +818,16 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
     <div class="row"><span class="lab">Water:</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span></div>
     <div class="row"><span class="cb"></span>Meds AM<span class="cb"></span>PM<span class="cb"></span>Missed<span class="lab">Notes</span><span class="fill w"></span></div>
   </div></div>
-  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
+  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="row" style="margin:1px 0 3px"><span class="lab">Scripture today:</span><span class="fill" style="min-width:200px"></span></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Appointments / Calls</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Thankful For</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
 </div></div>
-<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">WEDNESDAY, NOVEMBER 18, 2026</div><div class="field">WEATHER / MOOD: </div></div>
 <div class="grid" style="grid-template-columns:1.1fr 1fr">
@@ -771,14 +850,16 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
     <div class="row"><span class="lab">Water:</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span></div>
     <div class="row"><span class="cb"></span>Meds AM<span class="cb"></span>PM<span class="cb"></span>Missed<span class="lab">Notes</span><span class="fill w"></span></div>
   </div></div>
-  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
+  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="row" style="margin:1px 0 3px"><span class="lab">Scripture today:</span><span class="fill" style="min-width:200px"></span></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Appointments / Calls</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Thankful For</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
 </div></div>
-<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">THURSDAY, NOVEMBER 19, 2026</div><div class="field">WEATHER / MOOD: </div></div>
 <div class="grid" style="grid-template-columns:1.1fr 1fr">
@@ -801,14 +882,16 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
     <div class="row"><span class="lab">Water:</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span></div>
     <div class="row"><span class="cb"></span>Meds AM<span class="cb"></span>PM<span class="cb"></span>Missed<span class="lab">Notes</span><span class="fill w"></span></div>
   </div></div>
-  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
+  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="row" style="margin:1px 0 3px"><span class="lab">Scripture today:</span><span class="fill" style="min-width:200px"></span></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Appointments / Calls</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Thankful For</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
 </div></div>
-<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">FRIDAY, NOVEMBER 20, 2026</div><div class="field">WEATHER / MOOD: </div></div>
 <div class="grid" style="grid-template-columns:1.1fr 1fr">
@@ -831,14 +914,16 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
     <div class="row"><span class="lab">Water:</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span></div>
     <div class="row"><span class="cb"></span>Meds AM<span class="cb"></span>PM<span class="cb"></span>Missed<span class="lab">Notes</span><span class="fill w"></span></div>
   </div></div>
-  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
+  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="row" style="margin:1px 0 3px"><span class="lab">Scripture today:</span><span class="fill" style="min-width:200px"></span></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Appointments / Calls</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Thankful For</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
 </div></div>
-<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">SATURDAY, NOVEMBER 21, 2026</div><div class="field">WEATHER / MOOD: </div></div>
 <div class="grid" style="grid-template-columns:1.1fr 1fr">
@@ -861,14 +946,16 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
     <div class="row"><span class="lab">Water:</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span></div>
     <div class="row"><span class="cb"></span>Meds AM<span class="cb"></span>PM<span class="cb"></span>Missed<span class="lab">Notes</span><span class="fill w"></span></div>
   </div></div>
-  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
+  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="row" style="margin:1px 0 3px"><span class="lab">Scripture today:</span><span class="fill" style="min-width:200px"></span></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Appointments / Calls</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Thankful For</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
 </div></div>
-<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">SUNDAY, NOVEMBER 22, 2026</div><div class="field">WEATHER / MOOD: </div></div>
 <div class="grid" style="grid-template-columns:1.1fr 1fr">
@@ -891,14 +978,16 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
     <div class="row"><span class="lab">Water:</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span></div>
     <div class="row"><span class="cb"></span>Meds AM<span class="cb"></span>PM<span class="cb"></span>Missed<span class="lab">Notes</span><span class="fill w"></span></div>
   </div></div>
-  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
+  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="row" style="margin:1px 0 3px"><span class="lab">Scripture today:</span><span class="fill" style="min-width:200px"></span></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Appointments / Calls</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Thankful For</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
 </div></div>
-<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">MONDAY, NOVEMBER 23, 2026</div><div class="field">WEATHER / MOOD: </div></div>
 <div class="grid" style="grid-template-columns:1.1fr 1fr">
@@ -921,14 +1010,16 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
     <div class="row"><span class="lab">Water:</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span></div>
     <div class="row"><span class="cb"></span>Meds AM<span class="cb"></span>PM<span class="cb"></span>Missed<span class="lab">Notes</span><span class="fill w"></span></div>
   </div></div>
-  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
+  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="row" style="margin:1px 0 3px"><span class="lab">Scripture today:</span><span class="fill" style="min-width:200px"></span></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Appointments / Calls</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Thankful For</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
 </div></div>
-<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">TUESDAY, NOVEMBER 24, 2026</div><div class="field">WEATHER / MOOD: </div></div>
 <div class="grid" style="grid-template-columns:1.1fr 1fr">
@@ -951,14 +1042,16 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
     <div class="row"><span class="lab">Water:</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span></div>
     <div class="row"><span class="cb"></span>Meds AM<span class="cb"></span>PM<span class="cb"></span>Missed<span class="lab">Notes</span><span class="fill w"></span></div>
   </div></div>
-  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
+  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="row" style="margin:1px 0 3px"><span class="lab">Scripture today:</span><span class="fill" style="min-width:200px"></span></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Appointments / Calls</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Thankful For</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
 </div></div>
-<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">WEDNESDAY, NOVEMBER 25, 2026</div><div class="field">WEATHER / MOOD: </div></div>
 <div class="grid" style="grid-template-columns:1.1fr 1fr">
@@ -981,14 +1074,16 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
     <div class="row"><span class="lab">Water:</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span></div>
     <div class="row"><span class="cb"></span>Meds AM<span class="cb"></span>PM<span class="cb"></span>Missed<span class="lab">Notes</span><span class="fill w"></span></div>
   </div></div>
-  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
+  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="row" style="margin:1px 0 3px"><span class="lab">Scripture today:</span><span class="fill" style="min-width:200px"></span></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Appointments / Calls</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Thankful For</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
 </div></div>
-<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">THURSDAY, NOVEMBER 26, 2026</div><div class="field">WEATHER / MOOD: </div></div>
 <div class="grid" style="grid-template-columns:1.1fr 1fr">
@@ -1011,14 +1106,16 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
     <div class="row"><span class="lab">Water:</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span></div>
     <div class="row"><span class="cb"></span>Meds AM<span class="cb"></span>PM<span class="cb"></span>Missed<span class="lab">Notes</span><span class="fill w"></span></div>
   </div></div>
-  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
+  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="row" style="margin:1px 0 3px"><span class="lab">Scripture today:</span><span class="fill" style="min-width:200px"></span></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Appointments / Calls</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Thankful For</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
 </div></div>
-<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">FRIDAY, NOVEMBER 27, 2026</div><div class="field">WEATHER / MOOD: </div></div>
 <div class="grid" style="grid-template-columns:1.1fr 1fr">
@@ -1041,14 +1138,16 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
     <div class="row"><span class="lab">Water:</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span></div>
     <div class="row"><span class="cb"></span>Meds AM<span class="cb"></span>PM<span class="cb"></span>Missed<span class="lab">Notes</span><span class="fill w"></span></div>
   </div></div>
-  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
+  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="row" style="margin:1px 0 3px"><span class="lab">Scripture today:</span><span class="fill" style="min-width:200px"></span></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Appointments / Calls</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Thankful For</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
 </div></div>
-<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">SATURDAY, NOVEMBER 28, 2026</div><div class="field">WEATHER / MOOD: </div></div>
 <div class="grid" style="grid-template-columns:1.1fr 1fr">
@@ -1071,14 +1170,16 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
     <div class="row"><span class="lab">Water:</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span></div>
     <div class="row"><span class="cb"></span>Meds AM<span class="cb"></span>PM<span class="cb"></span>Missed<span class="lab">Notes</span><span class="fill w"></span></div>
   </div></div>
-  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
+  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="row" style="margin:1px 0 3px"><span class="lab">Scripture today:</span><span class="fill" style="min-width:200px"></span></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Appointments / Calls</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Thankful For</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
 </div></div>
-<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">SUNDAY, NOVEMBER 29, 2026</div><div class="field">WEATHER / MOOD: </div></div>
 <div class="grid" style="grid-template-columns:1.1fr 1fr">
@@ -1101,14 +1202,16 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
     <div class="row"><span class="lab">Water:</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span></div>
     <div class="row"><span class="cb"></span>Meds AM<span class="cb"></span>PM<span class="cb"></span>Missed<span class="lab">Notes</span><span class="fill w"></span></div>
   </div></div>
-  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
+  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="row" style="margin:1px 0 3px"><span class="lab">Scripture today:</span><span class="fill" style="min-width:200px"></span></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Appointments / Calls</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Thankful For</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
 </div></div>
-<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div></section><section class="page">
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section><section class="page">
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Daily Planner</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:2fr 1fr"><div class="field">MONDAY, NOVEMBER 30, 2026</div><div class="field">WEATHER / MOOD: </div></div>
 <div class="grid" style="grid-template-columns:1.1fr 1fr">
@@ -1131,16 +1234,18 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
     <div class="row"><span class="lab">Water:</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span><span class="num">&nbsp;</span></div>
     <div class="row"><span class="cb"></span>Meds AM<span class="cb"></span>PM<span class="cb"></span>Missed<span class="lab">Notes</span><span class="fill w"></span></div>
   </div></div>
-  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
+  <div class="sec"><h2>Prayers · What God Showed Me</h2><div class="in"><div class="row" style="margin:1px 0 3px"><span class="lab">Scripture today:</span><span class="fill" style="min-width:200px"></span></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Appointments / Calls</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
   <div class="sec"><h2>Thankful For</h2><div class="in"><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div><div class="ln" style="height:21px"></div></div></div>
 </div></div>
-<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div></section>
+<div class="foot"><b>Daily.</b> The detailed log pages are at the back. Even one box counts.</div><div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section>
 <section class="page">
 
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>Daily Log</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>Daily Log</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar">
   <div class="field">DATE: </div>
@@ -1217,12 +1322,14 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
 </div>
 </div>
 <div class="foot"><b>Page 1 of 2.</b> Flip for the full detail log. Personal record, not medical advice — bring patterns (ringing, sleep, dizziness) to your doctor.<br>Share only what feels safe. · We survived. Now let's go back — with truth and a hand out.</div>
-</section>
+<div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section>
 <section class="page">
 
-<div class="head pat ">
-  <div class="tt"><div class="brand">7HE H0LY R3UP</div><h1>What Happened — Full Detail</h1><div class="tag">You survived. Now we rebuild.</div></div>
-  <div class="motif"><div class="ic"><img src="assets/icons/hat.png" class="i-hat" alt=""><img src="assets/icons/boot.png" class="i-boot" alt=""><img src="assets/icons/cross.png" class="i-cross" alt=""></div>COWGIRL STRONG</div>
+<div class="hd">
+  <div class="hd-photo"></div>
+  <img class="hd-wash" src="assets/cut/wash-teal.png" alt="">
+  <div class="hd-lw"><div class="hd-label"><div class="brand">7HE H0LY R3UP</div><h1>What Happened — Full Detail</h1><div class="tag">You survived. Now we rebuild.</div></div></div>
+  <div class="hd-deco"><img class="d-cow " src="assets/cut/cow.png" alt=""></div>
 </div>
 <div class="datebar" style="grid-template-columns:1.2fr 1fr 1.3fr">
   <div class="field">DATE: </div><div class="field">DAY: </div><div class="field">WHERE I WAS MOST OF THE DAY: </div>
@@ -1256,4 +1363,4 @@ td.k{ font-weight:700; color:var(--b); background:var(--soft); }
   <div class="row"><span class="cb"></span>Water by the bed<span class="cb"></span>Phone charged<span class="cb"></span>Big Boy settled<span class="cb"></span>Took night meds<span class="cb"></span>Ate something<span class="cb"></span>Breathed — 3 slow ones</div>
 </div></div>
 <div class="foot"><b>Page 2 of 2.</b> 7HE H0LY R3UP · You survived. Now we rebuild. · Check the patterns, not the guilt. Your body is giving data, not a verdict.</div>
-</section></body></html>
+<div class="dec dl"><img class="d-paws " src="assets/cut/paws.png" alt=""></div><div class="dec dr"><img class="d-bully " src="assets/cut/bully.png" alt=""></div></section></body></html>
