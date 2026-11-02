@@ -1,0 +1,1987 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>THE R3NEW · November 2026 · 7HE H0LY R3UP</title>
+<style>/* latin-ext */
+@font-face {
+  font-family: 'Rye';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/fonts_gstatic_com_s_rye_v17_r05XGLJT86YzH57tbOo_woff2.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Rye';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/fonts_gstatic_com_s_rye_v17_r05XGLJT86YzEZ7t_woff2.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* vietnamese */
+@font-face {
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/fonts_gstatic_com_s_anton_v27_1Ptgg87LROyAm3K8_C8QSw_woff2.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/fonts_gstatic_com_s_anton_v27_1Ptgg87LROyAm3K9_C8QSw_woff2.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/fonts_gstatic_com_s_anton_v27_1Ptgg87LROyAm3Kz_C8_woff2.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* cyrillic */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/YO7KN_qiTDN3oCIU3oE2BEqjGM4vnR0g_skey_f57a6d1e6bccdd9c_v_v40.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/YO7KN_qiTDN3oCIU3oE2BEqjGM4vsR0g_skey_f57a6d1e6bccdd9c_v_v40.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/YO7KN_qiTDN3oCIU3oE2BEqjGM4vtR0g_skey_f57a6d1e6bccdd9c_v_v40.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/YO7KN_qiTDN3oCIU3oE2BEqjGM4vjR0g_skey_f57a6d1e6bccdd9c_v_v40.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/YO7KN_qiTDN3oCIU3oE2BEqjGM4vnR0g_skey_f57a6d1e6bccdd9c_v_v40.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/YO7KN_qiTDN3oCIU3oE2BEqjGM4vsR0g_skey_f57a6d1e6bccdd9c_v_v40.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/YO7KN_qiTDN3oCIU3oE2BEqjGM4vtR0g_skey_f57a6d1e6bccdd9c_v_v40.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/YO7KN_qiTDN3oCIU3oE2BEqjGM4vjR0g_skey_f57a6d1e6bccdd9c_v_v40.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/ayfairdisplay_v40_nuFiD_vYSZviVYUb_rj3ij__anPXDTjYgFE__woff2.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/ayfairdisplay_v40_nuFiD_vYSZviVYUb_rj3ij__anPXDTPYgFE__woff2.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/ayfairdisplay_v40_nuFiD_vYSZviVYUb_rj3ij__anPXDTLYgFE__woff2.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/playfairdisplay_v40_nuFiD_vYSZviVYUb_rj3ij__anPXDTzYgA_woff2.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/ayfairdisplay_v40_nuFiD_vYSZviVYUb_rj3ij__anPXDTjYgFE__woff2.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/ayfairdisplay_v40_nuFiD_vYSZviVYUb_rj3ij__anPXDTPYgFE__woff2.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/ayfairdisplay_v40_nuFiD_vYSZviVYUb_rj3ij__anPXDTLYgFE__woff2.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/playfairdisplay_v40_nuFiD_vYSZviVYUb_rj3ij__anPXDTzYgA_woff2.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(fonts/ayfairdisplay_v40_nuFiD_vYSZviVYUb_rj3ij__anPXDTjYgFE__woff2.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(fonts/ayfairdisplay_v40_nuFiD_vYSZviVYUb_rj3ij__anPXDTPYgFE__woff2.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(fonts/ayfairdisplay_v40_nuFiD_vYSZviVYUb_rj3ij__anPXDTLYgFE__woff2.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(fonts/playfairdisplay_v40_nuFiD_vYSZviVYUb_rj3ij__anPXDTzYgA_woff2.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Kaushan Script';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/s_kaushanscript_v19_vm8vdRfvXFLG3OLnsO15WYS5DG72wNJHMw_woff2.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Kaushan Script';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/om_s_kaushanscript_v19_vm8vdRfvXFLG3OLnsO15WYS5DG74wNI_woff2.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/om_s_lora_v37_0QI8MX1D_JOuMw_hLdO6T2wV9KnW_MoFoqJ2nOeZ_woff2.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/om_s_lora_v37_0QI8MX1D_JOuMw_hLdO6T2wV9KnW_MoFoqt2nOeZ_woff2.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* math */
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/om_s_lora_v37_0QI8MX1D_JOuMw_hLdO6T2wV9KnW_MoFotN2nOeZ_woff2.woff2) format('woff2');
+  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-209F, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
+}
+/* symbols */
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/om_s_lora_v37_0QI8MX1D_JOuMw_hLdO6T2wV9KnW_MoFosF2nOeZ_woff2.woff2) format('woff2');
+  unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AE, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F8D0-1F8D8, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FAC6, U+1FAC8, U+1FACC-1FADD, U+1FADF-1FAEB, U+1FAEF-1FAFA, U+1FB00-1FBFF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/om_s_lora_v37_0QI8MX1D_JOuMw_hLdO6T2wV9KnW_MoFoqB2nOeZ_woff2.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/om_s_lora_v37_0QI8MX1D_JOuMw_hLdO6T2wV9KnW_MoFoqF2nOeZ_woff2.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/_com_s_lora_v37_0QI8MX1D_JOuMw_hLdO6T2wV9KnW_MoFoq92nA_woff2.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/fonts_gstatic_com_s_lora_v37_0QIvMX1D_JOuMwf7I_NP_woff2.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/fonts_gstatic_com_s_lora_v37_0QIvMX1D_JOuMw77I_NP_woff2.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* math */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/fonts_gstatic_com_s_lora_v37_0QIvMX1D_JOuM3b7I_NP_woff2.woff2) format('woff2');
+  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-209F, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
+}
+/* symbols */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/fonts_gstatic_com_s_lora_v37_0QIvMX1D_JOuM2T7I_NP_woff2.woff2) format('woff2');
+  unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AE, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F8D0-1F8D8, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FAC6, U+1FAC8, U+1FACC-1FADD, U+1FADF-1FAEB, U+1FAEF-1FAFA, U+1FB00-1FBFF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/fonts_gstatic_com_s_lora_v37_0QIvMX1D_JOuMwX7I_NP_woff2.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/fonts_gstatic_com_s_lora_v37_0QIvMX1D_JOuMwT7I_NP_woff2.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/fonts_gstatic_com_s_lora_v37_0QIvMX1D_JOuMwr7Iw_woff2.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/fonts_gstatic_com_s_lora_v37_0QIvMX1D_JOuMwf7I_NP_woff2.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/fonts_gstatic_com_s_lora_v37_0QIvMX1D_JOuMw77I_NP_woff2.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* math */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/fonts_gstatic_com_s_lora_v37_0QIvMX1D_JOuM3b7I_NP_woff2.woff2) format('woff2');
+  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-209F, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
+}
+/* symbols */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/fonts_gstatic_com_s_lora_v37_0QIvMX1D_JOuM2T7I_NP_woff2.woff2) format('woff2');
+  unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AE, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F8D0-1F8D8, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FAC6, U+1FAC8, U+1FACC-1FADD, U+1FADF-1FAEB, U+1FAEF-1FAFA, U+1FB00-1FBFF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/fonts_gstatic_com_s_lora_v37_0QIvMX1D_JOuMwX7I_NP_woff2.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/fonts_gstatic_com_s_lora_v37_0QIvMX1D_JOuMwT7I_NP_woff2.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/fonts_gstatic_com_s_lora_v37_0QIvMX1D_JOuMwr7Iw_woff2.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Noto Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/rif_v33_ga6daw1J5X9T9RW6j9bNVls_hfgvz8JcMofYTYf3D33Esw_woff2.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Noto Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/rif_v33_ga6daw1J5X9T9RW6j9bNVls_hfgvz8JcMofYTYf_D33Esw_woff2.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Noto Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/rif_v33_ga6daw1J5X9T9RW6j9bNVls_hfgvz8JcMofYTYf2D33Esw_woff2.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Noto Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/rif_v33_ga6daw1J5X9T9RW6j9bNVls_hfgvz8JcMofYTYf5D33Esw_woff2.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* math */
+@font-face {
+  font-family: 'Noto Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/rif_v33_ga6daw1J5X9T9RW6j9bNVls_hfgvz8JcMofYTYeGD33Esw_woff2.woff2) format('woff2');
+  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-209F, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Noto Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/rif_v33_ga6daw1J5X9T9RW6j9bNVls_hfgvz8JcMofYTYf1D33Esw_woff2.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Noto Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/rif_v33_ga6daw1J5X9T9RW6j9bNVls_hfgvz8JcMofYTYf0D33Esw_woff2.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Noto Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/oserif_v33_ga6daw1J5X9T9RW6j9bNVls_hfgvz8JcMofYTYf6D30_woff2.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Noto Serif';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/rif_v33_ga6daw1J5X9T9RW6j9bNVls_hfgvz8JcMofYTYf3D33Esw_woff2.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Noto Serif';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/rif_v33_ga6daw1J5X9T9RW6j9bNVls_hfgvz8JcMofYTYf_D33Esw_woff2.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Noto Serif';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/rif_v33_ga6daw1J5X9T9RW6j9bNVls_hfgvz8JcMofYTYf2D33Esw_woff2.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Noto Serif';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/rif_v33_ga6daw1J5X9T9RW6j9bNVls_hfgvz8JcMofYTYf5D33Esw_woff2.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* math */
+@font-face {
+  font-family: 'Noto Serif';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/rif_v33_ga6daw1J5X9T9RW6j9bNVls_hfgvz8JcMofYTYeGD33Esw_woff2.woff2) format('woff2');
+  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-209F, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Noto Serif';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/rif_v33_ga6daw1J5X9T9RW6j9bNVls_hfgvz8JcMofYTYf1D33Esw_woff2.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Noto Serif';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/rif_v33_ga6daw1J5X9T9RW6j9bNVls_hfgvz8JcMofYTYf0D33Esw_woff2.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Noto Serif';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/oserif_v33_ga6daw1J5X9T9RW6j9bNVls_hfgvz8JcMofYTYf6D30_woff2.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* ethiopic */
+@font-face {
+  font-family: 'Noto Sans Ethiopic';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/HAv50vjIepfJVOZZgcpQ5B9FBTH9KGNfhSTgtoow1KVnIv4gckut2Q_woff2.woff2) format('woff2');
+  unicode-range: U+030E, U+1200-1399, U+2D80-2DDE, U+AB01-AB2E, U+1E7E0-1E7E6, U+1E7E8-1E7EB, U+1E7ED-1E7EE, U+1E7F0-1E7FE;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Noto Sans Ethiopic';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/HAv50vjIepfJVOZZgcpQ5B9FBTH9KGNfhSTgtoow1KVnIv4hgkut2Q_woff2.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Noto Sans Ethiopic';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/7cHAv50vjIepfJVOZZgcpQ5B9FBTH9KGNfhSTgtoow1KVnIv4hYkug_woff2.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* ethiopic */
+@font-face {
+  font-family: 'Noto Sans Ethiopic';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/HAv50vjIepfJVOZZgcpQ5B9FBTH9KGNfhSTgtoow1KVnIv4gckut2Q_woff2.woff2) format('woff2');
+  unicode-range: U+030E, U+1200-1399, U+2D80-2DDE, U+AB01-AB2E, U+1E7E0-1E7E6, U+1E7E8-1E7EB, U+1E7ED-1E7EE, U+1E7F0-1E7FE;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Noto Sans Ethiopic';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/HAv50vjIepfJVOZZgcpQ5B9FBTH9KGNfhSTgtoow1KVnIv4hgkut2Q_woff2.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Noto Sans Ethiopic';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/7cHAv50vjIepfJVOZZgcpQ5B9FBTH9KGNfhSTgtoow1KVnIv4hYkug_woff2.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* arabic */
+@font-face {
+  font-family: 'Noto Naskh Arabic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/naskharabic_v44_RrQKbpV_9Dd1b1OAGA6M9PkyDuVBeN2DHV20Lg_woff2.woff2) format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC7, U+10EC9-10EEE, U+10EF0-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+/* math */
+@font-face {
+  font-family: 'Noto Naskh Arabic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/naskharabic_v44_RrQKbpV_9Dd1b1OAGA6M9PkyDuVBeN36HV20Lg_woff2.woff2) format('woff2');
+  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-209F, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
+}
+/* symbols */
+@font-face {
+  font-family: 'Noto Naskh Arabic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/naskharabic_v44_RrQKbpV_9Dd1b1OAGA6M9PkyDuVBeN3oHV20Lg_woff2.woff2) format('woff2');
+  unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AE, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F8D0-1F8D8, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FAC6, U+1FAC8, U+1FACC-1FADD, U+1FADF-1FAEB, U+1FAEF-1FAFA, U+1FB00-1FBFF;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Noto Naskh Arabic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/naskharabic_v44_RrQKbpV_9Dd1b1OAGA6M9PkyDuVBeN2IHV20Lg_woff2.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Noto Naskh Arabic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/otonaskharabic_v44_RrQKbpV_9Dd1b1OAGA6M9PkyDuVBeN2GHV0_woff2.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* arabic */
+@font-face {
+  font-family: 'Noto Naskh Arabic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/naskharabic_v44_RrQKbpV_9Dd1b1OAGA6M9PkyDuVBeN2DHV20Lg_woff2.woff2) format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC7, U+10EC9-10EEE, U+10EF0-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+/* math */
+@font-face {
+  font-family: 'Noto Naskh Arabic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/naskharabic_v44_RrQKbpV_9Dd1b1OAGA6M9PkyDuVBeN36HV20Lg_woff2.woff2) format('woff2');
+  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-209F, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
+}
+/* symbols */
+@font-face {
+  font-family: 'Noto Naskh Arabic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/naskharabic_v44_RrQKbpV_9Dd1b1OAGA6M9PkyDuVBeN3oHV20Lg_woff2.woff2) format('woff2');
+  unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AE, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F8D0-1F8D8, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FAC6, U+1FAC8, U+1FACC-1FADD, U+1FADF-1FAEB, U+1FAEF-1FAFA, U+1FB00-1FBFF;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Noto Naskh Arabic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/naskharabic_v44_RrQKbpV_9Dd1b1OAGA6M9PkyDuVBeN2IHV20Lg_woff2.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Noto Naskh Arabic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/otonaskharabic_v44_RrQKbpV_9Dd1b1OAGA6M9PkyDuVBeN2GHV0_woff2.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Noto Sans Hebrew';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/or30Q7v33eiDljA1IufXTtVf7V6RvEEdhQlk0LlGxCyaePiZTNzENg_woff2.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Noto Sans Hebrew';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/or30Q7v33eiDljA1IufXTtVf7V6RvEEdhQlk0LlGxCyaePiYTNzENg_woff2.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* hebrew */
+@font-face {
+  font-family: 'Noto Sans Hebrew';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/or30Q7v33eiDljA1IufXTtVf7V6RvEEdhQlk0LlGxCyaePiWTNzENg_woff2.woff2) format('woff2');
+  unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Noto Sans Hebrew';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/or30Q7v33eiDljA1IufXTtVf7V6RvEEdhQlk0LlGxCyaePiaTNzENg_woff2.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Noto Sans Hebrew';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/50_or30Q7v33eiDljA1IufXTtVf7V6RvEEdhQlk0LlGxCyaePiUTNw_woff2.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Noto Sans Hebrew';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/or30Q7v33eiDljA1IufXTtVf7V6RvEEdhQlk0LlGxCyaePiZTNzENg_woff2.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Noto Sans Hebrew';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/or30Q7v33eiDljA1IufXTtVf7V6RvEEdhQlk0LlGxCyaePiYTNzENg_woff2.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* hebrew */
+@font-face {
+  font-family: 'Noto Sans Hebrew';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/or30Q7v33eiDljA1IufXTtVf7V6RvEEdhQlk0LlGxCyaePiWTNzENg_woff2.woff2) format('woff2');
+  unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Noto Sans Hebrew';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/or30Q7v33eiDljA1IufXTtVf7V6RvEEdhQlk0LlGxCyaePiaTNzENg_woff2.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Noto Sans Hebrew';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/50_or30Q7v33eiDljA1IufXTtVf7V6RvEEdhQlk0LlGxCyaePiUTNw_woff2.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* devanagari */
+@font-face {
+  font-family: 'Noto Sans Devanagari';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/UFzXI5FBtUq5a8bjKYTZjtRU6Sgv3NaV_SNmI0b8QQCQmHN5TV_9qo_woff2.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Noto Sans Devanagari';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/UFzXI5FBtUq5a8bjKYTZjtRU6Sgv3NaV_SNmI0b8QQCQmHN6jV_9qo_woff2.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Noto Sans Devanagari';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/G7UUFzXI5FBtUq5a8bjKYTZjtRU6Sgv3NaV_SNmI0b8QQCQmHN5DV__woff2.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Noto Sans Devanagari';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/UFzXI5FBtUq5a8bjKYTZjtRU6Sgv3NaV_SNmI0b8QQCQmHN5TV_9qo_woff2.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Noto Sans Devanagari';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/UFzXI5FBtUq5a8bjKYTZjtRU6Sgv3NaV_SNmI0b8QQCQmHN6jV_9qo_woff2.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Noto Sans Devanagari';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/G7UUFzXI5FBtUq5a8bjKYTZjtRU6Sgv3NaV_SNmI0b8QQCQmHN5DV__woff2.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/9RyLvOH3k3gW1mcjNSmNgrgKFJB9_Osg_skey_72472b0eb8793570_v_v57.woff2) format('woff2');
+  unicode-range: U+304b-304e, U+305f-3060, U+306a, U+3072-3073, U+3089, U+3099, U+30ab-30ac, U+30bf-30c0, U+30ca, U+4e8c, U+4f0a, U+518d, U+52e2, U+5341, U+5b57, U+5bae, U+5e74, U+5f0f, U+65b0, U+65e5, U+66f4, U+672c, U+6f22, U+751f, U+795e, U+7d99, U+8a9e, U+9077, U+91d1;
+}
+
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/qtAbtIccIdscaJeB7QMB8eU1yF8jje1w_skey_cf0bb10b5602fdc3_v_v41.woff2) format('woff2');
+  unicode-range: U+4e00, U+4e4b, U+53c8, U+5927, U+5b66, U+62fc, U+65b0, U+65e5, U+66f4, U+6c49, U+6c64, U+7115, U+7136, U+751f, U+76d8, U+82df, U+8bed, U+91cd, U+94ed, U+97f3;
+}
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/ZpCO8Lv2xB_ypu6s898hHehsjosxItxg_skey_87e7ee645936e2c7_v_v40.woff2) format('woff2');
+  unicode-range: U+65b0, U+66f4, U+ac31, U+ac8c, U+ae00, U+b0a0, U+b2e4, U+b300, U+b86d, U+bbfc, U+c0c8, U+c124, U+c138, U+c2e0, U+c655, U+c74c, U+c815, U+c885, U+d558, U+d55c, U+d6c8;
+}
+
+:root{--turq:#19A7A3;--turqd:#0E7C7A;--gold:#D9A441;--peach:#F6C9A0;--pink:#E6559A;--purple:#8A5BC0;
+--denim:#4A74A8;--ivory:#FBF4E4;--ivory2:#F3E7CB;--leather:#5B3A22;--navy:#1D2C57;--ink:#2A2118;}
+@page{size:8.5in 11in;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--ivory);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-family:'Lora',serif;color:var(--ink);font-size:10.5pt;line-height:1.38;counter-reset:pg}
+.page{width:8.5in;height:11in;position:relative;overflow:hidden;page-break-after:always;padding:.42in .5in .55in;
+  background:var(--ivory);counter-increment:pg}
+.page:before{content:"";position:absolute;inset:.18in;border:2px dashed #b98b57;border-radius:10px;pointer-events:none;opacity:.8}
+.page:after{content:"7HE H0LY R3UP  ·  THE R3NEW  ·  NOVEMBER 2026  ·  " counter(pg);position:absolute;bottom:.26in;left:0;right:0;
+  text-align:center;font-family:'Rye',serif;font-size:7pt;letter-spacing:.08em;color:var(--leather)}
+.cover:after,.cover:before{display:none}
+.brand{font-family:'Rye',serif;letter-spacing:.04em}
+.z{position:relative;display:inline-block}.z:after{content:"";position:absolute;left:12%;right:12%;top:50%;height:.09em;background:currentColor;transform:rotate(-62deg)}
+.anton{font-family:'Anton',sans-serif;text-transform:uppercase;letter-spacing:.02em}
+.play{font-family:'Playfair Display',serif}
+.script{font-family:'Kaushan Script',cursive}
+.grk{font-family:'Noto Serif','Playfair Display',serif}.heb{font-family:'Noto Sans Hebrew',sans-serif}
+.eth{font-family:'Noto Sans Ethiopic',sans-serif}.ara{font-family:'Noto Naskh Arabic',serif}
+.dev{font-family:'Noto Sans Devanagari',sans-serif}.jp{font-family:'Noto Sans JP',sans-serif}
+.sc{font-family:'Noto Sans SC',sans-serif}.kr{font-family:'Noto Sans KR',sans-serif}
+h1.title{font-family:'Anton',sans-serif;font-size:68pt;line-height:.95;text-transform:uppercase;
+  background:linear-gradient(90deg,var(--turq),var(--pink) 60%,var(--purple));-webkit-background-clip:text;color:transparent}
+h2{font-family:'Anton',sans-serif;font-size:25pt;text-transform:uppercase;color:var(--navy);letter-spacing:.02em;line-height:1}
+h3{font-family:'Playfair Display',serif;font-size:12.5pt;color:var(--navy)}
+.band{height:10px;border-radius:5px;background:linear-gradient(90deg,var(--turq),var(--peach),var(--pink),var(--purple));margin:6px 0 10px}
+.stitch{border:1.6px dashed #b98b57;border-radius:10px;background:#fffaf0}
+.tag{display:inline-block;font-family:'Anton',sans-serif;font-size:7.5pt;letter-spacing:.07em;text-transform:uppercase;color:#fff;
+  padding:2px 7px;border-radius:3px}
+.small{font-size:7.6pt}.mut{color:#6d5a46}
+.cover{padding:.5in .5in;background:radial-gradient(circle at 50% 8%,#FFE3BC 0,var(--ivory) 52%)}
+.cover .emb{width:6.4in;height:6.4in;object-fit:cover;border-radius:16px;margin:10px auto 0;display:block;border:3px solid var(--leather);
+  box-shadow:0 8px 26px rgba(91,58,34,.35)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+ul.tight{margin-left:14px}ul.tight li{margin:2px 0}
+/* calendar */
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:8px}
+.dow{font-family:'Anton',sans-serif;text-align:center;background:var(--navy);color:#fff;font-size:8.5pt;padding:3px 0;border-radius:3px;letter-spacing:.1em}
+.cell{height:1.43in;border:1.4px dashed #b98b57;border-radius:6px;padding:4px 5px;background:#fffaf0;position:relative;overflow:hidden}
+.cell.blank{background:transparent;border:none}
+.cell .dn{font-family:'Anton',sans-serif;font-size:17pt;line-height:1;color:var(--navy)}
+.cell .lg{font-family:'Playfair Display',serif;font-weight:700;font-size:8.4pt;line-height:1.1;margin-top:2px}
+.cell .nt{white-space:nowrap;font-size:12.5pt;line-height:1.15;margin-top:2px;color:var(--leather)}
+.cell .mk{position:absolute;left:4px;bottom:3px;right:4px;font-size:6.5pt;line-height:1.15;color:#6d5a46}
+.cell .bar{position:absolute;left:0;top:0;bottom:0;width:5px}
+/* day cards */
+.arcbar{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.arcbar img{width:.55in;height:.55in;object-fit:cover;border-radius:8px;border:1.5px solid var(--leather)}
+.arcname{font-family:'Anton',sans-serif;font-size:15pt;text-transform:uppercase;letter-spacing:.04em}
+.card{height:4.6in;margin-bottom:.12in;border:1.8px dashed #b98b57;border-radius:12px;background:#fffaf0;overflow:hidden;position:relative}
+.card .hd{display:flex;align-items:center;gap:10px;padding:6px 12px;color:#fff;font-family:'Anton',sans-serif;letter-spacing:.06em;text-transform:uppercase;font-size:11pt}
+.card .hd .r{margin-left:auto;font-size:8.6pt}
+.card .body{display:grid;grid-template-columns:2.3in 1fr;gap:12px;padding:9px 12px 0}
+.word{border-radius:10px;padding:10px 9px 9px;text-align:center;background:var(--ivory2);border:1.4px solid #d8bd8f}
+.word .nat{line-height:1.2;color:var(--navy);font-weight:700;word-break:keep-all;overflow-wrap:anywhere}
+.word .lng{font-family:'Rye',serif;font-size:12.5pt;color:var(--leather);margin-bottom:2px}
+.word .tr{font-family:'Playfair Display',serif;font-style:italic;font-size:11.5pt;color:var(--purple);margin-top:2px}
+.word .pr{font-size:8.6pt;color:#6d5a46}
+.word .mn{font-size:9.6pt;margin-top:7px;line-height:1.32}
+.lbl{font-family:'Anton',sans-serif;font-size:8.4pt;letter-spacing:.09em;text-transform:uppercase;color:var(--turqd);margin-bottom:1px}
+.txt p{margin-bottom:5px;font-size:9.6pt;line-height:1.38}
+.hook{font-family:'Kaushan Script',cursive;font-size:13.5pt;line-height:1.2;color:var(--pink);margin:2px 0 6px}
+.trio{display:grid;grid-template-columns:1fr 1fr;gap:7px;padding:7px 12px 0}
+.box{border:1.2px dashed #c9a56d;border-radius:8px;padding:4px 8px;background:#fff;font-size:9.2pt;line-height:1.32}
+.verify{margin:5px 12px 0;font-size:7.2pt;color:#7a6650;text-align:center;border-top:1px dotted #cdb48a;padding-top:2px}
+.tr2{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.brick{display:inline-block;width:.62in;height:.34in;border:1.4px solid var(--leather);margin:2px;border-radius:3px;text-align:center;
+  font-family:'Anton',sans-serif;font-size:10pt;line-height:.3in;color:var(--navy);background:linear-gradient(180deg,#f9e6cf,#e9c9a0)}
+</style></head><body><section class="page cover" style="text-align:center">
+<div class="brand" style="font-size:15pt;color:var(--leather)">7HE H<span class="z">0</span>LY R3UP</div>
+<div class="small mut" style="letter-spacing:.2em">YOU SURVIVED. NOW WE REBUILD.</div>
+<h1 class="title" style="margin-top:6px">THE R3NEW</h1>
+<div class="play" style="font-size:15pt;color:var(--navy);margin-top:2px;font-style:italic">30 days · 30 languages · one word: <b>again</b></div>
+<img class="emb" src="img/emblem.jpg">
+<div class="band" style="margin:14px 0 8px"></div>
+<div class="anton" style="font-size:16pt;color:var(--turqd)">November 2026 Content Calendar + Outline</div>
+<div class="small mut" style="margin-top:4px">A daily interactive series for the family: Morning drop + R3NEW post, each day building on the last, every day able to stand alone.</div>
+<div class="script" style="font-size:13pt;color:var(--pink);margin-top:10px">Big Boy approved. God Almighty gets the glory.</div>
+</section><section class="page">
+<h2>Welcome to the R3NEW</h2><div class="band"></div>
+<div style="display:grid;grid-template-columns:2.4in 1fr;gap:16px">
+<img src="img/heart.jpg" style="width:2.4in;border-radius:12px;border:2px solid #5B3A22">
+<div>
+<p class="script" style="font-size:19pt;color:var(--pink);line-height:1.2;margin-bottom:8px">“Renew ain't 'new.' Renew is 'again,' on purpose, scars and all.”</p>
+<p>November is the R3NEW. Every day for 30 days, one language gives us its word for <b>renew</b>, a different meaning, a different definition, and a fun fact you didn't see coming. Then we drop one real, low-energy step you can do in 10 minutes or less.</p>
+<p style="margin-top:6px">I'm not here to be above anybody. I'm beside you. Same rebuild, different rooms. The family does this together, in the comments, one brick at a time.</p>
+</div></div>
+<h3 style="margin-top:16px;font-size:15pt">What makes this different</h3>
+<ul class="tight" style="margin-top:4px">
+<li><b>Each day builds on the one before.</b> Every post starts with a mini recap (“Yesterday: ___. Today builds: ___.”) so new people can hop in and old people feel the climb.</li>
+<li><b>Every day also stands alone.</b> Each post carries a one-line “Start here” catch-up. Nobody's ever behind. You are being positioned, not behind.</li>
+<li><b>Two posts a day, two jobs.</b> The <i>Daily R3UP · Morning</i> drop teaches the word. The separate <i>R3NEW</i> post is the interactive one: comment, vote, say it back, tag your crew.</li>
+<li><b>The Jar.</b> Every day the family drops a Jar word. Every Sunday is a Jar Reveal: I read yours out loud, raw, with thanks.</li>
+<li><b>The Wall.</b> Each day adds one brick to the R3NEW Wall graphic. By Nov 30 the wall is built, with 30 words in 30 tongues.</li>
+<li><b>Thanksgiving voice.</b> Gratitude for mercy already completed, not “almost there.” Gratitude and grief can sit at the same table.</li>
+</ul>
+<div class="stitch" style="padding:10px 14px;margin-top:14px;font-size:9.4pt">
+<b>Honest disclaimer.</b> This series is faith-based education, personal testimony and encouragement. It is not medical, mental-health or legal advice and it doesn't diagnose or treat anything. Struggling isn't weak faith. If you're in crisis or thinking about hurting yourself, call or text 988 (US) or your local emergency number. Scripture references are listed by book, chapter and verse; before posting, quote from your Ethiopian Orthodox Tewahedo edition and name the edition and translator on the graphic. Psalm numbers follow the Ge'ez/Septuagint tradition and can run one number behind Hebrew-numbered Bibles. Language pronunciations are friendly approximations. Ask a native speaker, a deacon or a priest to confirm. Copyright © 2026 7HE H0LY R3UP. All rights reserved.
+</div>
+</section><section class="page">
+<h2>How Each Day Works</h2><div class="band"></div>
+<div style="display:grid;grid-template-columns:2.9in 1fr;gap:16px">
+<div><img src="img/goodmorning.jpg" style="width:2.9in;border-radius:10px;border:2px solid #5B3A22"><div class="small mut" style="text-align:center;margin-top:3px">Morning graphic: swap in the day's word + date</div></div>
+<div>
+<h3>1 · Daily R3UP · Morning (teach)</h3>
+<ul class="tight" style="font-size:9.6pt">
+<li><b>Mini recap (2 lines):</b> “Yesterday: ___ (language) meant ___. Today builds: ___.”</li>
+<li><b>Start-here line:</b> “Joining late? Renew = making new again. That's all you need.”</li>
+<li><b>Hook</b> in my voice (real struggle, short punchy sentences).</li>
+<li><b>The word:</b> script, sound, meaning, explanation, fun fact.</li>
+<li><b>Word of God:</b> exact book, chapter and verse. Church teaching, Scripture, history, testimony and metaphor kept separate.</li>
+<li><b>Verify it:</b> search the word, compare two sources, ask a native speaker or clergy.</li>
+</ul>
+<h3 style="margin-top:8px">2 · R3NEW post (interact)</h3>
+<ul class="tight" style="font-size:9.6pt">
+<li>One simple action: comment a word, vote, fill in a blank, say it back, tag a crew member.</li>
+<li>A 10-minute step, plus a low-energy option and a no-cost, private option.</li>
+<li>Reply to as many comments as possible in the first hour. Pin the best Jar word.</li>
+</ul></div></div>
+<h3 style="margin-top:12px">The caption blueprint (every post)</h3>
+<div class="stitch" style="padding:9px 13px;font-size:9.6pt;line-height:1.5">
+<b>1.</b> Hook (specific, real) → <b>2.</b> Mini recap + start-here line → <b>3.</b> Teaching + evidence-backed context → <b>4.</b> Interactive ask → <b>5.</b> 10-minute step (and low-energy option) → <b>6.</b> Verification invite: <i>“Check both sides, including mine. Read the sources. Truth can withstand honest questions.”</i> → <b>7.</b> Invitation → <b>8.</b> Signature closing.
+</div>
+<div class="grid2" style="margin-top:10px">
+<div class="stitch" style="padding:9px 13px;font-size:9.4pt"><b>Standard Bio</b><br>“I'm Nikki, founder of 7HE H0LY R3UP, a survivor rebuilding through faith, with Big Boy, my American Bully service dog, beside me. I share lived experience, carefully sourced teaching, and practical steps for the next stretch of rebuilding.”</div>
+<div class="stitch" style="padding:9px 13px;font-size:9.4pt"><b>Standard Invitation</b><br>“If this meets you where you are, reach out through this page. Share only what feels safe. What step are you working on?”<br><br><b>Signature Closing</b><br>“We survived. Now let's go back, with truth and a hand out. Souls are attached to my obedience. God Almighty gets the glory.”</div>
+</div>
+<h3 style="margin-top:10px">Grounding invitation (optional, top of Morning post)</h3>
+<p style="font-size:9.6pt">“If it's okay for you: feet on the floor, one slow breath in, one out. Eyes open or closed, your call. Skip this if it doesn't feel good today. You're still welcome here.”</p>
+<h3 style="margin-top:8px">Hashtag set</h3><p class="small">#7HEH0LYR3UP · #THER3NEW · #YouSurvivedNowWeRebuild · #BigBoy</p>
+</section><section class="page">
+<div style="display:flex;align-items:flex-end;justify-content:space-between"><h2>November 2026 · 30 Languages</h2><div class="brand" style="color:var(--leather);font-size:10pt">THE R3NEW</div></div>
+<div class="band"></div>
+<div class="cal"><div class="dow">SUN</div><div class="dow">MON</div><div class="dow">TUE</div><div class="dow">WED</div><div class="dow">THU</div><div class="dow">FRI</div><div class="dow">SAT</div><div class="cell"><div class="bar" style="background:#19A7A3"></div><div style="padding-left:4px"><div class="dn">1</div>
+        <div class="lg" style="color:#19A7A3">English</div><div class="nt " style="font-size:13pt">renew</div></div><div class="mk" style="padding-left:4px">🫙 Jar Reveal</div></div><div class="cell"><div class="bar" style="background:#19A7A3"></div><div style="padding-left:4px"><div class="dn">2</div>
+        <div class="lg" style="color:#19A7A3">Latin</div><div class="nt " style="font-size:13pt">renovare</div></div><div class="mk" style="padding-left:4px"></div></div><div class="cell"><div class="bar" style="background:#19A7A3"></div><div style="padding-left:4px"><div class="dn">3</div>
+        <div class="lg" style="color:#19A7A3">Greek</div><div class="nt grk" style="font-size:10.5pt">ἀνακαίνωσις</div></div><div class="mk" style="padding-left:4px"></div></div><div class="cell"><div class="bar" style="background:#19A7A3"></div><div style="padding-left:4px"><div class="dn">4</div>
+        <div class="lg" style="color:#19A7A3">Hebrew</div><div class="nt heb" style="font-size:10.5pt">לְחַדֵּשׁ</div></div><div class="mk" style="padding-left:4px">◆ fast day*</div></div><div class="cell"><div class="bar" style="background:#19A7A3"></div><div style="padding-left:4px"><div class="dn">5</div>
+        <div class="lg" style="color:#19A7A3">Ge&#x27;ez</div><div class="nt eth" style="font-size:13pt">ሐደሰ</div></div><div class="mk" style="padding-left:4px"></div></div><div class="cell"><div class="bar" style="background:#19A7A3"></div><div style="padding-left:4px"><div class="dn">6</div>
+        <div class="lg" style="color:#19A7A3">Amharic</div><div class="nt eth" style="font-size:13pt">ማደስ</div></div><div class="mk" style="padding-left:4px">◆ fast day*</div></div><div class="cell"><div class="bar" style="background:#19A7A3"></div><div style="padding-left:4px"><div class="dn">7</div>
+        <div class="lg" style="color:#19A7A3">Arabic</div><div class="nt ara" style="font-size:13pt">تجديد</div></div><div class="mk" style="padding-left:4px"></div></div><div class="cell"><div class="bar" style="background:#E6559A"></div><div style="padding-left:4px"><div class="dn">8</div>
+        <div class="lg" style="color:#E6559A">Swahili</div><div class="nt " style="font-size:13pt">kuhuisha</div></div><div class="mk" style="padding-left:4px">🫙 Jar Reveal</div></div><div class="cell"><div class="bar" style="background:#E6559A"></div><div style="padding-left:4px"><div class="dn">9</div>
+        <div class="lg" style="color:#E6559A">Yoruba</div><div class="nt " style="font-size:13pt">àtúnbí</div></div><div class="mk" style="padding-left:4px"></div></div><div class="cell"><div class="bar" style="background:#E6559A"></div><div style="padding-left:4px"><div class="dn">10</div>
+        <div class="lg" style="color:#E6559A">Zulu</div><div class="nt " style="font-size:10.5pt">ukuvuselela</div></div><div class="mk" style="padding-left:4px">Hidar 1</div></div><div class="cell"><div class="bar" style="background:#E6559A"></div><div style="padding-left:4px"><div class="dn">11</div>
+        <div class="lg" style="color:#E6559A">Spanish</div><div class="nt " style="font-size:13pt">renovar</div></div><div class="mk" style="padding-left:4px">◆ fast day*</div></div><div class="cell"><div class="bar" style="background:#E6559A"></div><div style="padding-left:4px"><div class="dn">12</div>
+        <div class="lg" style="color:#E6559A">French</div><div class="nt " style="font-size:10.5pt">renouveler</div></div><div class="mk" style="padding-left:4px"></div></div><div class="cell"><div class="bar" style="background:#E6559A"></div><div style="padding-left:4px"><div class="dn">13</div>
+        <div class="lg" style="color:#E6559A">Italian</div><div class="nt " style="font-size:10.5pt">rinnovare</div></div><div class="mk" style="padding-left:4px">◆ fast day*</div></div><div class="cell"><div class="bar" style="background:#E6559A"></div><div style="padding-left:4px"><div class="dn">14</div>
+        <div class="lg" style="color:#E6559A">German</div><div class="nt " style="font-size:8.5pt">Wiederaufbau</div></div><div class="mk" style="padding-left:4px"></div></div><div class="cell"><div class="bar" style="background:#D9A441"></div><div style="padding-left:4px"><div class="dn">15</div>
+        <div class="lg" style="color:#D9A441">Japanese</div><div class="nt jp" lang="ja" style="font-size:13pt">金継ぎ</div></div><div class="mk" style="padding-left:4px">🫙 Jar Reveal</div></div><div class="cell"><div class="bar" style="background:#D9A441"></div><div style="padding-left:4px"><div class="dn">16</div>
+        <div class="lg" style="color:#D9A441">Mandarin</div><div class="nt sc" lang="zh" style="font-size:13pt">日日新</div></div><div class="mk" style="padding-left:4px"></div></div><div class="cell"><div class="bar" style="background:#D9A441"></div><div style="padding-left:4px"><div class="dn">17</div>
+        <div class="lg" style="color:#D9A441">Korean</div><div class="nt kr" lang="ko" style="font-size:13pt">새롭게 하다</div></div><div class="mk" style="padding-left:4px"></div></div><div class="cell"><div class="bar" style="background:#D9A441"></div><div style="padding-left:4px"><div class="dn">18</div>
+        <div class="lg" style="color:#D9A441">Hindi</div><div class="nt dev" style="font-size:13pt">नवीनीकरण</div></div><div class="mk" style="padding-left:4px">◆ fast day*</div></div><div class="cell"><div class="bar" style="background:#D9A441"></div><div style="padding-left:4px"><div class="dn">19</div>
+        <div class="lg" style="color:#D9A441">Sanskrit</div><div class="nt dev" style="font-size:13pt">पुनर्नवा</div></div><div class="mk" style="padding-left:4px"></div></div><div class="cell"><div class="bar" style="background:#D9A441"></div><div style="padding-left:4px"><div class="dn">20</div>
+        <div class="lg" style="color:#D9A441">Persian</div><div class="nt ara" style="font-size:13pt">نوروز</div></div><div class="mk" style="padding-left:4px">◆ fast day*</div></div><div class="cell"><div class="bar" style="background:#D9A441"></div><div style="padding-left:4px"><div class="dn">21</div>
+        <div class="lg" style="color:#D9A441">Turkish</div><div class="nt " style="font-size:10.5pt">yenilemek</div></div><div class="mk" style="padding-left:4px">Hidar 12 · St. Michael</div></div><div class="cell"><div class="bar" style="background:#8A5BC0"></div><div style="padding-left:4px"><div class="dn">22</div>
+        <div class="lg" style="color:#8A5BC0">Māori</div><div class="nt " style="font-size:13pt">whakahou</div></div><div class="mk" style="padding-left:4px">🫙 Jar Reveal</div></div><div class="cell"><div class="bar" style="background:#8A5BC0"></div><div style="padding-left:4px"><div class="dn">23</div>
+        <div class="lg" style="color:#8A5BC0">Tagalog</div><div class="nt " style="font-size:8.5pt">pagpapanibago</div></div><div class="mk" style="padding-left:4px"></div></div><div class="cell"><div class="bar" style="background:#8A5BC0"></div><div style="padding-left:4px"><div class="dn">24</div>
+        <div class="lg" style="color:#8A5BC0">Irish</div><div class="nt " style="font-size:10.5pt">athnuachan</div></div><div class="mk" style="padding-left:4px"></div></div><div class="cell"><div class="bar" style="background:#8A5BC0"></div><div style="padding-left:4px"><div class="dn">25</div>
+        <div class="lg" style="color:#8A5BC0">Welsh</div><div class="nt " style="font-size:10.5pt">adnewyddu</div></div><div class="mk" style="padding-left:4px">◆ fast day*</div></div><div class="cell"><div class="bar" style="background:#8A5BC0"></div><div style="padding-left:4px"><div class="dn">26</div>
+        <div class="lg" style="color:#8A5BC0">Hawaiian</div><div class="nt " style="font-size:13pt">hoʻōla</div></div><div class="mk" style="padding-left:4px">Thanksgiving (US)</div></div><div class="cell"><div class="bar" style="background:#8A5BC0"></div><div style="padding-left:4px"><div class="dn">27</div>
+        <div class="lg" style="color:#8A5BC0">Russian</div><div class="nt " style="font-size:10.5pt">обновление</div></div><div class="mk" style="padding-left:4px">◆ fast day*</div></div><div class="cell"><div class="bar" style="background:#8A5BC0"></div><div style="padding-left:4px"><div class="dn">28</div>
+        <div class="lg" style="color:#8A5BC0">Vietnamese</div><div class="nt " style="font-size:13pt">làm mới</div></div><div class="mk" style="padding-left:4px"></div></div><div class="cell"><div class="bar" style="background:#4A74A8"></div><div style="padding-left:4px"><div class="dn">29</div>
+        <div class="lg" style="color:#4A74A8">Swedish</div><div class="nt " style="font-size:13pt">förnya</div></div><div class="mk" style="padding-left:4px">🫙 Jar Reveal</div></div><div class="cell"><div class="bar" style="background:#4A74A8"></div><div style="padding-left:4px"><div class="dn">30</div>
+        <div class="lg" style="color:#4A74A8">Every Tongue</div></div><div class="mk" style="padding-left:4px">Hidar 21 · Tsion Mariam</div></div></div>
+<div class="small mut" style="margin-top:9px;line-height:1.45;font-size:8.6pt">
+<b>Color bar = arc.</b> <span style="color:#19A7A3">■ Roots</span> · <span style="color:#E6559A">■ Rise</span> · <span style="color:#D9A441">■ Repair</span> · <span style="color:#8A5BC0">■ Return + Thanks</span> · <span style="color:#4A74A8">■ Every Tongue</span>.
+<b>🫙 Jar Reveal</b> = Sunday read-aloud of the week's Jar words.
+<b>* ◆ Wed/Fri</b> are traditional fast days in the Ethiopian Orthodox Tewahedo Church. Food fasting isn't for everyone (health, history with food, pregnancy). Ask your priest. Low-energy option: fast from scrolling for one hour.
+Ethiopian-calendar notes (Hidar 1 = Nov 10, Hidar 12 = Nov 21, Hidar 21 = Nov 30) follow the standard conversion for 2026. Confirm feast days with your church calendar.
+</div>
+</section><section class="page">
+<h2>The Roadmap: What's To Come</h2><div class="band"></div>
+<img src="img/corkboard.jpg" style="width:100%;height:2.7in;object-fit:cover;border-radius:12px;border:2px solid #5B3A22">
+<div class="small mut" style="text-align:center;margin:3px 0 8px">The Wall starts as a corkboard. By Nov 30 it's a wall of 30 bricks.</div>
+<div class="stitch" style="padding:7px 10px;margin-bottom:7px;display:flex;gap:10px;align-items:center">
+        <img src="img/stk_00.jpg" style="width:.85in;height:.85in;object-fit:cover;border-radius:10px;border:1.5px solid #5B3A22">
+        <div><div class="arcname" style="color:#19A7A3">Arc 1 · ROOTS · Nov 1–7</div>
+        <div style="font-size:9.8pt"><i>Where the word &#x27;new&#x27; comes from. Dig up the roots.</i></div><div class="small mut" style="font-size:8.6pt"><b>Languages:</b> English, Latin, Greek, Hebrew, Ge&#x27;ez, Amharic, Arabic</div></div></div><div class="stitch" style="padding:7px 10px;margin-bottom:7px;display:flex;gap:10px;align-items:center">
+        <img src="img/stk_01.jpg" style="width:.85in;height:.85in;object-fit:cover;border-radius:10px;border:1.5px solid #5B3A22">
+        <div><div class="arcname" style="color:#E6559A">Arc 2 · RISE · Nov 8–14</div>
+        <div style="font-size:9.8pt"><i>Revive, rebuild, and don&#x27;t do it alone.</i></div><div class="small mut" style="font-size:8.6pt"><b>Languages:</b> Swahili, Yoruba, Zulu, Spanish, French, Italian, German</div></div></div><div class="stitch" style="padding:7px 10px;margin-bottom:7px;display:flex;gap:10px;align-items:center">
+        <img src="img/stk_12.jpg" style="width:.85in;height:.85in;object-fit:cover;border-radius:10px;border:1.5px solid #5B3A22">
+        <div><div class="arcname" style="color:#D9A441">Arc 3 · REPAIR · Nov 15–21</div>
+        <div style="font-size:9.8pt"><i>Gold in the cracks. Daily washing. Plain words.</i></div><div class="small mut" style="font-size:8.6pt"><b>Languages:</b> Japanese, Mandarin, Korean, Hindi, Sanskrit, Persian, Turkish</div></div></div><div class="stitch" style="padding:7px 10px;margin-bottom:7px;display:flex;gap:10px;align-items:center">
+        <img src="img/stk_21.jpg" style="width:.85in;height:.85in;object-fit:cover;border-radius:10px;border:1.5px solid #5B3A22">
+        <div><div class="arcname" style="color:#8A5BC0">Arc 4 · RETURN + THANKS · Nov 22–28</div>
+        <div style="font-size:9.8pt"><i>Languages that came back from the edge. Thanks for mercy already done.</i></div><div class="small mut" style="font-size:8.6pt"><b>Languages:</b> Māori, Tagalog, Irish, Welsh, Hawaiian, Russian, Vietnamese</div></div></div><div class="stitch" style="padding:7px 10px;margin-bottom:7px;display:flex;gap:10px;align-items:center">
+        <img src="img/stk_22.jpg" style="width:.85in;height:.85in;object-fit:cover;border-radius:10px;border:1.5px solid #5B3A22">
+        <div><div class="arcname" style="color:#4A74A8">Arc 5 · EVERY TONGUE · Nov 29–30</div>
+        <div style="font-size:9.8pt"><i>Curious, hungry, and finished. Thirty words, one wall.</i></div><div class="small mut" style="font-size:8.6pt"><b>Languages:</b> Swedish, Every Tongue</div></div></div>
+<div class="stitch" style="padding:9px 13px;margin-top:6px;font-size:9.4pt"><b>Weekly rhythm.</b> Sundays: Jar Reveal + arc recap. Mon–Sat: one word, one fact, one step. Wed + Fri: lighter posts (fast days; fewer words, more prayer). Day 20 plants a sprout jar. Day 25 is the check-in. Day 26 is Thanksgiving. Day 29 opens the Q+A. Day 30 reveals the whole Wall.</div>
+</section><section class="page"><div class="arcbar" style="gap:24px"><div style="display:flex;align-items:center;gap:8px"><img src="img/stk_00.jpg" style="width:.5in;height:.5in;object-fit:cover;border-radius:8px;border:1.5px solid #5B3A22">
+            <div><div class="arcname" style="color:#19A7A3">Arc 1 · ROOTS <span class="mut small" style="font-family:Lora">Nov 1–7</span></div><div class="small mut">Where the word &#x27;new&#x27; comes from. Dig up the roots.</div></div></div></div>
+<div class="card">
+ <div class="hd" style="background:linear-gradient(90deg,#19A7A3,#19A7A3cc)"><span>DAY 01</span><span>Sun · NOV 1</span><span class="r">Jar Reveal</span></div>
+ <div class="body">
+  <div class="word">
+   <div class="lng">English</div>
+   <div class="nat " style="font-size:28pt">renew</div>
+   <div class="tr">ree-NOO</div>
+   <div class="pr">/rɪˈnjuː/</div>
+   <div class="mn"><b>Means:</b> to make new again; to begin again; to restore</div>
+  </div>
+  <div class="txt">
+   <div class="hook">“Renew ain&#x27;t &#x27;new.&#x27; Renew is &#x27;again,&#x27; on purpose, scars and all.”</div>
+   <div class="lbl">What it means</div><p>&#x27;Re&#x27; means again. &#x27;New&#x27; means new. Renew does not erase the old. You renew a vow, a license, a lease, a strength. Same thing, made fresh, on purpose.</p>
+   <div class="lbl">Fun fact</div><p>&#x27;News&#x27; is just &#x27;new things.&#x27; And &#x27;new&#x27; shares one ancestor with Latin novus, Greek néos and Sanskrit náva, a root linguists call Proto-Indo-European *néwos.</p>
+   <div class="lbl">Word of God</div><p><b>Lamentations 3:22-23</b></p>
+  </div>
+ </div>
+ <div class="trio">
+  <div class="box"><div class="lbl">Mini recap · builds on yesterday</div>Kickoff. Day 1 has nothing to recap. That&#x27;s the point. We lay the first board.</div>
+  <div class="box"><div class="lbl">R3NEW interactive post</div>DROP YOUR JAR WORD. One word for something God already renewed in you. Comment it. It goes in the Jar all month.</div>
+ </div>
+ <div class="trio" style="grid-template-columns:1fr">
+  <div class="box"><div class="lbl">10-minute step (low-energy option included)</div>Write your Jar word on paper and put it where you will see it. Low energy: type it in your Notes app.</div>
+ </div>
+ <div class="verify">Don't take my word for it: search the word + “etymology,” compare two sources, ask a native speaker.</div>
+</div>
+<div class="card">
+ <div class="hd" style="background:linear-gradient(90deg,#19A7A3,#19A7A3cc)"><span>DAY 02</span><span>Mon · NOV 2</span><span class="r"></span></div>
+ <div class="body">
+  <div class="word">
+   <div class="lng">Latin</div>
+   <div class="nat " style="font-size:28pt">renovare</div>
+   <div class="tr">reh-noh-WAH-reh</div>
+   <div class="pr">from novus = new</div>
+   <div class="mn"><b>Means:</b> to make new again (renovatio = a making-new-again)</div>
+  </div>
+  <div class="txt">
+   <div class="hook">“Latin gave us the root. I&#x27;m giving you the receipts: novus. New. Now go find it.”</div>
+   <div class="lbl">What it means</div><p>Novus is the root under renovate, innovate, novel, novice and nova. The Vulgate calls the person in Christ a &#x27;nova creatura,&#x27; a new creation (2 Cor 5:17).</p>
+   <div class="lbl">Fun fact</div><p>In 1573 Tycho Brahe published a book about a &#x27;new star&#x27; (stella nova) that blazed in the sky in 1572. Astronomers still call a sudden flare a nova.</p>
+   <div class="lbl">Word of God</div><p><b>2 Corinthians 5:17</b></p>
+  </div>
+ </div>
+ <div class="trio">
+  <div class="box"><div class="lbl">Mini recap · builds on yesterday</div>Yesterday: renew = &#x27;again&#x27; + &#x27;new.&#x27; Today we dig up the &#x27;new&#x27; root.</div>
+  <div class="box"><div class="lbl">R3NEW interactive post</div>WORD HUNT. Find a word in your house or phone with &#x27;nov&#x27; or &#x27;new&#x27; in it (novel, novice, renovate, news). Comment your find.</div>
+ </div>
+ <div class="trio" style="grid-template-columns:1fr">
+  <div class="box"><div class="lbl">10-minute step (low-energy option included)</div>Wipe down one surface you&#x27;ve been ignoring. 10 minutes max. A tiny renovation counts.</div>
+ </div>
+ <div class="verify">Don't take my word for it: search the word + “etymology,” compare two sources, ask a native speaker.</div>
+</div></section>
+<section class="page"><div class="arcbar" style="gap:24px"><div style="display:flex;align-items:center;gap:8px"><img src="img/stk_00.jpg" style="width:.5in;height:.5in;object-fit:cover;border-radius:8px;border:1.5px solid #5B3A22">
+            <div><div class="arcname" style="color:#19A7A3">Arc 1 · ROOTS <span class="mut small" style="font-family:Lora">Nov 1–7</span></div><div class="small mut">Where the word &#x27;new&#x27; comes from. Dig up the roots.</div></div></div></div>
+<div class="card">
+ <div class="hd" style="background:linear-gradient(90deg,#19A7A3,#19A7A3cc)"><span>DAY 03</span><span>Tue · NOV 3</span><span class="r"></span></div>
+ <div class="body">
+  <div class="word">
+   <div class="lng">Greek</div>
+   <div class="nat grk" style="font-size:20pt">ἀνακαίνωσις</div>
+   <div class="tr">an-ah-KAI-no-sis</div>
+   <div class="pr">anakaínōsis</div>
+   <div class="mn"><b>Means:</b> renewal; a making new in quality</div>
+  </div>
+  <div class="txt">
+   <div class="hook">“Greek has two words for new. One&#x27;s a baby. One&#x27;s a whole different quality. Guess which one I&#x27;m after.”</div>
+   <div class="lbl">What it means</div><p>Greek has two &#x27;new&#x27; words. Néos means new in time, just born. Kainós means new in kind, fresh in quality. Paul says &#x27;be transformed by the renewing (anakainōsis) of your mind.&#x27;</p>
+   <div class="lbl">Fun fact</div><p>In the whole New Testament, anakaínōsis shows up only twice: Romans 12:2 and Titus 3:5.</p>
+   <div class="lbl">Word of God</div><p><b>Romans 12:2</b></p>
+  </div>
+ </div>
+ <div class="trio">
+  <div class="box"><div class="lbl">Mini recap · builds on yesterday</div>Yesterday: Latin novus. Today: Greek splits &#x27;new&#x27; into two kinds.</div>
+  <div class="box"><div class="lbl">R3NEW interactive post</div>THIS OR THAT (Stories poll). Néos: a brand-new start? Or kainós: same life, new quality? Vote and tell us why.</div>
+ </div>
+ <div class="trio" style="grid-template-columns:1fr">
+  <div class="box"><div class="lbl">10-minute step (low-energy option included)</div>Write one thought that keeps replaying and one true thing to put next to it. This is not praying it away. It&#x27;s making room.</div>
+ </div>
+ <div class="verify">Don't take my word for it: search the word + “etymology,” compare two sources, ask a native speaker.</div>
+</div>
+<div class="card">
+ <div class="hd" style="background:linear-gradient(90deg,#19A7A3,#19A7A3cc)"><span>DAY 04</span><span>Wed · NOV 4</span><span class="r">Wed/Fri fast day*</span></div>
+ <div class="body">
+  <div class="word">
+   <div class="lng">Hebrew</div>
+   <div class="nat heb" style="font-size:20pt">לְחַדֵּשׁ</div>
+   <div class="tr">le-khah-DESH</div>
+   <div class="pr">lechadésh = to renew</div>
+   <div class="mn"><b>Means:</b> to renew; חָדָשׁ (chadásh) = new</div>
+  </div>
+  <div class="txt">
+   <div class="hook">“The moon goes dark and comes back. They named the MONTH after it. Renewal ain&#x27;t weird. It&#x27;s the calendar.”</div>
+   <div class="lbl">What it means</div><p>Same root as chódesh (חֹדֶשׁ), which means month and new moon. The moon goes dark and returns, so a month is literally a renewal. Lamentations 5:21: &#x27;Renew our days as of old.&#x27;</p>
+   <div class="lbl">Fun fact</div><p>Isaiah 40:31 says they &#x27;renew&#x27; strength using the verb chalaf (חָלַף), which literally means to swap or exchange. Renewal can be a trade.</p>
+   <div class="lbl">Word of God</div><p><b>Lamentations 5:21 · Isaiah 40:31</b></p>
+  </div>
+ </div>
+ <div class="trio">
+  <div class="box"><div class="lbl">Mini recap · builds on yesterday</div>Yesterday: two kinds of new. Today: Hebrew ties renewal to the moon, the month and the swap.</div>
+  <div class="box"><div class="lbl">R3NEW interactive post</div>SWAP IT. Fill in the blank: &#x27;I&#x27;m trading ___ for ___.&#x27; Comment yours. Share only what feels safe.</div>
+ </div>
+ <div class="trio" style="grid-template-columns:1fr">
+  <div class="box"><div class="lbl">10-minute step (low-energy option included)</div>Write your swap on a sticky note. Low energy: say it out loud once.</div>
+ </div>
+ <div class="verify">Don't take my word for it: search the word + “etymology,” compare two sources, ask a native speaker.</div>
+</div></section>
+<section class="page"><div class="arcbar" style="gap:24px"><div style="display:flex;align-items:center;gap:8px"><img src="img/stk_00.jpg" style="width:.5in;height:.5in;object-fit:cover;border-radius:8px;border:1.5px solid #5B3A22">
+            <div><div class="arcname" style="color:#19A7A3">Arc 1 · ROOTS <span class="mut small" style="font-family:Lora">Nov 1–7</span></div><div class="small mut">Where the word &#x27;new&#x27; comes from. Dig up the roots.</div></div></div></div>
+<div class="card">
+ <div class="hd" style="background:linear-gradient(90deg,#19A7A3,#19A7A3cc)"><span>DAY 05</span><span>Thu · NOV 5</span><span class="r"></span></div>
+ <div class="body">
+  <div class="word">
+   <div class="lng">Ge&#x27;ez</div>
+   <div class="nat eth" style="font-size:28pt">ሐደሰ</div>
+   <div class="tr">had-DAH-seh</div>
+   <div class="pr">ḥaddasa (approx.)</div>
+   <div class="mn"><b>Means:</b> to be new; to renew. ሐዲስ (ḥaddis) = new</div>
+  </div>
+  <div class="txt">
+   <div class="hook">“This is the language my church still prays in. Older than most of what&#x27;s on your feed.”</div>
+   <div class="lbl">What it means</div><p>Ge&#x27;ez is the ancient liturgical language of the Ethiopian Orthodox Tewahedo Church. ሐዲስ ኪዳን (Ḥaddis Kidan) is the New Covenant, the New Testament. Our church still prays in this language.</p>
+   <div class="lbl">Fun fact</div><p>The Garima Gospels, Ge&#x27;ez gospel books kept at Abuna Garima monastery in Tigray, have been radiocarbon dated to roughly the 4th-7th centuries, among the oldest illuminated Christian books known.</p>
+   <div class="lbl">Word of God</div><p><b>Revelation 21:5</b></p>
+  </div>
+ </div>
+ <div class="trio">
+  <div class="box"><div class="lbl">Mini recap · builds on yesterday</div>Yesterday: Hebrew roots of &#x27;new.&#x27; Today: our own church language, Ge&#x27;ez.</div>
+  <div class="box"><div class="lbl">R3NEW interactive post</div>SAY IT BACK. Record 10 seconds: &#x27;ḥaddasa&#x27; and your Jar word. Post it, tag us. We&#x27;ll feature the family.</div>
+ </div>
+ <div class="trio" style="grid-template-columns:1fr">
+  <div class="box"><div class="lbl">10-minute step (low-energy option included)</div>Read Revelation 21:1-5 slowly one time (about 3 minutes). Circle every &#x27;new.&#x27;</div>
+ </div>
+ <div class="verify">Don't take my word for it: search the word + “etymology,” compare two sources, ask a native speaker.</div>
+</div>
+<div class="card">
+ <div class="hd" style="background:linear-gradient(90deg,#19A7A3,#19A7A3cc)"><span>DAY 06</span><span>Fri · NOV 6</span><span class="r">Wed/Fri fast day*</span></div>
+ <div class="body">
+  <div class="word">
+   <div class="lng">Amharic</div>
+   <div class="nat eth" style="font-size:28pt">ማደስ</div>
+   <div class="tr">mah-DESS</div>
+   <div class="pr">madés (approx.)</div>
+   <div class="mn"><b>Means:</b> to renew, to renovate. እድሳት (edsát) = renewal. አዲስ (addis) = new</div>
+  </div>
+  <div class="txt">
+   <div class="hook">“Addis Ababa means &#x27;new flower.&#x27; A whole city named after something that just bloomed.”</div>
+   <div class="lbl">What it means</div><p>Addis Ababa, አዲስ አበባ, means &#x27;new flower.&#x27; A whole capital city named for something that just bloomed. The Ethiopian calendar has 13 months, and Enkutatash, the Ethiopian New Year, lands around September 11.</p>
+   <div class="lbl">Fun fact</div><p>Addis Ababa was founded in the 1880s, and its name means &#x27;new flower.&#x27; Renewal that blooms is still renewal that has roots.</p>
+   <div class="lbl">Word of God</div><p><b>Isaiah 43:19</b></p>
+  </div>
+ </div>
+ <div class="trio">
+  <div class="box"><div class="lbl">Mini recap · builds on yesterday</div>Yesterday: Ge&#x27;ez ḥaddasa. Today: the Amharic cousin, and a city named &#x27;new flower.&#x27;</div>
+  <div class="box"><div class="lbl">R3NEW interactive post</div>NAME YOUR FLOWER. Finish it: &#x27;God is growing a new ___ in me.&#x27; Comment it.</div>
+ </div>
+ <div class="trio" style="grid-template-columns:1fr">
+  <div class="box"><div class="lbl">10-minute step (low-energy option included)</div>Water a plant, or look at a picture of a flower for 2 minutes and thank God for one thing that bloomed.</div>
+ </div>
+ <div class="verify">Don't take my word for it: search the word + “etymology,” compare two sources, ask a native speaker.</div>
+</div></section>
+<section class="page"><div class="arcbar" style="gap:24px"><div style="display:flex;align-items:center;gap:8px"><img src="img/stk_00.jpg" style="width:.5in;height:.5in;object-fit:cover;border-radius:8px;border:1.5px solid #5B3A22">
+            <div><div class="arcname" style="color:#19A7A3">Arc 1 · ROOTS <span class="mut small" style="font-family:Lora">Nov 1–7</span></div><div class="small mut">Where the word &#x27;new&#x27; comes from. Dig up the roots.</div></div></div><div style="display:flex;align-items:center;gap:8px"><img src="img/stk_01.jpg" style="width:.5in;height:.5in;object-fit:cover;border-radius:8px;border:1.5px solid #5B3A22">
+            <div><div class="arcname" style="color:#E6559A">Arc 2 · RISE <span class="mut small" style="font-family:Lora">Nov 8–14</span></div><div class="small mut">Revive, rebuild, and don&#x27;t do it alone.</div></div></div></div>
+<div class="card">
+ <div class="hd" style="background:linear-gradient(90deg,#19A7A3,#19A7A3cc)"><span>DAY 07</span><span>Sat · NOV 7</span><span class="r"></span></div>
+ <div class="body">
+  <div class="word">
+   <div class="lng">Arabic</div>
+   <div class="nat ara" dir="rtl" style="font-size:28pt">تجديد</div>
+   <div class="tr">tahj-DEED</div>
+   <div class="pr">tajdīd</div>
+   <div class="mn"><b>Means:</b> renewal. جديد (jadīd) = new</div>
+  </div>
+  <div class="txt">
+   <div class="hook">“Same family tree, different branch. Three languages, one root: new.”</div>
+   <div class="lbl">What it means</div><p>Arabic builds words on three-letter roots. J-D-D gives jadīd (new) and tajdīd (making new). Hebrew chadásh and Ge&#x27;ez ḥaddis come from a related Semitic root family. Cousins, not twins.</p>
+   <div class="lbl">Fun fact</div><p>Linguists link Hebrew ḥadásh, Ge&#x27;ez ḥaddis and Arabic ḥadīth (حديث, &#x27;new, recent&#x27;) to the same ancient root family. One word, three neighbors, thousands of years.</p>
+   <div class="lbl">Word of God</div><p><b>Ezekiel 36:26</b></p>
+  </div>
+ </div>
+ <div class="trio">
+  <div class="box"><div class="lbl">Mini recap · builds on yesterday</div>Yesterday: Ethiopia&#x27;s languages. Today: the Semitic cousins. Arabic sits beside Hebrew and Ge&#x27;ez.</div>
+  <div class="box"><div class="lbl">R3NEW interactive post</div>COUSIN CHECK. What languages did your family speak? Drop &#x27;em in the comments. Let&#x27;s find the cousins.</div>
+ </div>
+ <div class="trio" style="grid-template-columns:1fr">
+  <div class="box"><div class="lbl">10-minute step (low-energy option included)</div>Text one family member: &#x27;How do you say new in grandma&#x27;s language?&#x27; Honoring the word, not borrowing anyone&#x27;s religion.</div>
+ </div>
+ <div class="verify">Don't take my word for it: search the word + “etymology,” compare two sources, ask a native speaker.</div>
+</div>
+<div class="card">
+ <div class="hd" style="background:linear-gradient(90deg,#E6559A,#E6559Acc)"><span>DAY 08</span><span>Sun · NOV 8</span><span class="r">Jar Reveal</span></div>
+ <div class="body">
+  <div class="word">
+   <div class="lng">Swahili</div>
+   <div class="nat " style="font-size:28pt">kuhuisha</div>
+   <div class="tr">koo-hoo-ee-SHA</div>
+   <div class="pr">kuhuisha</div>
+   <div class="mn"><b>Means:</b> to revive, to bring back to life. -pya = new, upya = anew</div>
+  </div>
+  <div class="txt">
+   <div class="hook">“Eagle days and sparrow days. Both count. Both got fed.”</div>
+   <div class="lbl">What it means</div><p>Huisha comes from the idea of giving life. Kuanza upya means &#x27;to begin anew.&#x27; Mwaka mpya is &#x27;new year.&#x27;</p>
+   <div class="lbl">Fun fact</div><p>Swahili is spoken across East Africa by well over 100 million people as a first or second language and carries many Arabic loanwords. A bridge language.</p>
+   <div class="lbl">Word of God</div><p><b>Psalm 103:5 (102:5 in Ge&#x27;ez/Septuagint numbering)</b></p>
+  </div>
+ </div>
+ <div class="trio">
+  <div class="box"><div class="lbl">Mini recap · builds on yesterday</div>Week 1 recap: roots of &#x27;new.&#x27; Today we head to East Africa: revive.</div>
+  <div class="box"><div class="lbl">R3NEW interactive post</div>PICK YOUR BIRD. Eagle (soaring), sparrow (hanging on) or egg (still forming)? Vote in Stories. JAR REVEAL: Week 1 Jar words read out loud.</div>
+ </div>
+ <div class="trio" style="grid-template-columns:1fr">
+  <div class="box"><div class="lbl">10-minute step (low-energy option included)</div>Go stand outside or at a window for 5 minutes. Name 3 things you can see. Thank God for one.</div>
+ </div>
+ <div class="verify">Don't take my word for it: search the word + “etymology,” compare two sources, ask a native speaker.</div>
+</div></section>
+<section class="page"><div class="arcbar" style="gap:24px"><div style="display:flex;align-items:center;gap:8px"><img src="img/stk_01.jpg" style="width:.5in;height:.5in;object-fit:cover;border-radius:8px;border:1.5px solid #5B3A22">
+            <div><div class="arcname" style="color:#E6559A">Arc 2 · RISE <span class="mut small" style="font-family:Lora">Nov 8–14</span></div><div class="small mut">Revive, rebuild, and don&#x27;t do it alone.</div></div></div></div>
+<div class="card">
+ <div class="hd" style="background:linear-gradient(90deg,#E6559A,#E6559Acc)"><span>DAY 09</span><span>Mon · NOV 9</span><span class="r"></span></div>
+ <div class="body">
+  <div class="word">
+   <div class="lng">Yoruba</div>
+   <div class="nat " style="font-size:28pt">àtúnbí</div>
+   <div class="tr">ah-TOON-bee</div>
+   <div class="pr">tuntun = new</div>
+   <div class="mn"><b>Means:</b> reborn. tuntun = new. àtúnṣe = to repair, to adjust</div>
+  </div>
+  <div class="txt">
+   <div class="hook">“Names carry stories. Yours too. Let&#x27;s talk about what yours is growing into.”</div>
+   <div class="lbl">What it means</div><p>&#x27;Àtún-&#x27; is a prefix that means again. Yoruba is tonal, so the little marks change the meaning. Our faith says rebirth is in Christ (Titus 3:5), not reincarnation.</p>
+   <div class="lbl">Fun fact</div><p>Names like Babatúndé (&#x27;father returns&#x27;) and Yétúndé (&#x27;mother returns&#x27;) are traditionally given to babies born after a grandparent has passed. That&#x27;s a cultural naming tradition. We honor the language.</p>
+   <div class="lbl">Word of God</div><p><b>Titus 3:5</b></p>
+  </div>
+ </div>
+ <div class="trio">
+  <div class="box"><div class="lbl">Mini recap · builds on yesterday</div>Yesterday: kuhuisha, revive. Today: &#x27;tún,&#x27; doing it again, with a name.</div>
+  <div class="box"><div class="lbl">R3NEW interactive post</div>NAME STORY. Drop the meaning of your name, or the name you&#x27;re growing into.</div>
+ </div>
+ <div class="trio" style="grid-template-columns:1fr">
+  <div class="box"><div class="lbl">10-minute step (low-energy option included)</div>Look up your name&#x27;s meaning. Write one thing you want God to renew in it.</div>
+ </div>
+ <div class="verify">Don't take my word for it: search the word + “etymology,” compare two sources, ask a native speaker.</div>
+</div>
+<div class="card">
+ <div class="hd" style="background:linear-gradient(90deg,#E6559A,#E6559Acc)"><span>DAY 10</span><span>Tue · NOV 10</span><span class="r">Hidar 1</span></div>
+ <div class="body">
+  <div class="word">
+   <div class="lng">Zulu</div>
+   <div class="nat " style="font-size:20pt">ukuvuselela</div>
+   <div class="tr">oo-koo-voo-seh-LEH-lah</div>
+   <div class="pr">ukuvuselela</div>
+   <div class="mn"><b>Means:</b> to revive, to refresh, to renew</div>
+  </div>
+  <div class="txt">
+   <div class="hook">“Nobody rebuilds a wall by themselves. Nehemiah had a crew. 52 days. You got a crew too.”</div>
+   <div class="lbl">What it means</div><p>Zulu is a Bantu language with click consonants (c, q, x). &#x27;Ubuntu&#x27; means &#x27;a person is a person through other people.&#x27; Renewal is a team sport.</p>
+   <div class="lbl">Fun fact</div><p>Nehemiah&#x27;s crew rebuilt Jerusalem&#x27;s wall in 52 days (Neh 6:15). They didn&#x27;t start with a perfect plan. They started with &#x27;Let us rise up and build.&#x27;</p>
+   <div class="lbl">Word of God</div><p><b>Nehemiah 2:18 · 6:15</b></p>
+  </div>
+ </div>
+ <div class="trio">
+  <div class="box"><div class="lbl">Mini recap · builds on yesterday</div>Yesterday: new names. Today: new walls. Nobody rebuilds alone.</div>
+  <div class="box"><div class="lbl">R3NEW interactive post</div>WALL CREW. Tag one person who helped you rebuild. They get a 🫙 in the replies.</div>
+ </div>
+ <div class="trio" style="grid-template-columns:1fr">
+  <div class="box"><div class="lbl">10-minute step (low-energy option included)</div>Send one thank-you text. Three sentences max.</div>
+ </div>
+ <div class="verify">Don't take my word for it: search the word + “etymology,” compare two sources, ask a native speaker.</div>
+</div></section>
+<section class="page"><div class="arcbar" style="gap:24px"><div style="display:flex;align-items:center;gap:8px"><img src="img/stk_01.jpg" style="width:.5in;height:.5in;object-fit:cover;border-radius:8px;border:1.5px solid #5B3A22">
+            <div><div class="arcname" style="color:#E6559A">Arc 2 · RISE <span class="mut small" style="font-family:Lora">Nov 8–14</span></div><div class="small mut">Revive, rebuild, and don&#x27;t do it alone.</div></div></div></div>
+<div class="card">
+ <div class="hd" style="background:linear-gradient(90deg,#E6559A,#E6559Acc)"><span>DAY 11</span><span>Wed · NOV 11</span><span class="r">Wed/Fri fast day*</span></div>
+ <div class="body">
+  <div class="word">
+   <div class="lng">Spanish</div>
+   <div class="nat " style="font-size:28pt">renovar</div>
+   <div class="tr">rreh-noh-BAR</div>
+   <div class="pr">renacer = to be reborn</div>
+   <div class="mn"><b>Means:</b> to renew. renacer = to be reborn (nacer = to be born)</div>
+  </div>
+  <div class="txt">
+   <div class="hook">“Twelve grapes. Twelve months. Twelve chances to say thank you before the year hits you.”</div>
+   <div class="lbl">What it means</div><p>Renovar is renew. Renacer is &#x27;be born again,&#x27; re-nacer. Año Nuevo is New Year. Jesus says the branch that stays in the vine bears fruit (John 15:5).</p>
+   <div class="lbl">Fun fact</div><p>In Spain, people eat 12 grapes at midnight on New Year&#x27;s Eve, one for each chime and one for each month ahead (las doce uvas). Grapes. Vines. Our brand&#x27;s got a lot of grapes.</p>
+   <div class="lbl">Word of God</div><p><b>John 15:5</b></p>
+  </div>
+ </div>
+ <div class="trio">
+  <div class="box"><div class="lbl">Mini recap · builds on yesterday</div>Yesterday: crew. Today: the thanks that keeps a crew going. Twelve grapes.</div>
+  <div class="box"><div class="lbl">R3NEW interactive post</div>12-GRAPE THANKS. Name up to 12 small things God has already renewed. Even 3 counts. Jar time.</div>
+ </div>
+ <div class="trio" style="grid-template-columns:1fr">
+  <div class="box"><div class="lbl">10-minute step (low-energy option included)</div>Write your 3 (or 12) on a card. Low energy: say them in the shower.</div>
+ </div>
+ <div class="verify">Don't take my word for it: search the word + “etymology,” compare two sources, ask a native speaker.</div>
+</div>
+<div class="card">
+ <div class="hd" style="background:linear-gradient(90deg,#E6559A,#E6559Acc)"><span>DAY 12</span><span>Thu · NOV 12</span><span class="r"></span></div>
+ <div class="body">
+  <div class="word">
+   <div class="lng">French</div>
+   <div class="nat " style="font-size:20pt">renouveler</div>
+   <div class="tr">ruh-noo-vuh-LAY</div>
+   <div class="pr">renouveau = renewal</div>
+   <div class="mn"><b>Means:</b> to renew. renouveau = renewal. renaissance = re + naissance = rebirth</div>
+  </div>
+  <div class="txt">
+   <div class="hook">“Renaissance. You&#x27;ve said it a hundred times. It means &#x27;rebirth.&#x27; Mind blown, Sunday school.”</div>
+   <div class="lbl">What it means</div><p>&#x27;Renaissance&#x27; is just French for &#x27;rebirth.&#x27; The age of art and learning (14th-17th c.) was named that by people looking back. The name got popular in the 1800s.</p>
+   <div class="lbl">Fun fact</div><p>You&#x27;ve said &#x27;Renaissance&#x27; a hundred times and never heard &#x27;rebirth.&#x27; Ezekiel 37 gives the picture: dry bones, breath, standing back up.</p>
+   <div class="lbl">Word of God</div><p><b>Ezekiel 37:5</b></p>
+  </div>
+ </div>
+ <div class="trio">
+  <div class="box"><div class="lbl">Mini recap · builds on yesterday</div>Yesterday: 12 thank-yous. Today: what looking back on rebuilding is called. Rebirth.</div>
+  <div class="box"><div class="lbl">R3NEW interactive post</div>REBIRTH REMIX. &#x27;I used to ___. Now I ___.&#x27; One sentence. Share only what feels safe.</div>
+ </div>
+ <div class="trio" style="grid-template-columns:1fr">
+  <div class="box"><div class="lbl">10-minute step (low-energy option included)</div>Write your sentence. Read it out loud once. That&#x27;s your 10 minutes.</div>
+ </div>
+ <div class="verify">Don't take my word for it: search the word + “etymology,” compare two sources, ask a native speaker.</div>
+</div></section>
+<section class="page"><div class="arcbar" style="gap:24px"><div style="display:flex;align-items:center;gap:8px"><img src="img/stk_01.jpg" style="width:.5in;height:.5in;object-fit:cover;border-radius:8px;border:1.5px solid #5B3A22">
+            <div><div class="arcname" style="color:#E6559A">Arc 2 · RISE <span class="mut small" style="font-family:Lora">Nov 8–14</span></div><div class="small mut">Revive, rebuild, and don&#x27;t do it alone.</div></div></div></div>
+<div class="card">
+ <div class="hd" style="background:linear-gradient(90deg,#E6559A,#E6559Acc)"><span>DAY 13</span><span>Fri · NOV 13</span><span class="r">Wed/Fri fast day*</span></div>
+ <div class="body">
+  <div class="word">
+   <div class="lng">Italian</div>
+   <div class="nat " style="font-size:20pt">rinnovare</div>
+   <div class="tr">reen-noh-VAH-reh</div>
+   <div class="pr">rinascita = rebirth</div>
+   <div class="mn"><b>Means:</b> to renew. rinascita = rebirth. Rinascimento = Renaissance</div>
+  </div>
+  <div class="txt">
+   <div class="hook">“Locusts ate the years. God said &#x27;I&#x27;ll restore them.&#x27; I&#x27;m still reading that one slow.”</div>
+   <div class="lbl">What it means</div><p>Giorgio Vasari used &#x27;rinascita&#x27; (rebirth) in his 1550 Lives of the Artists to describe art coming back to life. The word stuck.</p>
+   <div class="lbl">Fun fact</div><p>Joel 2:25: &#x27;I will restore to you the years the locusts have eaten.&#x27; Restoration doesn&#x27;t mean the damage didn&#x27;t happen. It means God&#x27;s still working.</p>
+   <div class="lbl">Word of God</div><p><b>Joel 2:25</b></p>
+  </div>
+ </div>
+ <div class="trio">
+  <div class="box"><div class="lbl">Mini recap · builds on yesterday</div>Yesterday: rebirth. Today: what gets restored after the damage.</div>
+  <div class="box"><div class="lbl">R3NEW interactive post</div>LOCUST LETTER. &#x27;God is restoring the ___ the locusts ate.&#x27; Share what you&#x27;re comfortable with.</div>
+ </div>
+ <div class="trio" style="grid-template-columns:1fr">
+  <div class="box"><div class="lbl">10-minute step (low-energy option included)</div>Pick one area. Write one small restore step for this week. No promises on the timeline.</div>
+ </div>
+ <div class="verify">Don't take my word for it: search the word + “etymology,” compare two sources, ask a native speaker.</div>
+</div>
+<div class="card">
+ <div class="hd" style="background:linear-gradient(90deg,#E6559A,#E6559Acc)"><span>DAY 14</span><span>Sat · NOV 14</span><span class="r"></span></div>
+ <div class="body">
+  <div class="word">
+   <div class="lng">German</div>
+   <div class="nat " style="font-size:15pt">Wiederaufbau</div>
+   <div class="tr">VEE-der-owf-bow</div>
+   <div class="pr">erneuern = to renew</div>
+   <div class="mn"><b>Means:</b> rebuilding (wieder = again + Aufbau = building up). erneuern = to renew</div>
+  </div>
+  <div class="txt">
+   <div class="hook">“Wiederaufbau. Say it with me: again-build. Brick, then brick.”</div>
+   <div class="lbl">What it means</div><p>German glues words together. Neu + Anfang = Neuanfang (new start). Wieder + Aufbau = Wiederaufbau, the word for rebuilding after destruction.</p>
+   <div class="lbl">Fun fact</div><p>Wiederaufbau became the word for reconstruction after World War II. Isaiah 61:4: &#x27;They shall rebuild the ancient ruins.&#x27;</p>
+   <div class="lbl">Word of God</div><p><b>Isaiah 61:4</b></p>
+  </div>
+ </div>
+ <div class="trio">
+  <div class="box"><div class="lbl">Mini recap · builds on yesterday</div>Yesterday: restoration. Today: the practical part. Rebuild, brick by brick.</div>
+  <div class="box"><div class="lbl">R3NEW interactive post</div>BUILD-A-WORD. German glues words. Make up your own compound word for your season (Grit-Grace-Gold). Comment it.</div>
+ </div>
+ <div class="trio" style="grid-template-columns:1fr">
+  <div class="box"><div class="lbl">10-minute step (low-energy option included)</div>Draw one brick on paper. Write on it the one thing you&#x27;ll build this week. JAR REVEAL: Week 2 Jar words.</div>
+ </div>
+ <div class="verify">Don't take my word for it: search the word + “etymology,” compare two sources, ask a native speaker.</div>
+</div></section>
+<section class="page"><div class="arcbar" style="gap:24px"><div style="display:flex;align-items:center;gap:8px"><img src="img/stk_12.jpg" style="width:.5in;height:.5in;object-fit:cover;border-radius:8px;border:1.5px solid #5B3A22">
+            <div><div class="arcname" style="color:#D9A441">Arc 3 · REPAIR <span class="mut small" style="font-family:Lora">Nov 15–21</span></div><div class="small mut">Gold in the cracks. Daily washing. Plain words.</div></div></div></div>
+<div class="card">
+ <div class="hd" style="background:linear-gradient(90deg,#D9A441,#D9A441cc)"><span>DAY 15</span><span>Sun · NOV 15</span><span class="r">Jar Reveal</span></div>
+ <div class="body">
+  <div class="word">
+   <div class="lng">Japanese</div>
+   <div class="nat jp" lang="ja" style="font-size:28pt">金継ぎ</div>
+   <div class="tr">kin-TSOO-gee</div>
+   <div class="pr">kintsugi = gold joinery</div>
+   <div class="mn"><b>Means:</b> repair with gold. 更新 (kōshin) = renewal. 再生 (saisei) = rebirth</div>
+  </div>
+  <div class="txt">
+   <div class="hook">“My heart&#x27;s got a gold seam. Yours can too. Nobody throws away gold.”</div>
+   <div class="lbl">What it means</div><p>Kintsugi mends broken pottery with lacquer and powdered gold so the crack becomes the feature. The practice is traditionally traced to the 1400s.</p>
+   <div class="lbl">Fun fact</div><p>The Ise Grand Shrine is ritually rebuilt every 20 years, a custom said to go back about 1,300 years. Rebuilding on schedule, on purpose.</p>
+   <div class="lbl">Word of God</div><p><b>Psalm 34:18 (33:19 in Septuagint/Vulgate numbering)</b></p>
+  </div>
+ </div>
+ <div class="trio">
+  <div class="box"><div class="lbl">Mini recap · builds on yesterday</div>Week 2 recap: rise and rebuild. Today: repairing what broke. Gold in the cracks.</div>
+  <div class="box"><div class="lbl">R3NEW interactive post</div>GOLD SEAM. Describe one crack in your story you&#x27;re asking God to gild. Share only what feels safe. Honoring scars, never glorifying harm.</div>
+ </div>
+ <div class="trio" style="grid-template-columns:1fr">
+  <div class="box"><div class="lbl">10-minute step (low-energy option included)</div>Mend one small thing (tape, glue, button). Say a thank-you while you do.</div>
+ </div>
+ <div class="verify">Don't take my word for it: search the word + “etymology,” compare two sources, ask a native speaker.</div>
+</div>
+<div class="card">
+ <div class="hd" style="background:linear-gradient(90deg,#D9A441,#D9A441cc)"><span>DAY 16</span><span>Mon · NOV 16</span><span class="r"></span></div>
+ <div class="body">
+  <div class="word">
+   <div class="lng">Mandarin</div>
+   <div class="nat sc" lang="zh" style="font-size:28pt">日日新</div>
+   <div class="tr">rr-rr SHIN</div>
+   <div class="pr">rì rì xīn = new every day</div>
+   <div class="mn"><b>Means:</b> new every day. 焕然一新 = completely made new. 更新 (gēngxīn) = renew, update</div>
+  </div>
+  <div class="txt">
+   <div class="hook">“&#x27;Wash daily&#x27; hits different when the bathtub has scripture on it.”</div>
+   <div class="lbl">What it means</div><p>The classic Great Learning (Daxue) quotes an inscription said to be on King Tang&#x27;s bathing basin: 苟日新 日日新 又日新. &#x27;If you can renew yourself one day, do so every day, and again each day.&#x27;</p>
+   <div class="lbl">Fun fact</div><p>更新 uses the same characters in Chinese and Japanese. In Chinese it means both renew and update. Your phone has been &#x27;renewing&#x27; all along.</p>
+   <div class="lbl">Word of God</div><p><b>2 Corinthians 4:16</b></p>
+  </div>
+ </div>
+ <div class="trio">
+  <div class="box"><div class="lbl">Mini recap · builds on yesterday</div>Yesterday: gold seams. Today: the daily wash. Repair is repeated.</div>
+  <div class="box"><div class="lbl">R3NEW interactive post</div>DAILY BASIN. What&#x27;s the one daily thing that resets you? (shower, coffee, prayer, walk). Comment it.</div>
+ </div>
+ <div class="trio" style="grid-template-columns:1fr">
+  <div class="box"><div class="lbl">10-minute step (low-energy option included)</div>Do your daily reset on purpose today, slow, and notice it.</div>
+ </div>
+ <div class="verify">Don't take my word for it: search the word + “etymology,” compare two sources, ask a native speaker.</div>
+</div></section>
+<section class="page"><div class="arcbar" style="gap:24px"><div style="display:flex;align-items:center;gap:8px"><img src="img/stk_12.jpg" style="width:.5in;height:.5in;object-fit:cover;border-radius:8px;border:1.5px solid #5B3A22">
+            <div><div class="arcname" style="color:#D9A441">Arc 3 · REPAIR <span class="mut small" style="font-family:Lora">Nov 15–21</span></div><div class="small mut">Gold in the cracks. Daily washing. Plain words.</div></div></div></div>
+<div class="card">
+ <div class="hd" style="background:linear-gradient(90deg,#D9A441,#D9A441cc)"><span>DAY 17</span><span>Tue · NOV 17</span><span class="r"></span></div>
+ <div class="body">
+  <div class="word">
+   <div class="lng">Korean</div>
+   <div class="nat kr" lang="ko" style="font-size:28pt">새롭게 하다</div>
+   <div class="tr">seh-ROP-geh hah-dah</div>
+   <div class="pr">saeropge hada</div>
+   <div class="mn"><b>Means:</b> to make new. 갱신 (gaengsin) = renewal, as in renewing a contract</div>
+  </div>
+  <div class="txt">
+   <div class="hook">“A whole alphabet built so regular people could read. That&#x27;s the kind of renew I&#x27;m into.”</div>
+   <div class="lbl">What it means</div><p>Gaengsin uses the same Chinese-origin characters as Japanese kōshin (更新). Korean also has the native phrase saeropge hada, &#x27;to make it new.&#x27;</p>
+   <div class="lbl">Fun fact</div><p>Hangul was created in 1443 under King Sejong and published in 1446, designed so ordinary people, not only scholars, could learn to read quickly. A writing system rebuilt for everybody.</p>
+   <div class="lbl">Word of God</div><p><b>Habakkuk 2:2</b></p>
+  </div>
+ </div>
+ <div class="trio">
+  <div class="box"><div class="lbl">Mini recap · builds on yesterday</div>Yesterday: daily renewal. Today: renewal made plain enough for everyone.</div>
+  <div class="box"><div class="lbl">R3NEW interactive post</div>MAKE IT PLAIN. Explain your faith or your rebuild in 10 words or fewer. Best ones get featured.</div>
+ </div>
+ <div class="trio" style="grid-template-columns:1fr">
+  <div class="box"><div class="lbl">10-minute step (low-energy option included)</div>Write your 10 words. Cut one word. Keep it plain.</div>
+ </div>
+ <div class="verify">Don't take my word for it: search the word + “etymology,” compare two sources, ask a native speaker.</div>
+</div>
+<div class="card">
+ <div class="hd" style="background:linear-gradient(90deg,#D9A441,#D9A441cc)"><span>DAY 18</span><span>Wed · NOV 18</span><span class="r">Wed/Fri fast day*</span></div>
+ <div class="body">
+  <div class="word">
+   <div class="lng">Hindi</div>
+   <div class="nat dev" style="font-size:28pt">नवीनीकरण</div>
+   <div class="tr">nah-VEE-nee-kah-ran</div>
+   <div class="pr">navīnīkaraṇ</div>
+   <div class="mn"><b>Means:</b> renewal. नया (nayā) = new. नव (nav) = new</div>
+  </div>
+  <div class="txt">
+   <div class="hook">“&#x27;Nav&#x27; is &#x27;new&#x27; AND &#x27;nine.&#x27; Tiny word. Big fresh-start energy.”</div>
+   <div class="lbl">What it means</div><p>In Sanskrit-based words, nava means &#x27;new&#x27; and, as a separate word, nava also means &#x27;nine.&#x27; Navratri is &#x27;nine nights.&#x27; Little word, double life.</p>
+   <div class="lbl">Fun fact</div><p>Hindi uses Devanagari script, written with a line across the top. नया कदम (nayā kadam) means &#x27;new step.&#x27;</p>
+   <div class="lbl">Word of God</div><p><b>Psalm 51:10 (50:10 in Ge&#x27;ez/Septuagint numbering)</b></p>
+  </div>
+ </div>
+ <div class="trio">
+  <div class="box"><div class="lbl">Mini recap · builds on yesterday</div>Yesterday: plain language. Today: one tiny word, nav, and a next step.</div>
+  <div class="box"><div class="lbl">R3NEW interactive post</div>NAYA KADAM. Drop your next tiny step in the comments. Just one.</div>
+ </div>
+ <div class="trio" style="grid-template-columns:1fr">
+  <div class="box"><div class="lbl">10-minute step (low-energy option included)</div>Take that step. Under 10 minutes. Low energy version: do the first 2 minutes.</div>
+ </div>
+ <div class="verify">Don't take my word for it: search the word + “etymology,” compare two sources, ask a native speaker.</div>
+</div></section>
+<section class="page"><div class="arcbar" style="gap:24px"><div style="display:flex;align-items:center;gap:8px"><img src="img/stk_12.jpg" style="width:.5in;height:.5in;object-fit:cover;border-radius:8px;border:1.5px solid #5B3A22">
+            <div><div class="arcname" style="color:#D9A441">Arc 3 · REPAIR <span class="mut small" style="font-family:Lora">Nov 15–21</span></div><div class="small mut">Gold in the cracks. Daily washing. Plain words.</div></div></div></div>
+<div class="card">
+ <div class="hd" style="background:linear-gradient(90deg,#D9A441,#D9A441cc)"><span>DAY 19</span><span>Thu · NOV 19</span><span class="r"></span></div>
+ <div class="body">
+  <div class="word">
+   <div class="lng">Sanskrit</div>
+   <div class="nat dev" style="font-size:28pt">पुनर्नवा</div>
+   <div class="tr">poo-nar-NAH-vah</div>
+   <div class="pr">punarnavā</div>
+   <div class="mn"><b>Means:</b> &#x27;renewed again.&#x27; punar = again + nava = new</div>
+  </div>
+  <div class="txt">
+   <div class="hook">“Cut it down, it sprouts again. Not dramatic. Just botany. Just God.”</div>
+   <div class="lbl">What it means</div><p>Punarnavā is the name of a plant, Boerhavia diffusa. It dries back in the dry season and greens up again with the rains. Its name literally says &#x27;again-new.&#x27; (This is language, not medical advice.)</p>
+   <div class="lbl">Fun fact</div><p>Job 14:7: &#x27;There is hope for a tree: if it&#x27;s cut down, it will sprout again.&#x27; Not dramatic. Just botany. Just God.</p>
+   <div class="lbl">Word of God</div><p><b>Job 14:7</b></p>
+  </div>
+ </div>
+ <div class="trio">
+  <div class="box"><div class="lbl">Mini recap · builds on yesterday</div>Yesterday: nine/new. Today: &#x27;again-new,&#x27; a plant that sprouts back.</div>
+  <div class="box"><div class="lbl">R3NEW interactive post</div>RAINY SEASON. What was your &#x27;rain,&#x27; the thing that helped you turn green again? Comment it.</div>
+ </div>
+ <div class="trio" style="grid-template-columns:1fr">
+  <div class="box"><div class="lbl">10-minute step (low-energy option included)</div>Step outside and find one green thing. Thank God for it.</div>
+ </div>
+ <div class="verify">Don't take my word for it: search the word + “etymology,” compare two sources, ask a native speaker.</div>
+</div>
+<div class="card">
+ <div class="hd" style="background:linear-gradient(90deg,#D9A441,#D9A441cc)"><span>DAY 20</span><span>Fri · NOV 20</span><span class="r">Wed/Fri fast day*</span></div>
+ <div class="body">
+  <div class="word">
+   <div class="lng">Persian</div>
+   <div class="nat ara" dir="rtl" style="font-size:28pt">نوروز</div>
+   <div class="tr">no-ROOZ</div>
+   <div class="pr">Nowruz = new day</div>
+   <div class="mn"><b>Means:</b> &#x27;new day&#x27; (no = new + ruz = day). نو کردن (no kardan) = to make new</div>
+  </div>
+  <div class="txt">
+   <div class="hook">“Persians been celebrating &#x27;new day&#x27; for 3,000 years. We got 30. Let&#x27;s make &#x27;em count.”</div>
+   <div class="lbl">What it means</div><p>Nowruz marks the spring equinox and has been celebrated for over 3,000 years. UNESCO listed it in 2009. The haft-sin table includes sabzeh, sprouted wheat or lentils, a sign of new growth.</p>
+   <div class="lbl">Fun fact</div><p>Persians have celebrated a &#x27;new day&#x27; for three thousand years. We&#x27;ve got 30. Let&#x27;s make &#x27;em count.</p>
+   <div class="lbl">Word of God</div><p><b>Song of Songs 2:11</b></p>
+  </div>
+ </div>
+ <div class="trio">
+  <div class="box"><div class="lbl">Mini recap · builds on yesterday</div>Yesterday: regrowth. Today: a whole new year built on sprouting.</div>
+  <div class="box"><div class="lbl">R3NEW interactive post</div>SPROUT IT. Soak a few lentils in a damp paper towel in a mason jar. Post day-1. We check back on Nov 25.</div>
+ </div>
+ <div class="trio" style="grid-template-columns:1fr">
+  <div class="box"><div class="lbl">10-minute step (low-energy option included)</div>Set up the sprout jar (5 minutes). Low energy: just the paper towel and 3 beans.</div>
+ </div>
+ <div class="verify">Don't take my word for it: search the word + “etymology,” compare two sources, ask a native speaker.</div>
+</div></section>
+<section class="page"><div class="arcbar" style="gap:24px"><div style="display:flex;align-items:center;gap:8px"><img src="img/stk_12.jpg" style="width:.5in;height:.5in;object-fit:cover;border-radius:8px;border:1.5px solid #5B3A22">
+            <div><div class="arcname" style="color:#D9A441">Arc 3 · REPAIR <span class="mut small" style="font-family:Lora">Nov 15–21</span></div><div class="small mut">Gold in the cracks. Daily washing. Plain words.</div></div></div><div style="display:flex;align-items:center;gap:8px"><img src="img/stk_21.jpg" style="width:.5in;height:.5in;object-fit:cover;border-radius:8px;border:1.5px solid #5B3A22">
+            <div><div class="arcname" style="color:#8A5BC0">Arc 4 · RETURN + THANKS <span class="mut small" style="font-family:Lora">Nov 22–28</span></div><div class="small mut">Languages that came back from the edge. Thanks for mercy already done.</div></div></div></div>
+<div class="card">
+ <div class="hd" style="background:linear-gradient(90deg,#D9A441,#D9A441cc)"><span>DAY 21</span><span>Sat · NOV 21</span><span class="r">Hidar 12 · St. Michael</span></div>
+ <div class="body">
+  <div class="word">
+   <div class="lng">Turkish</div>
+   <div class="nat " style="font-size:20pt">yenilemek</div>
+   <div class="tr">yen-ee-leh-MEK</div>
+   <div class="pr">yeni = new</div>
+   <div class="mn"><b>Means:</b> to renew. yenilenmek = to be renewed. yeni = new</div>
+  </div>
+  <div class="txt">
+   <div class="hook">“The &#x27;New Mosque&#x27; is over 350 years old. Still called new. Be patient with your &#x27;new.&#x27;”</div>
+   <div class="lbl">What it means</div><p>Istanbul&#x27;s Yeni Cami, the New Mosque, was begun in 1597 and finished in the 1660s. It&#x27;s still called &#x27;New.&#x27; Yeniçeri, the Janissaries, means &#x27;new troops.&#x27;</p>
+   <div class="lbl">Fun fact</div><p>A building over 350 years old that still goes by &#x27;New.&#x27; New isn&#x27;t about age. It&#x27;s about direction.</p>
+   <div class="lbl">Word of God</div><p><b>Psalm 40:3 (39:4 in Ge&#x27;ez/Septuagint numbering)</b></p>
+  </div>
+ </div>
+ <div class="trio">
+  <div class="box"><div class="lbl">Mini recap · builds on yesterday</div>Yesterday: new day. Today: what &#x27;new&#x27; looks like when it&#x27;s 350 years old.</div>
+  <div class="box"><div class="lbl">R3NEW interactive post</div>NEW SONG. What&#x27;s a &#x27;new song&#x27; for you this month? Drop a title (clean, uplifting).</div>
+ </div>
+ <div class="trio" style="grid-template-columns:1fr">
+  <div class="box"><div class="lbl">10-minute step (low-energy option included)</div>Play it for 3 minutes. Sit with it. Thank God.</div>
+ </div>
+ <div class="verify">Don't take my word for it: search the word + “etymology,” compare two sources, ask a native speaker.</div>
+</div>
+<div class="card">
+ <div class="hd" style="background:linear-gradient(90deg,#8A5BC0,#8A5BC0cc)"><span>DAY 22</span><span>Sun · NOV 22</span><span class="r">Jar Reveal</span></div>
+ <div class="body">
+  <div class="word">
+   <div class="lng">Māori</div>
+   <div class="nat " style="font-size:28pt">whakahou</div>
+   <div class="tr">fah-kah-HOH</div>
+   <div class="pr">hou = new</div>
+   <div class="mn"><b>Means:</b> to renew, to make new again. hou = new</div>
+  </div>
+  <div class="txt">
+   <div class="hook">“A language almost lost. Then somebody opened a nursery and taught the babies. Renewal with a diaper bag.”</div>
+   <div class="lbl">What it means</div><p>Hou also means &#x27;new&#x27; in Hawaiian. The two languages are Polynesian relatives. Matariki, the Māori New Year, is marked when the Pleiades star cluster rises in midwinter.</p>
+   <div class="lbl">Fun fact</div><p>In 1982 the first kōhanga reo, &#x27;language nest,&#x27; opened so little ones could be raised in te reo Māori at a time when the language was at risk.</p>
+   <div class="lbl">Word of God</div><p><b>Isaiah 58:12</b></p>
+  </div>
+ </div>
+ <div class="trio">
+  <div class="box"><div class="lbl">Mini recap · builds on yesterday</div>Week 3 recap: repair and daily. Today: languages that came back from the edge.</div>
+  <div class="box"><div class="lbl">R3NEW interactive post</div>GRANDMA&#x27;S WORD. Teach us one word or phrase from your grandma&#x27;s language. JAR REVEAL: Week 3.</div>
+ </div>
+ <div class="trio" style="grid-template-columns:1fr">
+  <div class="box"><div class="lbl">10-minute step (low-energy option included)</div>Ask someone or record a voice note of a family word.</div>
+ </div>
+ <div class="verify">Don't take my word for it: search the word + “etymology,” compare two sources, ask a native speaker.</div>
+</div></section>
+<section class="page"><div class="arcbar" style="gap:24px"><div style="display:flex;align-items:center;gap:8px"><img src="img/stk_21.jpg" style="width:.5in;height:.5in;object-fit:cover;border-radius:8px;border:1.5px solid #5B3A22">
+            <div><div class="arcname" style="color:#8A5BC0">Arc 4 · RETURN + THANKS <span class="mut small" style="font-family:Lora">Nov 22–28</span></div><div class="small mut">Languages that came back from the edge. Thanks for mercy already done.</div></div></div></div>
+<div class="card">
+ <div class="hd" style="background:linear-gradient(90deg,#8A5BC0,#8A5BC0cc)"><span>DAY 23</span><span>Mon · NOV 23</span><span class="r"></span></div>
+ <div class="body">
+  <div class="word">
+   <div class="lng">Tagalog</div>
+   <div class="nat " style="font-size:15pt">pagpapanibago</div>
+   <div class="tr">pag-pah-pah-nee-BAH-go</div>
+   <div class="pr">bago = new</div>
+   <div class="mn"><b>Means:</b> renewal, making new again. bago = new. panibago = anew</div>
+  </div>
+  <div class="txt">
+   <div class="hook">“&#x27;Bago&#x27; means new. &#x27;Bagong buhay&#x27; means new life. Three words I don&#x27;t take lightly.”</div>
+   <div class="lbl">What it means</div><p>Bagong Taon is New Year. Bagong buhay is new life (buhay = life). The Philippines has well over 100 languages, and Filipino, based on Tagalog, is the national language.</p>
+   <div class="lbl">Fun fact</div><p>Words get doubled in Tagalog for emphasis and rhythm. &#x27;Bago&#x27; keeps showing up, in new year, new life, new again.</p>
+   <div class="lbl">Word of God</div><p><b>Ephesians 4:23-24</b></p>
+  </div>
+ </div>
+ <div class="trio">
+  <div class="box"><div class="lbl">Mini recap · builds on yesterday</div>Yesterday: a language renewed. Today: renewed life, &#x27;bagong buhay.&#x27;</div>
+  <div class="box"><div class="lbl">R3NEW interactive post</div>BAGO CHALLENGE. What&#x27;s one habit you&#x27;re brand-new at this week? Comment it.</div>
+ </div>
+ <div class="trio" style="grid-template-columns:1fr">
+  <div class="box"><div class="lbl">10-minute step (low-energy option included)</div>Do that habit for 10 minutes. Or 2 minutes. Showing up counts.</div>
+ </div>
+ <div class="verify">Don't take my word for it: search the word + “etymology,” compare two sources, ask a native speaker.</div>
+</div>
+<div class="card">
+ <div class="hd" style="background:linear-gradient(90deg,#8A5BC0,#8A5BC0cc)"><span>DAY 24</span><span>Tue · NOV 24</span><span class="r"></span></div>
+ <div class="body">
+  <div class="word">
+   <div class="lng">Irish</div>
+   <div class="nat " style="font-size:20pt">athnuachan</div>
+   <div class="tr">ah-NOO-ah-khan</div>
+   <div class="pr">nua = new</div>
+   <div class="mn"><b>Means:</b> renewal. nua = new. ath- = again</div>
+  </div>
+  <div class="txt">
+   <div class="hook">“News is just &#x27;newness&#x27; in Irish. Let&#x27;s go fill the world with good news for once.”</div>
+   <div class="lbl">What it means</div><p>Irish nuacht, &#x27;news,&#x27; is literally &#x27;newness.&#x27; Irish has been written for over 1,500 years, from the Ogham stones onward.</p>
+   <div class="lbl">Fun fact</div><p>In Irish and in English, the word for news comes from the word for new. What&#x27;s new is what&#x27;s news.</p>
+   <div class="lbl">Word of God</div><p><b>Romans 6:4</b></p>
+  </div>
+ </div>
+ <div class="trio">
+  <div class="box"><div class="lbl">Mini recap · builds on yesterday</div>Yesterday: new life. Today: good news, nuacht, literally &#x27;newness.&#x27;</div>
+  <div class="box"><div class="lbl">R3NEW interactive post</div>NEWSFLASH. Drop one piece of good news from your life this week. Fill the feed with it.</div>
+ </div>
+ <div class="trio" style="grid-template-columns:1fr">
+  <div class="box"><div class="lbl">10-minute step (low-energy option included)</div>Share your good news with one person today.</div>
+ </div>
+ <div class="verify">Don't take my word for it: search the word + “etymology,” compare two sources, ask a native speaker.</div>
+</div></section>
+<section class="page"><div class="arcbar" style="gap:24px"><div style="display:flex;align-items:center;gap:8px"><img src="img/stk_21.jpg" style="width:.5in;height:.5in;object-fit:cover;border-radius:8px;border:1.5px solid #5B3A22">
+            <div><div class="arcname" style="color:#8A5BC0">Arc 4 · RETURN + THANKS <span class="mut small" style="font-family:Lora">Nov 22–28</span></div><div class="small mut">Languages that came back from the edge. Thanks for mercy already done.</div></div></div></div>
+<div class="card">
+ <div class="hd" style="background:linear-gradient(90deg,#8A5BC0,#8A5BC0cc)"><span>DAY 25</span><span>Wed · NOV 25</span><span class="r">Wed/Fri fast day*</span></div>
+ <div class="body">
+  <div class="word">
+   <div class="lng">Welsh</div>
+   <div class="nat " style="font-size:20pt">adnewyddu</div>
+   <div class="tr">ad-neh-WITH-ee</div>
+   <div class="pr">newydd = new</div>
+   <div class="mn"><b>Means:</b> to renew. newydd = new. adfywio = to revive</div>
+  </div>
+  <div class="txt">
+   <div class="hook">“Revive us again. Not &#x27;maybe.&#x27; Not &#x27;one day.&#x27; Again.”</div>
+   <div class="lbl">What it means</div><p>&#x27;Ad-&#x27; means again. Adfywio, to revive, comes from the idea of living again. Welsh newyddion, &#x27;news,&#x27; also comes from newydd.</p>
+   <div class="lbl">Fun fact</div><p>Wales has a goal of one million Welsh speakers by 2050 (Cymraeg 2050). A language renewed on purpose.</p>
+   <div class="lbl">Word of God</div><p><b>Psalm 85:6 (84:7 in Ge&#x27;ez/Septuagint numbering)</b></p>
+  </div>
+ </div>
+ <div class="trio">
+  <div class="box"><div class="lbl">Mini recap · builds on yesterday</div>Yesterday: good news. Today: &#x27;revive us again.&#x27;</div>
+  <div class="box"><div class="lbl">R3NEW interactive post</div>REVIVE ME. Drop a one-word prayer request in the comments. I&#x27;ll pray over them. No promises of outcomes, just company. SPROUT CHECK-IN: post your Nov 20 jar.</div>
+ </div>
+ <div class="trio" style="grid-template-columns:1fr">
+  <div class="box"><div class="lbl">10-minute step (low-energy option included)</div>Pray for the person above you in the comments. Low energy: type &#x27;Amen.&#x27;</div>
+ </div>
+ <div class="verify">Don't take my word for it: search the word + “etymology,” compare two sources, ask a native speaker.</div>
+</div>
+<div class="card">
+ <div class="hd" style="background:linear-gradient(90deg,#8A5BC0,#8A5BC0cc)"><span>DAY 26</span><span>Thu · NOV 26</span><span class="r">Thanksgiving (US)</span></div>
+ <div class="body">
+  <div class="word">
+   <div class="lng">Hawaiian</div>
+   <div class="nat " style="font-size:28pt">hoʻōla</div>
+   <div class="tr">hoh-OH-lah</div>
+   <div class="pr">ola = life</div>
+   <div class="mn"><b>Means:</b> to revive, to heal, to give life. ola = life. hou = new</div>
+  </div>
+  <div class="txt">
+   <div class="hook">“Thankful for what&#x27;s already done. Not what&#x27;s &#x27;almost.&#x27; Done. Mercy that already showed up.”</div>
+   <div class="lbl">What it means</div><p>Mahalo means thank you. Hawaiian has 13 letters, including the ʻokina, the little glottal stop. By the 1980s very few children spoke Hawaiian fluently. ʻAha Pūnana Leo language nests began in 1983.</p>
+   <div class="lbl">Fun fact</div><p>Thanksgiving. Gratitude for completed mercy, not almost-mercy. Done. Delivered. Thank you, Lord.</p>
+   <div class="lbl">Word of God</div><p><b>Psalm 107:1 (106:1 in Ge&#x27;ez/Septuagint numbering)</b></p>
+  </div>
+ </div>
+ <div class="trio">
+  <div class="box"><div class="lbl">Mini recap · builds on yesterday</div>Yesterday: revival. Today: Thanksgiving, thankful for mercy already done.</div>
+  <div class="box"><div class="lbl">R3NEW interactive post</div>THANKS-GIVING TABLE. Comment MAHALO + one mercy God already completed. We read them all today.</div>
+ </div>
+ <div class="trio" style="grid-template-columns:1fr">
+  <div class="box"><div class="lbl">10-minute step (low-energy option included)</div>Say thank you out loud, to God or to someone. Low energy: whisper it.</div>
+ </div>
+ <div class="verify">Don't take my word for it: search the word + “etymology,” compare two sources, ask a native speaker.</div>
+</div></section>
+<section class="page"><div class="arcbar" style="gap:24px"><div style="display:flex;align-items:center;gap:8px"><img src="img/stk_21.jpg" style="width:.5in;height:.5in;object-fit:cover;border-radius:8px;border:1.5px solid #5B3A22">
+            <div><div class="arcname" style="color:#8A5BC0">Arc 4 · RETURN + THANKS <span class="mut small" style="font-family:Lora">Nov 22–28</span></div><div class="small mut">Languages that came back from the edge. Thanks for mercy already done.</div></div></div></div>
+<div class="card">
+ <div class="hd" style="background:linear-gradient(90deg,#8A5BC0,#8A5BC0cc)"><span>DAY 27</span><span>Fri · NOV 27</span><span class="r">Wed/Fri fast day*</span></div>
+ <div class="body">
+  <div class="word">
+   <div class="lng">Russian</div>
+   <div class="nat " style="font-size:20pt">обновление</div>
+   <div class="tr">ob-nuh-VLYEH-nee-yeh</div>
+   <div class="pr">novyy = new</div>
+   <div class="mn"><b>Means:</b> renewal. новый (nóvyy) = new. возрождение = revival, rebirth</div>
+  </div>
+  <div class="txt">
+   <div class="hook">“A thousand-year-old city still called &#x27;New Town.&#x27; New isn&#x27;t about age. It&#x27;s about direction.”</div>
+   <div class="lbl">What it means</div><p>Veliky Novgorod means &#x27;Great New Town.&#x27; It was founded around the 9th century and it&#x27;s still &#x27;New.&#x27; Russian uses the same Slavic root as nova.</p>
+   <div class="lbl">Fun fact</div><p>Old city. New name. 1,100+ years running. New can stay new when the heart stays pointed forward.</p>
+   <div class="lbl">Word of God</div><p><b>Isaiah 65:17</b></p>
+  </div>
+ </div>
+ <div class="trio">
+  <div class="box"><div class="lbl">Mini recap · builds on yesterday</div>Yesterday: gratitude. Today: old that stays new.</div>
+  <div class="box"><div class="lbl">R3NEW interactive post</div>OLD + NEW. Name one old thing you&#x27;re keeping and one new thing you&#x27;re adding.</div>
+ </div>
+ <div class="trio" style="grid-template-columns:1fr">
+  <div class="box"><div class="lbl">10-minute step (low-energy option included)</div>Write both on one sticky. Put it where you&#x27;ll see it.</div>
+ </div>
+ <div class="verify">Don't take my word for it: search the word + “etymology,” compare two sources, ask a native speaker.</div>
+</div>
+<div class="card">
+ <div class="hd" style="background:linear-gradient(90deg,#8A5BC0,#8A5BC0cc)"><span>DAY 28</span><span>Sat · NOV 28</span><span class="r"></span></div>
+ <div class="body">
+  <div class="word">
+   <div class="lng">Vietnamese</div>
+   <div class="nat " style="font-size:28pt">làm mới</div>
+   <div class="tr">lahm MUH-ee</div>
+   <div class="pr">mới = new</div>
+   <div class="mn"><b>Means:</b> to make new, to refresh. mới = new</div>
+  </div>
+  <div class="txt">
+   <div class="hook">“First morning of the year, they call it. I say every morning&#x27;s a first one. Bring coffee.”</div>
+   <div class="lbl">What it means</div><p>Tết Nguyên Đán means &#x27;Feast of the First Morning.&#x27; Vietnamese has six tones. Ma, má, mà, mả, mã and mạ are six different words.</p>
+   <div class="lbl">Fun fact</div><p>Same letters, six meanings, just different tones. A reminder that tiny shifts can change the whole thing.</p>
+   <div class="lbl">Word of God</div><p><b>Psalm 30:5 (29:6 in Ge&#x27;ez/Septuagint numbering)</b></p>
+  </div>
+ </div>
+ <div class="trio">
+  <div class="box"><div class="lbl">Mini recap · builds on yesterday</div>Yesterday: old and new. Today: the first morning.</div>
+  <div class="box"><div class="lbl">R3NEW interactive post</div>FIRST MORNING. What do you do first thing every morning? Share it. Tag &#x27;Daily R3UP - Morning.&#x27;</div>
+ </div>
+ <div class="trio" style="grid-template-columns:1fr">
+  <div class="box"><div class="lbl">10-minute step (low-energy option included)</div>Plan tomorrow&#x27;s 10-minute morning anchor. Write it down tonight.</div>
+ </div>
+ <div class="verify">Don't take my word for it: search the word + “etymology,” compare two sources, ask a native speaker.</div>
+</div></section>
+<section class="page"><div class="arcbar" style="gap:24px"><div style="display:flex;align-items:center;gap:8px"><img src="img/stk_22.jpg" style="width:.5in;height:.5in;object-fit:cover;border-radius:8px;border:1.5px solid #5B3A22">
+            <div><div class="arcname" style="color:#4A74A8">Arc 5 · EVERY TONGUE <span class="mut small" style="font-family:Lora">Nov 29–30</span></div><div class="small mut">Curious, hungry, and finished. Thirty words, one wall.</div></div></div></div>
+<div class="card">
+ <div class="hd" style="background:linear-gradient(90deg,#4A74A8,#4A74A8cc)"><span>DAY 29</span><span>Sun · NOV 29</span><span class="r">Jar Reveal</span></div>
+ <div class="body">
+  <div class="word">
+   <div class="lng">Swedish</div>
+   <div class="nat " style="font-size:28pt">förnya</div>
+   <div class="tr">FUR-nüa</div>
+   <div class="pr">ny = new</div>
+   <div class="mn"><b>Means:</b> to renew. förnyelse = renewal. ny = new</div>
+  </div>
+  <div class="txt">
+   <div class="hook">“Curious is &#x27;new-hungry&#x27; in Swedish. I wanna be new-hungry, not stuck-hungry.”</div>
+   <div class="lbl">What it means</div><p>Nyfiken means curious: ny (&#x27;new&#x27;) + fiken (&#x27;keen, eager&#x27;). Curious is literally &#x27;new-hungry.&#x27;</p>
+   <div class="lbl">Fun fact</div><p>Curiosity as hunger for the new. Isaiah 42:9: &#x27;New things I now declare.&#x27; A curious faith asks real questions.</p>
+   <div class="lbl">Word of God</div><p><b>Isaiah 42:9</b></p>
+  </div>
+ </div>
+ <div class="trio">
+  <div class="box"><div class="lbl">Mini recap · builds on yesterday</div>Week 4 recap: return and thanks. Today: curiosity. New hunger.</div>
+  <div class="box"><div class="lbl">R3NEW interactive post</div>NYFIKEN NOV. Ask me anything, faith or rebuild. Raw. I&#x27;ll answer tomorrow. JAR REVEAL: Week 4.</div>
+ </div>
+ <div class="trio" style="grid-template-columns:1fr">
+  <div class="box"><div class="lbl">10-minute step (low-energy option included)</div>Write one question you&#x27;ve been scared to ask. Send it anonymously if you want.</div>
+ </div>
+ <div class="verify">Don't take my word for it: search the word + “etymology,” compare two sources, ask a native speaker.</div>
+</div>
+<div class="card">
+ <div class="hd" style="background:linear-gradient(90deg,#4A74A8,#4A74A8cc)"><span>DAY 30</span><span>Mon · NOV 30</span><span class="r">Hidar 21 · Tsion Mariam</span></div>
+ <div class="body">
+  <div class="word">
+   <div class="lng">Every Tongue</div>
+   <div class="nat " style="font-size:28pt">∞</div>
+   <div class="tr">all 30 words, one wall</div>
+   <div class="pr">every nation, tribe, people and language</div>
+   <div class="mn"><b>Means:</b> the R3NEW wall, complete</div>
+  </div>
+  <div class="txt">
+   <div class="hook">“Thirty words. Thirty bricks. One wall. Let&#x27;s walk the whole thing together.”</div>
+   <div class="lbl">What it means</div><p>Revelation 7:9 sees people from every nation, tribe, people and language before the throne. Thirty words, thirty bricks, one wall. By the Ethiopian calendar, Hidar 21 (Feast of Tsion Mariam) falls about today. Confirm with your church calendar.</p>
+   <div class="lbl">Fun fact</div><p>Thirty languages in thirty days. &#x27;Renew&#x27; sounds different in every one and means the same mercy in all of them.</p>
+   <div class="lbl">Word of God</div><p><b>Revelation 7:9</b></p>
+  </div>
+ </div>
+ <div class="trio">
+  <div class="box"><div class="lbl">Mini recap · builds on yesterday</div>Full recap: all 30 bricks. Every tongue.</div>
+  <div class="box"><div class="lbl">R3NEW interactive post</div>WALL REVEAL + VOTE. Comment your favorite word of the month. Q+A answers go live. Jar reading.</div>
+ </div>
+ <div class="trio" style="grid-template-columns:1fr">
+  <div class="box"><div class="lbl">10-minute step (low-energy option included)</div>Choose one word to carry into December. Write it on a card.</div>
+ </div>
+ <div class="verify">Don't take my word for it: search the word + “etymology,” compare two sources, ask a native speaker.</div>
+</div></section><section class="page">
+<h2>The Interaction Playbook</h2><div class="band"></div>
+<p style="font-size:10.5pt">Followers become family when they get to <i>do</i> something. Rotate these. Keep each ask small enough for a tired nervous system.</p>
+<div class="grid2" style="margin-top:8px">
+<div class="stitch" style="padding:10px 13px;font-size:10pt"><h3>🫙 Drop your Jar word</h3>One word in the comments. Read out every Sunday. Builds a Jar graphic that grows all month.</div>
+<div class="stitch" style="padding:10px 13px;font-size:10pt"><h3>🗳 This or That</h3>Story poll. Two clear choices. Reply to every “why.”</div>
+<div class="stitch" style="padding:10px 13px;font-size:10pt"><h3>🎙 Say it back</h3>10-second voice or video of the day's word. Duet or stitch. Feature the family.</div>
+<div class="stitch" style="padding:10px 13px;font-size:10pt"><h3>✍ Fill in the blank</h3>“God is growing a new ___ in me.” Easy, low-stakes, honest.</div>
+<div class="stitch" style="padding:10px 13px;font-size:10pt"><h3>👥 Tag your crew</h3>Thank one person. Everyone tagged gets a reply. Builds community.</div>
+<div class="stitch" style="padding:10px 13px;font-size:10pt"><h3>🌱 Sprout check-in</h3>Day 20 plant, Day 25 compare. A real thing growing across days, a living recap.</div>
+<div class="stitch" style="padding:10px 13px;font-size:10pt"><h3>❓ Raw Q+A</h3>Day 29 opens it. Day 30 answers. Faith or rebuild questions. Honest “I don't know” counts as an answer.</div>
+<div class="stitch" style="padding:10px 13px;font-size:10pt"><h3>🧱 Wall vote</h3>Day 30: vote your favorite word. The Wall graphic gets everybody's pick.</div>
+</div>
+<h3 style="margin-top:12px">Targeted critique + both sides (use when it fits)</h3>
+<div class="stitch" style="padding:10px 14px;font-size:9.8pt;line-height:1.5">
+Name a <b>specific quote or pattern</b>, never a whole group or denomination. Show: <b>what was claimed</b> → <b>what the source says in context</b> → <b>the other view</b> → <b>the practical difference</b> → <b>your action step</b>. Example for Day 4 (chalaf): some English verses read “renew” where Hebrew says “exchange.” Check a Hebrew interlinear and ask your priest which sense the Church teaches.
+</div>
+<h3 style="margin-top:12px">Boundaries for the whole series</h3>
+<ul class="tight" style="font-size:9.8pt">
+<li>No tarot or divination, no syncretic spirituality, no generational-curse mechanics for medical or trauma conditions.</li>
+<li>Distinguish spiritual language from behavioral recovery. Faith walks beside therapy and medical care. It doesn't replace them.</li>
+<li>Other languages and cultures are honored for their words. We borrow no one's religion and make no claims about their beliefs.</li>
+<li>Never promise outcomes. Never use fake urgency or FOMO. “You are not behind” means it.</li>
+<li>Big Boy is presented respectfully: he's my service dog and my companion. No invented tasks, no spiritual authority.</li>
+</ul>
+<h3 style="margin-top:12px">How to measure it (keep it simple)</h3>
+<p style="font-size:9.8pt">Weekly: comments per post · saves · shares · new followers · replies sent. Keep the top 3 interaction types and drop the lowest. Ask the family what they want more of.</p>
+</section><section class="page" style="text-align:center">
+<h2>My R3NEW Wall</h2><div class="band"></div>
+<p style="font-size:9pt">Color in one brick a day. Missed a day? Skip it and keep going. You are not behind.</p>
+<div style="margin:12px auto;width:7in;padding:10px;border:2px dashed #b98b57;border-radius:12px;background:#fffaf0"><span class="brick">1</span><span class="brick">2</span><span class="brick">3</span><span class="brick">4</span><span class="brick">5</span><span class="brick">6</span><span class="brick">7</span><span class="brick">8</span><span class="brick">9</span><span class="brick">10</span><span class="brick">11</span><span class="brick">12</span><span class="brick">13</span><span class="brick">14</span><span class="brick">15</span><span class="brick">16</span><span class="brick">17</span><span class="brick">18</span><span class="brick">19</span><span class="brick">20</span><span class="brick">21</span><span class="brick">22</span><span class="brick">23</span><span class="brick">24</span><span class="brick">25</span><span class="brick">26</span><span class="brick">27</span><span class="brick">28</span><span class="brick">29</span><span class="brick">30</span></div>
+<div class="grid2" style="text-align:left;margin-top:12px">
+<div class="stitch" style="padding:9px 12px;font-size:8.6pt"><h3>My Jar words</h3><br>_______________________<br><br>_______________________<br><br>_______________________<br><br>_______________________</div>
+<div class="stitch" style="padding:9px 12px;font-size:8.6pt"><h3>Words I'm carrying into December</h3><br>_______________________<br><br>_______________________<br><br>_______________________<br><br>_______________________</div>
+</div>
+<div class="stitch" style="margin:14px auto 0;width:6.6in;padding:16px 20px;border-width:3px">
+<div class="brand" style="font-size:12pt;color:var(--leather)">7HE H<span class="z">0</span>LY R3UP</div>
+<div class="anton" style="font-size:24pt;color:var(--navy);margin-top:2px">Certificate of Completion</div>
+<div class="play" style="font-style:italic;margin-top:4px">This certifies that</div>
+<div style="border-bottom:1.5px solid var(--leather);width:4in;margin:10px auto 2px;height:22px"></div>
+<div class="play" style="font-style:italic">rebuilt, renewed and showed up for the R3NEW, November 2026: 30 days, 30 languages.</div>
+<div class="script" style="font-size:13pt;color:var(--pink);margin-top:8px">You survived. Now we rebuild.</div>
+<div class="small" style="margin-top:6px">We survived. Now let's go back, with truth and a hand out. Souls are attached to my obedience. God Almighty gets the glory.</div>
+</div>
+</section></body></html>
