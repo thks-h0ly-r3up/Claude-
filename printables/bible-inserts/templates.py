@@ -984,3 +984,58 @@ def j_verse_week(p):
     p.box('The verse, in my handwriting', 130, stroke=TURQ)
     p.field('Why this one', 2)
     p.field('Day by day: what I noticed', 6)
+
+
+# ---------------------------------------------------------------- single-page versions (one insert per page)
+def woman_single(p, w, idx, total):
+    name, ref, note, found, q, step = w
+    p.tag = name
+    p.header(f'Women of the Word · {idx} of {total}', name, ref, size=15)
+    if note:
+        p.note(note, None, T_PEACH, 'BodyI', 8.2)
+    p.label('Where we meet her')
+    p.para(found, size=8.8, after=3)
+    fixed = 30 + 30 + 14 + 14 + 33 + 52 + 6 + 34 + p.soft_h(step) + 6
+    nl = max(4, int((p.room() - fixed) / 16.5))
+    n1 = max(2, int(round(nl * 0.6)))
+    p.field('Who is in the scene?', 1)
+    p.field('Where and when?', 1)
+    p.field('What happened, in my words', n1)
+    p.field('Words that stand out', max(2, nl - n1))
+    p.cols(['What she lost', 'What she did', 'Who saw her'], 46)
+    p.para(q, 'BodyB', 8.8, TEAL, after=3)
+    p.soft(step)
+
+
+def topic_single(p, d):
+    p.tag = d['title']
+    p.header(d['kicker'], d['title'], d['sub'], size=15)
+    intro = d['intro']
+    if intro.startswith('Content note') or intro.startswith('Textual'):
+        p.note(intro, None, T_PEACH, 'BodyI', 8.2)
+    elif intro:
+        p.para(intro, size=8.8, after=4)
+    refs = d['refs']
+    prompt_h = sum(len(wrap(q, 'BodyB', 8.8, p.w)) * 11 + 2 * 15 + 4 for q in d['prompts'])
+    res_h = 0
+    if d.get('res'):
+        res_h = len(wrap(d['res'], 'Body', 7.8, p.w - 16)) * 9.8 + 28
+    avail = p.room() - 24 - p.soft_h(d['step'], d['low']) - 8 - prompt_h - res_h
+    n = max(1, min(3, int((avail / len(refs) - 22) / 16.5)))
+    for ref, hint in refs:
+        p.c.setFillColor(TEAL)
+        p.c.setFont('BodyB', 9.2)
+        p.c.drawString(p.L, p.cy - 9, ref)
+        p.cy -= 11
+        p.c.setFillColor(GRAY)
+        p.c.setFont('BodyI', 7.8)
+        p.c.drawString(p.L, p.cy - 8, 'Look for: ' + hint)
+        p.cy -= 9
+        p.lines(n)
+    p.para('Check: read two chapters around it, compare two editions (cite which), ask clergy about doctrine.', 'BodyI', 7.6, GRAY, after=3)
+    for q in d['prompts']:
+        p.para(q, 'BodyB', 8.8, TEAL, after=0)
+        p.lines(2, 15)
+    if d.get('res'):
+        p.note(d['res'], 'Help is real', T_GOLD, 'Body', 7.8)
+    p.soft(d['step'], d['low'])

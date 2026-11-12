@@ -10,20 +10,21 @@ from templates import *
 
 TOTAL = 100
 OUT = os.path.join(os.path.dirname(__file__), '7HE_H0LY_R3UP_Bible_Study_Inserts_Bundle.pdf')
-STD_NOTE = 'Cut on the dashed lines  ·  Finished size 5 × 7.5 in (127 × 190.5 mm)  ·  Print at 100% / Actual Size  ·  Cut the center gutter first'
+STD_NOTE = 'Cut on the dashed line  ·  Finished size 5 × 7.5 in (127 × 190.5 mm)  ·  Print at 100% / Actual Size  ·  One insert per page'
 PAGES = []          # dict(sec, toc, draw)
 
 
 # ------------------------------------------------------------------ frame bits
-def slug(c, n, sec, note, ty=15):
+def slug(c, n, sec, note, ty=15, W=PAGE_W):
+    H = PAGE_H if W == PAGE_W else 792
     c.setFillColor(GRAY)
     c.setFont('Sans', 6.5)
-    c.drawString(18, PAGE_H - ty, '7HE H0LY R3UP  ·  ' + sec)
-    c.drawRightString(PAGE_W - 18, PAGE_H - ty, f'Page {n} of {TOTAL}')
+    c.drawString(18, H - ty, '7HE H0LY R3UP  ·  ' + sec)
+    c.drawRightString(W - 18, H - ty, f'Page {n} of {TOTAL}')
     c.setFont('Sym', 7)
-    c.drawString(PAGE_W / 2 - pdfmetrics.stringWidth(note, 'Sans', 6.5) / 2 - 12, 15, '✂')
+    c.drawString(W / 2 - pdfmetrics.stringWidth(note, 'Sans', 6.5) / 2 - 12, 15, '✂')
     c.setFont('Sans', 6.5)
-    c.drawCentredString(PAGE_W / 2, 15, note)
+    c.drawCentredString(W / 2, 15, note)
 
 
 def ticks(c, x, y, w, h):
@@ -68,6 +69,20 @@ def two(sec, fa, fb, toc=None, note=STD_NOTE):
             ticks(c, x, 36, INS_W, INS_H)
             scissors(c, x - 13, 36 + INS_H - 3)
     PAGES.append(dict(sec=sec, toc=toc or sec, draw=draw))
+
+
+def one(sec, fa, toc=None, note=STD_NOTE):
+    """One 5 x 7.5 in insert centered on a US Letter portrait page."""
+    def draw(c, n):
+        lib.CUR['page'] = n
+        slug(c, n, sec, note, 15, 612)
+        p = Panel(c, 126, 126, 'A')
+        fa(p)
+        p.fill_notes()
+        cutrect(c, 126, 126, INS_W, INS_H)
+        ticks(c, 126, 126, INS_W, INS_H)
+        scissors(c, 126 - 13, 126 + INS_H - 3)
+    PAGES.append(dict(sec=sec, toc=toc or sec, draw=draw, size=(612, 792)))
 
 
 def raw(sec, draw, toc=None):
@@ -198,12 +213,12 @@ def welcome(c, n):
             ('p', 'You survived. Now we rebuild. These inserts are made to sit inside your study Bible and meet you where you are: tired, angry, grateful, or all three on the same Tuesday.'),
             ('p', 'Some pages are tender. Some are loud. All of them are yours. Use what helps. Skip what does not. Come back when you can.'),
             ('h', 'What is inside (100 pages)'),
-            ('b', '27 Women of the Word: verse map + S.O.A.P. for each woman'),
-            ('b', '9 Addiction & Recovery sets, with craving, relapse-mercy, and family pages'),
-            ('b', '8 Trauma & Healing sets: grounding, lament, boundaries, rebuild'),
-            ('b', '12 Topics Most Won’t Talk About: abuse, church hurt, anger at God, doubt, despair, loss, divorce, shame, mental health, and forgiveness'),
-            ('b', 'Verse maps, S.O.A.P. in 11 layouts, reflection pages, topic and character study templates'),
-            ('b', 'Journal pages, trackers, memory cards, declarations, bookmarks, and sticker sheets'),
+            ('b', '27 Women of the Word: one full page each, with verse map, reflection, and a soft step'),
+            ('b', '13 Addiction & Recovery pages, with craving log, exit plan, 30 days of mercy, and a mercy plan for slips'),
+            ('b', '11 Trauma & Healing pages: grounding, lament, window of tolerance, boundaries, rebuild'),
+            ('b', '14 Topics Most Won’t Talk About pages: abuse, church hurt, anger at God, doubt, despair, loss, divorce, shame, mental health, forgiveness, plus a Safety Plan and Both-Sides Check'),
+            ('b', '4 verse maps, 3 S.O.A.P. layouts plus S.O.A.P. cards, 3 reflection pages, and a topic study template'),
+            ('b', 'Journal pages, memory cards, declarations, a help-line page, 4 bookmark sheets, 3 sticker sheets, and 4 tabbed dividers'),
             ('h', 'A word on Scripture'),
             ('p', 'This bundle gives references only. No verse text is reproduced, so you can write from the edition you trust. Book names, verse numbers, and which books are included vary between the Ethiopian Orthodox Tewahedo canon, Greek (LXX)-based editions, and Western Bibles. Psalm numbers in LXX-based editions typically run one behind Western numbering for much of the Psalter, and we show both. Your edition’s table of contents is the final word.'),
             ('p', 'Cite your edition, translator, book, chapter, and verse when you write. Western translations are useful to document omissions or differences, not to replace your tradition’s text.')]
@@ -221,12 +236,12 @@ def welcome(c, n):
 
 def instructions(c, n):
     left = [('h', 'Print'),
-            ('b', 'Paper: US Letter, 8.5 × 11 in, landscape. Choose Actual Size or 100%, never Fit to Page.'),
+            ('b', 'Paper: US Letter, 8.5 × 11 in. Insert pages are portrait with one insert centered on each page. Card, bookmark, and sticker sheets are landscape. Choose Actual Size or 100%, never Fit to Page.'),
             ('b', 'For inserts, 20–24 lb paper keeps your Bible from bulging. Cardstock (65–110 lb) is for bookmarks and dividers. Matte sticker paper is for sticker sheets.'),
             ('b', 'Do a test on page 4 first: the ruler squares should measure exactly 1 inch.'),
             ('b', 'Print single-sided for tip-in inserts so nothing shows through. Double-sided is fine for binders.'),
             ('h', 'Cut'),
-            ('b', 'Every sheet has dashed cut lines and corner ticks. Cut the center gutter first, then cut just inside each dashed line.'),
+            ('b', 'Every page has a dashed cut line and corner ticks. Cut just inside the dashed line.'),
             ('b', 'A paper trimmer gives the cleanest edge. Scissors work. Keep text at least 0.3 in from any edge you trim.'),
             ('b', 'Each sheet’s bottom edge note gives its finished size.'),
             ('h', 'Fit to your Bible'),
@@ -251,7 +266,7 @@ def instructions(c, n):
 def sizeguide(c, n):
     lib.CUR['page'] = n
     read_page(c, n, 'Size & Cut Guide', 'Size & Cut Guide', [], [])
-    rows = [('Inserts (two per sheet)', '5 × 7.5 in', '127 × 190.5 mm'),
+    rows = [('Inserts (one per page)', '5 × 7.5 in', '127 × 190.5 mm'),
             ('Divider with tab', '5 × 7.5 in + 0.35 in tab', '127 × 190.5 + 9 mm'),
             ('S.O.A.P. cards (four per sheet)', '5 × 3.5 in', '127 × 89 mm'),
             ('Memory verse cards (eight per sheet)', '2.5 × 3.5 in', '63.5 × 89 mm'),
@@ -560,7 +575,7 @@ def divider_panel(title, kicker, blurb, bullets, rng, tabpos, color, icon_kind):
     def fn(p):
         c = p.c
         # tab
-        tx = p.x + 24 + tabpos * 90
+        tx = p.x + 24 + tabpos * 70
         c.setFillColor(color)
         c.roundRect(tx, p.top, 118, 26, 6, stroke=0, fill=1)
         tracked(c, tx + 59, p.top + 9, kicker.upper(), 'SansB', 6.6, IVORY if color not in (GOLD, PEACH) else INK, 1, 'c')
@@ -588,108 +603,96 @@ def divider_panel(title, kicker, blurb, bullets, rng, tabpos, color, icon_kind):
     return fn
 
 
-def divider_page(sec, a, b, note):
+def divider_page(sec, spec, note):
     def draw(c, n):
         lib.CUR['page'] = n
-        slug(c, n, sec, note, 7)
-        for x, spec in ((18, a), (414, b)):
-            pnl = Panel(c, x, 36, 'D')
-            spec(pnl)
-            path = c.beginPath()
-            tabs = spec.tabbox
-            path.moveTo(x, 36); path.lineTo(x, 36 + INS_H)
-            path.lineTo(tabs[0], 36 + INS_H); path.lineTo(tabs[0], 36 + INS_H + 26); path.lineTo(tabs[0] + 118, 36 + INS_H + 26)
-            path.lineTo(tabs[0] + 118, 36 + INS_H); path.lineTo(x + INS_W, 36 + INS_H); path.lineTo(x + INS_W, 36); path.close()
-            c.setStrokeColor(INK); c.setLineWidth(0.9); c.setDash(5, 3)
-            c.drawPath(path, stroke=1, fill=0); c.setDash()
-            scissors(c, x - 13, 36 + INS_H - 3)
+        slug(c, n, sec, note, 15, 612)
+        x = 126
+        pnl = Panel(c, x, 126, 'D')
+        spec(pnl)
+        tabs = spec.tabbox
+        path = c.beginPath()
+        path.moveTo(x, 126); path.lineTo(x, 126 + INS_H)
+        path.lineTo(tabs[0], 126 + INS_H); path.lineTo(tabs[0], 126 + INS_H + 26); path.lineTo(tabs[0] + 118, 126 + INS_H + 26)
+        path.lineTo(tabs[0] + 118, 126 + INS_H); path.lineTo(x + INS_W, 126 + INS_H); path.lineTo(x + INS_W, 126); path.close()
+        c.setStrokeColor(INK); c.setLineWidth(0.9); c.setDash(5, 3)
+        c.drawPath(path, stroke=1, fill=0); c.setDash()
+        scissors(c, x - 13, 126 + INS_H - 3)
     return draw
 
 
 # ------------------------------------------------------------------ assemble
 def build():
-    # --- front
     raw('Cover', draw_cover, 'Cover')
     raw('Welcome & Terms', welcome, 'Welcome, Terms & Care Notes')
     raw('Instructions', instructions, 'Instructions')
     raw('Size & Cut Guide', sizeguide, 'Size & Cut Guide')
     raw('Contents', toc, 'Contents')
-    # --- women
+    dnote = 'Divider with tab  \u00b7  Finished size 5 \u00d7 7.5 in + 0.35 in tab  \u00b7  Cut around the tab on the dashed line  \u00b7  Print on cardstock at 100%'
+
+    def dv(title, kicker, blurb, bullets, key, tabpos, color, ic):
+        def f(p):
+            divider_panel(title, kicker, blurb, bullets, SECTION_RANGES[key], tabpos, color, ic)(p)
+        f.tabbox = (126 + 24 + tabpos * 70, 0)
+        return f
+
+    def divider(key, *args):
+        PAGES.append(dict(sec='Dividers', toc='Section Dividers', draw=divider_page('Dividers', dv(*args[:4], key, *args[4:]), dnote), size=(612, 792)))
+
+    divider('Women of the Word', 'Women of the Word', 'Women', 'Twenty-seven women, named and unnamed. Their stories, read slowly and without shame.',
+            ['One full page per woman', 'Content notes on every hard story', 'A soft step you can do in ten minutes'], 0, TURQ, 'heart')
     for i, w in enumerate(WOMEN, 1):
-        two('Women of the Word', (lambda p, w=w, i=i: woman_a(p, w, i, len(WOMEN))), (lambda p, w=w: woman_b(p, w)), 'Women of the Word (27 women)')
-    # --- topic sets
-    def topic_set(sec, data, toc):
+        one('Women of the Word', (lambda p, w=w, i=i: woman_single(p, w, i, len(WOMEN))), 'Women of the Word (27 women)')
+    tools_keep = {'craving', 'exits', 'days', 'slip', 'bodymap', 'lament', 'nopractice', 'safetyplan', 'bothsides'}
+    A_MAP = {'halt': a_halt, 'team': a_team, 'ground': a_ground, 'window': a_window, 'circles': a_circles}
+    B_MAP = {'craving': b_craving, 'exits': b_exits, 'days': b_days, 'slip': b_slip, 'bodymap': b_bodymap, 'lament': b_lament,
+             'nopractice': b_nopractice, 'safetyplan': b_safetyplan, 'bothsides': b_bothsides}
+
+    def topic_set(sec, data):
         for d in data:
             a = d.get('custom_a')
-            fa = {'halt': a_halt, 'team': a_team, 'ground': a_ground, 'window': a_window, 'circles': a_circles}.get(a)
-            fa_f = (lambda p, d=d, fa=fa: fa(p, d)) if fa else (lambda p, d=d: topic_a(p, d))
-            b = d.get('custom_b')
-            bmap = {'craving': b_craving, 'exits': b_exits, 'days': b_days, 'slip': b_slip, 'triggers': b_triggers, 'testimony': b_testimony,
-                    'icancant': b_icancant, 'lament': b_lament, 'mercies': b_mercies, 'blueprint': b_blueprint, 'bothsides': b_bothsides,
-                    'safetyplan': b_safetyplan, 'careteam': b_careteam, 'safemoves': b_safemoves, 'nopractice': b_nopractice, 'bodymap': b_bodymap}
-            fb = bmap.get(b)
-            fb_f = (lambda p, d=d, fb=fb: fb(p, d)) if fb else (lambda p, d=d: topic_b(p, d))
-            two(sec, fa_f, fb_f, toc)
-    topic_set('Addiction & Recovery', ADDICTION, 'Addiction & Recovery')
-    topic_set('Trauma & Healing', TRAUMA, 'Trauma & Healing')
-    topic_set('Topics Most Won’t Talk About', HARD, 'Topics Most Won’t Talk About')
-    # --- verse maps
-    for a, b in [(vm_classic, vm_web), (vm_word, vm_compare), (vm_oia, vm_chapter), (vm_prayer, vm_two)]:
-        two('Verse Maps', a, b, 'Verse Maps')
-    # --- SOAP
-    two('S.O.A.P.', lambda p: soap_page(p), soap_soft, 'S.O.A.P. Templates')
-    two('S.O.A.P.', soap_tracker, soap_ground, 'S.O.A.P. Templates')
-    two('S.O.A.P.', soap_mini2, soap_mini3, 'S.O.A.P. Templates')
-    two('S.O.A.P.', soap_boxes, soap_art, 'S.O.A.P. Templates')
+            if a:
+                one(sec, (lambda p, d=d, fa=A_MAP[a]: fa(p, d)), sec)
+            else:
+                one(sec, (lambda p, d=d: topic_single(p, d)), sec)
+            bk = d.get('custom_b')
+            if bk in tools_keep:
+                one(sec, (lambda p, d=d, fb=B_MAP[bk]: fb(p, d)), sec)
+
+    divider('Addiction & Recovery', 'Addiction & Recovery', 'Recovery', 'Honest pages for the fight inside, and for the people who love someone in it.',
+            ['Verse maps with reflection and a soft step', 'Craving log, exit plan, and 30 days of mercy', 'If I Slip: a mercy plan, plus a team page'], 1, GOLD, 'chain')
+    topic_set('Addiction & Recovery', ADDICTION)
+    divider('Trauma & Healing', 'Trauma & Healing', 'Healing', 'Lament, grounding, boundaries, and the slow work of rebuilding the wall.',
+            ['Grounding and body check-in', 'Lament, dark-night psalms, and \u201cwhere was God?\u201d', 'Window of tolerance, boundaries, rebuild'], 2, PINK, 'anchor')
+    topic_set('Trauma & Healing', TRAUMA)
+    divider('Topics Most Won\u2019t Talk About', 'Topics Most Won\u2019t Talk About', 'Hard Topics', 'The questions people whisper. Asked out loud, with sources, and with care.',
+            ['Abuse, church hurt, anger at God, doubt', 'Loss, divorce, shame, mental health', 'Both-Sides Check and a Safety Plan'], 3, PURPLE, 'cross')
+    topic_set('Topics Most Won\u2019t Talk About', HARD)
+    for f in (vm_classic, vm_word, vm_web, vm_compare):
+        one('Verse Maps', f, 'Verse Maps')
+    for f in (lambda p: soap_page(p), soap_soft, soap_tracker):
+        one('S.O.A.P.', f, 'S.O.A.P. Templates')
     raw('S.O.A.P.', soap_cards, 'S.O.A.P. Templates')
-    two('S.O.A.P.', soap_teaching, soap_hard, 'S.O.A.P. Templates')
-    # --- reflection
-    for a, b in [(weekly, monthly), (thanks_log, answered), (bothsides_page, teaching_notes), (feelings, evening), (letter_god, letter_young)]:
-        two('Reflection', a, b, 'Reflection Templates')
-    # --- topic templates
-    for a, b in [(topic_study, character_study), (book_overview, theme_tracker), (questions, teach_back)]:
-        two('Topic Templates', a, b, 'Topic & Study Templates')
-    # --- journal
-    for a, b in [(j_lined, j_dotted), (j_grid, j_dated), (j_prayer_list, j_prayer_week), (j_gratitude, j_doodle), (j_rebuild, j_habits), (j_cornell, j_frame), (j_reading, j_verse_week)]:
-        two('Journal', a, b, 'Journal & Tracker Pages')
-    # --- dividers
-    dnote = 'Divider with tab  ·  Finished size 5 × 7.5 in + 0.35 in tab  ·  Cut around the tab on the dashed line  ·  Print on cardstock at 100%'
-    def mk(title, kicker, blurb, bullets, key, tabpos, color, ic):
-        f = divider_panel(title, kicker, blurb, bullets, '{%s}' % key, tabpos, color, ic)
-        f.tabbox = (0, 0)
-        return f
-    # tab x positions are resolved per panel at draw time; store absolute positions
-    def dv(title, kicker, blurb, bullets, key, tabpos, color, ic, px):
-        def f(p):
-            rng = SECTION_RANGES[key]
-            divider_panel(title, kicker, blurb, bullets, rng, tabpos, color, ic)(p)
-        f.tabbox = (px + 24 + tabpos * 90, 0)
-        return f
-    d1 = dv('Women of the Word', 'Women', 'Twenty-seven women, named and unnamed. Their stories, read slowly and without shame.', ['Verse map + S.O.A.P. for each woman', 'Content notes on every hard story', 'A soft step you can do in ten minutes'], 'Women of the Word', 0, TURQ, 'heart', 18)
-    d2 = dv('Addiction & Recovery', 'Recovery', 'Honest pages for the fight inside, and for the people who love someone in it.', ['Craving log, exit plan, and 30 days of mercy', 'If I Slip: a mercy plan', 'Team page and help lines'], 'Addiction & Recovery', 1, GOLD, 'chain', 414)
-    two_div = divider_page('Dividers', d1, d2, dnote)
-    PAGES.append(dict(sec='Dividers', toc='Section Dividers', draw=two_div))
-    d3 = dv('Trauma & Healing', 'Healing', 'Lament, grounding, boundaries, and the slow work of rebuilding the wall.', ['Grounding and body check-in', 'Lament and “where was God?”', 'Boundaries and the rebuild blueprint'], 'Trauma & Healing', 2, PINK, 'anchor', 18)
-    d4 = dv('Topics Most Won’t Talk About', 'Hard Topics', 'The questions people whisper. Asked out loud, with sources, and with care.', ['Abuse, church hurt, anger at God, doubt', 'Loss, divorce, shame, mental health', 'Safety plan and forgiveness without reconciliation'], 'Topics Most Won’t Talk About', 1, PURPLE, 'cross', 414)
-    PAGES.append(dict(sec='Dividers', toc='Section Dividers', draw=divider_page('Dividers', d3, d4, dnote)))
-    # --- extras
+    for f in (weekly, thanks_log, answered):
+        one('Reflection', f, 'Reflection Templates')
+    one('Topic Templates', topic_study, 'Topic Study Template')
+    for f in (j_lined, j_dotted):
+        one('Journal', f, 'Journal Pages')
+    one('Declarations', decl_a, 'Declarations')
+    one('Help Is Real', help_a, 'Help Is Real (Resources)')
     raw('Memory Verse Cards', memory_cards, 'Memory Verse Cards')
-    two('Declarations', decl_a, decl_b, 'Declarations')
-    two('Help Is Real', help_a, help_b, 'Help Is Real (Resources)')
-    two('Fast & Feast Tracker', fast_a, fast_b, 'Fast & Feast Tracker')
-    for k, nm in [('verse', 'Verse Keeper'), ('decl', 'Declarations'), ('women', 'Women of the Word'), ('check', 'Check-Ins')]:
+    for k in ('verse', 'decl', 'women', 'check'):
         raw('Bookmarks', bookmarks(k), 'Bookmarks')
     raw('Stickers', stickers_round, 'Stickers')
     raw('Stickers', stickers_labels, 'Stickers')
     raw('Stickers', stickers_flags, 'Stickers')
-    two('Closing', closing_a, closing_b, 'Closing & Certificate')
+    one('Closing', closing_a, 'Closing & Certificate')
+    one('Closing', closing_b, 'Closing & Certificate')
     assert len(PAGES) == TOTAL, f'expected {TOTAL} pages, got {len(PAGES)}'
-    # ranges
-    order = []
     for i, pg in enumerate(PAGES, 1):
         SECTION_RANGES.setdefault(pg['sec'], [i, i])[1] = i
     for k, v in list(SECTION_RANGES.items()):
-        SECTION_RANGES[k] = f'{v[0]}–{v[1]}' if v[0] != v[1] else f'{v[0]}'
+        SECTION_RANGES[k] = f'{v[0]}\u2013{v[1]}' if v[0] != v[1] else f'{v[0]}'
     seen = {}
     for i, pg in enumerate(PAGES, 1):
         seen.setdefault(pg['toc'], [i, i])[1] = i
@@ -700,6 +703,7 @@ def build():
     c.setAuthor('7HE H0LY R3UP')
     c.setSubject('100 print-ready Bible study inserts')
     for i, pg in enumerate(PAGES, 1):
+        c.setPageSize(pg.get('size', (PAGE_W, PAGE_H)))
         pg['draw'](c, i)
         c.showPage()
     c.save()
