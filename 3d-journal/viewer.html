@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Faith Journal 3D</title>
+<style>
+  html,body{margin:0;height:100%;background:#2a1d17;overflow:hidden;font-family:Georgia,serif}
+  canvas{display:block}
+  #hint{position:fixed;left:0;right:0;bottom:14px;text-align:center;color:#f6e9d8;font-size:13px;opacity:.75;pointer-events:none}
+</style>
+<script type="importmap">
+{"imports":{"three":"./vendor/three.module.js","three/addons/":"./vendor/addons/"}}
+</script>
+</head>
+<body>
+<div id="hint">Drag to rotate · scroll to zoom</div>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
+
+const q = new URLSearchParams(location.search);
+const still = q.has('still');              // still mode: fixed camera, no hint
+if (still) document.getElementById('hint').remove();
+
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.setSize(innerWidth, innerHeight);
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.05;
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+document.body.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x2a1d17);
+const pmrem = new THREE.PMREMGenerator(renderer);
+scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+scene.environmentIntensity = 0.35;
+scene.fog = new THREE.Fog(0x2a1d17, 28, 60);
+
+const camera = new THREE.PerspectiveCamera(32, innerWidth / innerHeight, 0.1, 200);
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.target.set(0, 0.3, 0);
+controls.maxPolarAngle = Math.PI * 0.49;
+controls.minDistance = 8; controls.maxDistance = 32;
+
+// ---------- lights ----------
+const key = new THREE.DirectionalLight(0xfff1dd, 2.6);
+key.position.set(-9, 16, 9);
+key.castShadow = true;
+key.shadow.mapSize.set(4096, 4096);
+Object.assign(key.shadow.camera, { left: -14, right: 14, top: 14, bottom: -14, near: 1, far: 50 });
+key.shadow.bias = -0.0004; key.shadow.normalBias = 0.02; key.shadow.radius = 5;
+scene.add(key);
+const rim = new THREE.DirectionalLight(0xffd9b0, 0.9); rim.position.set(10, 6, -8); scene.add(rim);
+scene.add(new THREE.HemisphereLight(0xfff3e4, 0x5a3a28, 0.35));
+
+// ---------- helpers ----------
+const tex = new THREE.TextureLoader();
+function canvasTex(w, h, draw, repeat) {
+  const c = document.createElement('canvas'); c.width = w; c.height = h;
+  draw(c.getContext('2d'), w, h);
+  const t = new THREE.CanvasTexture(c);
+  t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8;
+  if (repeat) { t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(...repeat); }
+  return t;
+}
+function noise(ctx, w, h, amt) {
+  const d = ctx.getImageData(0, 0, w, h);
+  for (let i = 0; i < d.data.length; i += 4) {
+    const n = (Math.random() - .5) * amt;
+    d.data[i] += n; d.data[i + 1] += n; d.data[i + 2] += n;
+  }
+  ctx.putImageData(d, 0, 0);
+}
+
+// ---------- table (warm weathered wood) ----------
+const wood = canvasTex(2048, 2048, (ctx, w, h) => {
+  ctx.fillStyle = '#7a5236'; ctx.fillRect(0, 0, w, h);
+  const planks = 6, ph = h / planks;
+  for (let p = 0; p < planks; p++) {
+    const y0 = p * ph, base = 95 + Math.random() * 30;
+    ctx.fillStyle = `rgb(${base + 40},${base - 5},${base - 40})`;
+    ctx.fillRect(0, y0, w, ph);
+    for (let i = 0; i < 160; i++) {
+      const y = y0 + Math.random() * ph;
+      ctx.strokeStyle = `rgba(${40 + Math.random() * 40},${20 + Math.random() * 20},10,${.06 + Math.random() * .12})`;
+      ctx.lineWidth = .6 + Math.random() * 2.2;
+      ctx.beginPath(); ctx.moveTo(0, y);
+      for (let x = 0; x <= w; x += 64) ctx.lineTo(x, y + Math.sin(x * .012 + i) * 3 + Math.sin(x * .003 + p) * 6);
+      ctx.stroke();
+    }
+    ctx.fillStyle = 'rgba(20,10,5,.75)'; ctx.fillRect(0, y0, w, 3);
+  }
+  noise(ctx, w, h, 14);
+}, [2, 2]);
+const floor = new THREE.Mesh(
+  new THREE.PlaneGeometry(90, 90),
+  new THREE.MeshStandardMaterial({ map: wood, roughness: .78, metalness: 0 })
+);
+floor.rotation.x = -Math.PI / 2; floor.position.y = -0.0; floor.receiveShadow = true;
+scene.add(floor);
+
+// ---------- book dimensions ----------
+const W = 6, H = 8, BOARD = 0.14, BLOCK = 1.15, OVER = 0.12;   // page block thickness 1.15
+const T = BOARD * 2 + BLOCK;
+const book = new THREE.Group();
+
+// Cover material: laminated, slightly glossy
+const coverMap = tex.load('cover.png');
+coverMap.colorSpace = THREE.SRGBColorSpace; coverMap.anisotropy = 16;
+const frontMat = new THREE.MeshPhysicalMaterial({
+  map: coverMap, roughness: .55, metalness: 0, clearcoat: .18, clearcoatRoughness: .5,
+  bumpMap: coverMap, bumpScale: .12
+});
+const clothColor = new THREE.Color(0xe45aa1).multiplyScalar(.75);
+const boardEdge = new THREE.MeshStandardMaterial({ color: 0xd7508f, roughness: .6 });
+const backMat = new THREE.MeshPhysicalMaterial({
+  map: canvasTex(512, 512, (ctx, w, h) => {
+    const g = ctx.createLinearGradient(0, 0, w, h);
+    g.addColorStop(0, '#f2a2c4'); g.addColorStop(1, '#d75a93');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = '#111';
+    for (let i = 0; i < 26; i++) {           // restrained cow-print hint
+      ctx.beginPath(); ctx.ellipse(Math.random() * w, Math.random() * h, 12 + Math.random() * 30, 8 + Math.random() * 22, Math.random() * 3, 0, 7); ctx.fill();
+    }
+    noise(ctx, w, h, 10);
+  }), roughness: .5, clearcoat: .3
+});
+
+const endpaper = new THREE.MeshStandardMaterial({ color: 0xf3c3d6, roughness: .85 });
+// front board  (+Y face carries the cover art, upright when viewed from +Z)
+const front = new THREE.Mesh(
+  new RoundedBoxGeometry(W + OVER, BOARD, H + OVER * 2, 3, 0.05),
+  [boardEdge, boardEdge, frontMat, endpaper, boardEdge, boardEdge]
+);
+front.position.set(OVER / 2, T - BOARD / 2, 0);
+front.castShadow = front.receiveShadow = true;
+
+const back = new THREE.Mesh(
+  new RoundedBoxGeometry(W + OVER, BOARD, H + OVER * 2, 3, 0.05),
+  [boardEdge, boardEdge, endpaper, backMat, boardEdge, boardEdge]
+);
+back.position.set(OVER / 2, BOARD / 2, 0);
+back.castShadow = back.receiveShadow = true;
+
+// page block with ruled edges + paper tint
+const edgeTex = (horizontal) => canvasTex(256, 256, (ctx, w, h) => {
+  ctx.fillStyle = '#fbf4e6'; ctx.fillRect(0, 0, w, h);
+  for (let i = 0; i < (horizontal ? h : w); i += 2) {
+    ctx.fillStyle = `rgba(150,130,100,${.10 + Math.random() * .18})`;
+    horizontal ? ctx.fillRect(0, i, w, 1) : ctx.fillRect(i, 0, 1, h);
+  }
+  noise(ctx, w, h, 8);
+});
+const edgeSide = new THREE.MeshStandardMaterial({ map: edgeTex(true), roughness: .95 });
+const edgeFront = new THREE.MeshStandardMaterial({ map: edgeTex(false), roughness: .95 });
+const paperTop = new THREE.MeshStandardMaterial({ color: 0xfbf4e6, roughness: .95 });
+const block = new THREE.Mesh(
+  new THREE.BoxGeometry(W - 0.2, BLOCK, H - 0.1),
+  [edgeSide, edgeSide, paperTop, paperTop, edgeFront, edgeFront]
+);
+block.position.set(0.05, BOARD + BLOCK / 2, 0);
+block.castShadow = block.receiveShadow = true;
+
+// rounded spine (half cylinder, bulging toward -X)
+const spine = new THREE.Mesh(
+  new THREE.CylinderGeometry(T / 2, T / 2, H + OVER * 2, 48, 1, false, Math.PI, Math.PI),
+  new THREE.MeshPhysicalMaterial({ color: clothColor, roughness: .55, clearcoat: .25, side: THREE.DoubleSide })
+);
+spine.rotation.x = Math.PI / 2;                       // axis -> Z
+spine.position.set(-W / 2 - OVER / 2 + OVER / 2 - 0.0, T / 2, 0);
+spine.position.x = -W / 2 + OVER / 2 - OVER / 2;
+spine.castShadow = spine.receiveShadow = true;
+// make the half-cylinder bulge toward -X
+spine.rotation.y = 0;
+
+// turquoise ribbon bookmark
+const ribbon = new THREE.Mesh(
+  new THREE.BoxGeometry(.2, .02, 2.4),
+  new THREE.MeshStandardMaterial({ color: 0x2cc6c0, roughness: .35 })
+);
+ribbon.position.set(-0.4, T - BOARD - .01, H / 2 + 0.9);
+ribbon.castShadow = true;
+
+// gold elastic closure band (subtle realism detail)
+const band = new THREE.Mesh(
+  new THREE.BoxGeometry(.16, T + .05, H + OVER * 2 + .06),
+  new THREE.MeshStandardMaterial({ color: 0xd9a441, roughness: .45, metalness: .2 })
+);
+band.position.set(W / 2 - 0.55, T / 2, 0);
+band.castShadow = true;
+
+book.add(back, block, front, spine, ribbon);
+book.position.y = 0.0;
+// slight lift + natural pose
+book.rotation.y = -0.32;
+scene.add(book);
+
+// contact shadow darkening under the book
+const cs = new THREE.Mesh(
+  new THREE.PlaneGeometry(W + 4, H + 4),
+  new THREE.MeshBasicMaterial({
+    map: canvasTex(256, 256, (ctx, w, h) => {
+      const g = ctx.createRadialGradient(w / 2, h / 2, w * .25, w / 2, h / 2, w * .5);
+      g.addColorStop(0, 'rgba(0,0,0,.55)'); g.addColorStop(1, 'rgba(0,0,0,0)');
+      ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+    }), transparent: true, depthWrite: false
+  })
+);
+cs.rotation.x = -Math.PI / 2; cs.position.y = 0.01; cs.rotation.z = book.rotation.y; scene.add(cs);
+
+// ---------- camera presets ----------
+const views = {
+  hero:  { p: [-7.5, 15.5, 13.5], t: [0, .4, 0] },
+  low:   { p: [-12, 8.5, 11],     t: [0, .5, 0] },
+  spine: { p: [-14, 5, -4],       t: [-1, .6, 0] },
+  top:   { p: [0.1, 26, 3.5],     t: [0, 0, 0] }
+};
+const v = views[q.get('view')] || views.hero;
+camera.position.set(...v.p); controls.target.set(...v.t); controls.update();
+
+if (!still && !q.has('noauto')) {
+  controls.autoRotate = true; controls.autoRotateSpeed = 0.8;
+  addEventListener('pointerdown', () => controls.autoRotate = false, { once: true });
+}
+addEventListener('resize', () => {
+  camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+});
+let frames = 0;
+renderer.setAnimationLoop(() => { controls.update(); renderer.render(scene, camera); if (++frames === 4) window.__ready = true; });
+</script>
+</body>
+</html>
